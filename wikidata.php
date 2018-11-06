@@ -81,6 +81,34 @@ function wikidata_item_from_jstor($jstor)
 
 
 //----------------------------------------------------------------------------------------
+// Does wikidata have this BioStor id?
+function wikidata_item_from_biostor($biostor)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P5315 "' . $biostor . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+
+//----------------------------------------------------------------------------------------
 // Does wikidata have this PDF
 function wikidata_item_from_pdf($pdf)
 {
@@ -88,8 +116,6 @@ function wikidata_item_from_pdf($pdf)
 	
 	// URI
 	$sparql = 'SELECT * WHERE { ?work wdt:P953 <' . $pdf . '> }';
-	
-	echo $sparql;
 	
 	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
 	$json = get($url, '', 'application/json');
@@ -250,6 +276,16 @@ function csljson_to_wikidata($work)
 		}
 	}	
 	
+	// BioStor
+	if ($item == '')
+	{
+		if (isset($work->message->BIOSTOR))
+		{
+			$item = wikidata_item_from_biostor($work->message->BIOSTOR);
+		}
+	}	
+	
+	
 	// PDF
 	if ($item == '')
 	{
@@ -295,6 +331,7 @@ $this->props = array(
 	$wikidata_properties = array(
 		'type'		=> 'P31',
 		'BHL' 		=> 'P687',
+		'BIOSTOR' 	=> 'P5315',
 		'DOI' 		=> 'P356',
 		'HANDLE'	=> 'P1184',
 		'JSTOR'		=> 'P888',
@@ -449,6 +486,10 @@ $this->props = array(
 			case 'BHL':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
+
+			case 'BIOSTOR':
+				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
+				break;
 				
 			case 'DOI':
 				$w[] = array($wikidata_properties[$k] => '"' . strtoupper($v) . '"');
@@ -458,6 +499,13 @@ $this->props = array(
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 				
+			// BioStor CSL-JSON
+			case 'bhl_pages':
+				// Get first element of page array
+				// https://stackoverflow.com/a/42066999/9684
+				$w[] = array($wikidata_properties['BHL'] => '"' . current($v) . '"');
+				break;
+			
 			/*
 			case 'URL':
 				if (is_array($v))
@@ -591,7 +639,12 @@ $name = 'Allertonia';
 $item =  wikidata_item_from_journal_name($name);
 echo "$name $item\n";
 
+// BioStor
+$biostor = 217669;
+$item =  wikidata_item_from_biostor($biostor);
+echo "$biostor $item\n";
 
+// Add from microcitation
 $guid = '10.3969/j.issn.2095-0845.2001.02.002';
 $guid = '10.13346/j.mycosystema.140275';
 
@@ -599,16 +652,21 @@ $guid = '10.13346/j.mycosystema.140275';
 $guid = 'http://www.jstor.org/stable/23187393';
 
 // PDF is GUID, need to have OpenURL and/or PDF lookup to check doesn't exist
-
 $guid = urlencode('http://www.museunacional.ufrj.br/publicacoes/wp-content/arquivos/Arqs%2065%20n%204%20p%20485-504%20Calvo%20et%20al.pdf');
 
 $json = get('http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . $guid);
 
 
+// BioStor examples
+$biostor = 240296;
+$biostor = 217669;
+
+$json = get('http://biostor.org/api.php?id=biostor/' . $biostor . '&format=citeproc');
+
 
 $obj = json_decode($json);
 
-print_r($obj);
+//print_r($obj);
 
 $work = new stdclass;
 $work->message = $obj;
