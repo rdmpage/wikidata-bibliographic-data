@@ -79,6 +79,37 @@ function wikidata_item_from_jstor($jstor)
 	return $item;
 }
 
+
+//----------------------------------------------------------------------------------------
+// Does wikidata have this PDF
+function wikidata_item_from_pdf($pdf)
+{
+	$item = '';
+	
+	// URI
+	$sparql = 'SELECT * WHERE { ?work wdt:P953 <' . $pdf . '> }';
+	
+	echo $sparql;
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+			
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
 //----------------------------------------------------------------------------------------
 // Do we have a journal with this ISSN?
 function wikidata_item_from_issn($issn)
@@ -210,6 +241,7 @@ function csljson_to_wikidata($work)
 		$item = wikidata_item_from_doi($work->message->DOI);
 	}
 	
+	// JSTOR
 	if ($item == '')
 	{
 		if (isset($work->message->JSTOR))
@@ -217,6 +249,23 @@ function csljson_to_wikidata($work)
 			$item = wikidata_item_from_jstor($work->message->JSTOR);
 		}
 	}	
+	
+	// PDF
+	if ($item == '')
+	{
+		if (isset($work->message->link))
+		{
+			foreach ($work->message->link as $link)
+			{
+				if ($link->{'content-type'} == 'application/pdf')
+				{
+					$item = wikidata_item_from_pdf($link->URL);
+				}
+			}
+		}
+	}	
+
+
 	
 	if ($item == '')
 	{
@@ -428,6 +477,16 @@ $this->props = array(
 			case 'WIKISPECIES':
 				$w[] = array('Sspecieswiki' => $v);
 				break;
+				
+			case 'link':
+				foreach ($v as $link)
+				{
+					if ($link->{'content-type'} == 'application/pdf')
+					{
+						$w[] = array($wikidata_properties['PDF'] => '"' . $link->URL . '"');
+					}
+				}
+				break;
 								
 			case 'container-title':
 				$container = $v;
@@ -535,7 +594,11 @@ echo "$name $item\n";
 
 $guid = '10.3969/j.issn.2095-0845.2001.02.002';
 $guid = '10.13346/j.mycosystema.140275';
+
+// JSTOR only
 $guid = 'http://www.jstor.org/stable/23187393';
+
+// PDF is GUID, need to have OpenURL and/or PDF lookup to check doesn't exist
 
 $guid = urlencode('http://www.museunacional.ufrj.br/publicacoes/wp-content/arquivos/Arqs%2065%20n%204%20p%20485-504%20Calvo%20et%20al.pdf');
 
