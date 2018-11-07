@@ -337,7 +337,7 @@ $this->props = array(
 		'JSTOR'		=> 'P888',
 		'PMID'		=> 'P698',
 		'PMC' 		=> 'P932',
-		//'URL'		=> 'P854',	
+		'URL'		=> 'P856',	
 		'title'		=> 'P1476',	
 		'volume' 	=> 'P478',
 		'issue' 	=> 'P433',
@@ -506,7 +506,7 @@ $this->props = array(
 				$w[] = array($wikidata_properties['BHL'] => '"' . current($v) . '"');
 				break;
 			
-			/*
+			
 			case 'URL':
 				if (is_array($v))
 				{
@@ -520,7 +520,6 @@ $this->props = array(
 					$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				}
 				break;
-			*/
 				
 			case 'WIKISPECIES':
 				$w[] = array('Sspecieswiki' => $v);
@@ -616,8 +615,65 @@ $this->props = array(
 }
 
 //----------------------------------------------------------------------------------------
+// list of items already in Wikidata for a journal
+// could use as basis for RIS export for matching, etc.
+function works_for_journal($issn)
+{
+	$works = array();
+	$sparql = 'SELECT ?work (group_concat(?author;separator=";") as ?authors) ?title ?volume ?issue ?pages ?doi 
+	WHERE { 
+	?container wdt:P236 "' . strtoupper($issn) . '" .
+  ?work wdt:P1433 ?container .
+  
+  ?work wdt:P1476 ?title .
+  
+  ?work wdt:P2093 ?author .
+  
+  ?work wdt:P478 ?volume .
+  OPTIONAL {
+    ?work wdt:P433 ?issue .
+   }
+  ?work wdt:P304 ?pages .
+  
+  OPTIONAL {
+    ?work wdt:P356 ?doi .
+   }  
+}
+GROUP BY ?work ?title ?volume ?issue ?pages ?doi ';
 
-// test
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		
+		
+		if (isset($obj->results->bindings))
+		{
+			foreach ($obj->results->bindings as $binding)
+			{
+				$work = new stdclass;
+				
+				foreach ($binding as $k => $v)
+				{
+					$work->{$k} = $v->value;
+				}
+				
+				$works[] = $work;
+
+			}
+		}
+	}
+	
+	return $works;
+
+}
+
+//----------------------------------------------------------------------------------------
+
+// tests
 
 // DOI
 $doi = '10.1080/00222933.2010.520169';
@@ -647,12 +703,13 @@ echo "$biostor $item\n";
 // Add from microcitation
 $guid = '10.3969/j.issn.2095-0845.2001.02.002';
 $guid = '10.13346/j.mycosystema.140275';
+$guid = '10.3969/j.issn.1005-9628.2005.01.005';
 
 // JSTOR only
-$guid = 'http://www.jstor.org/stable/23187393';
+//$guid = 'http://www.jstor.org/stable/23187393';
 
 // PDF is GUID, need to have OpenURL and/or PDF lookup to check doesn't exist
-$guid = urlencode('http://www.museunacional.ufrj.br/publicacoes/wp-content/arquivos/Arqs%2065%20n%204%20p%20485-504%20Calvo%20et%20al.pdf');
+//$guid = urlencode('http://www.museunacional.ufrj.br/publicacoes/wp-content/arquivos/Arqs%2065%20n%204%20p%20485-504%20Calvo%20et%20al.pdf');
 
 $json = get('http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . $guid);
 
@@ -661,7 +718,7 @@ $json = get('http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' .
 $biostor = 240296;
 $biostor = 217669;
 
-$json = get('http://biostor.org/api.php?id=biostor/' . $biostor . '&format=citeproc');
+//$json = get('http://biostor.org/api.php?id=biostor/' . $biostor . '&format=citeproc');
 
 
 $obj = json_decode($json);
@@ -672,5 +729,11 @@ $work = new stdclass;
 $work->message = $obj;
 
 csljson_to_wikidata($work);
+
+// works for a journal 
+$issn = '0079-8835';
+$works = works_for_journal($issn);
+
+print_r($works);
 
 ?>
