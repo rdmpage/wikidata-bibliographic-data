@@ -259,6 +259,9 @@ function wikidata_item_from_wikispecies_author($wikispecies)
 // Convert a csl json object to Wikidata quickstatments
 function csljson_to_wikidata($work)
 {
+
+	$quickstatements = '';
+
 	// Do we have this already in wikidata?
 	$item = '';
 	
@@ -427,7 +430,10 @@ $this->props = array(
 					{
 						if (isset($author->ORCID))
 						{
-							$author_item = wikidata_item_from_orcid($author->ORCID);
+							$orcid = $author->ORCID;
+							$orcid = preg_replace('/https?:\/\/orcid.org\//', '', $orcid);
+						
+							$author_item = wikidata_item_from_orcid($orcid);
 						
 							if ($author_item != '')
 							{							
@@ -512,12 +518,19 @@ $this->props = array(
 				{
 					foreach ($v as $url)
 					{
+						// force JSTOR to be https
+						
+						$url = preg_replace('/http:\/\/www.jstor.org/', 'https://www.jstor.org', $url);
+					
+					
 						$w[] = array($wikidata_properties[$k] => '"' . $url . '"');
 					}
 				}
 				else
-				{			
-					$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
+				{		
+					$url = $v;
+					$url = preg_replace('/http:\/\/www.jstor.org/', 'https://www.jstor.org', $url);	
+					$w[] = array($wikidata_properties[$k] => '"' . $url . '"');
 				}
 				break;
 				
@@ -587,11 +600,28 @@ $this->props = array(
 				$w[] = array('P577' => $date);
 				break;
 				
+			case 'reference':
+				foreach ($v as $reference)
+				{
+					if (isset($reference->DOI))
+					{
+						// for now just see if this already exists
+						$cited = wikidata_item_from_doi($reference->DOI);
+						if ($cited != '')
+						{
+							$w[] = array('P2860' => $cited);
+						}					
+					}
+				}
+				break;
+				
 	
 			default:
 				break;
 		}
 	}
+	
+	// echo "--------------------------\n";
 	
 	// assume create
 	if ($item == 'LAST')
@@ -608,9 +638,17 @@ $this->props = array(
 			$row[] = $property;
 			$row[] = $value;
 		
-			echo join("\t", $row) . "\n";
+			$quickstatements .= join("\t", $row) . "\n";
+			
 		}
 	}
+	
+	// echo "--------------------------\n";
+	
+	
+	
+	return $quickstatements;
+
 	
 }
 
@@ -672,9 +710,73 @@ GROUP BY ?work ?title ?volume ?issue ?pages ?doi ';
 }
 
 //----------------------------------------------------------------------------------------
+// OpenURL lookup using ISSN, volume, spage
+function wikidata_item_from_openurl($issn, $volume, $spage)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE 
+{ 
+  VALUES ?issn {"' . $issn . '" } .
+  VALUES ?volume {"' . $volume . '" } .
+  VALUES ?firstpage {"^' . $spage . '(–[0-9]+)?$" } .
+  
+  ?work wdt:P1433 ?container .
+  ?container wdt:P236 ?issn.
+  ?work wdt:P478 ?volume .
+  ?work wdt:P304 ?pages .
+  FILTER regex(?pages,?firstpage,"i")
+}';
+	
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		
+		//print_r($obj);
+		
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+
+
+//----------------------------------------------------------------------------------------
+// Fetch CrossRef DOI
+function get_work($doi)
+{
+	$obj = null;
+	
+	$url = 'https://api.crossref.org/v1/works/http://dx.doi.org/' . $doi;
+	
+	$json = get($url);
+	
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+	}
+	return $obj;
+}
+
+//----------------------------------------------------------------------------------------
 
 // tests
+if (0)
+{
 
+/*
 // DOI
 $doi = '10.1080/00222933.2010.520169';
 $doi = '10.3956/2011-13.1';
@@ -732,8 +834,58 @@ csljson_to_wikidata($work);
 
 // works for a journal 
 $issn = '0079-8835';
-$works = works_for_journal($issn);
 
+// $works = works_for_journal($issn);
+// print_r($works);
+
+// OpenURL
+
+
+$issn	= "1175-5326";
+$volume = "2528";
+$spage 	= "1";
+
+$item = wikidata_item_from_openurl($issn, $volume, $spage);
+echo "$issn  $volume  $spage $item\n";
+
+*/
+
+/*
+$doi = '10.1371/journal.pone.0029715';
+$doi = '10.1111/aen.12333'; // I've added this
+$work = get_work($doi);
+if ($work)
+{
+	// print_r($work);
+	csljson_to_wikidata($work);
+}
+*/
+
+// JSTOR-based journal
+
+$issn = '1174-9202';
+$works = works_for_journal($issn);
 print_r($works);
+
+$guid = 'http://www.jstor.org/stable/42905863';
+
+$guid = urlencode('http://www.guihaia-journal.com/ch/reader/view_abstract.aspx?file_no=1986Z1003&flag=1');
+
+$guid = urlencode('http://www.guihaia-journal.com/ch/reader/view_abstract.aspx?file_no=20070426&flag=1');
+
+
+$json = get('http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . $guid);
+
+
+$obj = json_decode($json);
+
+//print_r($obj);
+
+$work = new stdclass;
+$work->message = $obj;
+
+csljson_to_wikidata($work);
+
+}
 
 ?>
