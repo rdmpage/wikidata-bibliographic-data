@@ -276,6 +276,7 @@ function csljson_to_wikidata($work)
 		if (isset($work->message->JSTOR))
 		{
 			$item = wikidata_item_from_jstor($work->message->JSTOR);
+			
 		}
 	}	
 	
@@ -340,7 +341,7 @@ $this->props = array(
 		'JSTOR'		=> 'P888',
 		'PMID'		=> 'P698',
 		'PMC' 		=> 'P932',
-		'URL'		=> 'P856',	
+		'URL'		=> 'P953',	// https://twitter.com/EvoMRI/status/1062785719096229888
 		'title'		=> 'P1476',	
 		'volume' 	=> 'P478',
 		'issue' 	=> 'P433',
