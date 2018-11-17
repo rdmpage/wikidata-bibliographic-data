@@ -1,5 +1,8 @@
 <?php
 
+require_once 'vendor/autoload.php';
+use LanguageDetection\Language;
+
 //----------------------------------------------------------------------------------------
 function get($url, $user_agent='', $content_type = '')
 {	
@@ -140,26 +143,39 @@ function wikidata_item_from_pdf($pdf)
 // Do we have a journal with this ISSN?
 function wikidata_item_from_issn($issn)
 {
+	$cached_issn = array(
+		'0067-0464' => 'Q15214730', // Records of the Auckland Institute and Museum
+		'0001-804X' => 'Q58814054', // Adansonia nouvelle série
+	);
+
 	$item = '';
 	
-	$sparql = 'SELECT * WHERE { ?work wdt:P236 "' . strtoupper($issn) . '" }';
-	
-	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
-	$json = get($url, '', 'application/json');
-	
-	if ($json != '')
+	if (isset($cached_issn[$issn]))
 	{
-		$obj = json_decode($json);
-		if (isset($obj->results->bindings))
+		$item = $cached_issn[$issn];
+	}
+	else
+	{
+	
+		$sparql = 'SELECT * WHERE { ?work wdt:P236 "' . strtoupper($issn) . '" }';
+	
+		$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+		$json = get($url, '', 'application/json');
+	
+		if ($json != '')
 		{
-			if (count($obj->results->bindings) != 0)	
+			$obj = json_decode($json);
+			if (isset($obj->results->bindings))
 			{
-				$item = $obj->results->bindings[0]->work->value;
-				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+				if (count($obj->results->bindings) != 0)	
+				{
+					$item = $obj->results->bindings[0]->work->value;
+					$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+				}
 			}
 		}
 	}
-	
+		
 	return $item;
 }
 
@@ -257,55 +273,60 @@ function wikidata_item_from_wikispecies_author($wikispecies)
 
 //----------------------------------------------------------------------------------------
 // Convert a csl json object to Wikidata quickstatments
-function csljson_to_wikidata($work)
+function csljson_to_wikidata($work, $check = true)
 {
 
 	$quickstatements = '';
+	
 
 	// Do we have this already in wikidata?
 	$item = '';
 	
-	if (isset($work->message->DOI))
+	if ($check)
 	{
-		$item = wikidata_item_from_doi($work->message->DOI);
-	}
 	
-	// JSTOR
-	if ($item == '')
-	{
-		if (isset($work->message->JSTOR))
+	
+		if (isset($work->message->DOI))
 		{
-			$item = wikidata_item_from_jstor($work->message->JSTOR);
-			
+			$item = wikidata_item_from_doi($work->message->DOI);
 		}
-	}	
 	
-	// BioStor
-	if ($item == '')
-	{
-		if (isset($work->message->BIOSTOR))
+		// JSTOR
+		if ($item == '')
 		{
-			$item = wikidata_item_from_biostor($work->message->BIOSTOR);
-		}
-	}	
-	
-	
-	// PDF
-	if ($item == '')
-	{
-		if (isset($work->message->link))
-		{
-			foreach ($work->message->link as $link)
+			if (isset($work->message->JSTOR))
 			{
-				if ($link->{'content-type'} == 'application/pdf')
+				$item = wikidata_item_from_jstor($work->message->JSTOR);
+			
+			}
+		}	
+	
+		// BioStor
+		if ($item == '')
+		{
+			if (isset($work->message->BIOSTOR))
+			{
+				$item = wikidata_item_from_biostor($work->message->BIOSTOR);
+			}
+		}		
+	
+		// PDF
+		if ($item == '')
+		{
+			if (isset($work->message->link))
+			{
+				foreach ($work->message->link as $link)
 				{
-					$item = wikidata_item_from_pdf($link->URL);
+					if ($link->{'content-type'} == 'application/pdf')
+					{
+						$item = wikidata_item_from_pdf($link->URL);
+					}
 				}
 			}
-		}
-	}	
+		}	
 
-
+	}
+	
 	
 	if ($item == '')
 	{
@@ -397,6 +418,21 @@ $this->props = array(
 					$language = 'en';
 					
 					$title = strip_tags($title);
+					
+					
+					if (1)
+					{
+						// test language 
+						$ld = new Language(['fr', 'en']);
+						
+						//$object = $ld->detect($title);
+						//echo json_encode($object, JSON_PRETTY_PRINT);
+						
+						$language = $ld->detect($title)->__toString();
+						
+					}
+					
+					
 			
 					// title
 					$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
@@ -519,19 +555,39 @@ $this->props = array(
 				{
 					foreach ($v as $url)
 					{
-						// force JSTOR to be https
+						$go = true;
 						
-						$url = preg_replace('/http:\/\/www.jstor.org/', 'https://www.jstor.org', $url);
+						if (preg_match('/https?:\/\/www.jstor.org/', $url))
+						{
+							// force JSTOR to be https						
+							$url = preg_replace('/http:\/\/www.jstor.org/', 'https://www.jstor.org', $url);
+							// For now ignore JSTOR URLs
+							$go = false;
+						}						
 					
-					
-						$w[] = array($wikidata_properties[$k] => '"' . $url . '"');
+						if ($go)
+						{
+							$w[] = array($wikidata_properties[$k] => '"' . $url . '"');
+						}
 					}
 				}
 				else
 				{		
 					$url = $v;
-					$url = preg_replace('/http:\/\/www.jstor.org/', 'https://www.jstor.org', $url);	
-					$w[] = array($wikidata_properties[$k] => '"' . $url . '"');
+					$go = true;
+					
+					if (preg_match('/https?:\/\/www.jstor.org/', $url))
+					{
+						// force JSTOR to be https						
+						$url = preg_replace('/http:\/\/www.jstor.org/', 'https://www.jstor.org', $url);
+						// For now ignore JSTOR URLs
+						$go = false;
+					}						
+				
+					if ($go)
+					{
+						$w[] = array($wikidata_properties[$k] => '"' . $url . '"');
+					}
 				}
 				break;
 				
