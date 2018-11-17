@@ -1,0 +1,6 @@
+{
+    "require": {
+        "php": "^7.1",
+        "patrickschur/language-detection": "^3.4"
+    }
+}
