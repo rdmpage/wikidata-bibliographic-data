@@ -426,10 +426,12 @@ $this->props = array(
 					$language = 'en';					
 					$title = strip_tags($title);
 					
+					/*
 					// title
 					$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
 					// label
 					$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
+					*/
 										
 					
 					if (1)
@@ -442,6 +444,13 @@ $this->props = array(
 						{
 							// Assume work is English
 							$w[] = array('P407' => $language_map[$language]);
+
+							// title
+							$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
+							// label
+							$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
+							
+							
 						}
 						else											
 						{
@@ -451,7 +460,11 @@ $this->props = array(
 							$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
 							
 							// language of work (assume it is the same as the title)
-							$w[] = array('P407' => $language_map[$language]);
+							$w[] = array('P407' => $language_map[$language]);							
+							
+							// add label in English anyway
+							$w[] = array('Len' => '"' . addcslashes($title, '"') . '"');
+							
 						}	
 					}
 					
