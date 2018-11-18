@@ -6,6 +6,12 @@ require_once (dirname(__FILE__) . '/wikidata.php');
 
 $filename = '1174-9202.tsv';
 
+$filename = 'quickstatements/0067-0464.tsv';
+
+$filename = 'quickstatements/1005-9628.tsv';
+
+$filename = 'quickstatements/0001-804X.tsv';
+
 $file_handle = fopen($filename, "r");
 while (!feof($file_handle)) 
 {
@@ -16,7 +22,7 @@ while (!feof($file_handle))
 	$url = 'http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . $guid;
 
 	$json = get($url);
-
+	
 
 	$obj = json_decode($json);
 

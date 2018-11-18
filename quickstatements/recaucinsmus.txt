@@ -1,0 +1,5381 @@
+CREATE
+LAST	P1476	en:"New Species of Lepidoptera in the Collection of the Auckland Museum"
+LAST	Len	"New Species of Lepidoptera in the Collection of the Auckland Museum"
+LAST	P31	Q13442814
+LAST	P577	+1930-00-00T00:00:00Z/9
+LAST	P2093	"Alfred Philpott"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"1-16"
+LAST	P888	"42905932"
+
+
+CREATE
+LAST	P1476	en:"The Paryphantidae of New Zealand: their Hypothetical Ancestry, with descriptions of New Species and a New Genus"
+LAST	Len	"The Paryphantidae of New Zealand: their Hypothetical Ancestry, with descriptions of New Species and a New Genus"
+LAST	P31	Q13442814
+LAST	P577	+1930-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"17-56"
+LAST	P888	"42905933"
+
+
+CREATE
+LAST	P1476	en:"The Piraunui Pa at Matawhana, Waikato"
+LAST	Len	"The Piraunui Pa at Matawhana, Waikato"
+LAST	P31	Q13442814
+LAST	P577	+1930-00-00T00:00:00Z/9
+LAST	P2093	"L W Delph"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"57-69"
+LAST	P888	"42905934"
+
+
+CREATE
+LAST	P1476	en:"The Vegetation of Maungapohatu"
+LAST	Len	"The Vegetation of Maungapohatu"
+LAST	P31	Q13442814
+LAST	P577	+1931-00-00T00:00:00Z/9
+LAST	P2093	"L M Cranwell"	P1545	"1"
+LAST	P2093	"L B Moore"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"71-80"
+LAST	P888	"42905936"
+
+
+CREATE
+LAST	P1476	en:"Some Notes on Maori Agricultural and Earth-Working Implements"
+LAST	Len	"Some Notes on Maori Agricultural and Earth-Working Implements"
+LAST	P31	Q13442814
+LAST	P577	+1931-00-00T00:00:00Z/9
+LAST	P2093	"V F Fisher"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"81-84"
+LAST	P888	"42905937"
+
+
+CREATE
+LAST	P1476	en:"Waitotaran Faunules of the Wanganui System and Descriptions of New Species of Mollusca from the New Zealand Pliocene"
+LAST	Len	"Waitotaran Faunules of the Wanganui System and Descriptions of New Species of Mollusca from the New Zealand Pliocene"
+LAST	P31	Q13442814
+LAST	P577	+1931-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"85-112"
+LAST	P888	"42905938"
+
+
+CREATE
+LAST	P1476	en:"Notes on Sub-Fossil Bird Remains"
+LAST	Len	"Notes on Sub-Fossil Bird Remains"
+LAST	P31	Q13442814
+LAST	P577	+1931-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"113-121"
+LAST	P888	"42905939"
+
+
+CREATE
+LAST	P1476	en:"A Revision of the Carangid and Seriolid Fishes of New Zealand"
+LAST	Len	"A Revision of the Carangid and Seriolid Fishes of New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1932-00-00T00:00:00Z/9
+LAST	P2093	"L T Griffin"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"123-134"
+LAST	P888	"42905942"
+
+
+CREATE
+LAST	P1476	en:"Notes on a New Collembola from New Zealand"
+LAST	Len	"Notes on a New Collembola from New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1932-00-00T00:00:00Z/9
+LAST	P2093	"E D Pritchard"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"135-137"
+LAST	P888	"42905943"
+
+
+CREATE
+LAST	P1476	en:"New Zealand Cormorants in the collection of the Auckland Museum, with notes on field observations"
+LAST	Len	"New Zealand Cormorants in the collection of the Auckland Museum, with notes on field observations"
+LAST	P31	Q13442814
+LAST	P577	+1932-00-00T00:00:00Z/9
+LAST	P2093	"R A Falla"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"139-154"
+LAST	P888	"42905944"
+
+
+CREATE
+LAST	P1476	en:"The Paryphantidae of New Zealand. Descriptions of Further New Species"
+LAST	Len	"The Paryphantidae of New Zealand. Descriptions of Further New Species"
+LAST	P31	Q13442814
+LAST	P577	+1932-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"155-162"
+LAST	P888	"42905945"
+
+
+CREATE
+LAST	P1476	en:"Maori Decorated Sinkers"
+LAST	Len	"Maori Decorated Sinkers"
+LAST	P31	Q13442814
+LAST	P577	+1933-00-00T00:00:00Z/9
+LAST	P2093	"V F Fisher"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"163-167"
+LAST	P888	"42905947"
+
+
+CREATE
+LAST	P1476	en:"Flora of Manihiki, Cook Group"
+LAST	Len	"Flora of Manihiki, Cook Group"
+LAST	P31	Q13442814
+LAST	P577	+1933-00-00T00:00:00Z/9
+LAST	P2093	"L M Cranwell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"169-171"
+LAST	P888	"42905948"
+
+
+CREATE
+LAST	P1476	en:"Notes on New Zealand Petrels; With Descriptions of New Forms and some New Records"
+LAST	Len	"Notes on New Zealand Petrels; With Descriptions of New Forms and some New Records"
+LAST	P31	Q13442814
+LAST	P577	+1933-00-00T00:00:00Z/9
+LAST	P2093	"R A Falla"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"173-180"
+LAST	P888	"42905949"
+
+
+CREATE
+LAST	P1476	en:"The Marine Mollusca of the Chatham Islands"
+LAST	Len	"The Marine Mollusca of the Chatham Islands"
+LAST	P31	Q13442814
+LAST	P577	+1933-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"181-208"
+LAST	P888	"42905950"
+
+
+CREATE
+LAST	P1476	en:"Wood Carving in the North Auckland Area"
+LAST	Len	"Wood Carving in the North Auckland Area"
+LAST	P31	Q13442814
+LAST	P577	+1933-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"209-218"
+LAST	P888	"42905951"
+
+
+CREATE
+LAST	P1476	en:"Induced Dominance of Microlaena avenacea (Raoul) Hook. f., in a New Zealand Rain-Forest Area"
+LAST	Len	"Induced Dominance of Microlaena avenacea (Raoul) Hook. f., in a New Zealand Rain-Forest Area"
+LAST	P31	Q13442814
+LAST	P577	+1934-00-00T00:00:00Z/9
+LAST	P2093	"L B Moore"	P1545	"1"
+LAST	P2093	"L M Cranwell"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"219-238"
+LAST	P888	"42905953"
+
+
+CREATE
+LAST	P1476	en:"Description of a Rare Lophotid Fish from Cape Runaway, New Zealand"
+LAST	Len	"Description of a Rare Lophotid Fish from Cape Runaway, New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1934-00-00T00:00:00Z/9
+LAST	P2093	"L T Griffin"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"239-243"
+LAST	P888	"42905954"
+
+
+CREATE
+LAST	P1476	en:"The Distribution and Breeding Habits of Petrels in Northern New Zealand"
+LAST	Len	"The Distribution and Breeding Habits of Petrels in Northern New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1934-00-00T00:00:00Z/9
+LAST	P2093	"R A Falla"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"245-260"
+LAST	P888	"42905955"
+
+
+CREATE
+LAST	P1476	en:"Upper Pliocene Fossils from Cape Runaway"
+LAST	Len	"Upper Pliocene Fossils from Cape Runaway"
+LAST	P31	Q13442814
+LAST	P577	+1934-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"261-274"
+LAST	P888	"42905956"
+
+
+CREATE
+LAST	P1476	en:"The Material Culture of Oruarangi, Matatoki, Thames. 1. Bone Ornaments and Implements"
+LAST	Len	"The Material Culture of Oruarangi, Matatoki, Thames. 1. Bone Ornaments and Implements"
+LAST	P31	Q13442814
+LAST	P577	+1934-00-00T00:00:00Z/9
+LAST	P2093	"V F Fisher"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"275-286"
+LAST	P888	"42905957"
+
+
+CREATE
+LAST	P1476	en:"The Material Culture of Oruarangi, Matatoki, Thames. 2. Fish Hooks"
+LAST	Len	"The Material Culture of Oruarangi, Matatoki, Thames. 2. Fish Hooks"
+LAST	P31	Q13442814
+LAST	P577	+1935-00-00T00:00:00Z/9
+LAST	P2093	"V F Fisher"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"287-300"
+LAST	P888	"42905958"
+
+
+CREATE
+LAST	P1476	en:"Botanical Notes on the Hen and Chickens Islands"
+LAST	Len	"Botanical Notes on the Hen and Chickens Islands"
+LAST	P31	Q13442814
+LAST	P577	+1935-00-00T00:00:00Z/9
+LAST	P2093	"L M Cranwell"	P1545	"1"
+LAST	P2093	"L B Moore"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"301-318"
+LAST	P888	"42905959"
+
+
+CREATE
+LAST	P1476	en:"Notes on Penguins of the Genera Megadyptes and Eudyptes in Southern New Zealand"
+LAST	Len	"Notes on Penguins of the Genera Megadyptes and Eudyptes in Southern New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1935-00-00T00:00:00Z/9
+LAST	P2093	"R A Falla"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"319-326"
+LAST	P888	"42905960"
+
+
+CREATE
+LAST	P1476	en:"Tertiary Mollusca from Motutara, West Coast, Auckland"
+LAST	Len	"Tertiary Mollusca from Motutara, West Coast, Auckland"
+LAST	P31	Q13442814
+LAST	P577	+1935-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"1"
+LAST	P304	"327-340"
+LAST	P888	"42905961"
+
+
+CREATE
+LAST	P1476	en:"Arctic Birds as Migrants in N.Z."
+LAST	Len	"Arctic Birds as Migrants in N.Z."
+LAST	P31	Q13442814
+LAST	P577	+1936-00-00T00:00:00Z/9
+LAST	P2093	"R A Falla"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"3-14"
+LAST	P888	"42905964"
+
+
+CREATE
+LAST	P1476	en:"The Material Culture of Oruarangi, Matatoki, Thames. 3. Stone Implements and Ornaments"
+LAST	Len	"The Material Culture of Oruarangi, Matatoki, Thames. 3. Stone Implements and Ornaments"
+LAST	P31	Q13442814
+LAST	P577	+1936-00-00T00:00:00Z/9
+LAST	P2093	"V F Fisher"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"15-27"
+LAST	P888	"42905965"
+
+
+CREATE
+LAST	P1476	en:"The Paryphantidae of New Zealand. III. Further New Species of Paryphanta and Wainuia"
+LAST	Len	"The Paryphantidae of New Zealand. III. Further New Species of Paryphanta and Wainuia"
+LAST	P31	Q13442814
+LAST	P577	+1936-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"29-41"
+LAST	P888	"42905966"
+
+
+CREATE
+LAST	P1476	en:"Revision of the Chilopoda of New Zealand"
+LAST	Len	"Revision of the Chilopoda of New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1936-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"43-70"
+LAST	P888	"42905967"
+
+
+CREATE
+LAST	P1476	en:"Revision of the Chilopoda of New Zealand"
+LAST	Len	"Revision of the Chilopoda of New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1937-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"71-100"
+LAST	P888	"42905969"
+
+
+CREATE
+LAST	P1476	en:"New Plant Records from the Poor Knights Islands. With special reference to Todea barbara"
+LAST	Len	"New Plant Records from the Poor Knights Islands. With special reference to Todea barbara"
+LAST	P31	Q13442814
+LAST	P577	+1937-00-00T00:00:00Z/9
+LAST	P2093	"L M Cranwell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"101-110"
+LAST	P888	"42905970"
+
+
+CREATE
+LAST	P1476	en:"The Material Culture of Oruarangi, Matatoki, Thames. 4. Musical Instruments"
+LAST	Len	"The Material Culture of Oruarangi, Matatoki, Thames. 4. Musical Instruments"
+LAST	P31	Q13442814
+LAST	P577	+1937-00-00T00:00:00Z/9
+LAST	P2093	"V F Fisher"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"111-118"
+LAST	P888	"42905971"
+
+
+CREATE
+LAST	P1476	en:"New Species of Nudibranchiate Mollusca from Auckland Waters"
+LAST	Len	"New Species of Nudibranchiate Mollusca from Auckland Waters"
+LAST	P31	Q13442814
+LAST	P577	+1937-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"119-124"
+LAST	P888	"42905972"
+
+
+CREATE
+LAST	P1476	en:"Notes on the Birds of Canton Island"
+LAST	Len	"Notes on the Birds of Canton Island"
+LAST	P31	Q13442814
+LAST	P577	+1938-00-00T00:00:00Z/9
+LAST	P2093	"G A Buddle"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"125-132"
+LAST	P888	"42905974"
+
+
+CREATE
+LAST	P1476	en:"The Paryphantidae of New Zealand No. IV. and The Genus Placostylus in New Zealand"
+LAST	Len	"The Paryphantidae of New Zealand No. IV. and The Genus Placostylus in New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1938-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"133-150"
+LAST	P888	"42905975"
+
+
+CREATE
+LAST	P1476	en:"A New Cleidopus and Four Other Fishes New to New Zealand"
+LAST	Len	"A New Cleidopus and Four Other Fishes New to New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1938-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"151-156"
+LAST	P888	"42905976"
+
+
+CREATE
+LAST	P1476	en:"A Pliocene Molluscan Faunule from Castle Point"
+LAST	Len	"A Pliocene Molluscan Faunule from Castle Point"
+LAST	P31	Q13442814
+LAST	P577	+1938-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"157-164"
+LAST	P888	"42905977"
+
+
+CREATE
+LAST	P1476	en:"Additions to the Recent Molluscan Fauna of New Zealand"
+LAST	Len	"Additions to the Recent Molluscan Fauna of New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1938-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"165-170"
+LAST	P888	"42905978"
+
+
+CREATE
+LAST	P1476	en:"TAU RAPA: The Maori Canoe Stern-post"
+LAST	Len	"TAU RAPA: The Maori Canoe Stern-post"
+LAST	P31	Q13442814
+LAST	P577	+1938-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"171-175"
+LAST	P888	"42905979"
+
+
+CREATE
+LAST	P1476	en:"Southern-Beech Pollens"
+LAST	Len	"Southern-Beech Pollens"
+LAST	P31	Q13442814
+LAST	P577	+1939-00-00T00:00:00Z/9
+LAST	P2093	"Lucy M Cranwell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"175-196"
+LAST	P888	"42905981"
+
+
+CREATE
+LAST	P1476	en:"Maori Wooden Bowls"
+LAST	Len	"Maori Wooden Bowls"
+LAST	P31	Q13442814
+LAST	P577	+1939-00-00T00:00:00Z/9
+LAST	P2093	"A G Stevenson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"197-210"
+LAST	P888	"42905982"
+
+
+CREATE
+LAST	P1476	en:"The Mollusca of Stewart Island"
+LAST	Len	"The Mollusca of Stewart Island"
+LAST	P31	Q13442814
+LAST	P577	+1939-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"211-238"
+LAST	P888	"42905983"
+
+
+CREATE
+LAST	P1476	en:"Biological Primary Types in the Auckland Museum"
+LAST	Len	"Biological Primary Types in the Auckland Museum"
+LAST	P31	Q13442814
+LAST	P577	+1941-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"239-259"
+LAST	P888	"42905985"
+
+
+CREATE
+LAST	P1476	en:"Seven New Species of New Zealand Land Mollusca"
+LAST	Len	"Seven New Species of New Zealand Land Mollusca"
+LAST	P31	Q13442814
+LAST	P577	+1941-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"260-264"
+LAST	P888	"42905986"
+
+
+CREATE
+LAST	P1476	en:"A Giant Weevil Phaeophanus turbotti n. sp. From the POOR KNIGHTS ISLANDS"
+LAST	Len	"A Giant Weevil Phaeophanus turbotti n. sp. From the POOR KNIGHTS ISLANDS"
+LAST	P31	Q13442814
+LAST	P577	+1942-00-00T00:00:00Z/9
+LAST	P2093	"D Spiller"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"265-267"
+LAST	P888	"42905988"
+
+
+CREATE
+LAST	P1476	en:"Vivipary in Phormium"
+LAST	Len	"Vivipary in Phormium"
+LAST	P31	Q13442814
+LAST	P577	+1942-00-00T00:00:00Z/9
+LAST	P2093	"H H Allan"	P1545	"1"
+LAST	P2093	"Lucy M Cranwell"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"269-279"
+LAST	P888	"42905989"
+
+
+CREATE
+LAST	P1476	en:"New Zealand Pollen Studies: 1. KEY TO THE POLLEN GRAINS OF FAMILIES AND GENERA IN THE NATIVE FLORA"
+LAST	Len	"New Zealand Pollen Studies: 1. KEY TO THE POLLEN GRAINS OF FAMILIES AND GENERA IN THE NATIVE FLORA"
+LAST	P31	Q13442814
+LAST	P577	+1942-00-00T00:00:00Z/9
+LAST	P2093	"Lucy M Cranwell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"2"
+LAST	P304	"280-308"
+LAST	P888	"42905990"
+
+
+CREATE
+LAST	P1476	en:"The Australian Tertiary Mollusca of the Family Turridae"
+LAST	Len	"The Australian Tertiary Mollusca of the Family Turridae"
+LAST	P31	Q13442814
+LAST	P577	+1944-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"3-68"
+LAST	P888	"42905993"
+
+
+CREATE
+LAST	P1476	en:"Revision of the Araneae of New Zealand: Part I"
+LAST	Len	"Revision of the Araneae of New Zealand: Part I"
+LAST	P31	Q13442814
+LAST	P577	+1944-00-00T00:00:00Z/9
+LAST	P2093	"G Chamberlain"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"69-77"
+LAST	P888	"42905994"
+
+
+CREATE
+LAST	P1476	en:"The occurrence of some Australian Insects and a Spider in New Zealand"
+LAST	Len	"The occurrence of some Australian Insects and a Spider in New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1944-00-00T00:00:00Z/9
+LAST	P2093	"D Spiller"	P1545	"1"
+LAST	P2093	"E G Turbott"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"79-83"
+LAST	P888	"42905995"
+
+
+CREATE
+LAST	P1476	en:"Revision of the Araneae of New Zealand. Part II"
+LAST	Len	"Revision of the Araneae of New Zealand. Part II"
+LAST	P31	Q13442814
+LAST	P577	+1946-00-00T00:00:00Z/9
+LAST	P2093	"G Chamberlain"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"85-97"
+LAST	P888	"42905997"
+
+
+CREATE
+LAST	P1476	en:"The Paryphantidae of New Zealand. No. V. Further New Species of Paryphanta, Wainuia and Rhytida"
+LAST	Len	"The Paryphantidae of New Zealand. No. V. Further New Species of Paryphanta, Wainuia and Rhytida"
+LAST	P31	Q13442814
+LAST	P577	+1946-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"99-136"
+LAST	P888	"42905998"
+
+
+CREATE
+LAST	P1476	en:"New Species of New Zealand Mollusca from the South Island, Stewart Island, and Chatham Islands"
+LAST	Len	"New Species of New Zealand Mollusca from the South Island, Stewart Island, and Chatham Islands"
+LAST	P31	Q13442814
+LAST	P577	+1946-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"137-144"
+LAST	P888	"42905999"
+
+
+CREATE
+LAST	P1476	en:"A Giant Hearfr-urchin Brissus gigas n. sp. From NEW ZEALAND"
+LAST	Len	"A Giant Hearfr-urchin Brissus gigas n. sp. From NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1947-00-00T00:00:00Z/9
+LAST	P2093	"H Barraclough Fell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"145-150"
+LAST	P888	"42906001"
+
+
+CREATE
+LAST	P1476	en:"Hair Cordage in Oceania"
+LAST	Len	"Hair Cordage in Oceania"
+LAST	P31	Q13442814
+LAST	P577	+1947-00-00T00:00:00Z/9
+LAST	P2093	"Olwyn M Turbott"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"151-155"
+LAST	P888	"42906002"
+
+
+CREATE
+LAST	P1476	en:"Arachnoidism As Applied To New Zealand Spiders: A PRELIMINARY NOTE"
+LAST	Len	"Arachnoidism As Applied To New Zealand Spiders: A PRELIMINARY NOTE"
+LAST	P31	Q13442814
+LAST	P577	+1947-00-00T00:00:00Z/9
+LAST	P2093	"G Chamberlain"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"157-159"
+LAST	P888	"42906003"
+
+
+CREATE
+LAST	P1476	en:"Phytogeny of the Molluscan Genus Verconella, With Descriptions of New Recent and Tertiary Species"
+LAST	Len	"Phytogeny of the Molluscan Genus Verconella, With Descriptions of New Recent and Tertiary Species"
+LAST	P31	Q13442814
+LAST	P577	+1947-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"161-169"
+LAST	P888	"42906004"
+
+
+CREATE
+LAST	P1476	en:"On Tolema peregrina n. sp. And The East Australian Warm Water Current"
+LAST	Len	"On Tolema peregrina n. sp. And The East Australian Warm Water Current"
+LAST	P31	Q13442814
+LAST	P577	+1947-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"170-172"
+LAST	P888	"42906005"
+
+
+CREATE
+LAST	P1476	en:"Distribution of Placostylus Land Snails in Northernmost New Zealand"
+LAST	Len	"Distribution of Placostylus Land Snails in Northernmost New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1947-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"173-188"
+LAST	P888	"42906006"
+
+
+CREATE
+LAST	P1476	en:"FOREWORD"
+LAST	Len	"FOREWORD"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"189"
+LAST	P888	"42906008"
+
+
+CREATE
+LAST	P1476	en:"Chronology of Exploration of the Three Kings Islands"
+LAST	Len	"Chronology of Exploration of the Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"190-193"
+LAST	P888	"42906009"
+
+
+CREATE
+LAST	P1476	en:"The Outlying Islands of the Three Kings Group"
+LAST	Len	"The Outlying Islands of the Three Kings Group"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"G A Buddle"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"195-204"
+LAST	P888	"42906010"
+
+
+CREATE
+LAST	P1476	en:"Report on Rocks collected by Mr. G. A. Buddle from Islands of the Three Kings Group"
+LAST	Len	"Report on Rocks collected by Mr. G. A. Buddle from Islands of the Three Kings Group"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"J A Bartrum"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"205-206"
+LAST	P888	"42906011"
+
+
+CREATE
+LAST	P1476	en:"Maori Carvings from the Three Kings Islands"
+LAST	Len	"Maori Carvings from the Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"207-209"
+LAST	P888	"42906012"
+
+
+CREATE
+LAST	P1476	en:"The Flora of the Three Kings Islands"
+LAST	Len	"The Flora of the Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"W R B Oliver"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"211-238"
+LAST	P888	"42906013"
+
+
+CREATE
+LAST	P1476	en:"Vegetation of Great Island, Three Kings Group"
+LAST	Len	"Vegetation of Great Island, Three Kings Group"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"G T S Baylis"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"239-252"
+LAST	P888	"42906014"
+
+
+CREATE
+LAST	P1476	en:"Effect of Goats on Great Island, Three Kings, with descriptions of Vegetation Quadrats"
+LAST	Len	"Effect of Goats on Great Island, Three Kings, with descriptions of Vegetation Quadrats"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"E G Turbott"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"253-272"
+LAST	P888	"42906015"
+
+
+CREATE
+LAST	P1476	en:"Land Mollusca of the Three Kings Islands"
+LAST	Len	"Land Mollusca of the Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"273-290"
+LAST	P888	"42906016"
+
+
+CREATE
+LAST	P1476	en:"Collembola from the Three Kings Islands with a Description of Proisotomina, New Genus"
+LAST	Len	"Collembola from the Three Kings Islands with a Description of Proisotomina, New Genus"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"J T Salmon"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"291-300"
+LAST	P888	"42906017"
+
+
+CREATE
+LAST	P1476	en:"New Genera Species and Records of Orthoptera from the Three Kings Islands New Zealand"
+LAST	Len	"New Genera Species and Records of Orthoptera from the Three Kings Islands New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"J T Salmon"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"301-307"
+LAST	P888	"42906018"
+
+
+CREATE
+LAST	P1476	en:"New Species and Records of Lepidoptera from the Three Kings Islands, New Zealand"
+LAST	Len	"New Species and Records of Lepidoptera from the Three Kings Islands, New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"J T Salmon"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"309-311"
+LAST	P888	"42906019"
+
+
+CREATE
+LAST	P1476	en:"A New Sub-Family and Species of New Zealand Opiliones"
+LAST	Len	"A New Sub-Family and Species of New Zealand Opiliones"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"R R Forster"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"313-318"
+LAST	P888	"42906020"
+
+
+CREATE
+LAST	P1476	en:"Birds of the Three Kings Islands"
+LAST	Len	"Birds of the Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"E G Turbott"	P1545	"1"
+LAST	P2093	"G A Buddle"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"319-336"
+LAST	P888	"42906021"
+
+
+CREATE
+LAST	P1476	en:"A New Anthornis from Three Kings Islands"
+LAST	Len	"A New Anthornis from Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"R A Falla"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"337-338"
+LAST	P888	"42906022"
+
+
+CREATE
+LAST	P1476	en:"A Note on the Occurrence of the Genus Hoplodactylus Fitzinger in New Zealand"
+LAST	Len	"A Note on the Occurrence of the Genus Hoplodactylus Fitzinger in New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1948-00-00T00:00:00Z/9
+LAST	P2093	"N G Stephenson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"339-341"
+LAST	P888	"42906023"
+
+
+CREATE
+LAST	P1476	en:"The Occurrence of Australian Echinoids in New Zealand Waters"
+LAST	Len	"The Occurrence of Australian Echinoids in New Zealand Waters"
+LAST	P31	Q13442814
+LAST	P577	+1949-00-00T00:00:00Z/9
+LAST	P2093	"H Barraclough Fell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"343-346"
+LAST	P888	"42906025"
+
+
+CREATE
+LAST	P1476	en:"The Paryphantidae of New Zealand: No. VI. Distribution, hybrids and new species of Paryphanta, Rhytida and Schizoglossa"
+LAST	Len	"The Paryphantidae of New Zealand: No. VI. Distribution, hybrids and new species of Paryphanta, Rhytida and Schizoglossa"
+LAST	P31	Q13442814
+LAST	P577	+1949-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"347-367"
+LAST	P888	"42906026"
+
+
+CREATE
+LAST	P1476	en:"New Species of Crustacea from New Zealand of the Genera Scyllarus and Ctenocheles with Notes on Lyreidus tridentatus"
+LAST	Len	"New Species of Crustacea from New Zealand of the Genera Scyllarus and Ctenocheles with Notes on Lyreidus tridentatus"
+LAST	P31	Q13442814
+LAST	P577	+1949-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"368-371"
+LAST	P888	"42906027"
+
+
+CREATE
+LAST	P1476	en:"A Second Record of a King-Crab from New Zealand Waters"
+LAST	Len	"A Second Record of a King-Crab from New Zealand Waters"
+LAST	P31	Q13442814
+LAST	P577	+1949-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"372"
+LAST	P888	"42906028"
+
+
+CREATE
+LAST	P1476	en:"Discovery of the Breeding Habits of Leiopelma hochstetteri Fitzinger"
+LAST	Len	"Discovery of the Breeding Habits of Leiopelma hochstetteri Fitzinger"
+LAST	P31	Q13442814
+LAST	P577	+1949-00-00T00:00:00Z/9
+LAST	P2093	"E G Turbott"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"373-376"
+LAST	P888	"42906029"
+
+
+CREATE
+LAST	P1476	en:"Observations on the Occurrence of the Weddell Seal in New Zealand"
+LAST	Len	"Observations on the Occurrence of the Weddell Seal in New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1949-00-00T00:00:00Z/9
+LAST	P2093	"E G Turbott"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"377-379"
+LAST	P888	"42906030"
+
+
+CREATE
+LAST	P1476	en:"The Effect of the recent Eruption on the Plants of Ngauruhoe"
+LAST	Len	"The Effect of the recent Eruption on the Plants of Ngauruhoe"
+LAST	P31	Q13442814
+LAST	P577	+1949-00-00T00:00:00Z/9
+LAST	P2093	"Robert Cooper"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"381-385"
+LAST	P888	"42906031"
+
+
+CREATE
+LAST	P1476	en:"The Recent Eruption of Ngauruhoe"
+LAST	Len	"The Recent Eruption of Ngauruhoe"
+LAST	P31	Q13442814
+LAST	P577	+1949-00-00T00:00:00Z/9
+LAST	P2093	"M H Battey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"387-395"
+LAST	P888	"42906032"
+
+
+CREATE
+LAST	P1476	en:"Biological Primary Types in the Auckland Museum: No. 2. Botanical"
+LAST	Len	"Biological Primary Types in the Auckland Museum: No. 2. Botanical"
+LAST	P31	Q13442814
+LAST	P577	+1949-00-00T00:00:00Z/9
+LAST	P2093	"Robert Cooper"	P1545	"1"
+LAST	P2093	"R C Cooper"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"397-402"
+LAST	P888	"42906033"
+
+
+CREATE
+LAST	P1476	en:"Biological Primary Types in the Auckland Museum: No. 3. Zoological (supplement)"
+LAST	Len	"Biological Primary Types in the Auckland Museum: No. 3. Zoological (supplement)"
+LAST	P31	Q13442814
+LAST	P577	+1949-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"3"
+LAST	P304	"403-409"
+LAST	P888	"42906034"
+
+
+CREATE
+LAST	P1476	en:"A New Species of Microdictyon Decaisne in New Zealand"
+LAST	Len	"A New Species of Microdictyon Decaisne in New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1950-00-00T00:00:00Z/9
+LAST	P2093	"Vivienne Dellow"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"3-7"
+LAST	P888	"42906038"
+
+
+CREATE
+LAST	P1476	en:"New Records of Miridae (Heteroptera) from New Zealand, with Descriptions of a New Genus and Four New Species"
+LAST	Len	"New Records of Miridae (Heteroptera) from New Zealand, with Descriptions of a New Genus and Four New Species"
+LAST	P31	Q13442814
+LAST	P577	+1950-00-00T00:00:00Z/9
+LAST	P2093	"T E Woodward"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"9-23"
+LAST	P888	"42906039"
+
+
+CREATE
+LAST	P1476	en:"A New Species of Cermatulus Dallas from the Three Kings Islands, New Zealand (Heteroptera: Pentatomidae)"
+LAST	Len	"A New Species of Cermatulus Dallas from the Three Kings Islands, New Zealand (Heteroptera: Pentatomidae)"
+LAST	P31	Q13442814
+LAST	P577	+1950-00-00T00:00:00Z/9
+LAST	P2093	"T E Woodward"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"24-30"
+LAST	P888	"42906040"
+
+
+CREATE
+LAST	P1476	en:"The Genus Rhopalitnorpha Dallas (Hemiptera-Heteroptera) with a Description of a New Species"
+LAST	Len	"The Genus Rhopalitnorpha Dallas (Hemiptera-Heteroptera) with a Description of a New Species"
+LAST	P31	Q13442814
+LAST	P577	+1950-00-00T00:00:00Z/9
+LAST	P2093	"J G Pendergrast"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"31-34"
+LAST	P888	"42906041"
+
+
+CREATE
+LAST	P1476	en:"The Geology of Rangiawhia Peninsula, Doubtless Bay, North Auckland"
+LAST	Len	"The Geology of Rangiawhia Peninsula, Doubtless Bay, North Auckland"
+LAST	P31	Q13442814
+LAST	P577	+1950-00-00T00:00:00Z/9
+LAST	P2093	"M H Battey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"35-59"
+LAST	P888	"42906042"
+
+
+CREATE
+LAST	P1476	en:"Life History of Austrosuccinea archeyi, an Annual Snail, and its Value as a Post-Glacial Climatic Indicator"
+LAST	Len	"Life History of Austrosuccinea archeyi, an Annual Snail, and its Value as a Post-Glacial Climatic Indicator"
+LAST	P31	Q13442814
+LAST	P577	+1950-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"61-72"
+LAST	P888	"42906043"
+
+
+CREATE
+LAST	P1476	en:"Mollusca from the Continental Shelf, Eastern Otago"
+LAST	Len	"Mollusca from the Continental Shelf, Eastern Otago"
+LAST	P31	Q13442814
+LAST	P577	+1950-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"73-81"
+LAST	P888	"42906044"
+
+
+CREATE
+LAST	P1476	en:"New Plant Localities in the Auckland Province"
+LAST	Len	"New Plant Localities in the Auckland Province"
+LAST	P31	Q13442814
+LAST	P577	+1950-00-00T00:00:00Z/9
+LAST	P2093	"Ruth Mason"	P1545	"1"
+LAST	P2093	"Neville T Moar"	P1545	"2"
+LAST	P2093	"Robert Cooper"	P1545	"3"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"83-92"
+LAST	P888	"42906045"
+
+
+CREATE
+LAST	P1476	en:"Notes to Accompany a Topographical Map and a Provisional Geological Map of Great Island, Three Kings Group"
+LAST	Len	"Notes to Accompany a Topographical Map and a Provisional Geological Map of Great Island, Three Kings Group"
+LAST	P31	Q13442814
+LAST	P577	+1951-00-00T00:00:00Z/9
+LAST	P2093	"M H Battey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"93-97"
+LAST	P888	"42906047"
+
+
+CREATE
+LAST	P1476	en:"Elingamita (Myrsinaceae) a New Monotypic Genus from West Island, Three Kings"
+LAST	Len	"Elingamita (Myrsinaceae) a New Monotypic Genus from West Island, Three Kings"
+LAST	P31	Q13442814
+LAST	P577	+1951-00-00T00:00:00Z/9
+LAST	P2093	"G T S Baylis"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"99-102"
+LAST	P888	"42906048"
+
+
+CREATE
+LAST	P1476	en:"Incipient Forest Regeneration on Great Island, Three Kings Group"
+LAST	Len	"Incipient Forest Regeneration on Great Island, Three Kings Group"
+LAST	P31	Q13442814
+LAST	P577	+1951-00-00T00:00:00Z/9
+LAST	P2093	"G T S Baylis"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"103-109"
+LAST	P888	"42906049"
+
+
+CREATE
+LAST	P1476	en:"The Flora of the Three Kings Islands: Additional Notes : with Note on Suttonia"
+LAST	Len	"The Flora of the Three Kings Islands: Additional Notes : with Note on Suttonia"
+LAST	P31	Q13442814
+LAST	P577	+1951-00-00T00:00:00Z/9
+LAST	P2093	"W R B Oliver"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"111-112"
+LAST	P888	"42906050"
+
+
+CREATE
+LAST	P1476	en:"Effect of Goats on Great Island, Three Kings : The Permanent Quadrats Resurveyed"
+LAST	Len	"Effect of Goats on Great Island, Three Kings : The Permanent Quadrats Resurveyed"
+LAST	P31	Q13442814
+LAST	P577	+1951-00-00T00:00:00Z/9
+LAST	P2093	"M Holdsworth"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"113-121"
+LAST	P888	"42906051"
+
+
+CREATE
+LAST	P1476	en:"Succinea archeyi Powell"
+LAST	Len	"Succinea archeyi Powell"
+LAST	P31	Q13442814
+LAST	P577	+1951-00-00T00:00:00Z/9
+LAST	P2093	"H E Quick"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"123-126"
+LAST	P888	"42906052"
+
+
+CREATE
+LAST	P1476	en:"Land Mollusca from Four Islands of the Three Kings Group : With Descriptions of Three New Species"
+LAST	Len	"Land Mollusca from Four Islands of the Three Kings Group : With Descriptions of Three New Species"
+LAST	P31	Q13442814
+LAST	P577	+1951-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"127-133"
+LAST	P888	"42906053"
+
+
+CREATE
+LAST	P1476	en:"On Further Colonies of Placostylus Land Snails from Northernmost New Zealand"
+LAST	Len	"On Further Colonies of Placostylus Land Snails from Northernmost New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1951-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"134-140"
+LAST	P888	"42906054"
+
+
+CREATE
+LAST	P1476	en:"Notes on the Birds of the Three Kings Islands"
+LAST	Len	"Notes on the Birds of the Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1951-00-00T00:00:00Z/9
+LAST	P2093	"E G Turbott"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"141-143"
+LAST	P888	"42906055"
+
+
+CREATE
+LAST	P1476	en:"Human Forms in the Art of Melanesia"
+LAST	Len	"Human Forms in the Art of Melanesia"
+LAST	P31	Q13442814
+LAST	P577	+1952-00-00T00:00:00Z/9
+LAST	P2093	"Paul S Wingert"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"145-151"
+LAST	P888	"42906057"
+
+
+CREATE
+LAST	P1476	en:"A Note on the Geology of the Albatross Point District, Kawhia"
+LAST	Len	"A Note on the Geology of the Albatross Point District, Kawhia"
+LAST	P31	Q13442814
+LAST	P577	+1952-00-00T00:00:00Z/9
+LAST	P2093	"A P Mason"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"153-157"
+LAST	P888	"42906058"
+
+
+CREATE
+LAST	P1476	en:"The Genus Rhopalimorpha Dallas (Heteroptera, Pentatomidae)"
+LAST	Len	"The Genus Rhopalimorpha Dallas (Heteroptera, Pentatomidae)"
+LAST	P31	Q13442814
+LAST	P577	+1952-00-00T00:00:00Z/9
+LAST	P2093	"J G Pendergrast"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"159-162"
+LAST	P888	"42906059"
+
+
+CREATE
+LAST	P1476	en:"Four New Species of New Zealand Land Snails and the systematic position of Gerontia cordelia Hutton"
+LAST	Len	"Four New Species of New Zealand Land Snails and the systematic position of Gerontia cordelia Hutton"
+LAST	P31	Q13442814
+LAST	P577	+1952-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"163-168"
+LAST	P888	"42906060"
+
+
+CREATE
+LAST	P1476	en:"New Zealand Molluscan Systematics, with Descriptions of New Species, Part 1"
+LAST	Len	"New Zealand Molluscan Systematics, with Descriptions of New Species, Part 1"
+LAST	P31	Q13442814
+LAST	P577	+1952-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"169-185"
+LAST	P888	"42906061"
+
+
+CREATE
+LAST	P1476	en:"Some Stray Tropical and Sub-Tropical Sea Birds in New Zealand"
+LAST	Len	"Some Stray Tropical and Sub-Tropical Sea Birds in New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1952-00-00T00:00:00Z/9
+LAST	P2093	"E G Turbott"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"187-192"
+LAST	P888	"42906062"
+
+
+CREATE
+LAST	P1476	en:"The Torehine Beds of Coromandel Peninsula"
+LAST	Len	"The Torehine Beds of Coromandel Peninsula"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"R N Brothers"	P1545	"1"
+LAST	P2093	"A P Mason"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"193-197"
+LAST	P888	"42906064"
+
+
+CREATE
+LAST	P1476	en:"Algae of The Three Kings Islands, New Zealand"
+LAST	Len	"Algae of The Three Kings Islands, New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"V J Chapman"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"199-204"
+LAST	P888	"42906065"
+
+
+CREATE
+LAST	P1476	en:"POHUTUKAWA × RATA : Variation in Metrosideros (MYRTACEAE) on Rangitoto Island, New Zealand"
+LAST	Len	"POHUTUKAWA × RATA : Variation in Metrosideros (MYRTACEAE) on Rangitoto Island, New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"R C Cooper"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"205-211"
+LAST	P888	"42906066"
+
+
+CREATE
+LAST	P1476	en:"A Note on the Occurrence of Chelisoches morio (Fabricius) on Pitcairn Island, South East Pacific Ocean (Dermaptera : Labiduridae)"
+LAST	Len	"A Note on the Occurrence of Chelisoches morio (Fabricius) on Pitcairn Island, South East Pacific Ocean (Dermaptera : Labiduridae)"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"E T Giles"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"213-214"
+LAST	P888	"42906067"
+
+
+CREATE
+LAST	P1476	en:"New Records and Descriptions of Hemiptera-Heteroptera from the Three Kings Islands"
+LAST	Len	"New Records and Descriptions of Hemiptera-Heteroptera from the Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"T E Woodward"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"215-233"
+LAST	P888	"42906068"
+
+
+CREATE
+LAST	P1476	en:"New Zealand Molluscan Systematics, with Descriptions of New Species, Part 2"
+LAST	Len	"New Zealand Molluscan Systematics, with Descriptions of New Species, Part 2"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"235-240"
+LAST	P888	"42906069"
+
+
+CREATE
+LAST	P1476	en:"A New Rail From Cave Deposits in the North Island of New Zealand"
+LAST	Len	"A New Rail From Cave Deposits in the North Island of New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"R A Falla"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"241-243"
+LAST	P888	"42906070"
+
+
+CREATE
+LAST	P1476	en:"A Bird Census and Some Recent Observations on Birds on Great Island, Three Kings Group"
+LAST	Len	"A Bird Census and Some Recent Observations on Birds on Great Island, Three Kings Group"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"E G Turbott"	P1545	"1"
+LAST	P2093	"P C Bull"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"245-262"
+LAST	P888	"42906071"
+
+
+CREATE
+LAST	P1476	en:"The Occurrence of Babingtonite in Spilite from Three Kings Islands"
+LAST	Len	"The Occurrence of Babingtonite in Spilite from Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"M H Battey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"263-266"
+LAST	P888	"42906073"
+
+
+CREATE
+LAST	P1476	en:"Melolonthinae (Coleoptera) from the Three Kings Islands"
+LAST	Len	"Melolonthinae (Coleoptera) from the Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"B B Given"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"267-270"
+LAST	P888	"42906074"
+
+
+CREATE
+LAST	P1476	en:"The Molluscan Land Operculate Genus Liarea"
+LAST	Len	"The Molluscan Land Operculate Genus Liarea"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"271-293"
+LAST	P888	"42906075"
+
+
+CREATE
+LAST	P1476	en:"Variation in Hebe (SCROPHULARIACEAE) at Huia and Blockhouse Bay, New Zealand"
+LAST	Len	"Variation in Hebe (SCROPHULARIACEAE) at Huia and Blockhouse Bay, New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1954-00-00T00:00:00Z/9
+LAST	P2093	"R C Cooper"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"295-308"
+LAST	P888	"42906076"
+
+
+CREATE
+LAST	P1476	en:"A Botanical Survey of the Small Islands of the Three Kings Group"
+LAST	Len	"A Botanical Survey of the Small Islands of the Three Kings Group"
+LAST	P31	Q13442814
+LAST	P577	+1958-00-00T00:00:00Z/9
+LAST	P2093	"G T S Baylis"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"1-12"
+LAST	P888	"42906087"
+
+
+CREATE
+LAST	P1476	en:"Pohutukawa x Rata No. 2 : Variation in Metrosideros (MYRTACEAE) in New Zealand"
+LAST	Len	"Pohutukawa x Rata No. 2 : Variation in Metrosideros (MYRTACEAE) in New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1958-00-00T00:00:00Z/9
+LAST	P2093	"R C Cooper"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"13-40"
+LAST	P888	"42906088"
+
+
+CREATE
+LAST	P1476	en:"Additional Notes on Tecomanthe speciosa W. R. B. Oliver (Bignoniaceae) from the Three Kings Islands, New Zealand"
+LAST	Len	"Additional Notes on Tecomanthe speciosa W. R. B. Oliver (Bignoniaceae) from the Three Kings Islands, New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1958-00-00T00:00:00Z/9
+LAST	P2093	"J A Hunter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"41-42"
+LAST	P888	"42906089"
+
+
+CREATE
+LAST	P1476	en:"Dermaptera from the Three Kings Islands, New Zealand, with the Description of a New Species of Brachylabis Dohrn (Labiduridae)"
+LAST	Len	"Dermaptera from the Three Kings Islands, New Zealand, with the Description of a New Species of Brachylabis Dohrn (Labiduridae)"
+LAST	P31	Q13442814
+LAST	P577	+1958-00-00T00:00:00Z/9
+LAST	P2093	"E T Giles"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"43-48"
+LAST	P888	"42906090"
+
+
+CREATE
+LAST	P1476	en:"Trichoptera of New Zealand : I. A CATALOGUE OF THE AUCKLAND MUSEUM COLLECTION WITH DESCRIPTIONS OF NEW GENERA AND NEW SPECIES"
+LAST	Len	"Trichoptera of New Zealand : I. A CATALOGUE OF THE AUCKLAND MUSEUM COLLECTION WITH DESCRIPTIONS OF NEW GENERA AND NEW SPECIES"
+LAST	P31	Q13442814
+LAST	P577	+1958-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"49-63"
+LAST	P888	"42906091"
+
+
+CREATE
+LAST	P1476	en:"Mollusca of the Kermadec Islands: PART I"
+LAST	Len	"Mollusca of the Kermadec Islands: PART I"
+LAST	P31	Q13442814
+LAST	P577	+1958-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"65-85"
+LAST	P888	"42906092"
+
+
+CREATE
+LAST	P1476	en:"New Zealand Molluscan Systematics with Descriptions of New Species, Part 3"
+LAST	Len	"New Zealand Molluscan Systematics with Descriptions of New Species, Part 3"
+LAST	P31	Q13442814
+LAST	P577	+1958-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"87-91"
+LAST	P888	"42906093"
+
+
+CREATE
+LAST	P1476	en:"Tiki and Pou: Free Sculpture and Applied"
+LAST	Len	"Tiki and Pou: Free Sculpture and Applied"
+LAST	P31	Q13442814
+LAST	P577	+1958-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"93-109"
+LAST	P888	"42906094"
+
+
+CREATE
+LAST	P1476	en:"The Canoes of Geelvink Bay, Dutch New Guinea"
+LAST	Len	"The Canoes of Geelvink Bay, Dutch New Guinea"
+LAST	P31	Q13442814
+LAST	P577	+1958-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"111-115"
+LAST	P888	"42906095"
+
+
+CREATE
+LAST	P1476	en:"ANTARCTIC AND SUBANTARCTIC MOLLUSCA"
+LAST	Len	"ANTARCTIC AND SUBANTARCTIC MOLLUSCA"
+LAST	P31	Q13442814
+LAST	P577	+1960-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"117-193"
+LAST	P888	"42906097"
+
+
+CREATE
+LAST	P1476	en:"Scleractinian Corals from the Norfolk Island Cable"
+LAST	Len	"Scleractinian Corals from the Norfolk Island Cable"
+LAST	P31	Q13442814
+LAST	P577	+1960-00-00T00:00:00Z/9
+LAST	P2093	"Donald F Squires"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"195-201"
+LAST	P888	"42906098"
+
+
+CREATE
+LAST	P1476	en:"Pare (Door Lintels) of Human Figure Composition"
+LAST	Len	"Pare (Door Lintels) of Human Figure Composition"
+LAST	P31	Q13442814
+LAST	P577	+1960-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"203-214"
+LAST	P888	"42906099"
+
+
+CREATE
+LAST	P1476	en:"Endemism and Isolation in the Three Kings Islands, New Zealand—With Notes on Pollen and Spore Types of the Endemics"
+LAST	Len	"Endemism and Isolation in the Three Kings Islands, New Zealand—With Notes on Pollen and Spore Types of the Endemics"
+LAST	P31	Q13442814
+LAST	P577	+1962-00-00T00:00:00Z/9
+LAST	P2093	"Lucy M Cranwell"	P1545	"1"
+LAST	P2093	"Watson Smith"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"215-232"
+LAST	P888	"42906101"
+
+
+CREATE
+LAST	P1476	en:"Variation in Tecomanthe speciosa W. R. B. Oliver (BIGNONIACEAE) from the Three Kings Islands, New Zealand"
+LAST	Len	"Variation in Tecomanthe speciosa W. R. B. Oliver (BIGNONIACEAE) from the Three Kings Islands, New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1962-00-00T00:00:00Z/9
+LAST	P2093	"J A Hunter"	P1545	"1"
+LAST	P2093	"R C Cooper"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"233-245"
+LAST	P888	"42906102"
+
+
+CREATE
+LAST	P1476	en:"A New Genus and Three New Species of Trichoptera"
+LAST	Len	"A New Genus and Three New Species of Trichoptera"
+LAST	P31	Q13442814
+LAST	P577	+1962-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"247-250"
+LAST	P888	"42906103"
+
+
+CREATE
+LAST	P1476	en:"The Ants of the Three Kings Islands"
+LAST	Len	"The Ants of the Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1962-00-00T00:00:00Z/9
+LAST	P2093	"R W Taylor"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"251-254"
+LAST	P888	"42906104"
+
+
+CREATE
+LAST	P1476	en:"Coleoptera from Hen Island (Taranga), Northland, New Zealand"
+LAST	Len	"Coleoptera from Hen Island (Taranga), Northland, New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1962-00-00T00:00:00Z/9
+LAST	P2093	"J C Watt"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"255-269"
+LAST	P888	"42906105"
+
+
+CREATE
+LAST	P1476	en:"Spiral-Dominated Compositions in Pare (Door Lintels)"
+LAST	Len	"Spiral-Dominated Compositions in Pare (Door Lintels)"
+LAST	P31	Q13442814
+LAST	P577	+1962-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"5"
+LAST	P304	"271-281"
+LAST	P888	"42906106"
+
+
+CREATE
+LAST	P1476	en:"New Stony Corals (Scleractinia) from Northeastern New Zealand"
+LAST	Len	"New Stony Corals (Scleractinia) from Northeastern New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1964-00-00T00:00:00Z/9
+LAST	P2093	"Donald F Squires"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"1-9"
+LAST	P888	"42906109"
+
+
+CREATE
+LAST	P1476	en:"New Zealand Molluscan Systematics with Descriptions of New Species: Part 4"
+LAST	Len	"New Zealand Molluscan Systematics with Descriptions of New Species: Part 4"
+LAST	P31	Q13442814
+LAST	P577	+1964-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"11-20"
+LAST	P888	"42906110"
+
+
+CREATE
+LAST	P1476	en:"A Note on Archaeological Work at Ponui Island"
+LAST	Len	"A Note on Archaeological Work at Ponui Island"
+LAST	P31	Q13442814
+LAST	P577	+1964-00-00T00:00:00Z/9
+LAST	P2093	"V F Fisher"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"21"
+LAST	P888	"42906111"
+
+
+CREATE
+LAST	P1476	en:"Excavations on Ponui Island"
+LAST	Len	"Excavations on Ponui Island"
+LAST	P31	Q13442814
+LAST	P577	+1964-00-00T00:00:00Z/9
+LAST	P2093	"M P Nicholls"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"23-38"
+LAST	P888	"42906112"
+
+
+CREATE
+LAST	P1476	en:"Two Unusual Maori Carvings from Northland"
+LAST	Len	"Two Unusual Maori Carvings from Northland"
+LAST	P31	Q13442814
+LAST	P577	+1964-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"39-46"
+LAST	P888	"42906113"
+
+
+CREATE
+LAST	P1476	en:"The Family Eatoniellidae in New Zealand"
+LAST	Len	"The Family Eatoniellidae in New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1965-00-00T00:00:00Z/9
+LAST	P2093	"W F Ponder"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"47-99"
+LAST	P888	"42906115"
+
+
+CREATE
+LAST	P1476	en:"A Revision of the New Zealand Recent Species Previously Known as Notosetia Iredale, 1915 (Rissoidae, Gastropoda)"
+LAST	Len	"A Revision of the New Zealand Recent Species Previously Known as Notosetia Iredale, 1915 (Rissoidae, Gastropoda)"
+LAST	P31	Q13442814
+LAST	P577	+1965-00-00T00:00:00Z/9
+LAST	P2093	"W F Ponder"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"101-130"
+LAST	P888	"42906116"
+
+
+CREATE
+LAST	P1476	en:"A Revision of the New Zealand Recent and Fossil Species of Estea Iredale, 1915"
+LAST	Len	"A Revision of the New Zealand Recent and Fossil Species of Estea Iredale, 1915"
+LAST	P31	Q13442814
+LAST	P577	+1965-00-00T00:00:00Z/9
+LAST	P2093	"W F Ponder"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"131-159"
+LAST	P888	"42906117"
+
+
+CREATE
+LAST	P1476	en:"New Zealand Molluscan Systematics with Descriptions of New Species: Part 5"
+LAST	Len	"New Zealand Molluscan Systematics with Descriptions of New Species: Part 5"
+LAST	P31	Q13442814
+LAST	P577	+1965-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"161-168"
+LAST	P888	"42906118"
+
+
+CREATE
+LAST	P1476	en:"A Further Note on Tecomanthe speciosa W.R.B. Oliver (BIGNONIACEAE)"
+LAST	Len	"A Further Note on Tecomanthe speciosa W.R.B. Oliver (BIGNONIACEAE)"
+LAST	P31	Q13442814
+LAST	P577	+1967-00-00T00:00:00Z/9
+LAST	P2093	"J A Hunter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"169-170"
+LAST	P888	"42906120"
+
+
+CREATE
+LAST	P1476	en:"lpomoea pes-caprae (CONVOLVULACEAE) on Ninety Mile Beach, New Zealand"
+LAST	Len	"lpomoea pes-caprae (CONVOLVULACEAE) on Ninety Mile Beach, New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1967-00-00T00:00:00Z/9
+LAST	P2093	"R C Cooper"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"171-174"
+LAST	P888	"42906121"
+
+
+CREATE
+LAST	P1476	en:"VEGETATION OF GREAT ISLAND, THREE KINGS GROUP, IN 1963"
+LAST	Len	"VEGETATION OF GREAT ISLAND, THREE KINGS GROUP, IN 1963"
+LAST	P31	Q13442814
+LAST	P577	+1967-00-00T00:00:00Z/9
+LAST	P2093	"M Holdsworth"	P1545	"1"
+LAST	P2093	"G T S Baylis"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"175-184"
+LAST	P888	"42906122"
+
+
+CREATE
+LAST	P1476	en:"NEW ZEALAND MOLLUSCAN SYSTEMATICS WITH DESCRIPTIONS OF NEW SPECIES; PART 6"
+LAST	Len	"NEW ZEALAND MOLLUSCAN SYSTEMATICS WITH DESCRIPTIONS OF NEW SPECIES; PART 6"
+LAST	P31	Q13442814
+LAST	P577	+1967-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"185-196"
+LAST	P888	"42906123"
+
+
+CREATE
+LAST	P1476	en:"MOLLUSCA OF THE KERMADEC ISLANDS: PART 2"
+LAST	Len	"MOLLUSCA OF THE KERMADEC ISLANDS: PART 2"
+LAST	P31	Q13442814
+LAST	P577	+1967-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"197-199"
+LAST	P888	"42906124"
+
+
+CREATE
+LAST	P1476	en:"CYPRAEIDAE FROM NEW ZEALAND"
+LAST	Len	"CYPRAEIDAE FROM NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1967-00-00T00:00:00Z/9
+LAST	P2093	"F A Schilder"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"201-202"
+LAST	P888	"42906125"
+
+
+CREATE
+LAST	P1476	en:"Midden Analysis and the Economic Approach in New Zealand Archaeology"
+LAST	Len	"Midden Analysis and the Economic Approach in New Zealand Archaeology"
+LAST	P31	Q13442814
+LAST	P577	+1967-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"203-228"
+LAST	P888	"42906126"
+
+
+CREATE
+LAST	P1476	en:"MAORI WOOD SCULPTURE: THE HUMAN HEAD AND FACE"
+LAST	Len	"MAORI WOOD SCULPTURE: THE HUMAN HEAD AND FACE"
+LAST	P31	Q13442814
+LAST	P577	+1967-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"229-250"
+LAST	P888	"42906127"
+
+
+CREATE
+LAST	P1476	en:"ARCHAEOLOGICAL EXCAVATIONS IN TWO BURIAL MOUNDS AT 'ATELE, TONGATAPU"
+LAST	Len	"ARCHAEOLOGICAL EXCAVATIONS IN TWO BURIAL MOUNDS AT 'ATELE, TONGATAPU"
+LAST	P31	Q13442814
+LAST	P577	+1969-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"251-286"
+LAST	P888	"42906129"
+
+
+CREATE
+LAST	P1476	en:"AN OSTEOLOGICAL STUDY OF CRANIAL AND INFRACRANIAL REMAINS FROM TONGA"
+LAST	Len	"AN OSTEOLOGICAL STUDY OF CRANIAL AND INFRACRANIAL REMAINS FROM TONGA"
+LAST	P31	Q13442814
+LAST	P577	+1969-00-00T00:00:00Z/9
+LAST	P2093	"Michael Pietrusewsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"287-402"
+LAST	P888	"42906130"
+
+
+CREATE
+LAST	P1476	en:"FLOWERING OF TARO, COLOCASIA ESCULENTA (L.) SCHOTT, ARACEAE, IN NEW ZEALAND"
+LAST	Len	"FLOWERING OF TARO, COLOCASIA ESCULENTA (L.) SCHOTT, ARACEAE, IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1969-00-00T00:00:00Z/9
+LAST	P2093	"R C Cooper"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"403-406"
+LAST	P888	"42906131"
+
+
+CREATE
+LAST	P1476	en:"OUTGROWTHS OF KAURI, AGATHIS AUSTRALIS SALISB., ARAUCARIACEAE, IN THE AUCKLAND INSTITUTE AND MUSEUM, NEW ZEALAND"
+LAST	Len	"OUTGROWTHS OF KAURI, AGATHIS AUSTRALIS SALISB., ARAUCARIACEAE, IN THE AUCKLAND INSTITUTE AND MUSEUM, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1969-00-00T00:00:00Z/9
+LAST	P2093	"R C Cooper"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"407-412"
+LAST	P888	"42906132"
+
+
+CREATE
+LAST	P1476	en:"ADDITIONAL REMARKS TO THE NEW ZEALAND PSEUDOSCORPIONIDEA"
+LAST	Len	"ADDITIONAL REMARKS TO THE NEW ZEALAND PSEUDOSCORPIONIDEA"
+LAST	P31	Q13442814
+LAST	P577	+1969-00-00T00:00:00Z/9
+LAST	P2093	"M Beier"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"413-418"
+LAST	P888	"42906133"
+
+
+CREATE
+LAST	P1476	en:"A NEW CERCARIA FROM PHELUSSA FULMINATA (HUTTON, 1883), (PULMONATA: ENDODONTIDAE)"
+LAST	Len	"A NEW CERCARIA FROM PHELUSSA FULMINATA (HUTTON, 1883), (PULMONATA: ENDODONTIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1969-00-00T00:00:00Z/9
+LAST	P2093	"F M Climo"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"419-422"
+LAST	P888	"42906134"
+
+
+CREATE
+LAST	P1476	en:"THREE NEW INSECT RECORDS FOR THE AUCKLAND AREA, NEW ZEALAND"
+LAST	Len	"THREE NEW INSECT RECORDS FOR THE AUCKLAND AREA, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1969-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"423-426"
+LAST	P888	"42906135"
+
+
+CREATE
+LAST	P1476	en:"IRONA MELANOSTICTA (ISOPODA: CYMOTHOIDAE): A new record for New Zealand waters, with descriptions of male, female and larval states"
+LAST	Len	"IRONA MELANOSTICTA (ISOPODA: CYMOTHOIDAE): A new record for New Zealand waters, with descriptions of male, female and larval states"
+LAST	P31	Q13442814
+LAST	P577	+1969-00-00T00:00:00Z/9
+LAST	P2093	"A B Stephenson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"6"
+LAST	P304	"427-434"
+LAST	P888	"42906136"
+
+
+CREATE
+LAST	P1476	en:"SURVEY OF ARCHAEOLOGICAL SITES ON MOTUTAPU ISLAND"
+LAST	Len	"SURVEY OF ARCHAEOLOGICAL SITES ON MOTUTAPU ISLAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"1-12"
+LAST	P888	"42906140"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATIONS AT THE \"SUNDE SITE\", N38/24, MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	Len	"EXCAVATIONS AT THE \"SUNDE SITE\", N38/24, MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"Stuart D Scott"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"13-30"
+LAST	P888	"42906141"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATION OF AN \"UNDEFENDED\" SITE, N38/37, ON MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	Len	"EXCAVATION OF AN \"UNDEFENDED\" SITE, N38/37, ON MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"31-60"
+LAST	P888	"42906142"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATIONS AT SITE N38/30, MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	Len	"EXCAVATIONS AT SITE N38/30, MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"Anne Leahy"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"61-82"
+LAST	P888	"42906143"
+
+
+CREATE
+LAST	P1476	en:"ANALYSIS OF MIDDEN FROM TWO SITES ON MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	Len	"ANALYSIS OF MIDDEN FROM TWO SITES ON MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"Jan Allo"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"83-91"
+LAST	P888	"42906144"
+
+
+CREATE
+LAST	P1476	en:"A MAORI PIT SITE, N42/114, IN PARNELL, NEW ZEALAND"
+LAST	Len	"A MAORI PIT SITE, N42/114, IN PARNELL, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"R Garry Law"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"93-103"
+LAST	P888	"42906145"
+
+
+CREATE
+LAST	P1476	en:"SALVAGE EXCAVATIONS AT HAMLINS HILL, N42/137, AUCKLAND, NEW ZEALAND"
+LAST	Len	"SALVAGE EXCAVATIONS AT HAMLINS HILL, N42/137, AUCKLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"105-122"
+LAST	P888	"42906146"
+
+
+CREATE
+LAST	P1476	en:"JOHN EDGERLEY, BOTANIST, IN NEW ZEALAND"
+LAST	Len	"JOHN EDGERLEY, BOTANIST, IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"R C Cooper"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"123-136"
+LAST	P888	"42906147"
+
+
+CREATE
+LAST	P1476	en:"PITTOSPORUM BRACTEOLATUM ENDL. (PITTOSPORACEAE) FROM NORFOLK ISLAND"
+LAST	Len	"PITTOSPORUM BRACTEOLATUM ENDL. (PITTOSPORACEAE) FROM NORFOLK ISLAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"R C Cooper"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"137-141"
+LAST	P888	"42906148"
+
+
+CREATE
+LAST	P1476	en:"IDENTIFICATION OF PASSIONFLOWERS IN NEW ZEALAND (DICOTYLEDONES : PASSIFLORACEAE)"
+LAST	Len	"IDENTIFICATION OF PASSIONFLOWERS IN NEW ZEALAND (DICOTYLEDONES : PASSIFLORACEAE)"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"B R Young"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"143-169"
+LAST	P888	"42906149"
+
+
+CREATE
+LAST	P1476	en:"PALAU CAVE PAINTINGS ON AULONG ISLAND"
+LAST	Len	"PALAU CAVE PAINTINGS ON AULONG ISLAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"171-173"
+LAST	P888	"42906150"
+
+
+CREATE
+LAST	P1476	en:"THE LITTORAL MARINE MOLLUSCS OF NIUE ISLAND"
+LAST	Len	"THE LITTORAL MARINE MOLLUSCS OF NIUE ISLAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"175-186"
+LAST	P888	"42906151"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME AUSTRAL-NEOZELANIC CYMATIIDAE (MOLLUSCA : GASTROPODA)"
+LAST	Len	"THE TAXONOMY OF SOME AUSTRAL-NEOZELANIC CYMATIIDAE (MOLLUSCA : GASTROPODA)"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"187-191"
+LAST	P888	"42906152"
+
+
+CREATE
+LAST	P1476	en:"EBALIA TUBERCULOSA (OXYSTOMATA: LEUCOSIIDAE); TWO FURTHER RECORDS FOR NEW ZEALAND WATERS"
+LAST	Len	"EBALIA TUBERCULOSA (OXYSTOMATA: LEUCOSIIDAE); TWO FURTHER RECORDS FOR NEW ZEALAND WATERS"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"A B Stephenson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"193-195"
+LAST	P888	"42906153"
+
+
+CREATE
+LAST	P1476	en:"SOME NEW RECORDS OF FISH IN NEW ZEALAND WATERS"
+LAST	Len	"SOME NEW RECORDS OF FISH IN NEW ZEALAND WATERS"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"A B Stephenson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"197-200"
+LAST	P888	"42906154"
+
+
+CREATE
+LAST	P1476	en:"TRICHOPTERA OF NEW ZEALAND: II. The present status of R. J. Tillyard's species of New Zealand Trichoptera, with notes on the type specimens"
+LAST	Len	"TRICHOPTERA OF NEW ZEALAND: II. The present status of R. J. Tillyard's species of New Zealand Trichoptera, with notes on the type specimens"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"201-215"
+LAST	P888	"42906155"
+
+
+CREATE
+LAST	P1476	en:"ON THE TERRESTRIAL INVERTEBRATE FAUNA OF WHITE ISLAND, NEW ZEALAND"
+LAST	Len	"ON THE TERRESTRIAL INVERTEBRATE FAUNA OF WHITE ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1970-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"7"
+LAST	P304	"217-252"
+LAST	P888	"42906156"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATIONS ON RUARANGI PA (SITE N20/41), WHANGAREI, NEW ZEALAND"
+LAST	Len	"EXCAVATIONS ON RUARANGI PA (SITE N20/41), WHANGAREI, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"Molly P Hougaard"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"1-22"
+LAST	P888	"42906160"
+
+
+CREATE
+LAST	P1476	en:"THE BURIAL SYSTEM AT RUARANGI BURIAL GROUND"
+LAST	Len	"THE BURIAL SYSTEM AT RUARANGI BURIAL GROUND"
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"R S Oppenheim"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"23-27"
+LAST	P888	"42906161"
+
+
+CREATE
+LAST	P1476	en:"THE DENTITION OF THE MAORI DOG OF NEW ZEALAND"
+LAST	Len	"THE DENTITION OF THE MAORI DOG OF NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"Jan Allo"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"29-45"
+LAST	P888	"42906162"
+
+
+CREATE
+LAST	P1476	en:"ANTHROPOMORPHIC STONE POUNDERS IN NEW ZEALAND"
+LAST	Len	"ANTHROPOMORPHIC STONE POUNDERS IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"47-55"
+LAST	P888	"42906163"
+
+
+CREATE
+LAST	P1476	en:"IDENTIFICATION OF ARCHAEOLOGICAL AND ETHNOLOGICAL SPECIMENS OF FIBRE-PLANT MATERIAL USED BY THE MAORI"
+LAST	Len	"IDENTIFICATION OF ARCHAEOLOGICAL AND ETHNOLOGICAL SPECIMENS OF FIBRE-PLANT MATERIAL USED BY THE MAORI"
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"Jeanne H Goulding"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"57-102"
+LAST	P888	"42906164"
+
+
+CREATE
+LAST	P1476	en:"FOSSIL AND RECENT CYPRAEACEA (MOLLUSCA: GASTROPODA) OF NEW ZEALAND WITH DESCRIPTIONS OF NEW SPECIES"
+LAST	Len	"FOSSIL AND RECENT CYPRAEACEA (MOLLUSCA: GASTROPODA) OF NEW ZEALAND WITH DESCRIPTIONS OF NEW SPECIES"
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"103-129"
+LAST	P888	"42906165"
+
+
+CREATE
+LAST	P1476	en:"NEW MOLLUSCAN SPECIES OF STROMBUS (STROMBIDAE) AND CANCILLA (MITRIDAE) FROM NEW BRITAIN AND TAIWAN"
+LAST	Len	"NEW MOLLUSCAN SPECIES OF STROMBUS (STROMBIDAE) AND CANCILLA (MITRIDAE) FROM NEW BRITAIN AND TAIWAN"
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"131-135"
+LAST	P888	"42906166"
+
+
+CREATE
+LAST	P1476	en:"INDO-PACIFIC PISANIINAE (MOLLUSCA: GASTROPODA) AND RELATED BUCCINID GENERA"
+LAST	Len	"INDO-PACIFIC PISANIINAE (MOLLUSCA: GASTROPODA) AND RELATED BUCCINID GENERA"
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"137-167"
+LAST	P888	"42906167"
+
+
+CREATE
+LAST	P1476	en:"THE FAMILY NATICIDAE (MOLLUSCA: GASTROPODA) IN THE FIJI ISLANDS"
+LAST	Len	"THE FAMILY NATICIDAE (MOLLUSCA: GASTROPODA) IN THE FIJI ISLANDS"
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"169-208"
+LAST	P888	"42906168"
+
+
+CREATE
+LAST	P1476	en:"NEW ZEALAND MOLLUSCAN SYSTEMATICS WITH DESCRIPTIONS OF NEW SPECIES: PART 7"
+LAST	Len	"NEW ZEALAND MOLLUSCAN SYSTEMATICS WITH DESCRIPTIONS OF NEW SPECIES: PART 7"
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"209-228"
+LAST	P888	"42906169"
+
+
+CREATE
+LAST	P1476	en:"TU'I MALILA, \"COOK'S TORTOISE\""
+LAST	Len	"TU'I MALILA, \"COOK'S TORTOISE\""
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"Joan Robb"	P1545	"1"
+LAST	P2093	"E G Turbott"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"229-233"
+LAST	P888	"42906170"
+
+
+CREATE
+LAST	P1476	en:"FURTHER NEW RECORDS OF FISH IN NEW ZEALAND WATERS"
+LAST	Len	"FURTHER NEW RECORDS OF FISH IN NEW ZEALAND WATERS"
+LAST	P31	Q13442814
+LAST	P577	+1971-00-00T00:00:00Z/9
+LAST	P2093	"A B Stephenson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"8"
+LAST	P304	"235-241"
+LAST	P888	"42906171"
+
+
+CREATE
+LAST	P1476	en:"ARCHAEOLOGICAL INVESTIGATIONS ON MOTUTAPU ISLAND, NEW ZEALAND: Introduction to recent fieldwork, and further results"
+LAST	Len	"ARCHAEOLOGICAL INVESTIGATIONS ON MOTUTAPU ISLAND, NEW ZEALAND: Introduction to recent fieldwork, and further results"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"1-14"
+LAST	P888	"42906174"
+
+
+CREATE
+LAST	P1476	en:"FURTHER EXCAVATIONS AT SITE N38/30, MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	Len	"FURTHER EXCAVATIONS AT SITE N38/30, MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"Anne Leahy"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"15-26"
+LAST	P888	"42906175"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATION OF A PIT AT SITE N38/25, STATION BAY, MOTUTAPU ISLAND"
+LAST	Len	"EXCAVATION OF A PIT AT SITE N38/25, STATION BAY, MOTUTAPU ISLAND"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"Agnes Sullivan"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"27-60"
+LAST	P888	"42906176"
+
+
+CREATE
+LAST	P1476	en:"THE WHANGAMATA WHARF SITE (N49/2): EXCAVATIONS ON A COROMANDEL COASTAL MIDDEN"
+LAST	Len	"THE WHANGAMATA WHARF SITE (N49/2): EXCAVATIONS ON A COROMANDEL COASTAL MIDDEN"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"Jan Allo"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"61-79"
+LAST	P888	"42906177"
+
+
+CREATE
+LAST	P1476	en:"ARCHAEOLOGY AT HARATAONGA BAY, GREAT BARRIER ISLAND"
+LAST	Len	"ARCHAEOLOGY AT HARATAONGA BAY, GREAT BARRIER ISLAND"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"R G Law"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"81-123"
+LAST	P888	"42906178"
+
+
+CREATE
+LAST	P1476	en:"INDO-PACIFIC NASSARIIDAE (MOLLUSCA: GASTROPODA)"
+LAST	Len	"INDO-PACIFIC NASSARIIDAE (MOLLUSCA: GASTROPODA)"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"125-194"
+LAST	P888	"42906179"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA WITH DESCRIPTIONS OF NEW SPECIES"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA WITH DESCRIPTIONS OF NEW SPECIES"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"195-204"
+LAST	P888	"42906180"
+
+
+CREATE
+LAST	P1476	en:"A TAXONOMIC EVALUATION OF RECENT AND FOSSIL NON-MITRID SPECIES PROPOSED IN THE FAMILY MITRIDAE (MOLLUSCA: GASTROPODA)"
+LAST	Len	"A TAXONOMIC EVALUATION OF RECENT AND FOSSIL NON-MITRID SPECIES PROPOSED IN THE FAMILY MITRIDAE (MOLLUSCA: GASTROPODA)"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"205-229"
+LAST	P888	"42906181"
+
+
+CREATE
+LAST	P1476	en:"TYPE SPECIMENS OF RECENT AND FOSSIL MOLLUSCA DESCRIBED BY H. J. FINLAY: PART 1. (Scissurellidae — Turbinidae)"
+LAST	Len	"TYPE SPECIMENS OF RECENT AND FOSSIL MOLLUSCA DESCRIBED BY H. J. FINLAY: PART 1. (Scissurellidae — Turbinidae)"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"231-247"
+LAST	P888	"42906182"
+
+
+CREATE
+LAST	P1476	en:"A KERMADEC ISLANDS CONUS (MOLLUSCA: GASTROPODA) FOUND LIVING IN NORTHERN NEW ZEALAND WATERS"
+LAST	Len	"A KERMADEC ISLANDS CONUS (MOLLUSCA: GASTROPODA) FOUND LIVING IN NORTHERN NEW ZEALAND WATERS"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"249-251"
+LAST	P888	"42906183"
+
+
+CREATE
+LAST	P1476	en:"TRICHOPTERA OF THE AUCKLAND ISLANDS"
+LAST	Len	"TRICHOPTERA OF THE AUCKLAND ISLANDS"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"253-267"
+LAST	P888	"42906184"
+
+
+CREATE
+LAST	P1476	en:"NEUROPTERA OF THE KERMADEC ISLANDS"
+LAST	Len	"NEUROPTERA OF THE KERMADEC ISLANDS"
+LAST	P31	Q13442814
+LAST	P577	+1972-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"9"
+LAST	P304	"269-272"
+LAST	P888	"42906185"
+
+
+CREATE
+LAST	P1476	en:"SUGGESTED PERIODS IN SOUTH ISLAND PREHISTORY"
+LAST	Len	"SUGGESTED PERIODS IN SOUTH ISLAND PREHISTORY"
+LAST	P31	Q13442814
+LAST	P577	+1973-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"10"
+LAST	P304	"1-58"
+LAST	P888	"42906188"
+
+
+CREATE
+LAST	P1476	en:"ANTHROPOMORPHIC AND ZOOMORPHIC MAORI BOWLS FROM HAURAKI AND THE BAY OF PLENTY"
+LAST	Len	"ANTHROPOMORPHIC AND ZOOMORPHIC MAORI BOWLS FROM HAURAKI AND THE BAY OF PLENTY"
+LAST	P31	Q13442814
+LAST	P577	+1973-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"10"
+LAST	P304	"59-64"
+LAST	P888	"42906189"
+
+
+CREATE
+LAST	P1476	en:"\"GODSTICK\" HEAD FROM KATIKATI"
+LAST	Len	"\"GODSTICK\" HEAD FROM KATIKATI"
+LAST	P31	Q13442814
+LAST	P577	+1973-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"10"
+LAST	P304	"65-67"
+LAST	P888	"42906190"
+
+
+CREATE
+LAST	P1476	en:"THE LAST INITIATION CEREMONY AT GUPUNA SANTA ANA, EASTERN SOLOMON ISLANDS"
+LAST	Len	"THE LAST INITIATION CEREMONY AT GUPUNA SANTA ANA, EASTERN SOLOMON ISLANDS"
+LAST	P31	Q13442814
+LAST	P577	+1973-00-00T00:00:00Z/9
+LAST	P2093	"S M Mead"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"10"
+LAST	P304	"69-95"
+LAST	P888	"42906191"
+
+
+CREATE
+LAST	P1476	en:"THE ACAENA OVINA (ROSACEAE) COMPLEX IN NEW ZEALAND"
+LAST	Len	"THE ACAENA OVINA (ROSACEAE) COMPLEX IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1973-00-00T00:00:00Z/9
+LAST	P2093	"A E Orchard"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"10"
+LAST	P304	"97-107"
+LAST	P888	"42906192"
+
+
+CREATE
+LAST	P1476	en:"ZINGIBERACEAE IN NEW ZEALAND"
+LAST	Len	"ZINGIBERACEAE IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1973-00-00T00:00:00Z/9
+LAST	P2093	"A E Orchard"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"10"
+LAST	P304	"109-117"
+LAST	P888	"42906193"
+
+
+CREATE
+LAST	P1476	en:"HYPHALUS WISEI SP.N., A NEW INTERTIDAL BEETLE FROM NEW ZEALAND (COLEOPTERA: LIMNICHIDAE)"
+LAST	Len	"HYPHALUS WISEI SP.N., A NEW INTERTIDAL BEETLE FROM NEW ZEALAND (COLEOPTERA: LIMNICHIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1973-00-00T00:00:00Z/9
+LAST	P2093	"E B Britton"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"10"
+LAST	P304	"119-122"
+LAST	P888	"42906194"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF BENTHOVOLUTA HILGENDORFI (VON MARTENS) AND ALLIED TURBINELLID GENERA (MOLLUSCA: VOLUTACEA)"
+LAST	Len	"THE TAXONOMY OF BENTHOVOLUTA HILGENDORFI (VON MARTENS) AND ALLIED TURBINELLID GENERA (MOLLUSCA: VOLUTACEA)"
+LAST	P31	Q13442814
+LAST	P577	+1973-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"10"
+LAST	P304	"123-131"
+LAST	P888	"42906195"
+
+
+CREATE
+LAST	P1476	en:"DESCRIPTION OF NEW WEST AUSTRALIAN MITRIDAE AND VEXILLIDAE (MOLLUSCA: GASTROPODA)"
+LAST	Len	"DESCRIPTION OF NEW WEST AUSTRALIAN MITRIDAE AND VEXILLIDAE (MOLLUSCA: GASTROPODA)"
+LAST	P31	Q13442814
+LAST	P577	+1973-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"10"
+LAST	P304	"133-142"
+LAST	P888	"42906196"
+
+
+CREATE
+LAST	P1476	en:"A LIST AND BIBLIOGRAPHY OF THE AQUATIC AND WATER-ASSOCIATED INSECTS OF NEW ZEALAND"
+LAST	Len	"A LIST AND BIBLIOGRAPHY OF THE AQUATIC AND WATER-ASSOCIATED INSECTS OF NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1973-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"10"
+LAST	P304	"143-187"
+LAST	P888	"42906197"
+
+
+CREATE
+LAST	P1476	en:"SOME HAFTED SHELL ADZES IN THE AUCKLAND MUSEUM"
+LAST	Len	"SOME HAFTED SHELL ADZES IN THE AUCKLAND MUSEUM"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"1-8"
+LAST	P888	"42906200"
+
+
+CREATE
+LAST	P1476	en:"RADIOCARBON DATES FROM THE SUNDE SITE (N38/24), MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	Len	"RADIOCARBON DATES FROM THE SUNDE SITE (N38/24), MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"9-10"
+LAST	P888	"42906201"
+
+
+CREATE
+LAST	P1476	en:"FURTHER IDENTIFICATIONS OF SOURCES OF OBSIDIAN FLAKES FROM N38/37 ON MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	Len	"FURTHER IDENTIFICATIONS OF SOURCES OF OBSIDIAN FLAKES FROM N38/37 ON MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"11-12"
+LAST	P888	"42906202"
+
+
+CREATE
+LAST	P1476	en:"SOURCE OF OBSIDIANS FROM THE MOTUTAPU UNDEFENDED SITE N38/37"
+LAST	Len	"SOURCE OF OBSIDIANS FROM THE MOTUTAPU UNDEFENDED SITE N38/37"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"G K Ward"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"13-14"
+LAST	P888	"42906203"
+
+
+CREATE
+LAST	P1476	en:"THE PA, N43/59, AT PAWHETAU POINT, KAWAKAWA BAY, CLEVEDON, SOUTH AUCKLAND"
+LAST	Len	"THE PA, N43/59, AT PAWHETAU POINT, KAWAKAWA BAY, CLEVEDON, SOUTH AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"Aileen Fox"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"15-22"
+LAST	P888	"42906204"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATIONS AT HOT WATER BEACH (N44/69), COROMANDEL PENINSULA"
+LAST	Len	"EXCAVATIONS AT HOT WATER BEACH (N44/69), COROMANDEL PENINSULA"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"Anne Leahy"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"23-76"
+LAST	P888	"42906205"
+
+
+CREATE
+LAST	P1476	en:"A FUNCTIONAL ANALYSIS OF OBSIDIAN FLAKES FROM THREE ARCHAEOLOGICAL SITES ON GREAT BARRIER ISLAND AND ONE AT TOKOROA"
+LAST	Len	"A FUNCTIONAL ANALYSIS OF OBSIDIAN FLAKES FROM THREE ARCHAEOLOGICAL SITES ON GREAT BARRIER ISLAND AND ONE AT TOKOROA"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"M J Morwood"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"77-99"
+LAST	P888	"42906206"
+
+
+CREATE
+LAST	P1476	en:"A LINTEL FROM SOUTH KAIPARA HEAD"
+LAST	Len	"A LINTEL FROM SOUTH KAIPARA HEAD"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"101-102"
+LAST	P888	"42906207"
+
+
+CREATE
+LAST	P1476	en:"A CARVING FROM KAIKOHE"
+LAST	Len	"A CARVING FROM KAIKOHE"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"103-104"
+LAST	P888	"42906208"
+
+
+CREATE
+LAST	P1476	en:"NOTES ON THE CHEESEMAN HERBARIUM: Part 1. Exchange with U.S.A. herbaria before 1900"
+LAST	Len	"NOTES ON THE CHEESEMAN HERBARIUM: Part 1. Exchange with U.S.A. herbaria before 1900"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"Jeanne H Goulding"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"105-117"
+LAST	P888	"42906209"
+
+
+CREATE
+LAST	P1476	en:"A NOTE ON THE TYPE OF ACAENA OVINA VAR. AMBIGUA KIRK (ROSACEAE)"
+LAST	Len	"A NOTE ON THE TYPE OF ACAENA OVINA VAR. AMBIGUA KIRK (ROSACEAE)"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"A E Orchard"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"119"
+LAST	P888	"42906210"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA WITH DESCRIPTION OF A NEW SPECIES: PART 2"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA WITH DESCRIPTION OF A NEW SPECIES: PART 2"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"Walter O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"121-142"
+LAST	P888	"42906211"
+
+
+CREATE
+LAST	P1476	en:"TYPE SPECIMENS OF MOLLUSCA IN THE UNIVERSITY ZOOLOGICAL MUSEUM, COPENHAGEN"
+LAST	Len	"TYPE SPECIMENS OF MOLLUSCA IN THE UNIVERSITY ZOOLOGICAL MUSEUM, COPENHAGEN"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"Walter O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"143-192"
+LAST	P888	"42906212"
+
+
+CREATE
+LAST	P1476	en:"THREE RADIOCARBON DATES FOR QUATERNARY MOLLUSCA FROM NORTHLAND"
+LAST	Len	"THREE RADIOCARBON DATES FOR QUATERNARY MOLLUSCA FROM NORTHLAND"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"C A Fleming"	P1545	"1"
+LAST	P2093	"A W B Powell"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"193-195"
+LAST	P888	"42906213"
+
+
+CREATE
+LAST	P1476	en:"NEW ZEALAND MOLLUSCAN SYSTEMATICS WITH DESCRIPTIONS OF NEW SPECIES: PART 8"
+LAST	Len	"NEW ZEALAND MOLLUSCAN SYSTEMATICS WITH DESCRIPTIONS OF NEW SPECIES: PART 8"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"197-207"
+LAST	P888	"42906214"
+
+
+CREATE
+LAST	P1476	en:"NEW SYNONYMY IN CRYPTOPYGUS (COLLEMBOLA: ISOTOMIDAE)"
+LAST	Len	"NEW SYNONYMY IN CRYPTOPYGUS (COLLEMBOLA: ISOTOMIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1974-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"11"
+LAST	P304	"209-212"
+LAST	P888	"42906215"
+
+
+CREATE
+LAST	P1476	en:"THE EXCAVATION OF SKIPPER'S RIDGE (N40/7), OPITO, COROMANDEL PENINSULA, IN 1959 AND 1960"
+LAST	Len	"THE EXCAVATION OF SKIPPER'S RIDGE (N40/7), OPITO, COROMANDEL PENINSULA, IN 1959 AND 1960"
+LAST	P31	Q13442814
+LAST	P577	+1975-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"12"
+LAST	P304	"1-42"
+LAST	P888	"42906218"
+
+
+CREATE
+LAST	P1476	en:"A LOCALITY MAP FOR SKIPPER'S RIDGE (N40/7), OPITO"
+LAST	Len	"A LOCALITY MAP FOR SKIPPER'S RIDGE (N40/7), OPITO"
+LAST	P31	Q13442814
+LAST	P577	+1975-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P2093	"R C Green"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"12"
+LAST	P304	"43-46"
+LAST	P888	"42906219"
+
+
+CREATE
+LAST	P1476	en:"RADIOCARBON AGE ESTIMATES FOR RUARANGI PA (N20/41), WHANGAREI"
+LAST	Len	"RADIOCARBON AGE ESTIMATES FOR RUARANGI PA (N20/41), WHANGAREI"
+LAST	P31	Q13442814
+LAST	P577	+1975-00-00T00:00:00Z/9
+LAST	P2093	"Roger C Green"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"12"
+LAST	P304	"47-48"
+LAST	P888	"42906220"
+
+
+CREATE
+LAST	P1476	en:"FURTHER SALVAGE EXCAVATION ON HAMLINS HILL (N42/137), AUCKLAND, NEW ZEALAND"
+LAST	Len	"FURTHER SALVAGE EXCAVATION ON HAMLINS HILL (N42/137), AUCKLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1975-00-00T00:00:00Z/9
+LAST	P2093	"G J Irwin"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"12"
+LAST	P304	"49-55"
+LAST	P888	"42906221"
+
+
+CREATE
+LAST	P1476	en:"THE TAONUI MANUSCRIPT"
+LAST	Len	"THE TAONUI MANUSCRIPT"
+LAST	P31	Q13442814
+LAST	P577	+1975-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"12"
+LAST	P304	"57-82"
+LAST	P888	"42906222"
+
+
+CREATE
+LAST	P1476	en:"CYCLICAL ASPECTS OF EARLY MAORI AGRICULTURE"
+LAST	Len	"CYCLICAL ASPECTS OF EARLY MAORI AGRICULTURE"
+LAST	P31	Q13442814
+LAST	P577	+1975-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"12"
+LAST	P304	"83-90"
+LAST	P888	"42906223"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM"
+LAST	P31	Q13442814
+LAST	P577	+1975-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"12"
+LAST	P304	"91-94"
+LAST	P888	"42906224"
+
+
+CREATE
+LAST	P1476	en:"NOTES ON THE CHEESEMAN HERBARIUM: Part 2. Exchange with European herbaria before 1900"
+LAST	Len	"NOTES ON THE CHEESEMAN HERBARIUM: Part 2. Exchange with European herbaria before 1900"
+LAST	P31	Q13442814
+LAST	P577	+1975-00-00T00:00:00Z/9
+LAST	P2093	"Jeanne H Goulding"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"12"
+LAST	P304	"95-120"
+LAST	P888	"42906225"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME WEST AMERICAN AND ATLANTIC NASSARIIDAE BASED ON THEIR TYPE - SPECIMENS"
+LAST	Len	"THE TAXONOMY OF SOME WEST AMERICAN AND ATLANTIC NASSARIIDAE BASED ON THEIR TYPE - SPECIMENS"
+LAST	P31	Q13442814
+LAST	P577	+1975-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"12"
+LAST	P304	"121-173"
+LAST	P888	"42906226"
+
+
+CREATE
+LAST	P1476	en:"SUPPLEMENTARY NOTES ON THE TAXONOMY OF BUCCINID SPECIES OF THE SUBFAMILY PISANIINAE (MOLLUSCA : GASTROPODA)"
+LAST	Len	"SUPPLEMENTARY NOTES ON THE TAXONOMY OF BUCCINID SPECIES OF THE SUBFAMILY PISANIINAE (MOLLUSCA : GASTROPODA)"
+LAST	P31	Q13442814
+LAST	P577	+1975-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"12"
+LAST	P304	"175-211"
+LAST	P888	"42906227"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: Part 3. With descriptions of new taxa and remarks on an Ecuadorian fossil species of Turridae"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: Part 3. With descriptions of new taxa and remarks on an Ecuadorian fossil species of Turridae"
+LAST	P31	Q13442814
+LAST	P577	+1975-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"12"
+LAST	P304	"213-234"
+LAST	P888	"42906228"
+
+
+CREATE
+LAST	P1476	en:"ADDITIONAL EVIDENCE FROM THE EXCAVATIONS AT SKIPPER'S RIDGE, (N40/7), OPITO, COROMANDEL PENINSULA"
+LAST	Len	"ADDITIONAL EVIDENCE FROM THE EXCAVATIONS AT SKIPPER'S RIDGE, (N40/7), OPITO, COROMANDEL PENINSULA"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"1-7"
+LAST	P888	"42906231"
+
+
+CREATE
+LAST	P1476	en:"A NUKUORO FISHING KIT IN THE PITT RIVERS MUSEUM, OXFORD"
+LAST	Len	"A NUKUORO FISHING KIT IN THE PITT RIVERS MUSEUM, OXFORD"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"9-12"
+LAST	P888	"42906232"
+
+
+CREATE
+LAST	P1476	en:"PA AND OTHER SITES IN THE PARUA BAY DISTRICT, WHANGAROA, NORTHLAND"
+LAST	Len	"PA AND OTHER SITES IN THE PARUA BAY DISTRICT, WHANGAROA, NORTHLAND"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"Aileen Fox"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"13-27"
+LAST	P888	"42906233"
+
+
+CREATE
+LAST	P1476	en:"WHAKAMOENGA CAVE, TAUPO, N94/7: A report on the ecology, economy and stratigraphy"
+LAST	Len	"WHAKAMOENGA CAVE, TAUPO, N94/7: A report on the ecology, economy and stratigraphy"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"Anne Leahy"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"29-75"
+LAST	P888	"42906234"
+
+
+CREATE
+LAST	P1476	en:"THE TAHANGA BASALT : AN IMPORTANT STONE RESOURCE IN NORTH ISLAND PREHISTORY"
+LAST	Len	"THE TAHANGA BASALT : AN IMPORTANT STONE RESOURCE IN NORTH ISLAND PREHISTORY"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"P R Moore"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"77-93"
+LAST	P888	"42906235"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 2"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 2"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"95-100"
+LAST	P888	"42906236"
+
+
+CREATE
+LAST	P1476	en:"NOTES ON THE CHEESEMAN HERBARIUM: Part 3. Exchange with Australian herbaria from before 1900 to 1923"
+LAST	Len	"NOTES ON THE CHEESEMAN HERBARIUM: Part 3. Exchange with Australian herbaria from before 1900 to 1923"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"Jeanne H Goulding"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"101-108"
+LAST	P888	"42906237"
+
+
+CREATE
+LAST	P1476	en:"REDISCOVERY OF GONOCARPUS TRICHOSTACHYUS (HALORAGACEAE)"
+LAST	Len	"REDISCOVERY OF GONOCARPUS TRICHOSTACHYUS (HALORAGACEAE)"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"A E Orchard"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"109-110"
+LAST	P888	"42906238"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: Part 4. With descriptions of new taxa and remarks on Nassarius coppingeri (Smith)"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: Part 4. With descriptions of new taxa and remarks on Nassarius coppingeri (Smith)"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"111-129"
+LAST	P888	"42906239"
+
+
+CREATE
+LAST	P1476	en:"NOTES ON THE TAXONOMY OF INDO-PACIFIC TEREBRIDAE (MOLLUSCA: GASTROPODA), WITH DESCRIPTION OF A NEW SPECIES"
+LAST	Len	"NOTES ON THE TAXONOMY OF INDO-PACIFIC TEREBRIDAE (MOLLUSCA: GASTROPODA), WITH DESCRIPTION OF A NEW SPECIES"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P2093	"T Bratcher"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"131-140"
+LAST	P888	"42906240"
+
+
+CREATE
+LAST	P1476	en:"ON THE CONSIDERABLE INFLUX OF WARM WATER MOLLUSCS THAT HAVE INVADED NORTHERN NEW ZEALAND WATERS WITHIN RECENT YEARS"
+LAST	Len	"ON THE CONSIDERABLE INFLUX OF WARM WATER MOLLUSCS THAT HAVE INVADED NORTHERN NEW ZEALAND WATERS WITHIN RECENT YEARS"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"A W B Powell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"141-166"
+LAST	P888	"42906241"
+
+
+CREATE
+LAST	P1476	en:"GILL DAMAGE IN FISH PRODUCED BY BUCCAL PARASITES"
+LAST	Len	"GILL DAMAGE IN FISH PRODUCED BY BUCCAL PARASITES"
+LAST	P31	Q13442814
+LAST	P577	+1976-00-00T00:00:00Z/9
+LAST	P2093	"A B Stephenson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"13"
+LAST	P304	"167-173"
+LAST	P888	"42906242"
+
+
+CREATE
+LAST	P1476	en:"PA OF THE AUCKLAND ISTHMUS: AN ARCHAEOLOGICAL ANALYSIS"
+LAST	Len	"PA OF THE AUCKLAND ISTHMUS: AN ARCHAEOLOGICAL ANALYSIS"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"Aileen Fox"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"1-24"
+LAST	P888	"42906245"
+
+
+CREATE
+LAST	P1476	en:"SALVAGE EXCAVATION OF AN ARCHAIC BURIAL CONTEXT, N44/97, HAHEI"
+LAST	Len	"SALVAGE EXCAVATION OF AN ARCHAIC BURIAL CONTEXT, N44/97, HAHEI"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"S Edson"	P1545	"1"
+LAST	P2093	"D Brown"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"25-36"
+LAST	P888	"42906246"
+
+
+CREATE
+LAST	P1476	en:"PREHISTORIC BURIALS FROM RECENT EXCAVATIONS ON MOTUTAPU ISLAND"
+LAST	Len	"PREHISTORIC BURIALS FROM RECENT EXCAVATIONS ON MOTUTAPU ISLAND"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"Philip Houghton"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"37-43"
+LAST	P888	"42906247"
+
+
+CREATE
+LAST	P1476	en:"HUMAN SKELETAL MATERIAL FROM EXCAVATIONS IN EASTERN COROMANDEL"
+LAST	Len	"HUMAN SKELETAL MATERIAL FROM EXCAVATIONS IN EASTERN COROMANDEL"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"Philip Houghton"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"45-56"
+LAST	P888	"42906248"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 3"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 3"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"57-62"
+LAST	P888	"42906249"
+
+
+CREATE
+LAST	P1476	en:"EARLY PUBLICATIONS AND EXHIBITS OF NEW ZEALAND FERNS AND THE WORK OF ERIC CRAIG"
+LAST	Len	"EARLY PUBLICATIONS AND EXHIBITS OF NEW ZEALAND FERNS AND THE WORK OF ERIC CRAIG"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"Jeanne H Goulding"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"63-79"
+LAST	P888	"42906250"
+
+
+CREATE
+LAST	P1476	en:"THREE NEW INTERTIDAL SPECIES OF LIMNICHIDAE (COLEOPTERA) FROM NEW ZEALAND"
+LAST	Len	"THREE NEW INTERTIDAL SPECIES OF LIMNICHIDAE (COLEOPTERA) FROM NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"E B Britton"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"81-85"
+LAST	P888	"42906251"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME MOLLUSCAN SPECIES REPORTED FROM NEW ZEALAND"
+LAST	Len	"THE TAXONOMY OF SOME MOLLUSCAN SPECIES REPORTED FROM NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"87-104"
+LAST	P888	"42906252"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME SOUTHERN OCEAN MOLLUSCA (GASTROPODA) MAINLY ANTARCTIC AND SUBANTARCTIC"
+LAST	Len	"THE TAXONOMY OF SOME SOUTHERN OCEAN MOLLUSCA (GASTROPODA) MAINLY ANTARCTIC AND SUBANTARCTIC"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"105-119"
+LAST	P888	"42906253"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: Part 5. With descriptions of new taxa and remarks on Nassarius albus (Say)"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: Part 5. With descriptions of new taxa and remarks on Nassarius albus (Say)"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"121-132"
+LAST	P888	"42906254"
+
+
+CREATE
+LAST	P1476	en:"REINSTATEMENT OF Hoplodactylus maculatus (Boulenger) WITH REDESCRIPTION OF H. pacificus (Gray) (REPTILIA : SQUAMATA : GEKKONIDAE)"
+LAST	Len	"REINSTATEMENT OF Hoplodactylus maculatus (Boulenger) WITH REDESCRIPTION OF H. pacificus (Gray) (REPTILIA : SQUAMATA : GEKKONIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"J Robb"	P1545	"1"
+LAST	P2093	"R P V Rowlands"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"133-142"
+LAST	P888	"42906255"
+
+
+CREATE
+LAST	P1476	en:"Metavelifer multiradiatus (Regan, 1907) (PISCES : VELIFERIDAE), A NEW RECORD FROM NEW ZEALAND WATERS"
+LAST	Len	"Metavelifer multiradiatus (Regan, 1907) (PISCES : VELIFERIDAE), A NEW RECORD FROM NEW ZEALAND WATERS"
+LAST	P31	Q13442814
+LAST	P577	+1977-00-00T00:00:00Z/9
+LAST	P2093	"A B Stephenson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"14"
+LAST	P304	"143-144"
+LAST	P888	"42906256"
+
+
+CREATE
+LAST	P1476	en:"AUCKLAND PREHISTORY: A REVIEW"
+LAST	Len	"AUCKLAND PREHISTORY: A REVIEW"
+LAST	P31	Q13442814
+LAST	P577	+1978-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"15"
+LAST	P304	"1-14"
+LAST	P888	"42906259"
+
+
+CREATE
+LAST	P1476	en:"RADIOCARBON DATES FOR THREE SITES AT STATION BAY, MOTUTAPU ISLAND"
+LAST	Len	"RADIOCARBON DATES FOR THREE SITES AT STATION BAY, MOTUTAPU ISLAND"
+LAST	P31	Q13442814
+LAST	P577	+1978-00-00T00:00:00Z/9
+LAST	P2093	"Janet M Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"15"
+LAST	P304	"15-16"
+LAST	P888	"42906260"
+
+
+CREATE
+LAST	P1476	en:"SEASONAL SEA MAMMAL EXPLOITATION AND BUTCHERING PATTERNS IN AN ARCHAIC SITE (TAIRUA, N44/2) ON THE COROMANDEL PENINSULA"
+LAST	Len	"SEASONAL SEA MAMMAL EXPLOITATION AND BUTCHERING PATTERNS IN AN ARCHAIC SITE (TAIRUA, N44/2) ON THE COROMANDEL PENINSULA"
+LAST	P31	Q13442814
+LAST	P577	+1978-00-00T00:00:00Z/9
+LAST	P2093	"Ian W G Smith"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"15"
+LAST	P304	"17-26"
+LAST	P888	"42906261"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 4"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 4"
+LAST	P31	Q13442814
+LAST	P577	+1978-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"15"
+LAST	P304	"27-35"
+LAST	P888	"42906262"
+
+
+CREATE
+LAST	P1476	en:"ANNOTATED CHECKLIST OF TYPE SPECIMENS OF NEW ZEALAND PLANTS IN THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM: Parts 1 and 2. Pteridophyta and Gymnospermae"
+LAST	Len	"ANNOTATED CHECKLIST OF TYPE SPECIMENS OF NEW ZEALAND PLANTS IN THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM: Parts 1 and 2. Pteridophyta and Gymnospermae"
+LAST	P31	Q13442814
+LAST	P577	+1978-00-00T00:00:00Z/9
+LAST	P2093	"Jeanne H Goulding"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"15"
+LAST	P304	"37-44"
+LAST	P888	"42906263"
+
+
+CREATE
+LAST	P1476	en:"ANNOTATED CHECKLIST OF TYPE SPECIMENS OF NEW ZEALAND PLANTS IN THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM: Part 3. Monocotyledones — Gramineae"
+LAST	Len	"ANNOTATED CHECKLIST OF TYPE SPECIMENS OF NEW ZEALAND PLANTS IN THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM: Part 3. Monocotyledones — Gramineae"
+LAST	P31	Q13442814
+LAST	P577	+1978-00-00T00:00:00Z/9
+LAST	P2093	"A E Wright"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"15"
+LAST	P304	"45-53"
+LAST	P888	"42906264"
+
+
+CREATE
+LAST	P1476	en:"NEW RECORDS OF NEOGASTROPOD MOLLUSCA FROM THE KERMADEC ISLANDS"
+LAST	Len	"NEW RECORDS OF NEOGASTROPOD MOLLUSCA FROM THE KERMADEC ISLANDS"
+LAST	P31	Q13442814
+LAST	P577	+1978-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"15"
+LAST	P304	"55-65"
+LAST	P888	"42906265"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO–PACIFIC MOLLUSCA: Part 6"
+LAST	Len	"THE TAXONOMY OF SOME INDO–PACIFIC MOLLUSCA: Part 6"
+LAST	P31	Q13442814
+LAST	P577	+1978-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"15"
+LAST	P304	"67-86"
+LAST	P888	"42906266"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF CARIBBEAN – ATLANTIC COSTELLARIIDAE (MOLLUSCA : GASTROPODA)"
+LAST	Len	"THE TAXONOMY OF CARIBBEAN – ATLANTIC COSTELLARIIDAE (MOLLUSCA : GASTROPODA)"
+LAST	P31	Q13442814
+LAST	P577	+1978-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"15"
+LAST	P304	"87-109"
+LAST	P888	"42906267"
+
+
+CREATE
+LAST	P1476	en:"FURTHER RECORDS OF SUBANTARCTIC TRICHOPTERA"
+LAST	Len	"FURTHER RECORDS OF SUBANTARCTIC TRICHOPTERA"
+LAST	P31	Q13442814
+LAST	P577	+1978-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"15"
+LAST	P304	"111-113"
+LAST	P888	"42906268"
+
+
+CREATE
+LAST	P1476	en:"\"MAORI PLACE NAMES\""
+LAST	Len	"\"MAORI PLACE NAMES\""
+LAST	P31	Q13442814
+LAST	P577	+1979-00-00T00:00:00Z/9
+LAST	P2093	"George Graham"	P1545	"1"
+LAST	P2093	"D R Simmons"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"16"
+LAST	P304	"1-10"
+LAST	P888	"42906271"
+
+
+CREATE
+LAST	P1476	en:"GEORGE GRAHAM'S MAORI PLACE NAMES OF AUCKLAND"
+LAST	Len	"GEORGE GRAHAM'S MAORI PLACE NAMES OF AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1979-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"16"
+LAST	P304	"11-39"
+LAST	P888	"42906272"
+
+
+CREATE
+LAST	P1476	en:"A RADIOCARBON DATE FOR THE ARCHAIC BURIAL CONTEXT (N44/97) AT HAHEI"
+LAST	Len	"A RADIOCARBON DATE FOR THE ARCHAIC BURIAL CONTEXT (N44/97) AT HAHEI"
+LAST	P31	Q13442814
+LAST	P577	+1979-00-00T00:00:00Z/9
+LAST	P2093	"S Edson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"16"
+LAST	P304	"41-43"
+LAST	P888	"42906273"
+
+
+CREATE
+LAST	P1476	en:"THE PA ON MOUNT ROSKILL, AUCKLAND (N42/11): DATING EVIDENCE FROM THE 1961 EXCAVATIONS"
+LAST	Len	"THE PA ON MOUNT ROSKILL, AUCKLAND (N42/11): DATING EVIDENCE FROM THE 1961 EXCAVATIONS"
+LAST	P31	Q13442814
+LAST	P577	+1979-00-00T00:00:00Z/9
+LAST	P2093	"Aileen Fox"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"16"
+LAST	P304	"45-61"
+LAST	P888	"42906274"
+
+
+CREATE
+LAST	P1476	en:"REGIONAL VARIATIONS IN MAORI GREENSTONE PENDANTS OF THE KURU STYLE"
+LAST	Len	"REGIONAL VARIATIONS IN MAORI GREENSTONE PENDANTS OF THE KURU STYLE"
+LAST	P31	Q13442814
+LAST	P577	+1979-00-00T00:00:00Z/9
+LAST	P2093	"Garry Law"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"16"
+LAST	P304	"63-75"
+LAST	P888	"42906275"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM"
+LAST	P31	Q13442814
+LAST	P577	+1979-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"16"
+LAST	P304	"77-85"
+LAST	P888	"42906276"
+
+
+CREATE
+LAST	P1476	en:"ANNOTATED CHECKLIST OF TYPE SPECIMENS OF NEW ZEALAND PLANTS IN THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM: Part 4. Monocotyledones — except Gramineae"
+LAST	Len	"ANNOTATED CHECKLIST OF TYPE SPECIMENS OF NEW ZEALAND PLANTS IN THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM: Part 4. Monocotyledones — except Gramineae"
+LAST	P31	Q13442814
+LAST	P577	+1979-00-00T00:00:00Z/9
+LAST	P2093	"Jeanne H Goulding"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"16"
+LAST	P304	"87-104"
+LAST	P888	"42906277"
+
+
+CREATE
+LAST	P1476	en:"NEW SPECIES OF BATHYAL GASTROPODS FROM AUSTRALIA AND NEW ZEALAND"
+LAST	Len	"NEW SPECIES OF BATHYAL GASTROPODS FROM AUSTRALIA AND NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1979-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"16"
+LAST	P304	"105-108"
+LAST	P888	"42906278"
+
+
+CREATE
+LAST	P1476	en:"REVISION OF THE AUSTRALIAN AND NEW ZEALAND TERTIARY AND RECENT TEMPERATE SPECIES OF THE FAMILY COSTELLARIIDAE (MOLLUSCA: GASTROPODA)"
+LAST	Len	"REVISION OF THE AUSTRALIAN AND NEW ZEALAND TERTIARY AND RECENT TEMPERATE SPECIES OF THE FAMILY COSTELLARIIDAE (MOLLUSCA: GASTROPODA)"
+LAST	P31	Q13442814
+LAST	P577	+1979-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"16"
+LAST	P304	"109-169"
+LAST	P888	"42906279"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 7"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 7"
+LAST	P31	Q13442814
+LAST	P577	+1979-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"16"
+LAST	P304	"171-187"
+LAST	P888	"42906280"
+
+
+CREATE
+LAST	P1476	en:"REVIEW OF THE GENUS Naultinus Gray (REPTILIA: GEKKONIDAE)"
+LAST	Len	"REVIEW OF THE GENUS Naultinus Gray (REPTILIA: GEKKONIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1979-00-00T00:00:00Z/9
+LAST	P2093	"J Robb"	P1545	"1"
+LAST	P2093	"R A Hitchmough"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"16"
+LAST	P304	"189-200"
+LAST	P888	"42906281"
+
+
+CREATE
+LAST	P1476	en:"MAORI FORTIFICATIONS OF THE OMATA AND OAKURA DISTRICTS, TARANAKI"
+LAST	Len	"MAORI FORTIFICATIONS OF THE OMATA AND OAKURA DISTRICTS, TARANAKI"
+LAST	P31	Q13442814
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	P2093	"Nigel Prickett"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"17"
+LAST	P304	"1-48"
+LAST	P888	"42906284"
+
+
+CREATE
+LAST	P1476	en:"SOME DENDROGLYPH STYLES IN THE CHATHAM ISLANDS"
+LAST	Len	"SOME DENDROGLYPH STYLES IN THE CHATHAM ISLANDS"
+LAST	P31	Q13442814
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"17"
+LAST	P304	"49-63"
+LAST	P888	"42906285"
+
+
+CREATE
+LAST	P1476	en:"THE ARTEFACT ASSEMBLAGE FROM THE OPITO BEACH MIDDEN, N40/3, COROMANDEL PENINSULA"
+LAST	Len	"THE ARTEFACT ASSEMBLAGE FROM THE OPITO BEACH MIDDEN, N40/3, COROMANDEL PENINSULA"
+LAST	P31	Q13442814
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	P2093	"Joanna Boileau"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"17"
+LAST	P304	"65-95"
+LAST	P888	"42906286"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 6"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 6"
+LAST	P31	Q13442814
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"17"
+LAST	P304	"97-104"
+LAST	P888	"42906287"
+
+
+CREATE
+LAST	P1476	en:"SIGNIFICANCE OF CARBONATE CONCRETIONARY GROWTHS ON A MOA BONE IN HOLOCENE TIDAL FLAT DEPOSITS BENEATH AUCKLAND CITY, NEW ZEALAND"
+LAST	Len	"SIGNIFICANCE OF CARBONATE CONCRETIONARY GROWTHS ON A MOA BONE IN HOLOCENE TIDAL FLAT DEPOSITS BENEATH AUCKLAND CITY, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	P2093	"Campbell S Nelson"	P1545	"1"
+LAST	P2093	"J A Grant-Mackie"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"17"
+LAST	P304	"105-112"
+LAST	P888	"42906288"
+
+
+CREATE
+LAST	P1476	en:"TAXONOMIC NOTES ON POLYNESIAN MOLLUSCA WITH DESCRIPTIONS OF NEW SPECIES OF NASSARIIDAE"
+LAST	Len	"TAXONOMIC NOTES ON POLYNESIAN MOLLUSCA WITH DESCRIPTIONS OF NEW SPECIES OF NASSARIIDAE"
+LAST	P31	Q13442814
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"17"
+LAST	P304	"113-125"
+LAST	P888	"42906289"
+
+
+CREATE
+LAST	P1476	en:"SYSTEMATICS OF SOME WEST PACIFIC Lyria (MOLLUSCA: VOLUTIDAE) WITH DESCRIPTION OF A NEW SPECIES"
+LAST	Len	"SYSTEMATICS OF SOME WEST PACIFIC Lyria (MOLLUSCA: VOLUTIDAE) WITH DESCRIPTION OF A NEW SPECIES"
+LAST	P31	Q13442814
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"17"
+LAST	P304	"127-134"
+LAST	P888	"42906290"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 8"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 8"
+LAST	P31	Q13442814
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"17"
+LAST	P304	"135-152"
+LAST	P888	"42906291"
+
+
+CREATE
+LAST	P1476	en:"Aega angustata Whitelegge, 1901: (ISOPODA : AEGIDAE), A NEW RECORD FOR NEW ZEALAND WATERS"
+LAST	Len	"Aega angustata Whitelegge, 1901: (ISOPODA : AEGIDAE), A NEW RECORD FOR NEW ZEALAND WATERS"
+LAST	P31	Q13442814
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	P2093	"A B Stephenson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"17"
+LAST	P304	"153-155"
+LAST	P888	"42906292"
+
+
+CREATE
+LAST	P1476	en:"MONARCH BUTTERFLY DISPERSAL IN NEW ZEALAND"
+LAST	Len	"MONARCH BUTTERFLY DISPERSAL IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"17"
+LAST	P304	"157-173"
+LAST	P888	"42906293"
+
+
+CREATE
+LAST	P1476	en:"RECORDS OF SOUTH PACIFIC DRAGONFLIES (HEXAPODA: ODONATA)"
+LAST	Len	"RECORDS OF SOUTH PACIFIC DRAGONFLIES (HEXAPODA: ODONATA)"
+LAST	P31	Q13442814
+LAST	P577	+1980-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"17"
+LAST	P304	"175-178"
+LAST	P888	"42906294"
+
+
+CREATE
+LAST	P1476	en:"STABILITY AND CHANGE IN THE MATERIAL CULTURE OF QUEEN CHARLOTTE SOUND IN THE 18TH CENTURY"
+LAST	Len	"STABILITY AND CHANGE IN THE MATERIAL CULTURE OF QUEEN CHARLOTTE SOUND IN THE 18TH CENTURY"
+LAST	P31	Q13442814
+LAST	P577	+1981-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"18"
+LAST	P304	"1-61"
+LAST	P888	"42906297"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATIONS AT OUE PA, N43/35, SOUTH AUCKLAND"
+LAST	Len	"EXCAVATIONS AT OUE PA, N43/35, SOUTH AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1981-00-00T00:00:00Z/9
+LAST	P2093	"Wendy J Harsant"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"18"
+LAST	P304	"63-93"
+LAST	P888	"42906298"
+
+
+CREATE
+LAST	P1476	en:"MAMMALIAN FAUNA FROM AN ARCHAIC SITE ON MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	Len	"MAMMALIAN FAUNA FROM AN ARCHAIC SITE ON MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1981-00-00T00:00:00Z/9
+LAST	P2093	"Ian W G Smith"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"18"
+LAST	P304	"95-105"
+LAST	P888	"42906299"
+
+
+CREATE
+LAST	P1476	en:"PREHISTORIC MAMMALIAN FAUNA FROM THE COROMANDEL PENINSULA"
+LAST	Len	"PREHISTORIC MAMMALIAN FAUNA FROM THE COROMANDEL PENINSULA"
+LAST	P31	Q13442814
+LAST	P577	+1981-00-00T00:00:00Z/9
+LAST	P2093	"Ian W G Smith"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"18"
+LAST	P304	"107-125"
+LAST	P888	"42906300"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 7"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 7"
+LAST	P31	Q13442814
+LAST	P577	+1981-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"18"
+LAST	P304	"127-135"
+LAST	P888	"42906301"
+
+
+CREATE
+LAST	P1476	en:"REVISION OF THE AUSTRALIAN AND NEW ZEALAND TERTIARY AND RECENT SPECIES OF THE FAMILY NASSARIIDAE (MOLLUSCA: GASTROPODA)"
+LAST	Len	"REVISION OF THE AUSTRALIAN AND NEW ZEALAND TERTIARY AND RECENT SPECIES OF THE FAMILY NASSARIIDAE (MOLLUSCA: GASTROPODA)"
+LAST	P31	Q13442814
+LAST	P577	+1981-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"18"
+LAST	P304	"137-192"
+LAST	P888	"42906302"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 9"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 9"
+LAST	P31	Q13442814
+LAST	P577	+1981-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"18"
+LAST	P304	"193-202"
+LAST	P888	"42906303"
+
+
+CREATE
+LAST	P1476	en:"A NOTE ON THE OCCURRENCE OF Myrmecia brevinoda (HYMENOPTERA : FORMICIDAE) IN NEW ZEALAND"
+LAST	Len	"A NOTE ON THE OCCURRENCE OF Myrmecia brevinoda (HYMENOPTERA : FORMICIDAE) IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1981-00-00T00:00:00Z/9
+LAST	P2093	"J B Keall"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"18"
+LAST	P304	"203-204"
+LAST	P888	"42906304"
+
+
+CREATE
+LAST	P1476	en:"A NEW SPECIES OF Xanthocnemis Tillyard (ODONATA: COENAGRIONIDAE) FROM THE CHATHAM ISLANDS, NEW ZEALAND"
+LAST	Len	"A NEW SPECIES OF Xanthocnemis Tillyard (ODONATA: COENAGRIONIDAE) FROM THE CHATHAM ISLANDS, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1981-00-00T00:00:00Z/9
+LAST	P2093	"R J Rowe"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"18"
+LAST	P304	"205-209"
+LAST	P888	"42906305"
+
+
+CREATE
+LAST	P1476	en:"MAORI FORTIFICATIONS OF THE TATARAIMAKA DISTRICT, TARANAKI"
+LAST	Len	"MAORI FORTIFICATIONS OF THE TATARAIMAKA DISTRICT, TARANAKI"
+LAST	P31	Q13442814
+LAST	P577	+1982-00-00T00:00:00Z/9
+LAST	P2093	"Nigel Prickett"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"19"
+LAST	P304	"1-52"
+LAST	P888	"42906308"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATIONS AT MAIORO, N51/5, SOUTH AUCKLAND, 1965-66"
+LAST	Len	"EXCAVATIONS AT MAIORO, N51/5, SOUTH AUCKLAND, 1965-66"
+LAST	P31	Q13442814
+LAST	P577	+1982-00-00T00:00:00Z/9
+LAST	P2093	"Alleen Fox"	P1545	"1"
+LAST	P2093	"R C Green"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"19"
+LAST	P304	"53-80"
+LAST	P888	"42906309"
+
+
+CREATE
+LAST	P1476	en:"INVESTIGATIONS AT ROCK SHELTER N93/5 WAIHORA BAY, TAUPO, NEW ZEALAND"
+LAST	Len	"INVESTIGATIONS AT ROCK SHELTER N93/5 WAIHORA BAY, TAUPO, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1982-00-00T00:00:00Z/9
+LAST	P2093	"T Hosking"	P1545	"1"
+LAST	P2093	"A Leahy"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"19"
+LAST	P304	"81-99"
+LAST	P888	"42906310"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 8"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 8"
+LAST	P31	Q13442814
+LAST	P577	+1982-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"19"
+LAST	P304	"101-108"
+LAST	P888	"42906311"
+
+
+CREATE
+LAST	P1476	en:"DESCRIPTION OF A NEW SPECIES OF Vexillum (Costellaria) (MOLLUSCA: GASTROPODA) FROM THE WEST PACIFIC OCEAN"
+LAST	Len	"DESCRIPTION OF A NEW SPECIES OF Vexillum (Costellaria) (MOLLUSCA: GASTROPODA) FROM THE WEST PACIFIC OCEAN"
+LAST	P31	Q13442814
+LAST	P577	+1982-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"19"
+LAST	P304	"109-111"
+LAST	P888	"42906312"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMIC STATUS OF Cronia fiscella (GMELIN, 1791) AND C. margariticola (BRODERIP, 1833) (GASTROPODA: MURICIDAE)"
+LAST	Len	"THE TAXONOMIC STATUS OF Cronia fiscella (GMELIN, 1791) AND C. margariticola (BRODERIP, 1833) (GASTROPODA: MURICIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1982-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"19"
+LAST	P304	"113-124"
+LAST	P888	"42906313"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 10"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 10"
+LAST	P31	Q13442814
+LAST	P577	+1982-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"19"
+LAST	P304	"125-147"
+LAST	P888	"42906314"
+
+
+CREATE
+LAST	P1476	en:"TWO NEW SPECIES OF TRICHOPTERA FROM THE MURCHISON MOUNTAINS, SOUTH ISLAND, NEW ZEALAND"
+LAST	Len	"TWO NEW SPECIES OF TRICHOPTERA FROM THE MURCHISON MOUNTAINS, SOUTH ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1982-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"19"
+LAST	P304	"149-151"
+LAST	P888	"42906315"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATIONS AT PUKEARUHE (N99/49), NORTH TARANAKI, 1968"
+LAST	Len	"EXCAVATIONS AT PUKEARUHE (N99/49), NORTH TARANAKI, 1968"
+LAST	P31	Q13442814
+LAST	P577	+1984-00-00T00:00:00Z/9
+LAST	P2093	"Joan Lawrence"	P1545	"1"
+LAST	P2093	"Nigel Prickett"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"21"
+LAST	P304	"1-32"
+LAST	P888	"42906335"
+
+
+CREATE
+LAST	P1476	en:"OBSERVATIONS ON A TONGAN NOSE-FLUTE (FANGUFANGU)"
+LAST	Len	"OBSERVATIONS ON A TONGAN NOSE-FLUTE (FANGUFANGU)"
+LAST	P31	Q13442814
+LAST	P577	+1984-00-00T00:00:00Z/9
+LAST	P2093	"Okusitino Mahina"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"21"
+LAST	P304	"33-36"
+LAST	P888	"42906336"
+
+
+CREATE
+LAST	P1476	en:"KITES AND WINDBLOWN TOYS FROM TIKOPIA, A POLYNESIAN OUTLIER IN THE SOLOMON ISLANDS"
+LAST	Len	"KITES AND WINDBLOWN TOYS FROM TIKOPIA, A POLYNESIAN OUTLIER IN THE SOLOMON ISLANDS"
+LAST	P31	Q13442814
+LAST	P577	+1984-00-00T00:00:00Z/9
+LAST	P2093	"Mick Pendergrast"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"21"
+LAST	P304	"37-49"
+LAST	P888	"42906337"
+
+
+CREATE
+LAST	P1476	en:"MAORI DOG-SHAPE BOWLS"
+LAST	Len	"MAORI DOG-SHAPE BOWLS"
+LAST	P31	Q13442814
+LAST	P577	+1984-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"21"
+LAST	P304	"51-60"
+LAST	P888	"42906338"
+
+
+CREATE
+LAST	P1476	en:"THE SIGNIFICANCE OF DECORATION IN A MAORI MEETING HOUSE"
+LAST	Len	"THE SIGNIFICANCE OF DECORATION IN A MAORI MEETING HOUSE"
+LAST	P31	Q13442814
+LAST	P577	+1984-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"21"
+LAST	P304	"61-67"
+LAST	P888	"42906339"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 10"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 10"
+LAST	P31	Q13442814
+LAST	P577	+1984-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"21"
+LAST	P304	"69-76"
+LAST	P888	"42906340"
+
+
+CREATE
+LAST	P1476	en:"SPECIMENS OF RARE OR RECENTLY EXTINCT NEW ZEALAND NON-PASSERINE BIRDS IN THE AUCKLAND INSTITUTE AND MUSEUM"
+LAST	Len	"SPECIMENS OF RARE OR RECENTLY EXTINCT NEW ZEALAND NON-PASSERINE BIRDS IN THE AUCKLAND INSTITUTE AND MUSEUM"
+LAST	P31	Q13442814
+LAST	P577	+1984-00-00T00:00:00Z/9
+LAST	P2093	"B J Gill"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"21"
+LAST	P304	"77-82"
+LAST	P888	"42906341"
+
+
+CREATE
+LAST	P1476	en:"NEW SPECIES OF INTERTIDAL MESOSTIGMATA (ACARI) FROM NEW ZEALAND"
+LAST	Len	"NEW SPECIES OF INTERTIDAL MESOSTIGMATA (ACARI) FROM NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1984-00-00T00:00:00Z/9
+LAST	P2093	"Malcolm Luxton"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"21"
+LAST	P304	"83-100"
+LAST	P888	"42906342"
+
+
+CREATE
+LAST	P1476	en:"OKURATOPE PA, WAIMATE, BAY OF ISLANDS"
+LAST	Len	"OKURATOPE PA, WAIMATE, BAY OF ISLANDS"
+LAST	P31	Q13442814
+LAST	P577	+1985-00-00T00:00:00Z/9
+LAST	P2093	"Aileen Fox"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"22"
+LAST	P304	"1-15"
+LAST	P888	"42906345"
+
+
+CREATE
+LAST	P1476	en:"THE TWIN-LOBED PENDANT, AN ARCHAIC ARTEFACT FROM THE NELSON DISTRICT"
+LAST	Len	"THE TWIN-LOBED PENDANT, AN ARCHAIC ARTEFACT FROM THE NELSON DISTRICT"
+LAST	P31	Q13442814
+LAST	P577	+1985-00-00T00:00:00Z/9
+LAST	P2093	"Nigel Prickett"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"22"
+LAST	P304	"17-29"
+LAST	P888	"42906346"
+
+
+CREATE
+LAST	P1476	en:"JAVANESE ANGKLUNG IN THE AUCKLAND INSTITUTE AND MUSEUM"
+LAST	Len	"JAVANESE ANGKLUNG IN THE AUCKLAND INSTITUTE AND MUSEUM"
+LAST	P31	Q13442814
+LAST	P577	+1985-00-00T00:00:00Z/9
+LAST	P2093	"Angela R Annabell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"22"
+LAST	P304	"31-40"
+LAST	P888	"42906347"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 11"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 11"
+LAST	P31	Q13442814
+LAST	P577	+1985-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"22"
+LAST	P304	"41-45"
+LAST	P888	"42906348"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 12. WITH REMARKS ON TWO AMERICAN GASTROPOD SPECIES"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 12. WITH REMARKS ON TWO AMERICAN GASTROPOD SPECIES"
+LAST	P31	Q13442814
+LAST	P577	+1985-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"22"
+LAST	P304	"47-67"
+LAST	P888	"42906349"
+
+
+CREATE
+LAST	P1476	en:"SUBFOSSIL BONES OF A LARGE SKINK (REPTILIA: LACERTILIA) FROM MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	Len	"SUBFOSSIL BONES OF A LARGE SKINK (REPTILIA: LACERTILIA) FROM MOTUTAPU ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1985-00-00T00:00:00Z/9
+LAST	P2093	"B J Gill"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"22"
+LAST	P304	"69-76"
+LAST	P888	"42906350"
+
+
+CREATE
+LAST	P1476	en:"A NEW GENUS AND SPECIES OF PROSYMPIESTINAE (HEXAPODA : HEMIPTERA : ARADIDAE) FROM NORTHLAND, NEW ZEALAND"
+LAST	Len	"A NEW GENUS AND SPECIES OF PROSYMPIESTINAE (HEXAPODA : HEMIPTERA : ARADIDAE) FROM NORTHLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1985-00-00T00:00:00Z/9
+LAST	P2093	"M Kirman"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"22"
+LAST	P304	"77-83"
+LAST	P888	"42906351"
+
+
+CREATE
+LAST	P1476	en:"SUCCESSFUL ESTABLISHMENT OF THE ASIAN MUSSEL Musculista senhousia (BENSON IN CANTOR, 1842) IN NEW ZEALAND"
+LAST	Len	"SUCCESSFUL ESTABLISHMENT OF THE ASIAN MUSSEL Musculista senhousia (BENSON IN CANTOR, 1842) IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1985-00-00T00:00:00Z/9
+LAST	P2093	"R C Willan"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"22"
+LAST	P304	"85-96"
+LAST	P888	"42906352"
+
+
+CREATE
+LAST	P1476	en:"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND: 3. Fauna of Poor Knights Islands"
+LAST	Len	"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND: 3. Fauna of Poor Knights Islands"
+LAST	P31	Q13442814
+LAST	P577	+1985-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"22"
+LAST	P304	"97-103"
+LAST	P888	"42906353"
+
+
+CREATE
+LAST	P1476	en:"THE EXCAVATION OF WESTFIELD (R11/898), SOUTH AUCKLAND"
+LAST	Len	"THE EXCAVATION OF WESTFIELD (R11/898), SOUTH AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1986-00-00T00:00:00Z/9
+LAST	P2093	"Louise Furey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"23"
+LAST	P304	"1-24"
+LAST	P888	"42906356"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATIONS AT TE PANE O HOROIWI (N42/365), ST HELIERS, AUCKLAND"
+LAST	Len	"EXCAVATIONS AT TE PANE O HOROIWI (N42/365), ST HELIERS, AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1986-00-00T00:00:00Z/9
+LAST	P2093	"Brenda Sewell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"23"
+LAST	P304	"25-44"
+LAST	P888	"42906357"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 13. WITH DESCRIPTION OF A NEW SPECIES"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 13. WITH DESCRIPTION OF A NEW SPECIES"
+LAST	P31	Q13442814
+LAST	P577	+1986-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"23"
+LAST	P304	"45-57"
+LAST	P888	"42906358"
+
+
+CREATE
+LAST	P1476	en:"A TAXONOMIC STUDY ON TWO INDO-PACIFIC SPECIES OF CANTHARUS (PRODOTIA) [MOLLUSCA : BUCCINIDAE]"
+LAST	Len	"A TAXONOMIC STUDY ON TWO INDO-PACIFIC SPECIES OF CANTHARUS (PRODOTIA) [MOLLUSCA : BUCCINIDAE]"
+LAST	P31	Q13442814
+LAST	P577	+1986-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"23"
+LAST	P304	"59-65"
+LAST	P888	"42906359"
+
+
+CREATE
+LAST	P1476	en:"COLLEMBOLA OF MACQUARIE ISLAND"
+LAST	Len	"COLLEMBOLA OF MACQUARIE ISLAND"
+LAST	P31	Q13442814
+LAST	P577	+1986-00-00T00:00:00Z/9
+LAST	P2093	"Penelope Greenslade"	P1545	"1"
+LAST	P2093	"K A J Wise"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"23"
+LAST	P304	"67-97"
+LAST	P888	"42906360"
+
+
+CREATE
+LAST	P1476	en:"THE BRAMBLEY COLLECTION OF MAORI ARTEFACTS, AUCKLAND MUSEUM"
+LAST	Len	"THE BRAMBLEY COLLECTION OF MAORI ARTEFACTS, AUCKLAND MUSEUM"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"Nigel Prickett"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"1-66"
+LAST	P888	"42906363"
+
+
+CREATE
+LAST	P1476	en:"A MAORI BIRDMAN KITE IN THE AUCKLAND MUSEUM: A description and an account of the conservation treatment"
+LAST	Len	"A MAORI BIRDMAN KITE IN THE AUCKLAND MUSEUM: A description and an account of the conservation treatment"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"Gerry Barton"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"67-82"
+LAST	P888	"42906364"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 12"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 12"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"83-92"
+LAST	P888	"42906365"
+
+
+CREATE
+LAST	P1476	en:"TYPE SPECIMENS OF PACIFIC MOLLUSCA DESCRIBED MAINLY BY A. GARRETT AND W. PEASE WITH DESCRIPTION OF A NEW Morula SPECIES (MOLLUSCA:GASTROPODA)"
+LAST	Len	"TYPE SPECIMENS OF PACIFIC MOLLUSCA DESCRIBED MAINLY BY A. GARRETT AND W. PEASE WITH DESCRIPTION OF A NEW Morula SPECIES (MOLLUSCA:GASTROPODA)"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"93-105"
+LAST	P888	"42906366"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 14. WITH DESCRIPTIONS OF TWO NEW SPECIES"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 14. WITH DESCRIPTIONS OF TWO NEW SPECIES"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"107-122"
+LAST	P888	"42906367"
+
+
+CREATE
+LAST	P1476	en:"TAXONOMIC NOTES ON SOME DEEP-WATER TURRIDAE (MOLLUSCA: GASTROPODA) FROM THE MALAGASY REPUBLIC"
+LAST	Len	"TAXONOMIC NOTES ON SOME DEEP-WATER TURRIDAE (MOLLUSCA: GASTROPODA) FROM THE MALAGASY REPUBLIC"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"123-134"
+LAST	P888	"42906368"
+
+
+CREATE
+LAST	P1476	en:"ADDITIONAL NOTES ON Livoneca neocyttus (ISOPODA: CYMOTHOIDAE)"
+LAST	Len	"ADDITIONAL NOTES ON Livoneca neocyttus (ISOPODA: CYMOTHOIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"A B Stephenson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"135-142"
+LAST	P888	"42906369"
+
+
+CREATE
+LAST	P1476	en:"A NEW GENUS OF COLLEMBOLA (NEANURIDAE:NEANURINAE) FROM SOUTHERN NEW ZEALAND"
+LAST	Len	"A NEW GENUS OF COLLEMBOLA (NEANURIDAE:NEANURINAE) FROM SOUTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"L Deharveng"	P1545	"1"
+LAST	P2093	"K A J Wise"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"143-146"
+LAST	P888	"42906370"
+
+
+CREATE
+LAST	P1476	en:"PREHISTORIC ARCHAEOLOGICAL SITES ON THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	Len	"PREHISTORIC ARCHAEOLOGICAL SITES ON THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"Bruce W Hayward"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"147-161"
+LAST	P888	"42906371"
+
+
+CREATE
+LAST	P1476	en:"VEGETATION QUADRATS 1982-83 AND BROAD REGENERATION PATTERNS ON GREAT ISLAND, THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	Len	"VEGETATION QUADRATS 1982-83 AND BROAD REGENERATION PATTERNS ON GREAT ISLAND, THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"E K Cameron"	P1545	"1"
+LAST	P2093	"G T S Baylis"	P1545	"2"
+LAST	P2093	"A E Wright"	P1545	"3"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"163-185"
+LAST	P888	"42906372"
+
+
+CREATE
+LAST	P1476	en:"A PRELIMINARY LIST OF MOSSES FROM THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	Len	"A PRELIMINARY LIST OF MOSSES FROM THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"Jessica E Beever"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"187-192"
+LAST	P888	"42906373"
+
+
+CREATE
+LAST	P1476	en:"A PRELIMINARY LIST OF THE HEPATICAE (LIVERWORTS) AND ANTHOCEROTAE (HORNWORTS) FROM THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	Len	"A PRELIMINARY LIST OF THE HEPATICAE (LIVERWORTS) AND ANTHOCEROTAE (HORNWORTS) FROM THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"J E Braggins"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"193-196"
+LAST	P888	"42906374"
+
+
+CREATE
+LAST	P1476	en:"LICHENS FROM THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	Len	"LICHENS FROM THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"D J Galloway"	P1545	"1"
+LAST	P2093	"Bruce W Hayward"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"197-213"
+LAST	P888	"42906375"
+
+
+CREATE
+LAST	P1476	en:"GEOLOGY OF THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	Len	"GEOLOGY OF THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"Bruce W Hayward"	P1545	"1"
+LAST	P2093	"P R Moore"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"215-232"
+LAST	P888	"42906376"
+
+
+CREATE
+LAST	P1476	en:"PETROGRAPHY OF IGNEOUS AND SEDIMENTARY ROCKS FROM THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	Len	"PETROGRAPHY OF IGNEOUS AND SEDIMENTARY ROCKS FROM THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"G A Challis"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"233-242"
+LAST	P888	"42906377"
+
+
+CREATE
+LAST	P1476	en:"FISHES OBSERVED AT THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	Len	"FISHES OBSERVED AT THE THREE KINGS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1987-00-00T00:00:00Z/9
+LAST	P2093	"Graham S Hardy"	P1545	"1"
+LAST	P2093	"Roger V Grace"	P1545	"2"
+LAST	P2093	"Malcolm P Francis"	P1545	"3"
+LAST	P1433	Q15214730
+LAST	P478	"24"
+LAST	P304	"243-250"
+LAST	P888	"42906378"
+
+
+CREATE
+LAST	P1476	en:"ARTHUR WILLIAM BADEN POWELL (1901-1987) A BRIEF BIOGRAPHY AND BIBLIOGRAPHY WITH A LIST OF MOLLUSCAN TAXA"
+LAST	Len	"ARTHUR WILLIAM BADEN POWELL (1901-1987) A BRIEF BIOGRAPHY AND BIBLIOGRAPHY WITH A LIST OF MOLLUSCAN TAXA"
+LAST	P31	Q13442814
+LAST	P577	+1988-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"25"
+LAST	P304	"1-38"
+LAST	P888	"42906381"
+
+
+CREATE
+LAST	P1476	en:"PA AND EXTERNAL TERRACES WITH STRUCTURES AT POOR HILL (SITE P5/227), WAIMATE NORTH"
+LAST	Len	"PA AND EXTERNAL TERRACES WITH STRUCTURES AT POOR HILL (SITE P5/227), WAIMATE NORTH"
+LAST	P31	Q13442814
+LAST	P577	+1988-00-00T00:00:00Z/9
+LAST	P2093	"Anne Leahy"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"25"
+LAST	P304	"39-47"
+LAST	P888	"42906382"
+
+
+CREATE
+LAST	P1476	en:"SOURCE DETERMINATION OF OBSIDIAN FROM THE WESTFIELD (R11/898) SITE USING GEOCHEMICAL ANALYSIS"
+LAST	Len	"SOURCE DETERMINATION OF OBSIDIAN FROM THE WESTFIELD (R11/898) SITE USING GEOCHEMICAL ANALYSIS"
+LAST	P31	Q13442814
+LAST	P577	+1988-00-00T00:00:00Z/9
+LAST	P2093	"R S Ruddock"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"25"
+LAST	P304	"49-56"
+LAST	P888	"42906383"
+
+
+CREATE
+LAST	P1476	en:"A BROADWOOD SQUARE PIANOFORTE IN THE AUCKLAND INSTITUTE AND MUSEUM"
+LAST	Len	"A BROADWOOD SQUARE PIANOFORTE IN THE AUCKLAND INSTITUTE AND MUSEUM"
+LAST	P31	Q13442814
+LAST	P577	+1988-00-00T00:00:00Z/9
+LAST	P2093	"Angela R Annabell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"25"
+LAST	P304	"57-62"
+LAST	P888	"42906384"
+
+
+CREATE
+LAST	P1476	en:"TAXONOMIC NOTES ON THE MITROMORPHA GROUP OF THE FAMILY TURRIDAE (MOLLUSCA : GASTROPODA : BORSONIINAE)"
+LAST	Len	"TAXONOMIC NOTES ON THE MITROMORPHA GROUP OF THE FAMILY TURRIDAE (MOLLUSCA : GASTROPODA : BORSONIINAE)"
+LAST	P31	Q13442814
+LAST	P577	+1988-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"25"
+LAST	P304	"63-73"
+LAST	P888	"42906385"
+
+
+CREATE
+LAST	P1476	en:"THE MITRIDAE, COSTELLARIIDAE AND NASSARIIDAE (MOLLUSCA: GASTROPODA) RECENTLY DREDGED AT REUNION ISLAND, INDIAN OCEAN, WITH DESCRIPTIONS OF NEW SPECIES"
+LAST	Len	"THE MITRIDAE, COSTELLARIIDAE AND NASSARIIDAE (MOLLUSCA: GASTROPODA) RECENTLY DREDGED AT REUNION ISLAND, INDIAN OCEAN, WITH DESCRIPTIONS OF NEW SPECIES"
+LAST	P31	Q13442814
+LAST	P577	+1988-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"25"
+LAST	P304	"75-85"
+LAST	P888	"42906386"
+
+
+CREATE
+LAST	P1476	en:"RECORDS OF BIRDS AND REPTILES FROM TONGA"
+LAST	Len	"RECORDS OF BIRDS AND REPTILES FROM TONGA"
+LAST	P31	Q13442814
+LAST	P577	+1988-00-00T00:00:00Z/9
+LAST	P2093	"B J Gill"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"25"
+LAST	P304	"87-94"
+LAST	P888	"42906387"
+
+
+CREATE
+LAST	P1476	en:"A REVISION OF THE GENUS MIMOPEUS (TENEBRIONIDAE)"
+LAST	Len	"A REVISION OF THE GENUS MIMOPEUS (TENEBRIONIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1988-00-00T00:00:00Z/9
+LAST	P2093	"J C Watt"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"25"
+LAST	P304	"95-146"
+LAST	P888	"42906388"
+
+
+CREATE
+LAST	P1476	en:"SAND-DUNE TIGER BEETLES OF NORTHERN NEW ZEALAND COASTS (COLEOPTERA: CICINDELIDAE)"
+LAST	Len	"SAND-DUNE TIGER BEETLES OF NORTHERN NEW ZEALAND COASTS (COLEOPTERA: CICINDELIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1988-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"25"
+LAST	P304	"147-180"
+LAST	P888	"42906389"
+
+
+CREATE
+LAST	P1476	en:"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND : 4. New records and further distributions for Neuroptera"
+LAST	Len	"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND : 4. New records and further distributions for Neuroptera"
+LAST	P31	Q13442814
+LAST	P577	+1988-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"25"
+LAST	P304	"181-184"
+LAST	P888	"42906390"
+
+
+CREATE
+LAST	P1476	en:"THE EXCAVATION OF SITES R11/887, R11/888 AND R11/899, TAMAKI, AUCKLAND"
+LAST	Len	"THE EXCAVATION OF SITES R11/887, R11/888 AND R11/899, TAMAKI, AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1989-00-00T00:00:00Z/9
+LAST	P2093	"Russell Foster"	P1545	"1"
+LAST	P2093	"Brenda Sewell"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"26"
+LAST	P304	"1-24"
+LAST	P888	"42906393"
+
+
+CREATE
+LAST	P1476	en:"A NEW GENUS AND SPECIES OF CARVENTINAE (HEXAPODA : HEMIPTERA : ARADIDAE) FROM NORTHLAND, NEW ZEALAND"
+LAST	Len	"A NEW GENUS AND SPECIES OF CARVENTINAE (HEXAPODA : HEMIPTERA : ARADIDAE) FROM NORTHLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1989-00-00T00:00:00Z/9
+LAST	P2093	"M Kirman"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"26"
+LAST	P304	"25-32"
+LAST	P888	"42906394"
+
+
+CREATE
+LAST	P1476	en:"A REDESCRIPTION OF THE GENUS NEOCARVENTUS (HEXAPODA : HEMIPTERA : ARADIDAE) AND A DESCRIPTION OF A NEW SPECIES FROM NORTHLAND, NEW ZEALAND"
+LAST	Len	"A REDESCRIPTION OF THE GENUS NEOCARVENTUS (HEXAPODA : HEMIPTERA : ARADIDAE) AND A DESCRIPTION OF A NEW SPECIES FROM NORTHLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1989-00-00T00:00:00Z/9
+LAST	P2093	"M Kirman"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"26"
+LAST	P304	"33-38"
+LAST	P888	"42906395"
+
+
+CREATE
+LAST	P1476	en:"A REVISION OF THE GENUS MIMOPEUS (TENEBRIONIDAE) PART II"
+LAST	Len	"A REVISION OF THE GENUS MIMOPEUS (TENEBRIONIDAE) PART II"
+LAST	P31	Q13442814
+LAST	P577	+1989-00-00T00:00:00Z/9
+LAST	P2093	"J C Watt"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"26"
+LAST	P304	"39-81"
+LAST	P888	"42906396"
+
+
+CREATE
+LAST	P1476	en:"THE FAMILY GYRINIDAE (HEXAPODA: COLEOPTERA) IN NEW ZEALAND With a description of a northern population"
+LAST	Len	"THE FAMILY GYRINIDAE (HEXAPODA: COLEOPTERA) IN NEW ZEALAND With a description of a northern population"
+LAST	P31	Q13442814
+LAST	P577	+1989-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"26"
+LAST	P304	"83-102"
+LAST	P888	"42906397"
+
+
+CREATE
+LAST	P1476	en:"TEST EXCAVATIONS ON THE HEADLAND PA AT KAURI POINT, BIRKENHEAD, AUCKLAND, IN 1971"
+LAST	Len	"TEST EXCAVATIONS ON THE HEADLAND PA AT KAURI POINT, BIRKENHEAD, AUCKLAND, IN 1971"
+LAST	P31	Q13442814
+LAST	P577	+1990-00-00T00:00:00Z/9
+LAST	P2093	"Janet Davidson"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"27"
+LAST	P304	"1-18"
+LAST	P888	"42906400"
+
+
+CREATE
+LAST	P1476	en:"THE ARTEFACT COLLECTION FROM WHITIPIRORUA (T12/16), COROMANDEL PENINSULA"
+LAST	Len	"THE ARTEFACT COLLECTION FROM WHITIPIRORUA (T12/16), COROMANDEL PENINSULA"
+LAST	P31	Q13442814
+LAST	P577	+1990-00-00T00:00:00Z/9
+LAST	P2093	"Louise Furey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"27"
+LAST	P304	"19-60"
+LAST	P888	"42906401"
+
+
+CREATE
+LAST	P1476	en:"COMBS FROM ROCK SHELTERS IN THE WAITAKERE RANGES, WEST AUCKLAND"
+LAST	Len	"COMBS FROM ROCK SHELTERS IN THE WAITAKERE RANGES, WEST AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1990-00-00T00:00:00Z/9
+LAST	P2093	"Joan Lawrence"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"27"
+LAST	P304	"61-71"
+LAST	P888	"42906402"
+
+
+CREATE
+LAST	P1476	en:"ARCHAEOLOGICAL EXCAVATIONS AT RAUPA: THE 1987 SEASON"
+LAST	Len	"ARCHAEOLOGICAL EXCAVATIONS AT RAUPA: THE 1987 SEASON"
+LAST	P31	Q13442814
+LAST	P577	+1990-00-00T00:00:00Z/9
+LAST	P2093	"Nigel Prickett"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"27"
+LAST	P304	"73-153"
+LAST	P888	"42906403"
+
+
+CREATE
+LAST	P1476	en:"THE MOSSES OF MINERS COVE, GREAT BARRIER ISLAND, NORTHERN NEW ZEALAND"
+LAST	Len	"THE MOSSES OF MINERS COVE, GREAT BARRIER ISLAND, NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1990-00-00T00:00:00Z/9
+LAST	P2093	"Jessica E Beever"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"27"
+LAST	P304	"155-164"
+LAST	P888	"42906404"
+
+
+CREATE
+LAST	P1476	en:"RECORDS OF WILDLIFE FROM TONGA, ESPECIALLY VAVA'U"
+LAST	Len	"RECORDS OF WILDLIFE FROM TONGA, ESPECIALLY VAVA'U"
+LAST	P31	Q13442814
+LAST	P577	+1990-00-00T00:00:00Z/9
+LAST	P2093	"B J Gill"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"27"
+LAST	P304	"165-173"
+LAST	P888	"42906405"
+
+
+CREATE
+LAST	P1476	en:"RECORDS OF REPTILES FROM TONGA"
+LAST	Len	"RECORDS OF REPTILES FROM TONGA"
+LAST	P31	Q13442814
+LAST	P577	+1990-00-00T00:00:00Z/9
+LAST	P2093	"B J Gill"	P1545	"1"
+LAST	P2093	"D R Rinke"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"27"
+LAST	P304	"175-180"
+LAST	P888	"42906406"
+
+
+CREATE
+LAST	P1476	en:"NOTES ON COASTAL TIGER BEETLES (COLEOPTERA: CICINDELIDAE)"
+LAST	Len	"NOTES ON COASTAL TIGER BEETLES (COLEOPTERA: CICINDELIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1990-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"27"
+LAST	P304	"181-184"
+LAST	P888	"42906407"
+
+
+CREATE
+LAST	P1476	en:"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND: 5. Trichoptera of North Auckland"
+LAST	Len	"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND: 5. Trichoptera of North Auckland"
+LAST	P31	Q13442814
+LAST	P577	+1990-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"27"
+LAST	P304	"185-194"
+LAST	P888	"42906408"
+
+
+CREATE
+LAST	P1476	en:"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND: 6. Gerroidea (Hemiptera: Heteroptera) in North Auckland"
+LAST	Len	"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND: 6. Gerroidea (Hemiptera: Heteroptera) in North Auckland"
+LAST	P31	Q13442814
+LAST	P577	+1990-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"27"
+LAST	P304	"195-198"
+LAST	P888	"42906409"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATIONS AT WHITIPIRORUA, T12/16, COROMANDEL PENINSULA"
+LAST	Len	"EXCAVATIONS AT WHITIPIRORUA, T12/16, COROMANDEL PENINSULA"
+LAST	P31	Q13442814
+LAST	P577	+1991-00-00T00:00:00Z/9
+LAST	P2093	"Louise Furey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"28"
+LAST	P304	"1-32"
+LAST	P888	"42906412"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATIONS AT TAYLOR'S HILL, R11/96, AUCKLAND"
+LAST	Len	"EXCAVATIONS AT TAYLOR'S HILL, R11/96, AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1991-00-00T00:00:00Z/9
+LAST	P2093	"Anne Leahy"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"28"
+LAST	P304	"33-68"
+LAST	P888	"42906413"
+
+
+CREATE
+LAST	P1476	en:"JACOB WILLIAM HEBERLEY OF WELLINGTON: A MAORI CARVER IN A CHANGED WORLD"
+LAST	Len	"JACOB WILLIAM HEBERLEY OF WELLINGTON: A MAORI CARVER IN A CHANGED WORLD"
+LAST	P31	Q13442814
+LAST	P577	+1991-00-00T00:00:00Z/9
+LAST	P2093	"Roger Neich"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"28"
+LAST	P304	"69-146"
+LAST	P888	"42906414"
+
+
+CREATE
+LAST	P1476	en:"FURTHER ARCHAEOLOGICAL INVESTIGATIONS AT THE SETTLEMENT OF WAIWHAU, HAURAKI PLAINS"
+LAST	Len	"FURTHER ARCHAEOLOGICAL INVESTIGATIONS AT THE SETTLEMENT OF WAIWHAU, HAURAKI PLAINS"
+LAST	P31	Q13442814
+LAST	P577	+1991-00-00T00:00:00Z/9
+LAST	P2093	"Caroline Phillips"	P1545	"1"
+LAST	P2093	"R C Green"	P1545	"2"
+LAST	P2093	"Roger Green"	P1545	"3"
+LAST	P1433	Q15214730
+LAST	P478	"28"
+LAST	P304	"147-183"
+LAST	P888	"42906415"
+
+
+CREATE
+LAST	P1476	en:"LICHENS OF LITTLE BARRIER ISLAND (HAUTURU), NORTHERN NEW ZEALAND"
+LAST	Len	"LICHENS OF LITTLE BARRIER ISLAND (HAUTURU), NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1991-00-00T00:00:00Z/9
+LAST	P2093	"Bruce W Hayward"	P1545	"1"
+LAST	P2093	"Anthony E Wright"	P1545	"2"
+LAST	P2093	"Glenys C Hayward"	P1545	"3"
+LAST	P1433	Q15214730
+LAST	P478	"28"
+LAST	P304	"185-199"
+LAST	P888	"42906416"
+
+
+CREATE
+LAST	P1476	en:"MOSSES OF TAWHITI RAHI, POOR KNIGHTS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	Len	"MOSSES OF TAWHITI RAHI, POOR KNIGHTS ISLANDS, NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1991-00-00T00:00:00Z/9
+LAST	P2093	"Jessica E Beever"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"28"
+LAST	P304	"201-210"
+LAST	P888	"42906417"
+
+
+CREATE
+LAST	P1476	en:"DISTRIBUTION AND ZOOGEOGRAPHY OF NEW ZEALAND MEGALOPTERA AND NEUROPTERA"
+LAST	Len	"DISTRIBUTION AND ZOOGEOGRAPHY OF NEW ZEALAND MEGALOPTERA AND NEUROPTERA"
+LAST	P31	Q13442814
+LAST	P577	+1991-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"28"
+LAST	P304	"211-227"
+LAST	P888	"42906418"
+
+
+CREATE
+LAST	P1476	en:"ADDITIONAL INFORMATION ABOUT THE PA AT KAURI POINT, BIRKENHEAD, AUCKLAND"
+LAST	Len	"ADDITIONAL INFORMATION ABOUT THE PA AT KAURI POINT, BIRKENHEAD, AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1992-00-00T00:00:00Z/9
+LAST	P2093	"Janet Davidson"	P1545	"1"
+LAST	P2093	"Rod Wallace"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"29"
+LAST	P304	"1-5"
+LAST	P888	"42906421"
+
+
+CREATE
+LAST	P1476	en:"FIBRE FRAGMENTS FROM THE RAUPA SITE, HAURAKI PLAINS"
+LAST	Len	"FIBRE FRAGMENTS FROM THE RAUPA SITE, HAURAKI PLAINS"
+LAST	P31	Q13442814
+LAST	P577	+1992-00-00T00:00:00Z/9
+LAST	P2093	"Maureen Lander"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"29"
+LAST	P304	"7-23"
+LAST	P888	"42906422"
+
+
+CREATE
+LAST	P1476	en:"ARCHAEOLOGICAL EXCAVATIONS AT RAUPA: THE 1988 SEASON"
+LAST	Len	"ARCHAEOLOGICAL EXCAVATIONS AT RAUPA: THE 1988 SEASON"
+LAST	P31	Q13442814
+LAST	P577	+1992-00-00T00:00:00Z/9
+LAST	P2093	"Nigel Prickett"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"29"
+LAST	P304	"25-101"
+LAST	P888	"42906423"
+
+
+CREATE
+LAST	P1476	en:"A NEW LOWER MIOCENE SPECIES OF ANODONTIA (MOLLUSCA: BIVALVIA)"
+LAST	Len	"A NEW LOWER MIOCENE SPECIES OF ANODONTIA (MOLLUSCA: BIVALVIA)"
+LAST	P31	Q13442814
+LAST	P577	+1992-00-00T00:00:00Z/9
+LAST	P2093	"Michael K Eagle"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"29"
+LAST	P304	"103-111"
+LAST	P888	"42906424"
+
+
+CREATE
+LAST	P1476	en:"PALEONTOLOGY AND PALEOECOLOGY OF EARLY MIOCENE SEQUENCES IN HAYS AND TIPAKURI STREAMS, NORTHERN HUNUA RANGES, AUCKLAND"
+LAST	Len	"PALEONTOLOGY AND PALEOECOLOGY OF EARLY MIOCENE SEQUENCES IN HAYS AND TIPAKURI STREAMS, NORTHERN HUNUA RANGES, AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1992-00-00T00:00:00Z/9
+LAST	P2093	"Michael Eagle"	P1545	"1"
+LAST	P2093	"Bruce W Hayward"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"29"
+LAST	P304	"113-133"
+LAST	P888	"42906425"
+
+
+CREATE
+LAST	P1476	en:"ECOLOGY AND MORPHOLOGICAL VARIATION IN PLACOSTYLUS BOLLONSI (GASTROPODA: BULIMULIDAE) AT THREE KINGS ISLANDS, NEW ZEALAND"
+LAST	Len	"ECOLOGY AND MORPHOLOGICAL VARIATION IN PLACOSTYLUS BOLLONSI (GASTROPODA: BULIMULIDAE) AT THREE KINGS ISLANDS, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1992-00-00T00:00:00Z/9
+LAST	P2093	"F J Brook"	P1545	"1"
+LAST	P2093	"C M Laurenson"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"29"
+LAST	P304	"135-166"
+LAST	P888	"42906426"
+
+
+CREATE
+LAST	P1476	en:"THE NEW ZEALAND SPECIES OF BEROTHIDAE (INSECTA: NEUROPTERA)"
+LAST	Len	"THE NEW ZEALAND SPECIES OF BEROTHIDAE (INSECTA: NEUROPTERA)"
+LAST	P31	Q13442814
+LAST	P577	+1992-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"29"
+LAST	P304	"167-177"
+LAST	P888	"42906427"
+
+
+CREATE
+LAST	P1476	en:"A NEW FOSSIL ISOCRINID CRINOID FROM THE LATE OLIGOCENE OF WAITETE BAY, NORTHERN COROMANDEL"
+LAST	Len	"A NEW FOSSIL ISOCRINID CRINOID FROM THE LATE OLIGOCENE OF WAITETE BAY, NORTHERN COROMANDEL"
+LAST	P31	Q13442814
+LAST	P577	+1993-00-00T00:00:00Z/9
+LAST	P2093	"Michael K Eagle"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"30"
+LAST	P304	"1-12"
+LAST	P888	"42906430"
+
+
+CREATE
+LAST	P1476	en:"OLIGOCENE PALEONTOLOGY AND PALEOECOLOGY OF WAITETE BAY, NORTHERN COROMANDEL PENINSULA"
+LAST	Len	"OLIGOCENE PALEONTOLOGY AND PALEOECOLOGY OF WAITETE BAY, NORTHERN COROMANDEL PENINSULA"
+LAST	P31	Q13442814
+LAST	P577	+1993-00-00T00:00:00Z/9
+LAST	P2093	"Michael K Eagle"	P1545	"1"
+LAST	P2093	"Bruce W Hayward"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"30"
+LAST	P304	"13-26"
+LAST	P888	"42906431"
+
+
+CREATE
+LAST	P1476	en:"DESCRIPTIONS AND REDESCRIPTIONS OF LANDSNAILS (MOLLUSCA: PUNCTIDAE) IN THE GENERA PHRIXGNATHUS AND TAGUAHELIX"
+LAST	Len	"DESCRIPTIONS AND REDESCRIPTIONS OF LANDSNAILS (MOLLUSCA: PUNCTIDAE) IN THE GENERA PHRIXGNATHUS AND TAGUAHELIX"
+LAST	P31	Q13442814
+LAST	P577	+1993-00-00T00:00:00Z/9
+LAST	P2093	"F M Climo"	P1545	"1"
+LAST	P2093	"J F Goulstone"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"30"
+LAST	P304	"27-45"
+LAST	P888	"42906432"
+
+
+CREATE
+LAST	P1476	en:"MENIMUS CROSBYI, A NEW NAME FOR M. CLARKEI WATT, 1992 (COLEOPTERA: TENEBRIONIDAE)"
+LAST	Len	"MENIMUS CROSBYI, A NEW NAME FOR M. CLARKEI WATT, 1992 (COLEOPTERA: TENEBRIONIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1993-00-00T00:00:00Z/9
+LAST	P2093	"J C Watt"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"30"
+LAST	P304	"47"
+LAST	P888	"42906433"
+
+
+CREATE
+LAST	P1476	en:"PRIMARY TYPES OF TERRESTRIAL AND FRESHWATER PROTISTA, ANNELIDA AND ARTHROPODA IN THE AUCKLAND INSTITUTE AND MUSEUM: AN ANNOTATED LIST"
+LAST	Len	"PRIMARY TYPES OF TERRESTRIAL AND FRESHWATER PROTISTA, ANNELIDA AND ARTHROPODA IN THE AUCKLAND INSTITUTE AND MUSEUM: AN ANNOTATED LIST"
+LAST	P31	Q13442814
+LAST	P577	+1993-00-00T00:00:00Z/9
+LAST	P2093	"J W Early"	P1545	"1"
+LAST	P2093	"R F Gilbert"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"30"
+LAST	P304	"49-86"
+LAST	P888	"42906434"
+
+
+CREATE
+LAST	P1476	en:"NATAL DOWN AND EGG SIZE OF THE KOKAKO CALLAEAS CINEREA (AVES: CALLAEIDAE)"
+LAST	Len	"NATAL DOWN AND EGG SIZE OF THE KOKAKO CALLAEAS CINEREA (AVES: CALLAEIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1993-00-00T00:00:00Z/9
+LAST	P2093	"B J Gill"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"30"
+LAST	P304	"87-91"
+LAST	P888	"42906435"
+
+
+CREATE
+LAST	P1476	en:"SPECIES OF MICROMUS (NEUROPTERA: HEMEROBIIDAE) IN NEW ZEALAND"
+LAST	Len	"SPECIES OF MICROMUS (NEUROPTERA: HEMEROBIIDAE) IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1993-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"30"
+LAST	P304	"93-117"
+LAST	P888	"42906436"
+
+
+CREATE
+LAST	P1476	en:"PAKEHA AND MAORI FORTIFICATIONS OF THE FIRST TARANAKI WAR, 1860-61"
+LAST	Len	"PAKEHA AND MAORI FORTIFICATIONS OF THE FIRST TARANAKI WAR, 1860-61"
+LAST	P31	Q13442814
+LAST	P577	+1994-00-00T00:00:00Z/9
+LAST	P2093	"Nigel Prickett"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"31"
+LAST	P304	"1-87"
+LAST	P888	"42906439"
+
+
+CREATE
+LAST	P1476	en:"ANNOTATED CHECKLIST OF TYPE SPECIMENS OF NEW ZEALAND PLANTS IN THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM (AK). PART 5. DICOTYLEDONS"
+LAST	Len	"ANNOTATED CHECKLIST OF TYPE SPECIMENS OF NEW ZEALAND PLANTS IN THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM (AK). PART 5. DICOTYLEDONS"
+LAST	P31	Q13442814
+LAST	P577	+1994-00-00T00:00:00Z/9
+LAST	P2093	"Juliet F Herrick"	P1545	"1"
+LAST	P2093	"Ewen K Cameron"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"31"
+LAST	P304	"89-173"
+LAST	P888	"42906440"
+
+
+CREATE
+LAST	P1476	en:"A NEW UPPER CRETACEOUS SPECIES OF ISSELICRINUS (CRINOIDEA: ARTICULATA) FROM WESTERN HAWKES BAY, NEW ZEALAND"
+LAST	Len	"A NEW UPPER CRETACEOUS SPECIES OF ISSELICRINUS (CRINOIDEA: ARTICULATA) FROM WESTERN HAWKES BAY, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1994-00-00T00:00:00Z/9
+LAST	P2093	"Michael K Eagle"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"31"
+LAST	P304	"175-186"
+LAST	P888	"42906441"
+
+
+CREATE
+LAST	P1476	en:"EARLY MIOCENE ROCKY SHORE AND COARSE SEDIMENT FOSSIL COMMUNITIES, KAWAU ISLAND, AUCKLAND"
+LAST	Len	"EARLY MIOCENE ROCKY SHORE AND COARSE SEDIMENT FOSSIL COMMUNITIES, KAWAU ISLAND, AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1994-00-00T00:00:00Z/9
+LAST	P2093	"Michael K Eagle"	P1545	"1"
+LAST	P2093	"Bruce W Hayward"	P1545	"2"
+LAST	P2093	"Glenn Carter"	P1545	"3"
+LAST	P1433	Q15214730
+LAST	P478	"31"
+LAST	P304	"187-204"
+LAST	P888	"42906442"
+
+
+CREATE
+LAST	P1476	en:"A NEW GENUS AND TWO NEW SPECIES OF NORTHERN NEW ZEALAND LANDSNAILS (MOLLUSCA: PUNCTIDAE)"
+LAST	Len	"A NEW GENUS AND TWO NEW SPECIES OF NORTHERN NEW ZEALAND LANDSNAILS (MOLLUSCA: PUNCTIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1994-00-00T00:00:00Z/9
+LAST	P2093	"F M Climo"	P1545	"1"
+LAST	P2093	"J F Goulstone"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"31"
+LAST	P304	"205-214"
+LAST	P888	"42906443"
+
+
+CREATE
+LAST	P1476	en:"[SHORT NOTE]: EMOIA ADSPERSA (LACERTILIA: SCINCIDAE) - CONFIRMED IN TONGA"
+LAST	Len	"[SHORT NOTE]: EMOIA ADSPERSA (LACERTILIA: SCINCIDAE) - CONFIRMED IN TONGA"
+LAST	P31	Q13442814
+LAST	P577	+1994-00-00T00:00:00Z/9
+LAST	P2093	"B J Gill"	P1545	"1"
+LAST	P2093	"D R Rinke"	P1545	"2"
+LAST	P2093	"G R Zug"	P1545	"3"
+LAST	P1433	Q15214730
+LAST	P478	"31"
+LAST	P304	"215-217"
+LAST	P888	"42906444"
+
+
+CREATE
+LAST	P1476	en:"BENTHIC ECOLOGY OF WHANGAPE HARBOUR, NORTHLAND"
+LAST	Len	"BENTHIC ECOLOGY OF WHANGAPE HARBOUR, NORTHLAND"
+LAST	P31	Q13442814
+LAST	P577	+1994-00-00T00:00:00Z/9
+LAST	P2093	"Bruce W Hayward"	P1545	"1"
+LAST	P2093	"Wilma Blom"	P1545	"2"
+LAST	P2093	"Margaret Morley"	P1545	"3"
+LAST	P2093	"A Brett Stephenson"	P1545	"4"
+LAST	P2093	"Chris J Hollis"	P1545	"5"
+LAST	P1433	Q15214730
+LAST	P478	"31"
+LAST	P304	"219-230"
+LAST	P888	"42906445"
+
+
+CREATE
+LAST	P1476	en:"FORAMINIFERAL ASSOCIATIONS AROUND NORTHERN GREAT BARRIER ISLAND, NEW ZEALAND"
+LAST	Len	"FORAMINIFERAL ASSOCIATIONS AROUND NORTHERN GREAT BARRIER ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1994-00-00T00:00:00Z/9
+LAST	P2093	"Bruce W Hayward"	P1545	"1"
+LAST	P2093	"Hugh R Grenfell"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"31"
+LAST	P304	"231-273"
+LAST	P888	"42906446"
+
+
+CREATE
+LAST	P1476	en:"LATE ORDOVICIAN CRINOIDS FROM HAILES KNOB, UPPER TAKAKA, NEW ZEALAND"
+LAST	Len	"LATE ORDOVICIAN CRINOIDS FROM HAILES KNOB, UPPER TAKAKA, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1995-00-00T00:00:00Z/9
+LAST	P2093	"Michael K Eagle"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"32"
+LAST	P304	"1-16"
+LAST	P888	"42906449"
+
+
+CREATE
+LAST	P1476	en:"EARLY MIOCENE BEACH, ROCKY SHORE, AND ENCLOSED BAY FOSSIL COMMUNITIES, WAIHEKE ISLAND, AUCKLAND"
+LAST	Len	"EARLY MIOCENE BEACH, ROCKY SHORE, AND ENCLOSED BAY FOSSIL COMMUNITIES, WAIHEKE ISLAND, AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1995-00-00T00:00:00Z/9
+LAST	P2093	"Michael K Eagle"	P1545	"1"
+LAST	P2093	"Bruce W Hayward"	P1545	"2"
+LAST	P2093	"Jack A Grant-Mackie"	P1545	"3"
+LAST	P1433	Q15214730
+LAST	P478	"32"
+LAST	P304	"17-44"
+LAST	P888	"42906450"
+
+
+CREATE
+LAST	P1476	en:"AN INVASION OF AUSTRALIAN BLUE MOON AND BLUE TIGER BUTTERFLIES (LEPIDOPTERA: NYMPHALIDAE) IN NEW ZEALAND"
+LAST	Len	"AN INVASION OF AUSTRALIAN BLUE MOON AND BLUE TIGER BUTTERFLIES (LEPIDOPTERA: NYMPHALIDAE) IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1995-00-00T00:00:00Z/9
+LAST	P2093	"John W Early"	P1545	"1"
+LAST	P2093	"G Richard Parrish"	P1545	"2"
+LAST	P2093	"Paddy A Ryan"	P1545	"3"
+LAST	P1433	Q15214730
+LAST	P478	"32"
+LAST	P304	"45-53"
+LAST	P888	"42906451"
+
+
+CREATE
+LAST	P1476	en:"NOTES ON THE LAND REPTILES OF WALLIS AND FUTUNA, SOUTH-WEST PACIFIC"
+LAST	Len	"NOTES ON THE LAND REPTILES OF WALLIS AND FUTUNA, SOUTH-WEST PACIFIC"
+LAST	P31	Q13442814
+LAST	P577	+1995-00-00T00:00:00Z/9
+LAST	P2093	"B J Gill"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"32"
+LAST	P304	"55-61"
+LAST	P888	"42906452"
+
+
+CREATE
+LAST	P1476	en:"FIVE NEW SPECIES OF CLIMOCELLA N. GEN. (PUNCTOIDEA: CHAROPIDAE)"
+LAST	Len	"FIVE NEW SPECIES OF CLIMOCELLA N. GEN. (PUNCTOIDEA: CHAROPIDAE)"
+LAST	P31	Q13442814
+LAST	P577	+1995-00-00T00:00:00Z/9
+LAST	P2093	"J F Goulstone"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"32"
+LAST	P304	"63-90"
+LAST	P888	"42906453"
+
+
+CREATE
+LAST	P1476	en:"ISOPODS OF FOUR SEAWEEDS IN THE BAY OF ISLANDS, NEW ZEALAND"
+LAST	Len	"ISOPODS OF FOUR SEAWEEDS IN THE BAY OF ISLANDS, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1995-00-00T00:00:00Z/9
+LAST	P2093	"A Brett Stephenson"	P1545	"1"
+LAST	P2093	"Jenny Riley"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"32"
+LAST	P304	"91-99"
+LAST	P888	"42906454"
+
+
+CREATE
+LAST	P1476	en:"RECORDS CONCERNING BIOLOGICAL CONTROL OF INSECT PESTS BY NEUROPTEROIDEA (INSECTA) IN NEW ZEALAND"
+LAST	Len	"RECORDS CONCERNING BIOLOGICAL CONTROL OF INSECT PESTS BY NEUROPTEROIDEA (INSECTA) IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1995-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"32"
+LAST	P304	"101-117"
+LAST	P888	"42906455"
+
+
+CREATE
+LAST	P1476	en:"BRITISH ARMY AND COLONIAL FORTIFICATIONS IN NORTH TARANAKI, 1863-64"
+LAST	Len	"BRITISH ARMY AND COLONIAL FORTIFICATIONS IN NORTH TARANAKI, 1863-64"
+LAST	P31	Q13442814
+LAST	P577	+1996-00-00T00:00:00Z/9
+LAST	P2093	"Nigel Prickett"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"33"
+LAST	P304	"1-51"
+LAST	P888	"42906458"
+
+
+CREATE
+LAST	P1476	en:"T.F. CHEESEMAN'S DIARY OF A BOTANICAL VISIT TO RAROTONGA, COOK ISLANDS, 1899"
+LAST	Len	"T.F. CHEESEMAN'S DIARY OF A BOTANICAL VISIT TO RAROTONGA, COOK ISLANDS, 1899"
+LAST	P31	Q13442814
+LAST	P577	+1996-00-00T00:00:00Z/9
+LAST	P2093	"B J Gill"	P1545	"1"
+LAST	P2093	"W R Sykes"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"33"
+LAST	P304	"53-78"
+LAST	P888	"42906459"
+
+
+CREATE
+LAST	P1476	en:"CARVED ENTRANCES OF MAORI SEMI-SUBTERRANEAN STOREHOUSES"
+LAST	Len	"CARVED ENTRANCES OF MAORI SEMI-SUBTERRANEAN STOREHOUSES"
+LAST	P31	Q13442814
+LAST	P577	+1996-00-00T00:00:00Z/9
+LAST	P2093	"Roger Neich"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"33"
+LAST	P304	"79-109"
+LAST	P888	"42906460"
+
+
+CREATE
+LAST	P1476	en:"NEW ZEALAND MAORI BARKCLOTH AND BARKCLOTH BEATERS"
+LAST	Len	"NEW ZEALAND MAORI BARKCLOTH AND BARKCLOTH BEATERS"
+LAST	P31	Q13442814
+LAST	P577	+1996-00-00T00:00:00Z/9
+LAST	P2093	"Roger Neich"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"33"
+LAST	P304	"111-158"
+LAST	P888	"42906461"
+
+
+CREATE
+LAST	P1476	en:"A NEW SPECIES OF HALIOTIS (MOLLUSCA) FROM THE EARLY MIOCENE BASAL WAITEMATA BEDS, RODNEY DISTRICT, NORTH AUCKLAND"
+LAST	Len	"A NEW SPECIES OF HALIOTIS (MOLLUSCA) FROM THE EARLY MIOCENE BASAL WAITEMATA BEDS, RODNEY DISTRICT, NORTH AUCKLAND"
+LAST	P31	Q13442814
+LAST	P577	+1996-00-00T00:00:00Z/9
+LAST	P2093	"Michael K Eagle"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"33"
+LAST	P304	"159-171"
+LAST	P888	"42906462"
+
+
+CREATE
+LAST	P1476	en:"SEVEN NEW SPECIES OF CLIMOCELLA (GASTROPODA: PUNCTOIDEA: CHAROPIDAE) FROM NORTHERN NEW ZEALAND"
+LAST	Len	"SEVEN NEW SPECIES OF CLIMOCELLA (GASTROPODA: PUNCTOIDEA: CHAROPIDAE) FROM NORTHERN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1996-00-00T00:00:00Z/9
+LAST	P2093	"J F Goulstone"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"33"
+LAST	P304	"173-194"
+LAST	P888	"42906463"
+
+
+CREATE
+LAST	P1476	en:"SCUTULOIDEA KUTU, A NEW SPECIES OF SPHAEROMATIDAE (ISOPODA: CRUSTACEA) FROM NEW ZEALAND"
+LAST	Len	"SCUTULOIDEA KUTU, A NEW SPECIES OF SPHAEROMATIDAE (ISOPODA: CRUSTACEA) FROM NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1996-00-00T00:00:00Z/9
+LAST	P2093	"A B Stephenson"	P1545	"1"
+LAST	P2093	"J L Riley"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"33"
+LAST	P304	"195-200"
+LAST	P888	"42906464"
+
+
+CREATE
+LAST	P1476	en:"INDEXES TO THE RECORDS OF THE AUCKLAND INSTITUTE AND MUSEUM VOLUMES 1-33, 1930-1996"
+LAST	Len	"INDEXES TO THE RECORDS OF THE AUCKLAND INSTITUTE AND MUSEUM VOLUMES 1-33, 1930-1996"
+LAST	P31	Q13442814
+LAST	P577	+1997-00-00T00:00:00Z/9
+LAST	P2093	"L Furey"	P1545	"1"
+LAST	P2093	"B J Gill"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"34"
+LAST	P888	"42906468"
+
+
+CREATE
+LAST	P1476	en:"Observations on the Structure of Far Northern New Zealand"
+LAST	Len	"Observations on the Structure of Far Northern New Zealand"
+LAST	P31	Q13442814
+LAST	P577	+1956-00-00T00:00:00Z/9
+LAST	P2093	"M H Battey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"309-315"
+LAST	P888	"42906471"
+
+
+CREATE
+LAST	P1476	en:"Some Coleoptera from The Noises Islands, Hauraki Gulf"
+LAST	Len	"Some Coleoptera from The Noises Islands, Hauraki Gulf"
+LAST	P31	Q13442814
+LAST	P577	+1956-00-00T00:00:00Z/9
+LAST	P2093	"J C Watt"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"317-319"
+LAST	P888	"42906472"
+
+
+CREATE
+LAST	P1476	en:"Aquatic Insects of Little Barrier Island"
+LAST	Len	"Aquatic Insects of Little Barrier Island"
+LAST	P31	Q13442814
+LAST	P577	+1956-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"321-327"
+LAST	P888	"42906473"
+
+
+CREATE
+LAST	P1476	en:"Spiders from the Three Kings Islands"
+LAST	Len	"Spiders from the Three Kings Islands"
+LAST	P31	Q13442814
+LAST	P577	+1956-00-00T00:00:00Z/9
+LAST	P2093	"B J Marples"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"329-342"
+LAST	P888	"42906474"
+
+
+CREATE
+LAST	P1476	en:"Notes on the Plumages and Breeding Cycle of the Spotted Shag, Phalacrocorax (Stictocarbo) punctatus punctatus (Sparrman, 1786)"
+LAST	Len	"Notes on the Plumages and Breeding Cycle of the Spotted Shag, Phalacrocorax (Stictocarbo) punctatus punctatus (Sparrman, 1786)"
+LAST	P31	Q13442814
+LAST	P577	+1956-00-00T00:00:00Z/9
+LAST	P2093	"E G Turbott"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"343-363"
+LAST	P888	"42906475"
+
+
+CREATE
+LAST	P1476	en:"Tauihu: The Maori Canoe Prow"
+LAST	Len	"Tauihu: The Maori Canoe Prow"
+LAST	P31	Q13442814
+LAST	P577	+1956-00-00T00:00:00Z/9
+LAST	P2093	"Gilbert Archey"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"365-379"
+LAST	P888	"42906476"
+
+
+CREATE
+LAST	P1476	en:"The Three Kings Cabbage Tree"
+LAST	Len	"The Three Kings Cabbage Tree"
+LAST	P31	Q13442814
+LAST	P577	+1956-00-00T00:00:00Z/9
+LAST	P2093	"W R B Oliver"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"4"
+LAST	P304	"381-382"
+LAST	P888	"42906477"
+
+
+CREATE
+LAST	P1476	en:"MAORI FORTIFICATIONS OF THE OKATO DISTRICT, TARANAKI"
+LAST	Len	"MAORI FORTIFICATIONS OF THE OKATO DISTRICT, TARANAKI"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"Nigel Prickett"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"1-39"
+LAST	P888	"42906514"
+
+
+CREATE
+LAST	P1476	en:"AN ARCHAEOLOGICAL RECONNAISSANCE OF THE SHORE WHALING INDUSTRY ON KAPITI ISLAND, NEW ZEALAND"
+LAST	Len	"AN ARCHAEOLOGICAL RECONNAISSANCE OF THE SHORE WHALING INDUSTRY ON KAPITI ISLAND, NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"Nigel Prickett"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"41-63"
+LAST	P888	"42906515"
+
+
+CREATE
+LAST	P1476	en:"EXCAVATIONS AT AOTEA, WAIKATO, 1972-75"
+LAST	Len	"EXCAVATIONS AT AOTEA, WAIKATO, 1972-75"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"Aileen Fox"	P1545	"1"
+LAST	P2093	"Richard Cassels"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"65-106"
+LAST	P888	"42906516"
+
+
+CREATE
+LAST	P1476	en:"RADIOCARBON DATES FOR MAIORO, N51/5, SOUTH AUCKLAND, 1965-66"
+LAST	Len	"RADIOCARBON DATES FOR MAIORO, N51/5, SOUTH AUCKLAND, 1965-66"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"R C Green"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"107-114"
+LAST	P888	"42906517"
+
+
+CREATE
+LAST	P1476	en:"A PLACE OF RITUAL ON THE WESTERN SHORES OF LAKE TAUPO"
+LAST	Len	"A PLACE OF RITUAL ON THE WESTERN SHORES OF LAKE TAUPO"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"115-121"
+LAST	P888	"42906518"
+
+
+CREATE
+LAST	P1476	en:"WHAKAPAKOKO RAKAU: Godsticks"
+LAST	Len	"WHAKAPAKOKO RAKAU: Godsticks"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"D R Simmons"	P1545	"1"
+LAST	P2093	"Te Riria"	P1545	"2"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"123-145"
+LAST	P888	"42906519"
+
+
+CREATE
+LAST	P1476	en:"THREE SQUARE PIANOFORTES IN THE AUCKLAND INSTITUTE AND MUSEUM"
+LAST	Len	"THREE SQUARE PIANOFORTES IN THE AUCKLAND INSTITUTE AND MUSEUM"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"Angela R Annabell"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"147-163"
+LAST	P888	"42906520"
+
+
+CREATE
+LAST	P1476	en:"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 9"
+LAST	Len	"NEW AND INTERESTING RECORDS OF ADVENTIVE PLANTS FROM THE AUCKLAND INSTITUTE AND MUSEUM HERBARIUM 9"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"E B Bangerter"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"165-174"
+LAST	P888	"42906521"
+
+
+CREATE
+LAST	P1476	en:"CONSERVATION STATUS OF THE THREE KINGS ISLANDS ENDEMIC FLORA IN 1982"
+LAST	Len	"CONSERVATION STATUS OF THE THREE KINGS ISLANDS ENDEMIC FLORA IN 1982"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"A E Wright"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"175-184"
+LAST	P888	"42906522"
+
+
+CREATE
+LAST	P1476	en:"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 11"
+LAST	Len	"THE TAXONOMY OF SOME INDO-PACIFIC MOLLUSCA: PART 11"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"W O Cernohorsky"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"185-202"
+LAST	P888	"42906523"
+
+
+CREATE
+LAST	P1476	en:"TYPE SPECIMENS OF AMPHIBIANS, REPTILES, BIRDS AND MAMMALS IN THE AUCKLAND INSTITUTE AND MUSEUM"
+LAST	Len	"TYPE SPECIMENS OF AMPHIBIANS, REPTILES, BIRDS AND MAMMALS IN THE AUCKLAND INSTITUTE AND MUSEUM"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"B J Gill"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"203-215"
+LAST	P888	"42906524"
+
+
+CREATE
+LAST	P1476	en:"INTERACTION BETWEEN AN ICHNEUMONID WASP AND THE AUSTRALIAN TONGUE ORCHID IN NEW ZEALAND"
+LAST	Len	"INTERACTION BETWEEN AN ICHNEUMONID WASP AND THE AUSTRALIAN TONGUE ORCHID IN NEW ZEALAND"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"D K F Graham"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"217-222"
+LAST	P888	"42906525"
+
+
+CREATE
+LAST	P1476	en:"TRANS-OCEANIC INSECT DISPERSAL: 1. Trapping and collecting on ships in the South Pacific Ocean, 1974-1979"
+LAST	Len	"TRANS-OCEANIC INSECT DISPERSAL: 1. Trapping and collecting on ships in the South Pacific Ocean, 1974-1979"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"223-254"
+LAST	P888	"42906526"
+
+
+CREATE
+LAST	P1476	en:"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND: 1. Three new northern distribution records"
+LAST	Len	"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND: 1. Three new northern distribution records"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"255-257"
+LAST	P888	"42906527"
+
+
+CREATE
+LAST	P1476	en:"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND: 2. Fauna of the northern offshore islands"
+LAST	Len	"LACEWINGS AND AQUATIC INSECTS OF NEW ZEALAND: 2. Fauna of the northern offshore islands"
+LAST	P31	Q13442814
+LAST	P577	+1983-00-00T00:00:00Z/9
+LAST	P2093	"K A J Wise"	P1545	"1"
+LAST	P1433	Q15214730
+LAST	P478	"20"
+LAST	P304	"259-271"
+LAST	P888	"42906528"
+
+

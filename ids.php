@@ -5,6 +5,8 @@
 require_once (dirname(__FILE__) . '/wikidata.php');
 
 $filename = '1174-9202.tsv';
+$filename = 'quickstatements/0067-0464.tsv';
+
 
 $file_handle = fopen($filename, "r");
 while (!feof($file_handle)) 

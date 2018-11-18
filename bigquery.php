@@ -4,13 +4,18 @@
 
 
 $issn = '1174-9202';
+$issn = '0001-804X';
 
 $queries = array();
 
 $queries['works'] = 
 'SELECT ?work ?issn (group_concat(?author;separator=";") as ?authors) ?title ?volume ?issue ?pages ?doi 
 	WHERE {
+
 	VALUES ?issn {"' . strtoupper($issn) . '"} 
+	VALUES ?volume {"5"} 
+
+
 	?container wdt:P236 ?issn .
   ?work wdt:P1433 ?container .
   
