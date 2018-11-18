@@ -278,6 +278,13 @@ function csljson_to_wikidata($work, $check = true)
 
 	$quickstatements = '';
 	
+	// Map language codes to Wikidata items
+	$language_map = array(
+		'en' => 'Q1860',
+		'fr' => 'Q150',
+		'de' => 'Q188'
+	);
+	
 
 	// Do we have this already in wikidata?
 	$item = '';
@@ -367,7 +374,7 @@ $this->props = array(
 		'volume' 	=> 'P478',
 		'issue' 	=> 'P433',
 		'page' 		=> 'P304',
-		'PDF'		=> 'P953'
+		'PDF'		=> 'P953',
 	);
 	
 	// Need to think how to handle multi tag
@@ -414,30 +421,41 @@ $this->props = array(
 						$title = $v[0];
 					}				
 				
-					// assume English
-					$language = 'en';
-					
+					// We always want a title for the English language, even if
+					// it isn't English
+					$language = 'en';					
 					$title = strip_tags($title);
 					
-					
-					if (1)
-					{
-						// test language 
-						$ld = new Language(['fr', 'en']);
-						
-						//$object = $ld->detect($title);
-						//echo json_encode($object, JSON_PRETTY_PRINT);
-						
-						$language = $ld->detect($title)->__toString();
-						
-					}
-					
-					
-			
 					// title
 					$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
 					// label
 					$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
+										
+					
+					if (1)
+					{
+						// Detect language of title
+						$ld = new Language(['fr', 'en', 'de']);						
+						$language = $ld->detect($title)->__toString();
+						
+						if ($language == 'en')
+						{
+							// Assume work is English
+							$w[] = array('P407' => $language_map[$language]);
+						}
+						else											
+						{
+							// title
+							$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
+							// label
+							$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
+							
+							// language of work (assume it is the same as the title)
+							$w[] = array('P407' => $language_map[$language]);
+						}	
+					}
+					
+			
 				}
 				break;
 				
