@@ -1,6 +1,7 @@
 {
     "require": {
         "php": "^7.1",
-        "patrickschur/language-detection": "^3.4"
+        "patrickschur/language-detection": "^3.4",
+        "digitalbazaar/json-ld": "0.4.7"
     }
 }
