@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>baseURL</key>
+	<string>http://biostor.org/api_openurl.php?ctx_ver=Z39.88-2004&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:journal&amp;genre=article&amp;rft.atitle=Chicoreus+%28Triplex%29+setionoi+n.+sp.+%28Gastropoda%3A+Muricidae%29+from+Arafura+Sea%2C+Pacific+Ocean&amp;rft.jtitle=Novapex&amp;rft.issn=1375-7474&amp;rft.volume=2&amp;rft.spage=145&amp;rft.epage=148&amp;rft.aulast=Houart&amp;rft.aufirst=Roland&amp;rft.au=Roland+Houart&amp;rft.date=2001&amp;redirect=false</string>
+	<key>followRedirect</key>
+	<true/>
+	<key>handleJSONPCallbacks</key>
+	<false/>
+	<key>headers</key>
+	<array/>
+	<key>httpMethod</key>
+	<string>GET</string>
+	<key>jsonpScript</key>
+	<string></string>
+	<key>paramBodyUIChoice</key>
+	<integer>0</integer>
+	<key>parameters</key>
+	<array>
+		<dict>
+			<key>inUse</key>
+			<true/>
+			<key>parameter</key>
+			<string>redirect</string>
+			<key>value</key>
+			<string>false</string>
+		</dict>
+	</array>
+	<key>parametersType</key>
+	<integer>0</integer>
+	<key>presentBeforeChallenge</key>
+	<false/>
+	<key>stringEncoding</key>
+	<integer>4</integer>
+	<key>usingHTTPBody</key>
+	<false/>
+</dict>
+</plist>
