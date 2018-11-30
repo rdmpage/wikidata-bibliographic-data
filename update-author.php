@@ -214,6 +214,7 @@ while (!feof($file_handle))
 //print_r($data);
 
 $issn = '1174-9202';
+$issn = '0067-0464'; // Records of the Auckland Institute and Museum
 
 $done = array();
 
