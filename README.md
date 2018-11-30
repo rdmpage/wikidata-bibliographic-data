@@ -9,6 +9,18 @@ For some works we will have information on title in different language and can a
 
 To get a copy of the mapping between identifiers (e.g., DOIs, JSTOR) and/or metadata (e.g., journal, volume, page number) and Wikidata items we run a SPARQL query using bigquery.php which returns as TSV file with enough information to update the lcoal database. Use parse-query-result.php to generate the SQL statements to update local database.
 
+## Add cited works that lack a DOI
+
+Adding cited works that have DOIs is easy if those works also occur in Wikidata. But what about works that lack DOIs and/or are not it Wikidata? Seems we can add cited works that lack Wikidata items by setting the value of “cites” to “unknown value”. To do this is Quickstatements is tricky, but it seems we can use https://www.wikidata.org/wiki/Q53569537 which is ```placeholder for <somevalue>```. Using this enables us to add qualifiers, such as series ordinal and stated as to the citation. 
+
+```
+Q42258926	P2860	Q53569537	P1545	"5"	P1932	"Kiew R (2014) Two new species and one new subspecies of Ridleyandra (Gesneriaceae) from Peninsular Malaysia. Gardens’ Bulletin Singapore 66: 125–135."
+```
+
+We should also look at adding a reference URL as well so users can see where the information came from.
+
+Note also that can only run this one reference at a time, otherwise we get all the qualifiers attached to a single citation (the challenge here is how do we uniquely identify what is essentially a b-node?).
+
 
 ## Examples
 
