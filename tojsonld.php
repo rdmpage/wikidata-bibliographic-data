@@ -382,12 +382,12 @@ $doc = jsonld_from_rdf($nt, array('format' => 'application/nquads'));
 // Frame it-------------------------------------------------------------------------------
 
 
-// Identifier is alsways an array
+// Identifier is always an array
 $identifier = new stdclass;
 $identifier->{'@id'} = "http://schema.org/identifier";
 $identifier->{'@container'} = "@set";
 	
-// Creator is alsways an array
+// Creator is always an array
 $creator = new stdclass;
 $creator->{'@id'} = "http://schema.org/creator";
 $creator->{'@container'} = "@set";
@@ -411,6 +411,7 @@ $frame = (object)array(
 
 $framed = jsonld_frame($doc, $frame);
 
+// Note JSON_UNESCAPED_UNICODE so that, for example, Chinese characters are not escaped
 echo json_encode($framed, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 echo "\n";
 
