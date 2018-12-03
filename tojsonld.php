@@ -28,6 +28,48 @@ function get($url, $user_agent='', $content_type = '')
 }
 
 //----------------------------------------------------------------------------------------
+// get Wikidata record for person
+function get_wikidata_author_ld($qid)
+{
+	$url = 'https://www.wikidata.org/wiki/Special:EntityData/' . $qid . '.json';
+
+	$json = get($url);
+
+	$obj = json_decode($json);
+	
+	$author = new stdclass;
+	$author->id = 'https://www.wikidata.org/wiki/' . $qid;
+	
+	$author->names = array();
+	
+	foreach ($obj->entities->{$qid}->labels as $language => $label)
+	{
+		$author->names[] = '"' . $label->value . '"@' . $language;	
+	}
+
+	foreach ($obj->entities->{$qid}->claims as $p => $claims)
+	{
+		switch ($p)
+		{
+				
+			// ORCID
+			case 'P496':
+				foreach ($claims as $claim)
+				{
+					$author->orcid = $claim->mainsnak->datavalue->value;
+				}			
+				break;
+				
+
+			default:
+				break;
+		}
+	}	
+	
+	return $author;
+}	
+
+//----------------------------------------------------------------------------------------
 // get Wikidata record
 function get_wikidata_container_ld(&$triples, $qid)
 {
@@ -242,6 +284,19 @@ function get_wikidata_work_ld(&$triples, $qid)
 				}			
 				break;
 				
+			case 'P50':
+				foreach ($claims as $claim)
+				{
+					$author = get_wikidata_author_ld($claim->mainsnak->datavalue->value->id);
+					
+					if (isset($claim->qualifiers->P1545))
+					{
+						$order = $claim->qualifiers->P1545[0]->datavalue->value;
+						$authors[$order] = $author;
+					}
+						
+				}			
+				break;
 
 			// date
 			case 'P577':
@@ -309,13 +364,49 @@ function get_wikidata_work_ld(&$triples, $qid)
 	
 	}
 	
-	print_r($authors);
+	ksort($authors);
+	//print_r($authors);
 	
 	foreach ($authors as $k => $v)
 	{
 		if (is_object($v))
 		{
+			$id = '<' . $v->id . '>';
+
+			$triple = array();
+			$triple[] = $subject;
+			$triple[] = '<http://schema.org/creator>';					
+			$triple[] = $id;
+	
+			$triples[] = $triple;
+	
+			$triple = array();
+			$triple[] = $id;
+			$triple[] = '<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>';					
+			$triple[] = '<http://schema.org/Person>';
+				
+			$triples[] = $triple;
 		
+			foreach ($v->names as $name)
+			{
+				$triple = array();
+				$triple[] = $id;
+				$triple[] = '<http://schema.org/name>';					
+				$triple[] = $name;
+			
+				$triples[] = $triple;
+			}
+			
+			if (isset($v->orcid))
+			{
+				$triple = array();
+				$triple[] = $id;
+				$triple[] = '<http://schema.org/sameAs>';					
+				$triple[] = '"https://orcid.org/' . $v->orcid . '"';
+			
+				$triples[] = $triple;
+				
+			}
 		}
 		else
 		{
@@ -350,7 +441,7 @@ function get_wikidata_work_ld(&$triples, $qid)
 
 $qid = 'Q58837514';
 
-//$qid = 'Q42258926';
+$qid = 'Q42258926';
 
 $qid = 'Q58676985';
 
@@ -392,12 +483,19 @@ $creator = new stdclass;
 $creator->{'@id'} = "http://schema.org/creator";
 $creator->{'@container'} = "@set";
 
+// Creator is always an array
+$sameAs = new stdclass;
+$sameAs->{'@id'} = "http://schema.org/sameAs";
+$sameAs->{'@container'} = "@set";
+
+
 // Context to set vocab to schema
 $context = new stdclass;
 $context->{'@vocab'} = "http://schema.org/";
 
 $context->creator = $creator;
 $context->identifier = $identifier;
+$context->sameAs = $sameAs;
 
 $frame = (object)array(
 	'@context' => $context,
