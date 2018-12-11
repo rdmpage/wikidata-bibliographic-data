@@ -1,5 +1,7 @@
 <?php
 
+// Wikidata item to JSON-LD
+
 require_once 'vendor/autoload.php';
 
 //----------------------------------------------------------------------------------------
@@ -472,7 +474,6 @@ $doc = jsonld_from_rdf($nt, array('format' => 'application/nquads'));
 
 // Frame it-------------------------------------------------------------------------------
 
-
 // Identifier is always an array
 $identifier = new stdclass;
 $identifier->{'@id'} = "http://schema.org/identifier";
@@ -487,7 +488,6 @@ $creator->{'@container'} = "@set";
 $sameAs = new stdclass;
 $sameAs->{'@id'} = "http://schema.org/sameAs";
 $sameAs->{'@container'} = "@set";
-
 
 // Context to set vocab to schema
 $context = new stdclass;
@@ -505,28 +505,11 @@ $frame = (object)array(
 
 );	
 
-
-
 $framed = jsonld_frame($doc, $frame);
 
 // Note JSON_UNESCAPED_UNICODE so that, for example, Chinese characters are not escaped
 echo json_encode($framed, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 echo "\n";
-
-/*
-// Make pretty----------------------------------------------------------------------------
-$context = (object)array(
-	'@vocab' => 'http://schema.org/',
-	'wikidata' => 'https://www.wikidata.org/wiki/',
-);	
-
-$compacted = jsonld_compact($framed, $context);
-
-echo json_encode($compacted, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-
-echo "\n";
-
-*/
 
 
 ?>
