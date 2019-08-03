@@ -16,7 +16,12 @@ function get($url, $user_agent='', $content_type = '')
 
 	if ($content_type != '')
 	{
-		$opts[CURLOPT_HTTPHEADER] = array("Accept: " . $content_type);
+		
+		$opts[CURLOPT_HTTPHEADER] = array(
+			"Accept: " . $content_type, 
+			"User-agent: Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Mobile/7B405" 
+		);
+		
 	}
 	
 	$ch = curl_init();
@@ -215,7 +220,7 @@ function wikidata_item_from_orcid($orcid)
 	
 	$sparql = 'SELECT * WHERE { ?author wdt:P496 "' . $orcid . '" }';
 	
-	// echo $sparql . "\n";
+	//echo $sparql . "\n";
 	
 	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
 	$json = get($url, '', 'application/json');
@@ -418,56 +423,65 @@ $this->props = array(
 					$title = $v;
 					if (is_array($v))
 					{
-						$title = $v[0];
+						if (count($v) == 0)
+						{
+							$title = '';
+						}
+						{
+							$title = $v[0];
+						}
 					}				
-				
-					// We always want a title for the English language, even if
-					// it isn't English
-					$language = 'en';					
-					$title = strip_tags($title);
 					
-					/*
-					// title
-					$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
-					// label
-					$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
-					*/
+					if ($title != '')
+					{
+				
+						// We always want a title for the English language, even if
+						// it isn't English
+						$language = 'en';					
+						$title = strip_tags($title);
+					
+						/*
+						// title
+						$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
+						// label
+						$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
+						*/
 										
 					
-					if (1)
-					{
-						// Detect language of title
-						$ld = new Language(['fr', 'en', 'de']);						
-						$language = $ld->detect($title)->__toString();
+						if (1)
+						{
+							// Detect language of title
+							$ld = new Language(['fr', 'en', 'de']);						
+							$language = $ld->detect($title)->__toString();
 						
-						if ($language == 'en')
-						{
-							// Assume work is English
-							$w[] = array('P407' => $language_map[$language]);
+							if ($language == 'en')
+							{
+								// Assume work is English
+								$w[] = array('P407' => $language_map[$language]);
 
-							// title
-							$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
-							// label
-							$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
+								// title
+								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
+								// label
+								$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
 							
 							
+							}
+							else											
+							{
+								// title
+								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
+								// label
+								$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
+							
+								// language of work (assume it is the same as the title)
+								$w[] = array('P407' => $language_map[$language]);							
+							
+								// add label in English anyway
+								$w[] = array('Len' => '"' . addcslashes($title, '"') . '"');
+							
+							}	
 						}
-						else											
-						{
-							// title
-							$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
-							// label
-							$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
-							
-							// language of work (assume it is the same as the title)
-							$w[] = array('P407' => $language_map[$language]);							
-							
-							// add label in English anyway
-							$w[] = array('Len' => '"' . addcslashes($title, '"') . '"');
-							
-						}	
-					}
-					
+					}					
 			
 				}
 				break;
@@ -500,6 +514,8 @@ $this->props = array(
 						{
 							$orcid = $author->ORCID;
 							$orcid = preg_replace('/https?:\/\/orcid.org\//', '', $orcid);
+							
+							// echo "orcid =$orcid\n"; 
 						
 							$author_item = wikidata_item_from_orcid($orcid);
 						
@@ -691,6 +707,7 @@ $this->props = array(
 			case 'reference':
 				foreach ($v as $reference)
 				{
+					/*
 					if (isset($reference->DOI))
 					{
 						// for now just see if this already exists
@@ -700,6 +717,7 @@ $this->props = array(
 							$w[] = array('P2860' => $cited);
 						}					
 					}
+					*/
 				}
 				break;
 				
@@ -860,7 +878,191 @@ function get_work($doi)
 
 //----------------------------------------------------------------------------------------
 
+
+// fix
+if (0)
+{
+
+	$dois=array(
+	'10.1071/is07053',
+	'10.1071/is02015',
+	'10.1071/is05024',
+	'10.1071/is05035',
+	'10.1071/is05035',
+	'10.1071/is04021',
+	'10.1071/is05056',
+	'10.1071/it00036',
+	'10.1071/it01004',
+	'10.1071/is10034',
+	'10.1071/is16046',
+	'10.1071/is10044',
+	'10.1071/it01029',
+	'10.1071/is15047',
+	'10.1071/it01039',
+	'10.1071/is07018',
+	'10.1071/is05022',
+	'10.1071/is15039',
+	'10.1071/is11037',
+	'10.1071/is05005',
+	'10.1071/is05005',
+	'10.1071/is05005',
+	'10.1071/is16006',
+	'10.1071/is15046',
+	'10.1071/is15028',
+	'10.1071/is15028',
+	'10.1071/is10013',
+	'10.1071/is06031',
+	'10.1071/is07039',
+	'10.1071/is15011',
+	'10.1071/is14021',
+	'10.1071/is14025',
+	'10.1071/is14025',
+	'10.1071/is14025',
+	'10.1071/is14025',
+	'10.1071/is14025',
+	'10.1071/is14025',
+	'10.1071/is04020',
+	'10.1071/is14043',
+	'10.1071/it01038',
+	'10.1071/is02007',
+	'10.1071/is08028',
+	'10.1071/is12008',
+	'10.1071/is16054',
+	'10.1071/is05019',
+	'10.1071/is07016',
+	'10.1071/is05033',
+	'10.1071/is10035',
+	'10.1071/is14036',
+	'10.1071/is03008',
+	'10.1071/is04009',
+	'10.1071/it01043',
+	'10.1071/is02008',
+	'10.1071/is03005',
+	'10.1071/is04010',
+	'10.1071/is03005'
+	);
+
+	foreach ($dois as $doi)
+	{
+		$item = wikidata_item_from_doi($doi);
+		
+		if ($item != '')
+		{
+			echo $item . "\n";
+		}
+	}
+
+}
+
 // tests
+if (1)
+{
+
+	// add to Wikidata via DOI
+	$dois=array(
+	'10.1071/is07053',
+	'10.1071/is02015',
+	'10.1071/is05024',
+	'10.1071/is05035',
+	'10.1071/is05035',
+	'10.1071/is04021',
+	'10.1071/is05056',
+	'10.1071/it00036',
+	'10.1071/it01004',
+	'10.1071/is10034',
+	'10.1071/is16046',
+	'10.1071/is10044',
+	'10.1071/it01029',
+	'10.1071/is15047',
+	'10.1071/it01039',
+	'10.1071/is07018',
+	'10.1071/is05022',
+	'10.1071/is15039',
+	'10.1071/is11037',
+	'10.1071/is05005',
+	'10.1071/is05005',
+	'10.1071/is05005',
+	'10.1071/is16006',
+	'10.1071/is15046',
+	'10.1071/is15028',
+	'10.1071/is15028',
+	'10.1071/is10013',
+	'10.1071/is06031',
+	'10.1071/is07039',
+	'10.1071/is15011',
+	'10.1071/is14021',
+	'10.1071/is14025',
+	'10.1071/is14025',
+	'10.1071/is14025',
+	'10.1071/is14025',
+	'10.1071/is14025',
+	'10.1071/is14025',
+	'10.1071/is04020',
+	'10.1071/is14043',
+	'10.1071/it01038',
+	'10.1071/is02007',
+	'10.1071/is08028',
+	'10.1071/is12008',
+	'10.1071/is16054',
+	'10.1071/is05019',
+	'10.1071/is07016',
+	'10.1071/is05033',
+	'10.1071/is10035',
+	'10.1071/is14036',
+	'10.1071/is03008',
+	'10.1071/is04009',
+	'10.1071/it01043',
+	'10.1071/is02008',
+	'10.1071/is03005',
+	'10.1071/is04010',
+	'10.1071/is03005'
+	);
+
+	$dois=array(
+	'10.12681/eh.11534'
+	);
+
+	$dois=array(
+	'10.1080/0028825X.2019.1587474'
+	);
+
+	$dois=array(
+	'10.1111/j.1096-3642.1979.tb01909.x'
+	);
+
+$dois=array(
+'10.1163/187631208788784318'
+);
+
+$dois=array(
+'10.1111/syen.12241'
+);
+
+	/*
+	$dois = array(
+	'10.1071/IS02015'
+	);
+	*/
+
+	foreach ($dois as $doi)
+	{
+		$work = get_work($doi);
+	
+		//print_r($work);
+	
+		if ($work)
+		{
+			// print_r($work);
+			$q = csljson_to_wikidata($work);
+		
+			echo $q;
+			echo "\n";
+		}
+	}	
+	
+}
+
+
 if (0)
 {
 
@@ -949,30 +1151,38 @@ if ($work)
 }
 */
 
-// JSTOR-based journal
-
-$issn = '1174-9202';
-$works = works_for_journal($issn);
-print_r($works);
-
-$guid = 'http://www.jstor.org/stable/42905863';
-
-$guid = urlencode('http://www.guihaia-journal.com/ch/reader/view_abstract.aspx?file_no=1986Z1003&flag=1');
-
-$guid = urlencode('http://www.guihaia-journal.com/ch/reader/view_abstract.aspx?file_no=20070426&flag=1');
 
 
-$json = get('http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . $guid);
+if (0)
+{
+	// JSTOR-based journal
+
+	$issn = '1174-9202';
+	$works = works_for_journal($issn);
+	print_r($works);
+}
+
+if (0)
+{
+	$guid = 'http://www.jstor.org/stable/42905863';
+
+	$guid = urlencode('http://www.guihaia-journal.com/ch/reader/view_abstract.aspx?file_no=1986Z1003&flag=1');
+
+	$guid = urlencode('http://www.guihaia-journal.com/ch/reader/view_abstract.aspx?file_no=20070426&flag=1');
 
 
-$obj = json_decode($json);
+	$json = get('http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . $guid);
 
-//print_r($obj);
 
-$work = new stdclass;
-$work->message = $obj;
+	$obj = json_decode($json);
 
-csljson_to_wikidata($work);
+	//print_r($obj);
+
+	$work = new stdclass;
+	$work->message = $obj;
+
+	csljson_to_wikidata($work);
+}
 
 }
 
