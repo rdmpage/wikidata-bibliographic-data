@@ -561,7 +561,21 @@ $this->props = array(
 							}
 							$name = join(' ', $parts);				
 						}
-						$w[] = array('P2093' => '"' . addcslashes($name, '"') . '"' . "\tP1545\t\"$count\"");
+						
+						$qualifier = "\tP1545\t\"$count\"";
+						
+						if (isset($author->affiliation))
+						{
+							foreach ($author->affiliation as $affiliation)
+							{
+								if (isset($affiliation->name))
+								{
+									$qualifier .= "\tP6424\t\"" . addcslashes($affiliation->name, '"') . '"';
+								}
+							}						
+						}						
+						
+						$w[] = array('P2093' => '"' . addcslashes($name, '"') . '"' . $qualifier);
 					}
 					$count++;
 				}
@@ -707,7 +721,7 @@ $this->props = array(
 			case 'reference':
 				foreach ($v as $reference)
 				{
-					/*
+					
 					if (isset($reference->DOI))
 					{
 						// for now just see if this already exists
@@ -717,7 +731,7 @@ $this->props = array(
 							$w[] = array('P2860' => $cited);
 						}					
 					}
-					*/
+					
 				}
 				break;
 				
