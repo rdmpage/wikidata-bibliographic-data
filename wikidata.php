@@ -297,7 +297,7 @@ function csljson_to_wikidata($work, $check = true)
 	if ($check)
 	{
 	
-	
+		// DOI
 		if (isset($work->message->DOI))
 		{
 			$item = wikidata_item_from_doi($work->message->DOI);
@@ -380,12 +380,14 @@ $this->props = array(
 		'issue' 	=> 'P433',
 		'page' 		=> 'P304',
 		'PDF'		=> 'P953',
+		'ARCHIVE'	=> 'P724',
 	);
 	
 	// Need to think how to handle multi tag
 	
 	foreach ($work->message as $k => $v)
 	{
+	
 		switch ($k)
 		{
 			case 'type':
@@ -602,6 +604,11 @@ $this->props = array(
 			case 'JSTOR':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
+				
+			case 'ARCHIVE':
+				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
+				break;
+				
 				
 			// BioStor CSL-JSON
 			case 'bhl_pages':
@@ -969,7 +976,7 @@ if (0)
 }
 
 // tests
-if (1)
+if (0)
 {
 
 	// add to Wikidata via DOI
@@ -1044,13 +1051,19 @@ if (1)
 	'10.1111/j.1096-3642.1979.tb01909.x'
 	);
 
-$dois=array(
-'10.1163/187631208788784318'
-);
+	$dois=array(
+	'10.1163/187631208788784318'
+	);
 
-$dois=array(
-'10.1111/syen.12241'
-);
+	$dois=array(
+	'10.1111/syen.12241'
+	);
+
+	$dois=array(
+	//'10.1023/A:1024669103815'
+	//'10.1023/a:1003296302957'
+	'10.1080/23802359.2018.1545547'
+	);
 
 	/*
 	$dois = array(
@@ -1074,6 +1087,160 @@ $dois=array(
 		}
 	}	
 	
+}
+
+// Microcitations
+if (1)
+{
+	$guids=array(
+'http://docs.niwa.co.nz/library/public/Memoir%20110_Marine%20Fauna%20of%20NZ_Cephalopoda%20(Giant%20Squid)%20-%201998.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20109_The%20Marine%20Fauna%20of%20NZ_Pycnogonida%20(Sea%20Spiders).pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20108_Marine%20Fauna%20of%20Ross%20Sea_Polychaeta%20-%201998.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20107_The%20Marine%20Fauna%20of%20NZ_Porifera_Demospongiae%20Part%205_Dendroceratida%20and%20Halisarcida.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20106_The%20Marine%20Fauna%20of%20NZ_Athecate%20Hydroids%20and%20their%20Medusae%20(Cnidaria-Hydrozoa).pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20105_Marine%20Fauna%20of%20NZ_Index%20to%20the%20Fauna_Mollusca%20-%201995.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20104_Pelagic%20Copepoda.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20103_Scletactinia_of_New_Zealand%20-%201995.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20102_Pelagic%20Calanoid%20Copepoda%20(1).pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20101_Marine%20Fauna%20of%20NZ_Chaetognatha%20(Arrow%20Worms)%20-%201993.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20100_Marine%20Fauna%20of%20NZ_Index%20to%20the%20Porifera%20-%201993.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20099_The%20Marine%20Fauna%20of%20New%20Zealand%20-%20Index%20to%20the%20Fauna%201%20-%20Protozoa%20-%201992.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20098_Stylasteridae_of_New_Zealand%20-%201991.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20097_Marine%20Fauna%20of%20NZ_Bryozoa_Gymnolaemata%20from%20the%20Western%20South%20Island%20Shelf%20and%20Slope%20-%201989.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20096_Marine%20Fauna%20of%20NZ_Porifera,%20Demospongiae,%20Part%204%20(Poecilosclerida)%20-%201988.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20095_Marine%20Fauna%20of%20NZ_Bryozoa_Gymnolaemata%20from%20the%20Western%20South%20Island%20Shelf%20and%20Slope%20-%201986.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20094_Marine%20Fauna%20of%20NZ_Deep%20Sea%20Isopoda%20Asellota%20-%201985.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20093_Sedimentation_of_the_South_Otago_Continental_Shelf%20-%201985.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20092_Marine%20Fauna%20of%20NZ_Larvae%20of%20the%20Brachyura%20(Decapoda)%20-%201985.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20091_Marine%20Fauna%20of%20NZ_Bryozoa_Gymnolaemata%20from%20the%20Kermadec%20Ridge%20-%201984.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20090_Marine%20Fauna%20of%20NZ_Pelagic%20Calanoid%20Copepods%20-%201983.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20089_Late%20Quarternary%20Stratigraphy%20and%20Sedimentation%20of%20the%20Canterbury%20Continental%20Shelf,%20New%20Zealand.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20088_Physical%20Oceanography%20of%20the%20New%20Zealand%20Fiords.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20087_The%20Marine%20Fauna%20of%20New%20Zealand_Porifera,%20Demospongiae,%20Part%203%20(Haplosclerida%20and%20Nepheliospongida).pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20086_The%20Marine%20Fauna%20of%20New%20Zealand_Pelagic%20Alanoid%20Copepods_Family%20Aetideidae.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20085_The%20Marine%20Fauna%20of%20New%20Zealand_Ascidiacea.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20084_Foraminifera%20on%20the%20Continental%20Shelf%20and%20Slope%20off%20Southern%20Hawke\'s%20Bay,%20New%20Zealand.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20083_The%20Hydraulic%20Regime%20and%20its%20Potential%20to%20Transport%20Sediment%20on%20the%20Canterbury%20Continental%20Shelf.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20082_The%20Marine%20Fauna%20of%20New%20Zealand_Bethnic%20Ostracoda%20(Suborder%20Myodocopina).pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20081_Late%20Cenozoic%20Geology%20of%20the%20West%20Coast%20Shelf%20-%201978.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20080_Soft-bottom%20Bethnic%20Communities%20in%20Otago%20Harbour%20and%20Blueskin%20Bay,%20New%20Zealand.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20079_Fiord%20Studies%20Caswell%20and%20Nancy%20Sounds%20NZ%20-%201978.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20078_%20The%20Marine%20Fauna%20of%20New%20Zealand_Ostracods%20of%20the%20Otago%20Shelf.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20077_Distribution%20and%20Morphology%20of%20Chatham%20Rise%20Phosphorites.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20076_Catalogue%20of%20type%20and%20figured%20specimens%20in%20NZOI%20-%201979.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20075_Hydrology%20of%20the%20Bounty%20Islands%20Region.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20074_Checklist%20of%20NZ%20Lakes%20-%201975.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20073_Hydrology%20of%20the%20Kermadec%20Islands%20Region.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20072_Oceanic%20Circulation%20and%20Hydrology%20off%20the%20Southern%20Half%20of%20South%20Island,%20New%20Zealand.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20071_Comprehensive%20Bibliography%20of%20Marine%20Manganese%20Nodules.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20070_Settlement%20and%20Succession%20on%20Rocky%20Shores%20at%20Auckland,%20North%20Island,%20New%20Zealand.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20063_Marine%20Fauna%20of%20NZ_Sphaeromatidae%20(Isopoda)%20-%201977.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20062_The%20Marine%20Fauna%20of%20NZ%20Algae%20Living%20Littoral%20Gammaridea%20(Crustacea%20Amphipoda)%20-%201972.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20061_The%20Marine%20Fauna%20of%20New%20Zealand_Macrourid%20Fishes%20(Pisces-Gadida).pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20060_Internal%20Structure%20in%20Marine%20Shelf,%20Slope,%20and%20Abyssal%20Sediments%20East%20of%20New%20Zealand.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20059_The%20Fauna%20of%20the%20Ross%20Sea_Part%208.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20058_Hydrological%20Studies%20in%20the%20New%20Zealand%20Region%201966%20and%201967.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20057_Biological%20Results%20of%20the%20Chatham%20Islands%201954%20Expedition.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20056_Hydrology%20of%20the%20Southern%20Kermadec%20Trench%20Region.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20055_Oceanic%20Circulation%20off%20the%20East%20Coast%20of%20New%20Zealand.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20054_Systematics%20and%20Ecology%20of%20NZ%20Kaikoura%20Plankton%20-%201972.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20053_Zooplankton%20and%20Hydrology%20of%20Hauraki%20Gulf%20-%201971.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20052_The%20Marine%20Fauna%20of%20NZ%20-%20Sea%20Cucumbers%20-%201970.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20051_The%20Marine%20Fauna%20of%20New%20Zealand-Porifera,%20Demospongiae,%20Part%202%20(Axinellida%20and%20Halichondrida).pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20050_Marine%20Geology%20of%20the%20NZ%20Subantarctic%20Sea%20Floor%20-%201969.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20049_Fauna%20of%20the%20Ross%20Sea%20(Part%207)_Pycnogonida_1-%201969.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20048_Hydrology%20of%20the%20South-East%20Tasman%20Sea.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20047_Outline%20Distribution%20of%20NZ%20Shelf%20Fauna%20(Echinoidea)%20-%201969.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20046_Fauna%20of%20the%20Ross%20Sea%20(Part%206)_Foraminifera%20-%201968.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20045_A%20Key%20to%20the%20Recent%20Genera%20of%20Foraminiferida%20-%201970.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20044_A%20Checklist%20of%20Recent%20New%20Zealand%20Foraminifera.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20043_The%20Marine%20Fauna%20of%20New%20Zealand_Scleractinian%20Corals.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20042_The%20Echinozoan%20Fauna%20of%20the%20New%20Zealand%20Subantarctic%20Islands,%20Macquarie%20Island,%20and%20the%20Chatham%20Rise.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20041_Bathymetry%20and%20Geologic%20Structure%20of%20the%20North%20West%20Tasman%20Sea%20and%20South%20Solomon%20Sea%20-%201967%20.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20040_Sediments%20of%20the%20Western%20Shelf,%20North%20Island,%20New%20Zealand.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20039_Hydrology%20of%20the%20Southern%20Hikurangi%20Trench%20Region.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20038_The%20Marine%20Fauna%20of%20New%20Zealand_Intertidal%20Foraminifera%20of%20the%20Corallina%20Officinalis%20Zone%20-%201967.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20037_The%20Marine%20Fauna%20of%20New%20Zealand-Porifera,%20Demospongiae,%20Part%201%20(Tetractinomorpha%20and%20Lithistida)%20-%201968.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20036_Water%20Masses%20and%20Fronts%20in%20the%20Southern%20Ocean%20South%20of%20New%20Zealand%20-%201967.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20035_Spider_Crabs_Family_Majidae%20-%201966.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20034_Marine%20Fauna%20of%20NZ%20-%20Family%20Hymenosomatidea%20-%201975.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20033_Submrine_Geology_Foveaux_Strait%20-%201967.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20032_Fauna%20of%20the%20Ross%20Sea_Part%205%20-%201967.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20031_Contributions%20to%20Manihiki%20Atoll%20-%20Cook%20Islands%20-%201974.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20030_Geology%20and%20Geomagnetism%20of%20the%20Bounty%20Region%20East%20of%20the%20South%20Island%20-%201966.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20029_Biological%20Results%20of%20The%20Chatham%20Islands%201954%20Expedition%20-%201964.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20028_Sedimentation%20in%20Hawke%20Bay%20-%201966.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20027_The%20Fauna%20of%20the%20Ross%20Sea%20(Part%204)%20Mysidacea%20and%20Sipunculoidea%20-%201965.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20026_Sediments%20of%20Chatham%20Rise%20-%201964.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20025_A%20Foraminiferal%20Fauna%20from%20the%20Western%20Continental%20Shelf,%20North%20Island,%20New%20Zealand%20-%201965.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20024_A%20Bibliography%20of%20the%20Oceanography%20of%20the%20Tasman%20and%20Coral%20Seas%20(1860-1960)%20-%201964.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20023_Marine%20Fauna%20of%20NZ%20-%20Crustaceans%20of%20the%20order%20Cumacea%20-%201963.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20022_The%20Marine%20Fauna%20of%20New%20Zealand_Crustacea%20Brachyura%20-%201964.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20021_The%20Fauna%20of%20the%20Ross%20Sea_part%203_Asteroidea%20-%201963.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20020_Flabellum%20rubrum%20-%201963.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20019_Fauna%20of%20the%20Ross%20Sea_Part%202%20-%20Scleractinian%20Chorals%20-%201962.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20018_Fauna%20of%20the%20Ross%20Sea_Part%201%20-%20Ophiuroidea%20-%201961.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20017_Studies%20of%20a%20Southern%20Fiord%20-%201964.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20016_Bibliography%20of%20NZ%20Marine%20Zoology%201769%20to%201899%20-%201963.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20015_Bay%20Head%20sand%20beaches%20of%20Banks%20Peninsula%20NZ%20-%201974.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20014_Submarine%20Morphology%20East%20of%20the%20North%20Island%20NZ%20-%201963.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20013_Results%20of%20the%20Chatham%20Islands%20(1954%20Exped)_Part%205%20-%201961.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20012_Hydrology%20of%20NZ%20Offshore%20Waters%20-%201965.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20011_Bathymetry%20of%20the%20New%20Zealand%20Region%20-%201964.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20010_Hydrology%20of%20Circumpolar%20Waters%20South%20of%20New%20Zealand%20-%201961.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20009_Analysis%20of%20hydrological%20observations%20in%20the%20New%20Zealand%20region%20(1874-1955)%20-%201962.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20008_Hydrology%20of%20NZ%20Coastal%20waters%20(1955)%20-%201961.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20007_Biological%20results%20of%20the%20Chatham%20Islands%201954%20expedition%20(Part%204)%20-%201960.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20006_Results%20of%20the%20Chatham%20Islands%20(1954%20Exped)_Part%203%20-%201960.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20005_Biological%20results%20of%20the%20Chatham%20Islands%201954%20expedition%20(Part%202)%20-%201960.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20004_Biological%20Rsults%20of%20the%20Chatham%20Islands%201954%20expidition%20(Part%201)%20-%201960.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20003_Contributions%20to%20Marine%20Microbiology%20-%201959.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20002_General%20Account%20of%20the%20Chatham%20Islands%201954%20Expidition%20-%201957.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20001_Bibliography%20of%20NZ%20Oceanography%20from%201949%20to%201953%20-%201955.pdf',
+	);
+	
+	$guids=array(
+	'http://docs.niwa.co.nz/library/public/Memoir%20130_The%20Marine%20Fauna%20of%20New%20Zealand_Euplectellid%20sponges%20-%202018.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20129_The%20Marine%20Fauna%20of%20New%20Zealand_Primnoid%20octocorals%20(Part%202)%20-%202016.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20128_The%20Marine%20Fauna%20of%20New%20Zealand_Geodiidae.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20127_The%20Marine%20Fauna%20of%20New%20Zealand_Amphipoda,%20Synopiidae.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20126_The%20Marine%20Fauna%20of%20New%20Zealand_Primnoidae%20Part%201.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20125_The%20Marine%20Fauna%20of%20New%20Zealand_Mantis%20Shrimps.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20123_The%20Marine%20Fauna%20of%20New%20Zealand_King%20Crabs.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20122_The%20Marine%20Fauna%20of%20New%20Zealand_Isopoda,%20Aegidae.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20121_The%20Marine%20Fauna%20of%20New%20Zealand_Lithistid%20Demospongiae.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20120_The%20Marine%20Fauna%20of%20New%20Zealand_Echinodermata%20part%203.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20119_The%20Marine%20Fauna%20of%20New%20Zealand_Leptothecata_Cnidaria%20Hydrozoa.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20118_Marine%20Fauna%20of%20NZ_Nemertea%20(Ribbon%20Worms)%20-%202002.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20117_Marine%20Fauna%20of%20NZ_Echinodermata%20-%20Asteroidea%20(order%20Valvatida)%20-%202001.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20116_The%20Marine%20Fauna%20of%20NZ_Echinodermata-Asteroidea%20(Sea-stars).pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20115_The%20Marine%20Fauna%20of%20NZ_Basket-stars%20and%20Snake-stars%20(Echinodermata-Ophiuroidea-Euryalinida).pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20114_Marine%20Fauna%20of%20NZ_Paguridea%20(Hermit%20Crabs)%20-%202000.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20113_Marine%20Fauna%20of%20NZ_Hydromedusae%20-%201999.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20112_The%20Marine%20Fauna%20of%20New%20Zealand_Octopoda%20-%201999.pdf',
+'http://docs.niwa.co.nz/library/public/Memoir%20111_Pelagic%20Calanoid%20Copepoda.pdf',
+);
+	
+	foreach ($guids as $guid)
+	{
+	
+		$json = get('http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . urlencode($guid));
+	
+		//echo $json;
+
+		$obj = json_decode($json);
+
+		//print_r($obj);
+
+		$work = new stdclass;
+		$work->message = $obj;
+	
+		//print_r($work);
+
+		$q =  csljson_to_wikidata($work);
+		echo $q;
+		echo "\n";
+	}
 }
 
 

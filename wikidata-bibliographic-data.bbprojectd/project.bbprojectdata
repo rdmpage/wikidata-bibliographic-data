@@ -9,6 +9,7 @@
 		<string>4BA96BB2-C218-4CF9-AE36-24F4FDABCC13</string>
 		<string>3EB86DA3-AA08-4E85-A4B5-00D20CE6ECCC</string>
 		<string>30586FAD-C65A-4132-9ED0-0DF0996C846B</string>
+		<string>338CA684-05BB-4A94-94C0-66B98E9E5D3C</string>
 		<string>6711F80E-BCBB-445A-B7C6-DC73BB9ADE69</string>
 		<string>0B0B1396-9C0F-44E9-A751-62A93A6672AF</string>
 		<string>336DF9A4-099B-48E8-B004-B34B07BC7A54</string>
@@ -234,6 +235,56 @@
 			</dict>
 			<key>ItemName</key>
 			<string>wikidata.php</string>
+			<key>ItemType</key>
+			<string>FileReference</string>
+			<key>UserOverrideItemName</key>
+			<true/>
+		</dict>
+		<key>338CA684-05BB-4A94-94C0-66B98E9E5D3C</key>
+		<dict>
+			<key>ItemData</key>
+			<dict>
+				<key>BookmarkData</key>
+				<data>
+				Ym9vazQDAAAAAAQQMAAAAJI5exlaZIJvr60RlPbkQ2o0
+				nPqz1qyNAJInjTUcwhR1JAIAAAQAAAADAwAAAAgAKAUA
+				AAABAQAAVXNlcnMAAAAFAAAAAQEAAHJwYWdlAAAACwAA
+				AAEBAABEZXZlbG9wbWVudAAbAAAAAQEAAHdpa2lkYXRh
+				LWJpYmxpb2dyYXBoaWMtZGF0YQAMAAAAAQEAAHRvanNv
+				bmxkLnBocBQAAAABBgAAEAAAACAAAAAwAAAARAAAAGgA
+				AAAIAAAABAMAABBnAgAAAAAACAAAAAQDAACFdA0AAAAA
+				AAgAAAAEAwAAI1gOAAAAAAAIAAAABAMAAKbRQQIAAAAA
+				CAAAAAQDAADeWz8AAwAAABQAAAABBgAAmAAAAKgAAAC4
+				AAAAyAAAANgAAAAIAAAAAAQAAEHA2Bs37DBOGAAAAAEC
+				AAABAAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAIAAAABAMA
+				AAMAAAAAAAAABAAAAAMDAAD1AQAACAAAAAEJAABmaWxl
+				Oi8vLwwAAAABAQAATWFjaW50b3NoIEhECAAAAAQDAAAA
+				sJ8+aQAAAAgAAAAABAAAQb7dXWIAAAAkAAAAAQEAADI1
+				RTQyODZELTcxMkMtMzg5OS1CNDNGLTVEM0Y2QThCRDEy
+				MRgAAAABAgAAgQAAAAEAAADvEwAAAQAAAAAAAAAAAAAA
+				AQAAAAEBAAAvAAAAAAAAAAEFAAAaAAAAAQEAAE5TVVJM
+				RG9jdW1lbnRJZGVudGlmaWVyS2V5AAAEAAAAAwMAAExE
+				AADYAAAA/v///wEAAAAAAAAAEQAAAAQQAAB8AAAAAAAA
+				AAUQAADoAAAAAAAAABAQAAAUAQAAAAAAAEAQAAAEAQAA
+				AAAAAAIgAADgAQAAAAAAAAUgAABQAQAAAAAAABAgAABg
+				AQAAAAAAABEgAACUAQAAAAAAABIgAAB0AQAAAAAAABMg
+				AACEAQAAAAAAACAgAADAAQAAAAAAADAgAADsAQAAAAAA
+				AAHAAAA0AQAAAAAAABHAAAAgAAAAAAAAABLAAABEAQAA
+				AAAAABDQAAAEAAAAAAAAAPQBAIAYAgAAAAAAAA==
+				</data>
+				<key>FileURL</key>
+				<string>file:///Users/rpage/Development/wikidata-bibliographic-data/tojsonld.php</string>
+				<key>HasSecurityScope</key>
+				<true/>
+				<key>RelativePath</key>
+				<string>./tojsonld.php</string>
+				<key>TypeID</key>
+				<string>_CFileLocator</string>
+				<key>Version</key>
+				<integer>1</integer>
+			</dict>
+			<key>ItemName</key>
+			<string>tojsonld.php</string>
 			<key>ItemType</key>
 			<string>FileReference</string>
 			<key>UserOverrideItemName</key>
