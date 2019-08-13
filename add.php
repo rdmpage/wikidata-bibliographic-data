@@ -12,6 +12,11 @@ $filename = 'quickstatements/1005-9628.tsv';
 
 $filename = 'quickstatements/0001-804X.tsv';
 
+$filename = 'quickstatements/brittonia.tsv';
+
+$filename = 'quickstatements/extra.tsv';
+
+
 $file_handle = fopen($filename, "r");
 while (!feof($file_handle)) 
 {
