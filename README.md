@@ -1,6 +1,18 @@
 # wikidata-bibliographic-data
 Tools to upload bibliographic data to Wikidata
 
+## Notes
+
+```Not sure what you don't know here, so some basic pointers first:
+- to import by DOI//PMID/PMCID/ORCID/ISBN, use https://tools.wmflabs.org/sourcemd/  . This can also add authors to papers if both are in ORCID
+1/n```
+https://twitter.com/EvoMRI/status/1094299776181587968
+
+### Old sourcemd
+
+https://tools.wmflabs.org/sourcemd/index_old.php
+
+
 ## JSON-LD
 
 To add to project:
