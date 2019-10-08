@@ -8,6 +8,16 @@ Tools to upload bibliographic data to Wikidata
 1/n```
 https://twitter.com/EvoMRI/status/1094299776181587968
 
+## Danger
+
+Some references are entire din ways that make their discover problematic, e.g. https://www.wikidata.org/wiki/Q62024319 “A new Toxomerus species from Chile (Diptera: Syrpliidae)” which has bibliographic data as qualifiers for ```published in’’’.
+
+- published in Studia dipterologica
+	- publication date 2013
+	- volume 13
+	- page(s) 317-331
+
+
 ### Old sourcemd
 
 https://tools.wmflabs.org/sourcemd/index_old.php
