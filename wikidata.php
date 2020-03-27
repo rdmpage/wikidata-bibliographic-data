@@ -61,6 +61,34 @@ function wikidata_item_from_doi($doi)
 }
 
 //----------------------------------------------------------------------------------------
+// Does wikidata have this URL?
+function wikidata_item_from_url($url)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P953 <' . $url . '> }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+	
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
 // Does wikidata have this JSTOR id?
 function wikidata_item_from_jstor($jstor)
 {
@@ -366,21 +394,22 @@ $this->props = array(
 		) ;*/
 		
 	$wikidata_properties = array(
-		'type'		=> 'P31',
-		'BHL' 		=> 'P687',
-		'BIOSTOR' 	=> 'P5315',
-		'DOI' 		=> 'P356',
-		'HANDLE'	=> 'P1184',
-		'JSTOR'		=> 'P888',
-		'PMID'		=> 'P698',
-		'PMC' 		=> 'P932',
-		'URL'		=> 'P953',	// https://twitter.com/EvoMRI/status/1062785719096229888
-		'title'		=> 'P1476',	
-		'volume' 	=> 'P478',
-		'issue' 	=> 'P433',
-		'page' 		=> 'P304',
-		'PDF'		=> 'P953',
-		'ARCHIVE'	=> 'P724',
+		'type'					=> 'P31',
+		'BHL' 					=> 'P687',
+		'BIOSTOR' 				=> 'P5315',
+		'DOI' 					=> 'P356',
+		'HANDLE'				=> 'P1184',
+		'JSTOR'					=> 'P888',
+		'PMID'					=> 'P698',
+		'PMC' 					=> 'P932',
+		'URL'					=> 'P953',	// https://twitter.com/EvoMRI/status/1062785719096229888
+		'title'					=> 'P1476',	
+		'volume' 				=> 'P478',
+		'issue' 				=> 'P433',
+		'page' 					=> 'P304',
+		'PDF'					=> 'P953',
+		'ARCHIVE'				=> 'P724',
+		'ZOOBANK_PUBLICATION' 	=> 'P2007',
 	);
 	
 	// Need to think how to handle multi tag
@@ -663,6 +692,11 @@ $this->props = array(
 				$w[] = array('Sspecieswiki' => $v);
 				break;
 				
+			case 'ZOOBANK':
+				$w[] = array($wikidata_properties['ZOOBANK_PUBLICATION'] => '"' . $v . '"');
+				break;
+				
+				
 			case 'link':
 				foreach ($v as $link)
 				{
@@ -738,6 +772,31 @@ $this->props = array(
 							$w[] = array('P2860' => $cited);
 						}					
 					}
+					
+				}
+				break;
+				
+			case 'license':
+				if (isset($v[0]->URL))
+				{
+				
+					// map to Wikidata
+					$license_item = '';
+					switch ($v[0]->URL)
+					{
+						case 'https://creativecommons.org/licenses/by-nd/4.0/':
+							$license_item = 'Q36795408';
+							break;
+					
+						default:
+							break;
+					}
+					
+					if ($license_item != '')
+					{
+						$w[] = array('P275' => $license_item);
+					}					
+					
 					
 				}
 				break;
@@ -1089,8 +1148,102 @@ if (0)
 	
 }
 
+
+//----------------------------------------------------------------------------------------
+// Try to locate an item using any identifier or metadata that we have
+function wikidata_find_from_anything ($work)
+{
+	// Do we have this already in wikidata?
+	$item = '';
+	
+	// DOI
+	if (isset($work->message->DOI))
+	{
+		$item = wikidata_item_from_doi($work->message->DOI);
+	}
+
+	// JSTOR
+	if ($item == '')
+	{
+		if (isset($work->message->JSTOR))
+		{
+			$item = wikidata_item_from_jstor($work->message->JSTOR);
+		
+		}
+	}	
+
+	// BioStor
+	if ($item == '')
+	{
+		if (isset($work->message->BIOSTOR))
+		{
+			$item = wikidata_item_from_biostor($work->message->BIOSTOR);
+		}
+	}		
+
+	// PDF
+	if ($item == '')
+	{
+		if (isset($work->message->link))
+		{
+			foreach ($work->message->link as $link)
+			{
+				if ($link->{'content-type'} == 'application/pdf')
+				{
+					$item = wikidata_item_from_pdf($link->URL);
+				}
+			}
+		}
+	}	
+	
+	// OpenURL
+	if ($item == '')
+	{
+		$terms = array();
+				
+		$issn = $volume = $spage = '';
+		
+		if (isset($work->message->ISSN))
+		{
+			$terms[] = $work->message->ISSN;
+		}		
+		
+		if (isset($work->message->volume))
+		{
+			$terms[] = $work->message->volume;
+		}
+
+		if (isset($work->message->volume))
+		{
+			$terms[] = $work->message->volume;
+		}
+
+		if (isset($work->message->{'page-first'}))
+		{
+			$terms[] = $work->message->{'page-first'};
+		}
+			
+		if (count(terms) == 3)
+		{
+			foreach ($terms[0] as $issn)
+			{
+				$hit = wikidata_item_from_openurl($issn, $terms[1], $terms[2]);
+				if ($hit <> '')
+				{
+					$item = $hit;
+				}
+			}
+		}
+
+	}	
+	
+	return $item;	
+
+
+}
+
 // Microcitations
-if (1)
+if (0)
 {
 	$guids=array(
 'http://docs.niwa.co.nz/library/public/Memoir%20110_Marine%20Fauna%20of%20NZ_Cephalopoda%20(Giant%20Squid)%20-%201998.pdf',

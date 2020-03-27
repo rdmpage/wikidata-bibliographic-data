@@ -16,13 +16,14 @@ $filename = 'quickstatements/brittonia.tsv';
 
 $filename = 'quickstatements/extra.tsv';
 
+$filename = 'quickstatements/0035-9181.txt';
+
 
 $file_handle = fopen($filename, "r");
 while (!feof($file_handle)) 
 {
 	$guid = trim(fgets($file_handle));
 	
-	//echo $guid . "\n";
 	
 	$url = 'http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . $guid;
 
