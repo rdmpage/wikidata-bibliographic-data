@@ -15,7 +15,7 @@
 	<key>OpenDocumentsExpanded</key>
 	<true/>
 	<key>OpenDocumentsSplitterProportion</key>
-	<real>0.66866746698679469</real>
+	<real>0.66986794717887155</real>
 	<key>ProjectItemsExpanded</key>
 	<true/>
 	<key>ProjectViewVisible</key>
@@ -24,7 +24,7 @@
 	<array>
 		<dict>
 			<key>Date</key>
-			<date>2019-07-29T03:57:50Z</date>
+			<date>2020-03-27T12:58:34Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -67,7 +67,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2019-07-29T03:57:50Z</date>
+			<date>2020-03-27T12:58:34Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -110,7 +110,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2019-07-29T03:57:50Z</date>
+			<date>2020-03-27T12:58:34Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -153,7 +153,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2019-07-29T03:57:50Z</date>
+			<date>2020-03-27T12:58:34Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -196,7 +196,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2019-07-29T03:57:50Z</date>
+			<date>2020-03-27T12:58:34Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -240,7 +240,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2019-07-29T03:57:50Z</date>
+			<date>2020-03-27T12:58:34Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -283,7 +283,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2019-07-29T03:57:50Z</date>
+			<date>2020-03-27T12:58:34Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -329,7 +329,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2019-07-29T03:57:50Z</date>
+			<date>2020-03-27T12:58:34Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -377,7 +377,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2019-07-29T03:57:50Z</date>
+			<date>2020-03-27T12:58:34Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -433,6 +433,6 @@
 	<key>ViewSplitterPosition:rpage</key>
 	<real>0.1931493878364563</real>
 	<key>WindowFrame:rpage:displays([(0, 0), (1440, 900)]:[(-1920, 0), (1920, 1080)])</key>
-	<string>rect(157,-1797,990,-746)</string>
+	<string>rect(154,-1901,987,-850)</string>
 </dict>
 </plist>
