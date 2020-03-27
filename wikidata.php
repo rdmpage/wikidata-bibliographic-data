@@ -702,7 +702,24 @@ $this->props = array(
 				{
 					if ($link->{'content-type'} == 'application/pdf')
 					{
-						$w[] = array($wikidata_properties['PDF'] => '"' . $link->URL . '"');
+						// do we have an archive version?
+						if (isset($work->message->WAYBACK))
+						{
+							$wayback = $work->message->WAYBACK;
+							
+							if (!preg_match('/^\//', $wayback))
+							{
+								$wayback = '/' . $wayback;
+							}
+						
+							$qualifier = "\tP1065\t\"https://web.archive.org" . $wayback . '"';
+							$w[] = array($wikidata_properties['PDF'] => '"' . $link->URL . '"' . $qualifier);
+						}
+						else
+						{
+							$w[] = array($wikidata_properties['PDF'] => '"' . $link->URL . '"');
+						}
+						
 					}
 				}
 				break;
@@ -1208,11 +1225,6 @@ function wikidata_find_from_anything ($work)
 			$terms[] = $work->message->ISSN;
 		}		
 		
-		if (isset($work->message->volume))
-		{
-			$terms[] = $work->message->volume;
-		}
-
 		if (isset($work->message->volume))
 		{
 			$terms[] = $work->message->volume;
