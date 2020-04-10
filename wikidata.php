@@ -333,16 +333,23 @@ function wikidata_item_from_wikispecies_author($wikispecies)
 
 //----------------------------------------------------------------------------------------
 // Convert a csl json object to Wikidata quickstatments
-function csljson_to_wikidata($work, $check = true)
+function csljson_to_wikidata($work, $check = true, $update = true, $languages_to_detect = array('en'))
 {
 
 	$quickstatements = '';
 	
 	// Map language codes to Wikidata items
 	$language_map = array(
+		'de' => 'Q188',
 		'en' => 'Q1860',
+		'es' => 'Q1321',
 		'fr' => 'Q150',
-		'de' => 'Q188'
+		'ja' => 'Q5287',
+		'nl' => 'Q7411',
+		'pt' => 'Q5146',
+		'ru' => 'Q7737',
+		'th' => 'Q9217',
+		'zh' => 'Q7850',		
 	);
 	
 
@@ -401,8 +408,46 @@ function csljson_to_wikidata($work, $check = true)
 					}
 				}
 			}
-		}	
+		}
+		
+		// OpenURL
+		if ($item == '')
+		{
+			$parts = array();
+	
+			if (isset($work->message->ISSN))
+			{
+				$parts[] = $work->message->ISSN[0];
+			}
+			if (isset($work->message->volume))
+			{
+				$parts[] = $work->message->volume;
+			}
+			if (isset($work->message->page))
+			{
+				if (preg_match('/^(?<spage>\d+)(-\d+)?/', $work->message->page, $m))
+				{
+					$parts[] = $m['spage'];
+				}
+			}
+			
+			//print_r($parts);
+	
+			if (count($parts == 3))
+			{
+				$item = wikidata_item_from_openurl($parts[0], $parts[1], $parts[2]);
+			}
+		}
 
+	}
+	
+	if ($item != '')
+	{
+		// already exists, if $update is false exit
+		if (!$update)
+		{
+			return;
+		}	
 	}
 	
 	
@@ -448,6 +493,7 @@ $this->props = array(
 		'PDF'					=> 'P953',
 		'ARCHIVE'				=> 'P724',
 		'ZOOBANK_PUBLICATION' 	=> 'P2007',
+		'abstract'				=> 'P1922', // first line
 	);
 	
 	// Need to think how to handle multi tag
@@ -519,9 +565,28 @@ $this->props = array(
 					
 						if (1)
 						{
-							// Detect language of title
-							$ld = new Language(['fr', 'en', 'de']);						
-							$language = $ld->detect($title)->__toString();
+							$language == 'en';
+							
+							$detect = true;
+							
+							if (count($languages_to_detect) == 1 && $languages_to_detect[0] == 'en')
+							{
+								//echo "Assume English\n";
+							
+								// English is default
+								$detect = false;
+								
+								
+							}
+							
+							if ($detect)
+							{			
+								//echo "Detect language\n";
+											
+								// Detect language of title
+								$ld = new Language($languages_to_detect);						
+								$language = $ld->detect($title)->__toString();
+							}
 						
 							if ($language == 'en')
 							{
@@ -577,6 +642,8 @@ $this->props = array(
 					
 					$done = false;
 					
+					
+					// Do we have an ORCID?
 					if (!$done)
 					{
 						if (isset($author->ORCID))
@@ -596,6 +663,7 @@ $this->props = array(
 						}						
 					}
 					
+					// Do we have WIKISPECIES?
 					if (!$done)
 					{
 						if (isset($author->WIKISPECIES))
@@ -610,29 +678,47 @@ $this->props = array(
 						}						
 					}
 					
+					// If we've reached this point we only have literals, so add these
+					
 					if (!$done)
 					{
 						$name = '';
-						if (isset($author->literal))
-						{
-							$name = $author->literal;
-						}
-						else
-						{
-							$parts = array();
-							if (isset($author->given))
-							{
-								$parts[] = $author->given;
-							}
-							if (isset($author->family))
-							{
-								$parts[] = $author->family;
-							}
-							$name = join(' ', $parts);				
-						}
 						
+						// multilingual?
+						if (isset($author->multi->_key->literal))
+						{
+							$strings = array();
+							
+							foreach ($author->multi->_key->literal as $language => $v)
+							{
+								$strings[] = $v;
+							}
+							
+							$name = join("/", $strings);				
+						}
+						else 
+						{						
+							if (isset($author->literal))
+							{
+								$name = $author->literal;
+							}
+							else
+							{
+								$parts = array();
+								if (isset($author->given))
+								{
+									$parts[] = $author->given;
+								}
+								if (isset($author->family))
+								{
+									$parts[] = $author->family;
+								}
+								$name = join(' ', $parts);				
+							}
+						}
+					
 						$qualifier = "\tP1545\t\"$count\"";
-						
+					
 						if (isset($author->affiliation))
 						{
 							foreach ($author->affiliation as $affiliation)
@@ -643,8 +729,9 @@ $this->props = array(
 								}
 							}						
 						}						
-						
+					
 						$w[] = array('P2093' => '"' . addcslashes($name, '"') . '"' . $qualifier);
+
 					}
 					$count++;
 				}
@@ -843,8 +930,20 @@ $this->props = array(
 					$license_item = '';
 					switch ($v[0]->URL)
 					{
-						case 'https://creativecommons.org/licenses/by-nd/4.0/':
+						case 'https://creativecommons.org/licenses/by-nd/4.0/':						
+							// CC-BY-ND 4.0 
 							$license_item = 'Q36795408';
+							break;
+							
+						case 'http://creativecommons.org/licenses/by-nc/3.0/':						
+						case 'http://creativecommons.org/licenses/by-nc/3.0/nl/':						
+							// CC-BY-NC 
+							$license_item = 'Q18810331';					
+							break;
+							
+						case 'http://creativecommons.org/licenses/by-sa/3.0/nl/':
+							// CC-BY-SA 
+							$license_item = 'Q14946043';												
 							break;
 					
 						default:
@@ -857,6 +956,30 @@ $this->props = array(
 					}					
 					
 					
+				}
+				break;
+				
+			case 'abstract':
+				$text = $v;
+				
+				// for now just single language 9to do: multilingual)
+				
+				// clean
+				$text = preg_replace('/^(SUMMARY|Abstract|ABSTRACT|INTRODUCTION)/u', '', $text);
+				
+				// sentence split (assumes English-style text)
+				// see https://stackoverflow.com/a/16377765/9684 for some ideas
+				$sentences = preg_split('/(?<=[a-z\)])[.?!](?=\s+[A-Z])/u', $text);
+								
+				if (count($sentences) != 0)
+				{
+					$first_line = $sentences[0] . '.';
+				
+					// Detect language of first_line
+					$ld = new Language($languages_to_detect);						
+					$language = $ld->detect($first_line)->__toString();
+
+					$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($first_line, '"') . '"');
 				}
 				break;
 				
@@ -899,13 +1022,70 @@ $this->props = array(
 
 //----------------------------------------------------------------------------------------
 // list of items already in Wikidata for a journal
-// could use as basis for RIS export for matching, etc.
+// from ISSN, could use as basis for RIS export for matching, etc.
 function works_for_journal($issn)
 {
 	$works = array();
 	$sparql = 'SELECT ?work (group_concat(?author;separator=";") as ?authors) ?title ?volume ?issue ?pages ?doi 
 	WHERE { 
 	?container wdt:P236 "' . strtoupper($issn) . '" .
+  ?work wdt:P1433 ?container .
+  
+  ?work wdt:P1476 ?title .
+  
+  ?work wdt:P2093 ?author .
+  
+  ?work wdt:P478 ?volume .
+  OPTIONAL {
+    ?work wdt:P433 ?issue .
+   }
+  ?work wdt:P304 ?pages .
+  
+  OPTIONAL {
+    ?work wdt:P356 ?doi .
+   }  
+}
+GROUP BY ?work ?title ?volume ?issue ?pages ?doi ';
+
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		
+		
+		if (isset($obj->results->bindings))
+		{
+			foreach ($obj->results->bindings as $binding)
+			{
+				$work = new stdclass;
+				
+				foreach ($binding as $k => $v)
+				{
+					$work->{$k} = $v->value;
+				}
+				
+				$works[] = $work;
+
+			}
+		}
+	}
+	
+	return $works;
+
+}
+
+//----------------------------------------------------------------------------------------
+// list of items already in Wikidata for a journal
+// from Wikidata Q, could use as basis for RIS export for matching, etc.
+function works_for_journal_from_qid($qid)
+{
+	$works = array();
+	$sparql = 'SELECT ?work (group_concat(?author;separator=";") as ?authors) ?title ?volume ?issue ?pages ?doi 
+	WHERE { 
+	VALUES ?container { wd:' . $qid . '}
   ?work wdt:P1433 ?container .
   
   ?work wdt:P1476 ?title .
@@ -964,7 +1144,7 @@ function wikidata_item_from_openurl($issn, $volume, $spage)
 { 
   VALUES ?issn {"' . $issn . '" } .
   VALUES ?volume {"' . $volume . '" } .
-  VALUES ?firstpage {"^' . $spage . '(–[0-9]+)?$" } .
+  VALUES ?firstpage {"^' . $spage . '[^0-9]" } .
   
   ?work wdt:P1433 ?container .
   ?container wdt:P236 ?issn.

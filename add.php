@@ -1,6 +1,6 @@
 <?php
 
-// Add records to Wikidata
+// Add records to Wikidata based on file listing the microcitation GUIDs
 
 require_once (dirname(__FILE__) . '/wikidata.php');
 
@@ -18,6 +18,47 @@ $filename = 'quickstatements/extra.tsv';
 
 $filename = 'quickstatements/0035-9181.txt';
 
+$filename = 'quickstatements/0372-1361.txt';
+
+// Records of the Indian Museum
+$filename = 'quickstatements/0375-099X.txt';
+
+// Transactions And Proceedings of The Royal Society of New Zealand
+$filename = 'quickstatements/1176-6166.txt';
+
+// Basteria
+$filename = 'quickstatements/0005-6219.txt';
+
+// Test cases
+//$filename = 'quickstatements/test.txt';
+
+// Zoologische Mededelingen
+$filename = 'quickstatements/0024-0672.txt';
+
+// Pacific Insects
+$filename = 'quickstatements/0030-8714.txt';
+
+// Odonatologica
+$filename = 'quickstatements/0375-0183.txt';
+
+// Bulletin of the Osaka Museum of Natural History
+$filename = 'quickstatements/0078-6675.txt';
+
+// Journal of Arachnology
+$filename = 'quickstatements/0161-8202.txt';
+
+// Bulletin of The British Arachnological Society
+$filename = 'quickstatements/0524-4994.txt';
+
+
+// flags
+$check = true; // make sure record doesn't alreday exist
+$check = false;// don't check (only do this if we are sure we're adding new stuff)
+
+$update = true; // Update any existing records
+$update = false; // Leave existing record alone
+
+$languages = array('en'); // assume everything is in English
 
 $file_handle = fopen($filename, "r");
 while (!feof($file_handle)) 
@@ -34,8 +75,10 @@ while (!feof($file_handle))
 
 	//print_r($obj);
 	
-	// do we have this already?
+	// do we have this already? (now down in csljson_to_wikidata)
 	$ok = true;
+	
+	/*
 	
 	$parts = array();
 	
@@ -63,20 +106,27 @@ while (!feof($file_handle))
 		if ($item != '')
 		{
 			echo "*** Have already: $item ***\n";
-			$ok = false;
+			//$ok = false;
 		}
 		else
 		{
 			// echo "Not found\n";
 		}
 	}
+	*/
 	
 	if ($ok)
 	{
 		$work = new stdclass;
 		$work->message = $obj;
 
-		$quickstatements = csljson_to_wikidata($work);
+		//$quickstatements = csljson_to_wikidata($work, true, true, array('en', 'nl', 'de', 'fr'));
+		
+		$quickstatements = csljson_to_wikidata($work, 
+			$check, 
+			$update, 
+			$languages
+			);
 		
 		echo $quickstatements . "\n\n";
 	}

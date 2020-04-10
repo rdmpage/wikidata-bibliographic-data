@@ -1,6 +1,35 @@
 # wikidata-bibliographic-data
 Tools to upload bibliographic data to Wikidata
 
+## Added
+
+**IA** means there are PDFs of the articles in Internet Archive.
+
+Journal | ISSN | Wikidata | Notes
+--|--|--|--
+Records of the Auckland Institute and Museum | 0067-0464 | Q15214730 | JSTOR (first one)
+Records of the Auckland Museum | 1174-9202, 2422-8567 | 	Q15756170 | JSTOR
+Adansonia nouvelle série	 | 0001-804X | Q58814054 | No external identifiers
+New Zealand Oceanographic Institute Memoir |0083-7903 |Q21385262 | IA
+Transactions of the Royal Society of New Zealand. Zoology | 0372-1396 | Q28535616 | IA
+Transactions of the Royal Society of New Zealand. Botany | 0372-1361 | Q21034224 | IA
+Records of the Indian Museum | 0375-099X | Q41394003 | IA
+Transactions and Proceedings of the Royal Society of New Zealand | 1176-6166 | Q21556862 | IA
+Basteria	| 0005-6219 | Q21069434 | IA
+Zoologische Mededelingen | 0024-0672, 1876-2174 | Q2358748 | IA
+Peckhamia | 2161-8526 | Q7158750 | IA
+Pacific Insects | 0030-8714 | Q7122498 | IA
+Odonatologica | 0375-0183 |Q15758632 | IA
+
+
+Once added to Wikidata we should update local database to have Wikidata Q number.
+
+## Duplicates
+
+When adding in bulk we can end up with duplicates. Simplest way to fix this is do a SPARQL query, download results as TSV file, then run ```php fix-duplicates.php``` to generate quick statements to merge duplicates.
+
+Note that de-duping on PDFs or Internet Archive ids can be problematic if same pages (and same file) has multiple articles (e.g there has been a bit of a mess with Bulletin of the British Arachnological Society e.g. http://localhost/~rpage/alec/?id=Q90005688
+
 ## Notes
 
 ```Not sure what you don't know here, so some basic pointers first:
@@ -10,7 +39,7 @@ https://twitter.com/EvoMRI/status/1094299776181587968
 
 ## Danger
 
-Some references are entire din ways that make their discover problematic, e.g. https://www.wikidata.org/wiki/Q62024319 “A new Toxomerus species from Chile (Diptera: Syrpliidae)” which has bibliographic data as qualifiers for ```published in’’’.
+Some references are entired in ways that make their discover problematic, e.g. https://www.wikidata.org/wiki/Q62024319 “A new Toxomerus species from Chile (Diptera: Syrpliidae)” which has bibliographic data as qualifiers for ```published in’’’.
 
 - published in Studia dipterologica
 	- publication date 2013

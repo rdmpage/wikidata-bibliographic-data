@@ -42,13 +42,16 @@ function archive_url($url)
 	$obj = new stdclass;
 	$obj->url = $url;
 	
+	$obj->url = str_replace(';', '%3B', $obj->url);
+	$obj->url = str_replace('?', '%3F', $obj->url);
+	
 	$json = post('https://pragma.archivelab.org/', 'application/json', $obj);
 	
 	if ($json != '')
 	{
 		$response = json_decode($json);
 		
-		// print_r($obj);
+		print_r($response);
 		
 		if (isset($response->path))
 		{
@@ -62,30 +65,24 @@ function archive_url($url)
 }
 
 //----------------------------------------------------------------------------------------
+$filename = 'urls-wayback.txt';
 
-$urls = array(
-// 'http://peckhamia.com/peckhamia/PECKHAMIA_121.1.pdf',
-/*
-'http://peckhamia.com/peckhamia/PECKHAMIA_103.1.pdf',
-'http://peckhamia.com/peckhamia/PECKHAMIA_104.1.pdf',
-'http://peckhamia.com/peckhamia/PECKHAMIA_114.1.pdf',
-'http://peckhamia.com/peckhamia/PECKHAMIA_117.1.pdf',
-'http://peckhamia.com/peckhamia/PECKHAMIA_121.1.pdf',
-'http://peckhamia.com/peckhamia/PECKHAMIA_136.1.pdf',
-'http://peckhamia.com/peckhamia/PECKHAMIA_141.1.pdf',
-*/
-
-'http://rcin.org.pl/Content/57916/WA058_72953_P255-T40_%20Annal-Zool-Nr-11.pdf',
-);
-
-foreach ($urls as $url)
+$file_handle = fopen($filename, "r");
+while (!feof($file_handle)) 
 {
+	$url = trim(fgets($file_handle));
+	
 	archive_url($url);
+	
 	
     $rand = rand(1000000, 3000000);
     echo "\n-- ...sleeping for " . round(($rand / 1000000),2) . ' seconds' . "\n\n";
-    usleep($rand);
+    usleep($rand);	
+
 }
+
+fclose($file_handle);
+
 
 
 
