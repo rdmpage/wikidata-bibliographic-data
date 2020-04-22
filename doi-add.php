@@ -1192,9 +1192,79 @@ $dois=array(
 '10.1636/17-042.1',
 );
 
+$dois=array(
+'10.7883/yoken1952.8.199',
+'10.1080/00222933108673325',
+);
+
+$dois=array(
+"10.1007/BF00177798",
+"10.1007/BF01731581",
+"10.1007/BF02515385",
+"10.1016/j.ympev.2004.04.007",
+"10.1016/S0168-9525(96)80005-9",
+"10.1023/A:1026787515840",
+"10.1078/1616-5047-00166",
+"10.1080/10635150802429642",
+"10.1093/bioinformatics/17.8.754",
+"10.1093/bioinformatics/btl446",
+"10.1093/bioinformatics/btp187",
+"10.1093/molbev/msr121",
+"10.1093/oxfordjournals.molbev.a025580",
+"10.1093/sysbio/sys029",
+"10.1098/rstb.2008.0163",
+"10.1111/bij.12247",
+"10.1111/j.1096-3642.2012.00871.x",
+"10.1111/j.1365-2699.2010.02393.x",
+"10.1111/j.1439-0469.1994.tb00467.x",
+"10.1111/j.1463-6409.2008.00377.x",
+//"10.1111/zoj.12223",
+"10.1139/z99-008",
+"10.1186/1742-9994-10-48",
+"10.1371/journal.pone.0003715",
+"10.1644/08-MAMM-A-239R2.1",
+"10.1644/09-MAMM-A-325.1",
+"10.1644/09-MAMM-A-354.1",
+"10.1644/10-MAMM-F-355.1",
+"10.1644/11-MAMM-A-271.1",
+"10.2307/1378724",
+"10.3161/001.004.0107",
+"10.3161/001.005.s101",
+"10.3161/001.006.0202",
+"10.3161/1733-5329(2006)8[277:TICTCD]2.0.CO;2",
+"10.3161/1733-5329(2006)8[299:ADOANS]2.0.CO;2",
+"10.3161/150811012X654222",
+"10.3161/150811012X661594",
+"10.3897/zookeys.285.4892",
+"10.11646/zootaxa.2551.1.1",
+"10.11646/zootaxa.2880.1.1",
+"10.11646/zootaxa.3250.1.1",
+"10.11646/zootaxa.3746.1.5",
+"10.18637/jss.v014.i09",
+"10.18637/jss.v025.i01",
+);
+
+$dois = array(
+//'10.1111/zoj.12223'
+//'10.1080/00222934508654781',
+//'10.1080/00222934608654572',
+
+//"10.1017/S0031182000006132",
+//"10.1017/S0031182000024847",
+//"10.1111/j.1365-3113.1950.tb00944.x",
+//"10.1111/j.1469-7998.1936.tb08510.x",
+'10.12657/folmal.028.002',
+)
+;
+
 
 // True to update existing record, false to skip
 $update = false;
+$update = true;
+
+$check = true; // set to false if we are sure that record will exist with DOI
+
+$detect_languages = array('en', 'fr', 'de');
 
 foreach ($dois as $doi)
 {
@@ -1206,7 +1276,7 @@ foreach ($dois as $doi)
 	{
 		if (!$update)
 		{
-			// echo "Have already $item\n";
+			//echo "Have $item already $item\n";
 			
 			$go = false;
 		}
@@ -1233,14 +1303,15 @@ foreach ($dois as $doi)
 			$work->message = $obj;		
 		}
 	
-		// print_r($work);
+		//print_r($work);
 	
 		if ($work)
 		{
 			$q = csljson_to_wikidata(
 				$work, 
-				true, 	// check if already exists
-				$update // true to update an existing record, false to skip an existing record
+				$check, 	// check if already exists
+				$update, // true to update an existing record, false to skip an existing record
+				$detect_languages
 				);
 		
 			echo $q;

@@ -3,6 +3,27 @@
 require_once 'vendor/autoload.php';
 use LanguageDetection\Language;
 
+
+//----------------------------------------------------------------------------------------
+// trim a string nicelt
+function nice_shorten($str, $length = 250) {
+	if (mb_strlen($str) > $length)
+	{
+		$str = mb_substr($str, 0, $length - 1);
+		
+		$pos = mb_strrpos($str, ' ');
+		if ($pos === false) {
+		} else {
+			$str = mb_substr($str, 0, $pos);		
+		}
+		
+		$str .= '…';	
+	}
+
+	return $str;
+}
+
+
 //----------------------------------------------------------------------------------------
 function get($url, $user_agent='', $content_type = '')
 {	
@@ -240,12 +261,13 @@ function wikidata_item_from_issn($issn)
 }
 
 //----------------------------------------------------------------------------------------
-function wikidata_item_from_journal_name($name)
+function wikidata_item_from_journal_name($name, $language = 'en')
 {
 	$item = '';
 	
-	// Try English description
-	$sparql = 'SELECT * WHERE { ?item rdfs:label "' . addcslashes($name, '"') . '"@en . ?item wdt:P31 wd:Q5633421}';
+	// Try  description
+	$sparql = 'SELECT * WHERE { ?item rdfs:label "' . addcslashes($name, '"') . '"@' . $language . ' . ?item wdt:P31 wd:Q5633421}';
+
 	
 	// echo $sparql . "\n";
 	
@@ -335,6 +357,8 @@ function wikidata_item_from_wikispecies_author($wikispecies)
 // Convert a csl json object to Wikidata quickstatments
 function csljson_to_wikidata($work, $check = true, $update = true, $languages_to_detect = array('en'))
 {
+
+	$MAX_LABEL_LENGTH = 250;
 
 	$quickstatements = '';
 	
@@ -444,6 +468,9 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 	if ($item != '')
 	{
 		// already exists, if $update is false exit
+		
+		//echo "Have item $item\n";
+		
 		if (!$update)
 		{
 			return;
@@ -525,9 +552,10 @@ $this->props = array(
 						foreach ($work->message->multi->_key->title as $language => $v)
 						{
 							// title
-							$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($v, '"') . '"');
+							$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . str_replace('"', '""', $v) . '"');
+
 							// label
-							$w[] = array('L' . $language => '"' . addcslashes($v, '"') . '"');
+							$w[] = array('L' . $language => '"' . str_replace('"', '""', nice_shorten($v, $MAX_LABEL_LENGTH)) . '"');
 						}					
 						$done = true;
 					}					
@@ -554,6 +582,8 @@ $this->props = array(
 						// it isn't English
 						$language = 'en';					
 						$title = strip_tags($title);
+						
+						$title = html_entity_decode($title, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 					
 						/*
 						// title
@@ -594,24 +624,26 @@ $this->props = array(
 								$w[] = array('P407' => $language_map[$language]);
 
 								// title
-								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
+								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . str_replace('"', '""', $title) . '"');
+
 								// label
-								$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
+								$w[] = array('L' . $language => '"' . str_replace('"', '""', nice_shorten($title, $MAX_LABEL_LENGTH)) . '"');
 							
 							
 							}
 							else											
 							{
 								// title
-								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($title, '"') . '"');
+								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . str_replace('"', '""', $title) . '"');
+
 								// label
-								$w[] = array('L' . $language => '"' . addcslashes($title, '"') . '"');
+								$w[] = array('L' . $language => '"' . str_replace('"', '""', nice_shorten($title, $MAX_LABEL_LENGTH)) . '"');
 							
 								// language of work (assume it is the same as the title)
 								$w[] = array('P407' => $language_map[$language]);							
 							
 								// add label in English anyway
-								$w[] = array('Len' => '"' . addcslashes($title, '"') . '"');
+								$w[] = array('Len' => '"' . str_replace('"', '""', nice_shorten($title, $MAX_LABEL_LENGTH)) . '"');
 							
 							}	
 						}
@@ -881,7 +913,8 @@ $this->props = array(
 				
 				if ($journal_item == '')
 				{
-					$journal_item = wikidata_item_from_journal_name($container);
+					// try to find from name
+					$journal_item = wikidata_item_from_journal_name($container, $languages_to_detect[0]);
 				}
 				
 				// If we have the container in Wikidata link to it
@@ -966,6 +999,8 @@ $this->props = array(
 				
 				// clean
 				$text = preg_replace('/^(SUMMARY|Abstract|ABSTRACT|INTRODUCTION)/u', '', $text);
+				$text = preg_replace('/^<jats:p>/u', '', $text);
+				$text = strip_tags($text);
 				
 				// sentence split (assumes English-style text)
 				// see https://stackoverflow.com/a/16377765/9684 for some ideas

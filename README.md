@@ -7,28 +7,80 @@ Tools to upload bibliographic data to Wikidata
 
 Journal | ISSN | Wikidata | Notes
 --|--|--|--
-Records of the Auckland Institute and Museum | 0067-0464 | Q15214730 | JSTOR (first one)
-Records of the Auckland Museum | 1174-9202, 2422-8567 | 	Q15756170 | JSTOR
+A | | | 
 Adansonia nouvelle série	 | 0001-804X | Q58814054 | No external identifiers
+B | | | 
+Basteria	| 0005-6219 | Q21069434 | IA
+Beaufortia | | | IA
+Bijdragen Tot de Dierkunde | | | IA
+Braueria | 1026-3632 | | IA
+Bulletin of The British Arachnological Society | 0524-4994 | | IA
+Bulletin of the Osaka Museum of Natural History | 0078-6675 | | IA
+C | | | 
+Cahiers de Biologie Marine | | | DataCite DOIs
+D | | | 
+E | | | 
+F | | | 
+G | | | 
+H | | | 
+I | | | 
+J | | | 
+Journal of Arachnology | 0161-8202 | | JSTOR
+Journal of The Malayan Branch of The Royal Asiatic Society | 2304-7550 | | JSTOR
+J | | | 
+K | | | 
+L | | | 
+M | | | 
+N | | | 
 New Zealand Oceanographic Institute Memoir |0083-7903 |Q21385262 | IA
+O | | |
+Odonatologica | 0375-0183 |Q15758632 | IA
+P | | | 
+Pacific Insects | 0030-8714 | Q7122498 | IA
+Peckhamia | 2161-8526 | Q7158750 | IA
+Proceedings of the California Academy of Sciences | 0068-547X | | IA
+Proceedings of the Malacological Society of London | | | CrossRef DOIs have journal as Journal of Molluscan Studies
+Q | | | 
+R | | |
+Records of the Auckland Institute and Museum | 0067-0464 | Q15214730 | JSTOR
+Records of the Auckland Museum | 1174-9202, 2422-8567 | 	Q15756170 | JSTOR
+Records of the Indian Museum | 0375-099X | Q41394003 | IA
+S | | |
+Studies on the Fauna of Suriname and other Guyanas | 0300-5488 | | IA
+T | | |
 Transactions of the Royal Society of New Zealand. Zoology | 0372-1396 | Q28535616 | IA
 Transactions of the Royal Society of New Zealand. Botany | 0372-1361 | Q21034224 | IA
-Records of the Indian Museum | 0375-099X | Q41394003 | IA
 Transactions and Proceedings of the Royal Society of New Zealand | 1176-6166 | Q21556862 | IA
-Basteria	| 0005-6219 | Q21069434 | IA
+札幌博物学会会報 | | | Handle
+U | | | 
+V | | | 
+W | | | 
+X | | | 
+Y | | | 
+Z | | | 
 Zoologische Mededelingen | 0024-0672, 1876-2174 | Q2358748 | IA
-Peckhamia | 2161-8526 | Q7158750 | IA
-Pacific Insects | 0030-8714 | Q7122498 | IA
-Odonatologica | 0375-0183 |Q15758632 | IA
+
+
 
 
 Once added to Wikidata we should update local database to have Wikidata Q number.
 
 ## Duplicates
 
-When adding in bulk we can end up with duplicates. Simplest way to fix this is do a SPARQL query, download results as TSV file, then run ```php fix-duplicates.php``` to generate quick statements to merge duplicates.
+When adding in bulk we can end up with duplicates. Simplest way to fix this is do a SPARQL query, download results as TSV file, then run ```php fix-duplicates.php``` to generate quick statements to merge duplicates. For example:
 
-Note that de-duping on PDFs or Internet Archive ids can be problematic if same pages (and same file) has multiple articles (e.g there has been a bit of a mess with Bulletin of the British Arachnological Society e.g. http://localhost/~rpage/alec/?id=Q90005688
+```
+SELECT * 
+WHERE
+{
+ ?item wdt:P1433 wd:Q51522336 . 
+ ?item wdt:P1476 ?title .
+ ?item wdt:P724 ?ia .
+}
+ORDER BY ?title
+```
+
+Note that de-duping on PDFs or Internet Archive ids can be problematic if same pages (and same file) has multiple articles (e.g there has been a bit of a mess with Bulletin of the British Arachnological Society e.g. http://localhost/~rpage/alec/?id=Q90005688 )
 
 ## Notes
 
@@ -39,7 +91,7 @@ https://twitter.com/EvoMRI/status/1094299776181587968
 
 ## Danger
 
-Some references are entired in ways that make their discover problematic, e.g. https://www.wikidata.org/wiki/Q62024319 “A new Toxomerus species from Chile (Diptera: Syrpliidae)” which has bibliographic data as qualifiers for ```published in’’’.
+Some references are entered in ways that make their discovery problematic, e.g. https://www.wikidata.org/wiki/Q62024319 “A new Toxomerus species from Chile (Diptera: Syrpliidae)” which has bibliographic data as qualifiers for ```published in’’’.
 
 - published in Studia dipterologica
 	- publication date 2013

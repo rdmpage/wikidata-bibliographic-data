@@ -50,15 +50,72 @@ $filename = 'quickstatements/0161-8202.txt';
 // Bulletin of The British Arachnological Society
 $filename = 'quickstatements/0524-4994.txt';
 
+// Studies on the Fauna of Suriname and other Guyanas
+$filename = 'quickstatements/0300-5488.txt';
+
+// Proceedings of the California Academy of Sciences
+$filename = 'quickstatements/0068-547X.txt';
+
+// 札幌博物学会会報 Sapporo
+$filename = 'quickstatements/札幌博物学会会報.txt';
+
+// Proceedings of the California Academy of Sciences suppliements with comma in file name
+$filename = 'quickstatements/0068-547X-supplements.txt';
+
+// Journal of The Malayan Branch of The Royal Asiatic Society
+$filename = 'quickstatements/2304-7550.txt';
+$filename = 'quickstatements/2304-7550-extra.txt';
+
+// Beaufortia
+$filename = 'quickstatements/0067-4745.txt';
+
+// Bijdragen Tot de Dierkunde
+$filename = 'quickstatements/0067-8546.txt';
+
+// Cahiers de Biologie Marine (DataCite DOI)
+$filename = 'quickstatements/0007-9723.txt';
+
+// Proceedings of the Malacological Society of London
+$filename = 'quickstatements/0025-1194.txt';
+
+// Braueria
+$filename = 'quickstatements/1026-3632.txt';
+
+// Molluscan Research CSIRO
+$filename = 'quickstatements/1323-5818-2002-2004.txt';
+$filename = 'quickstatements/1323-5818-2005-2013.txt';
+
+// Selbyana
+$filename = 'quickstatements/0361-185X.txt';
+
+// Sida
+$filename = 'quickstatements/0036-1488.txt';
+$filename = 'quickstatements/long.txt';
+
+// Tettigonia
+$filename = 'quickstatements/1341-6707.txt';
+
+// Melbourne
+$filename = 'quickstatements/0311-9548.txt';
+$filename = 'quickstatements/0083-5986.txt';
+$filename = 'quickstatements/0814-1827.txt';
+$filename = 'quickstatements/1447-2546.txt';
 
 // flags
-$check = true; // make sure record doesn't alreday exist
 $check = false;// don't check (only do this if we are sure we're adding new stuff)
+$check = true; // make sure record doesn't alreday exist
 
 $update = true; // Update any existing records
 $update = false; // Leave existing record alone
 
 $languages = array('en'); // assume everything is in English
+//$languages = array('ja','en','de');
+//$languages = array('en', 'de', 'nl');
+//$languages = array('en', 'nl', 'de', 'fr');
+//$languages = array('en', 'de');
+$languages = array('ja', 'en');
+
+$count++;
 
 $file_handle = fopen($filename, "r");
 while (!feof($file_handle)) 
@@ -66,7 +123,7 @@ while (!feof($file_handle))
 	$guid = trim(fgets($file_handle));
 	
 	
-	$url = 'http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . $guid;
+	$url = 'http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . urlencode($guid);
 
 	$json = get($url);
 	
@@ -128,10 +185,20 @@ while (!feof($file_handle))
 			$languages
 			);
 		
-		echo $quickstatements . "\n\n";
+		if ($quickstatements != '')
+		{
+			echo $quickstatements . "\n\n";
+		}
 	}
 	
-	
+	// Give server a break every 10 items
+	if (($count++ % 10) == 0)
+	{
+		$rand = rand(1000000, 3000000);
+		//echo "\n-- ...sleeping for " . round(($rand / 1000000),2) . ' seconds' . "\n\n";
+		usleep($rand);
+	}
+
 
 }
 
