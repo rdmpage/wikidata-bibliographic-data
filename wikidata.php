@@ -55,6 +55,38 @@ function get($url, $user_agent='', $content_type = '')
 }
 
 //----------------------------------------------------------------------------------------
+// Does wikidata have this funder with a Crossref funder DOI
+function wikidata_funder_from_doi($doi)
+{
+	$item = '';
+	
+	$id = $doi;
+	$id = strtoupper(str_replace('10.13039/', '', $id));
+	
+	$sparql = 'SELECT * WHERE { ?funder wdt:P3153 "' . $id . '" }';
+	
+	// echo $sparql . "\n";
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->funder->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
 // Does wikidata have this DOI?
 function wikidata_item_from_doi($doi)
 {
@@ -136,6 +168,33 @@ function wikidata_item_from_jstor($jstor)
 	return $item;
 }
 
+//----------------------------------------------------------------------------------------
+// Does wikidata have this BHL part id?
+function wikidata_item_from_bhl_part($bhl_part)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P6535 "' . $bhl_part . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
 
 //----------------------------------------------------------------------------------------
 // Does wikidata have this BioStor id?
@@ -144,6 +203,33 @@ function wikidata_item_from_biostor($biostor)
 	$item = '';
 	
 	$sparql = 'SELECT * WHERE { ?work wdt:P5315 "' . $biostor . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
+// Does wikidata have this CNKI?
+function wikidata_item_from_cnki($cnki)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P6769 "' . $cnki . '" }';
 	
 	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
 	$json = get($url, '', 'application/json');
@@ -355,7 +441,7 @@ function wikidata_item_from_wikispecies_author($wikispecies)
 
 //----------------------------------------------------------------------------------------
 // Convert a csl json object to Wikidata quickstatments
-function csljson_to_wikidata($work, $check = true, $update = true, $languages_to_detect = array('en'))
+function csljson_to_wikidata($work, $check = true, $update = true, $languages_to_detect = array('en'), $source = array())
 {
 
 	$MAX_LABEL_LENGTH = 250;
@@ -364,6 +450,7 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 	
 	// Map language codes to Wikidata items
 	$language_map = array(
+		'da' => 'Q9035',
 		'de' => 'Q188',
 		'en' => 'Q1860',
 		'es' => 'Q1321',
@@ -416,6 +503,15 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 			if (isset($work->message->BIOSTOR))
 			{
 				$item = wikidata_item_from_biostor($work->message->BIOSTOR);
+			}
+		}		
+
+		// CNKI
+		if ($item == '')
+		{
+			if (isset($work->message->CNKI))
+			{
+				$item = wikidata_item_from_cnki($work->message->CNKI);
 			}
 		}		
 	
@@ -506,7 +602,9 @@ $this->props = array(
 	$wikidata_properties = array(
 		'type'					=> 'P31',
 		'BHL' 					=> 'P687',
+		'BHLPART' 				=> 'P6535',
 		'BIOSTOR' 				=> 'P5315',
+		'CNKI'					=> 'P6769',
 		'DOI' 					=> 'P356',
 		'HANDLE'				=> 'P1184',
 		'JSTOR'					=> 'P888',
@@ -779,7 +877,15 @@ $this->props = array(
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 
+			case 'BHLPART':
+				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
+				break;
+
 			case 'BIOSTOR':
+				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
+				break;
+
+			case 'CNKI':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 				
@@ -799,6 +905,9 @@ $this->props = array(
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 				
+			case 'PMID':
+				$w[] = array($wikidata_properties[$k] => '"' . strtoupper($v) . '"');
+				break;								
 				
 			// BioStor CSL-JSON
 			case 'bhl_pages':
@@ -855,8 +964,7 @@ $this->props = array(
 				
 			case 'ZOOBANK':
 				$w[] = array($wikidata_properties['ZOOBANK_PUBLICATION'] => '"' . $v . '"');
-				break;
-				
+				break;				
 				
 			case 'link':
 				foreach ($v as $link)
@@ -938,6 +1046,7 @@ $this->props = array(
 				$w[] = array('P577' => $date);
 				break;
 				
+				
 			case 'reference':
 				foreach ($v as $reference)
 				{
@@ -952,6 +1061,43 @@ $this->props = array(
 						}					
 					}
 					
+				}
+				break;
+				
+
+/*				
+funder: [
+{
+DOI: "10.13039/501100001659",
+name: "Deutsche Forschungsgemeinschaft",
+doi-asserted-by: "publisher",
+award: [
+"PA 1818/3-1",
+"HU 1561/1-1, 1-2"
+]
+},
+{
+name: "European Union Improving Human Potential program SYNTHESYS",
+award: [
+"GB-TAF-3410",
+"GB-TAF-5177"
+]
+}
+],
+*/
+
+			case 'funder':
+				foreach ($v as $funder)
+				{
+					//print_r($funder);
+					if (isset($funder->DOI))
+					{
+						$funder_qid = wikidata_funder_from_doi($funder->DOI);
+						if ($funder_qid != '')
+						{
+							$w[] = array('P859' => $funder_qid);
+						}
+					}				
 				}
 				break;
 				
@@ -993,28 +1139,77 @@ $this->props = array(
 				break;
 				
 			case 'abstract':
-				$text = $v;
+				// Handle multiple languages
+				$done = false;
 				
-				// for now just single language 9to do: multilingual)
-				
-				// clean
-				$text = preg_replace('/^(SUMMARY|Abstract|ABSTRACT|INTRODUCTION)/u', '', $text);
-				$text = preg_replace('/^<jats:p>/u', '', $text);
-				$text = strip_tags($text);
-				
-				// sentence split (assumes English-style text)
-				// see https://stackoverflow.com/a/16377765/9684 for some ideas
-				$sentences = preg_split('/(?<=[a-z\)])[.?!](?=\s+[A-Z])/u', $text);
-								
-				if (count($sentences) != 0)
+				if (isset($work->message->multi))
 				{
-					$first_line = $sentences[0] . '.';
+					if (isset($work->message->multi->_key->abstract))
+					{					
+						foreach ($work->message->multi->_key->abstract as $language => $text)
+						{
+							$text = preg_replace('/^(SUMMARY|Abstract|ABSTRACT|INTRODUCTION)/u', '', $text);
+							$text = preg_replace('/^<jats:p>/u', '', $text);
+							$text = strip_tags($text);
+						
 				
-					// Detect language of first_line
-					$ld = new Language($languages_to_detect);						
-					$language = $ld->detect($first_line)->__toString();
+							
+							$sentences = '';
+							
+							switch ($language)
+							{
+								case 'zh':
+									$sentences = preg_split('/。/u', $text);
+									break;							
+							
+								case 'en':
+								default:
+									// sentence split (assumes English-style text)
+									// see https://stackoverflow.com/a/16377765/9684 for some ideas
+									$sentences = preg_split('/(?<=[a-z\)])[.?!](?=\s+[A-Z])/u', $text);
+									break;
+							}
+							
+								
+							if (count($sentences) != 0)
+							{
+								$first_line = $sentences[0] . '.';								
+								$first_line = nice_shorten($first_line);
+				
+								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($first_line, '"') . '"');
+							}
+						}					
+						$done = true;
+					}					
+				}
+			
+				if (!$done)
+				{			
+					// one language only
+					$text = $v;
+				
+					// for now just single language 9to do: multilingual)
+				
+					// clean
+					$text = preg_replace('/^(SUMMARY|Abstract|ABSTRACT|INTRODUCTION)/u', '', $text);
+					$text = preg_replace('/^<jats:p>/u', '', $text);
+					$text = strip_tags($text);
+				
+					// sentence split (assumes English-style text)
+					// see https://stackoverflow.com/a/16377765/9684 for some ideas
+					$sentences = preg_split('/(?<=[a-z\)])[.?!](?=\s+[A-Z])/u', $text);
+								
+					if (count($sentences) != 0)
+					{
+						$first_line = $sentences[0] . '.';
+						$first_line = nice_shorten($first_line);
+				
+						// Detect language of first_line
+						$ld = new Language($languages_to_detect);						
+						$language = $ld->detect($first_line)->__toString();
 
-					$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($first_line, '"') . '"');
+						$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($first_line, '"') . '"');
+					}
 				}
 				break;
 				
@@ -1041,7 +1236,15 @@ $this->props = array(
 			$row[] = $property;
 			$row[] = $value;
 		
-			$quickstatements .= join("\t", $row) . "\n";
+			$quickstatements .= join("\t", $row);
+			
+			// labels don't get references 
+			if (count($source) > 0 && !preg_match('/^L/', $property))
+			{
+				$quickstatements .= "\t" . join("\t", $source);
+			}
+			
+			$quickstatements .= "\n";
 			
 		}
 	}
