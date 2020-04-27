@@ -18,7 +18,7 @@ while (!feof($file_handle))
 	
 	if (!$done)
 	{
-		if (preg_match('/https?:\/\/www.jstor.org\/stable\/(?<id>\d+)/', $guid, $m))
+		if (preg_match('/https?:\/\/www.jstor.org\/stable\/(?<id>.*)/', $guid, $m))
 		{
 			$jstor = $m['id'];
 			
@@ -43,6 +43,22 @@ while (!feof($file_handle))
 			}
 		}			
 	}
+	
+	if (!$done)
+	{
+		if (preg_match('/biodiversitylibrary.org\/part\/(?<id>\d+)/', $guid, $m))
+		{
+			$bhl_part = $m['id'];
+			
+			$item = wikidata_item_from_bhl_part($bhl_part);
+			if ($item)
+			{
+				echo "UPDATE publications SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";
+				$done = true;
+			}
+		}			
+	}
+	
 	
 	
 
