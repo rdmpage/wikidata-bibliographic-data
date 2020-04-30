@@ -44,6 +44,24 @@ while (!feof($file_handle))
 		}			
 	}
 	
+	// http://www.cnki.com.cn/Article/CJFDTOTAL-KCFL197901001.htm
+	if (!$done)
+	{
+		if (preg_match('/www.cnki.com.cn\/Article\/CJFDTOTAL-(?<id>.*)\.htm/', $guid, $m))
+		{
+			$cnki = $m['id'];
+			
+			//echo $cnki . "\n";
+			
+			$item = wikidata_item_from_cnki($cnki);
+			if ($item)
+			{
+				echo "UPDATE publications SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";
+				$done = true;
+			}
+		}			
+	}
+		
 	if (!$done)
 	{
 		if (preg_match('/biodiversitylibrary.org\/part\/(?<id>\d+)/', $guid, $m))
