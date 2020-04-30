@@ -347,6 +347,62 @@ function wikidata_item_from_issn($issn)
 }
 
 //----------------------------------------------------------------------------------------
+// Do we have a book with this ISBN-10?
+function wikidata_item_from_isbn10($isbn10)
+{
+	$item = '';
+
+	$sparql = 'SELECT * WHERE { ?work wdt:P957 "' . strtoupper($isbn10) . '" }';
+
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+		
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
+// Do we have a book with this ISBN-13?
+function wikidata_item_from_isbn13($isbn13)
+{
+	$item = '';
+
+	$sparql = 'SELECT * WHERE { ?work wdt:P212 "' . strtoupper($isbn13) . '" }';
+
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+		
+	return $item;
+}
+
+
+
+//----------------------------------------------------------------------------------------
 function wikidata_item_from_journal_name($name, $language = 'en')
 {
 	$item = '';
@@ -1521,197 +1577,7 @@ function get_work($doi)
 	return $obj;
 }
 
-//----------------------------------------------------------------------------------------
 
-
-// fix
-if (0)
-{
-
-	$dois=array(
-	'10.1071/is07053',
-	'10.1071/is02015',
-	'10.1071/is05024',
-	'10.1071/is05035',
-	'10.1071/is05035',
-	'10.1071/is04021',
-	'10.1071/is05056',
-	'10.1071/it00036',
-	'10.1071/it01004',
-	'10.1071/is10034',
-	'10.1071/is16046',
-	'10.1071/is10044',
-	'10.1071/it01029',
-	'10.1071/is15047',
-	'10.1071/it01039',
-	'10.1071/is07018',
-	'10.1071/is05022',
-	'10.1071/is15039',
-	'10.1071/is11037',
-	'10.1071/is05005',
-	'10.1071/is05005',
-	'10.1071/is05005',
-	'10.1071/is16006',
-	'10.1071/is15046',
-	'10.1071/is15028',
-	'10.1071/is15028',
-	'10.1071/is10013',
-	'10.1071/is06031',
-	'10.1071/is07039',
-	'10.1071/is15011',
-	'10.1071/is14021',
-	'10.1071/is14025',
-	'10.1071/is14025',
-	'10.1071/is14025',
-	'10.1071/is14025',
-	'10.1071/is14025',
-	'10.1071/is14025',
-	'10.1071/is04020',
-	'10.1071/is14043',
-	'10.1071/it01038',
-	'10.1071/is02007',
-	'10.1071/is08028',
-	'10.1071/is12008',
-	'10.1071/is16054',
-	'10.1071/is05019',
-	'10.1071/is07016',
-	'10.1071/is05033',
-	'10.1071/is10035',
-	'10.1071/is14036',
-	'10.1071/is03008',
-	'10.1071/is04009',
-	'10.1071/it01043',
-	'10.1071/is02008',
-	'10.1071/is03005',
-	'10.1071/is04010',
-	'10.1071/is03005'
-	);
-
-	foreach ($dois as $doi)
-	{
-		$item = wikidata_item_from_doi($doi);
-		
-		if ($item != '')
-		{
-			echo $item . "\n";
-		}
-	}
-
-}
-
-// tests
-if (0)
-{
-
-	// add to Wikidata via DOI
-	$dois=array(
-	'10.1071/is07053',
-	'10.1071/is02015',
-	'10.1071/is05024',
-	'10.1071/is05035',
-	'10.1071/is05035',
-	'10.1071/is04021',
-	'10.1071/is05056',
-	'10.1071/it00036',
-	'10.1071/it01004',
-	'10.1071/is10034',
-	'10.1071/is16046',
-	'10.1071/is10044',
-	'10.1071/it01029',
-	'10.1071/is15047',
-	'10.1071/it01039',
-	'10.1071/is07018',
-	'10.1071/is05022',
-	'10.1071/is15039',
-	'10.1071/is11037',
-	'10.1071/is05005',
-	'10.1071/is05005',
-	'10.1071/is05005',
-	'10.1071/is16006',
-	'10.1071/is15046',
-	'10.1071/is15028',
-	'10.1071/is15028',
-	'10.1071/is10013',
-	'10.1071/is06031',
-	'10.1071/is07039',
-	'10.1071/is15011',
-	'10.1071/is14021',
-	'10.1071/is14025',
-	'10.1071/is14025',
-	'10.1071/is14025',
-	'10.1071/is14025',
-	'10.1071/is14025',
-	'10.1071/is14025',
-	'10.1071/is04020',
-	'10.1071/is14043',
-	'10.1071/it01038',
-	'10.1071/is02007',
-	'10.1071/is08028',
-	'10.1071/is12008',
-	'10.1071/is16054',
-	'10.1071/is05019',
-	'10.1071/is07016',
-	'10.1071/is05033',
-	'10.1071/is10035',
-	'10.1071/is14036',
-	'10.1071/is03008',
-	'10.1071/is04009',
-	'10.1071/it01043',
-	'10.1071/is02008',
-	'10.1071/is03005',
-	'10.1071/is04010',
-	'10.1071/is03005'
-	);
-
-	$dois=array(
-	'10.12681/eh.11534'
-	);
-
-	$dois=array(
-	'10.1080/0028825X.2019.1587474'
-	);
-
-	$dois=array(
-	'10.1111/j.1096-3642.1979.tb01909.x'
-	);
-
-	$dois=array(
-	'10.1163/187631208788784318'
-	);
-
-	$dois=array(
-	'10.1111/syen.12241'
-	);
-
-	$dois=array(
-	//'10.1023/A:1024669103815'
-	//'10.1023/a:1003296302957'
-	'10.1080/23802359.2018.1545547'
-	);
-
-	/*
-	$dois = array(
-	'10.1071/IS02015'
-	);
-	*/
-
-	foreach ($dois as $doi)
-	{
-		$work = get_work($doi);
-	
-		//print_r($work);
-	
-		if ($work)
-		{
-			// print_r($work);
-			$q = csljson_to_wikidata($work);
-		
-			echo $q;
-			echo "\n";
-		}
-	}	
-	
-}
 
 
 //----------------------------------------------------------------------------------------
@@ -1802,282 +1668,239 @@ function wikidata_find_from_anything ($work)
 
 }
 
-// Microcitations
-if (0)
+function googlebooks_to_wikidata($isbn, $update = true)
 {
-	$guids=array(
-'http://docs.niwa.co.nz/library/public/Memoir%20110_Marine%20Fauna%20of%20NZ_Cephalopoda%20(Giant%20Squid)%20-%201998.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20109_The%20Marine%20Fauna%20of%20NZ_Pycnogonida%20(Sea%20Spiders).pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20108_Marine%20Fauna%20of%20Ross%20Sea_Polychaeta%20-%201998.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20107_The%20Marine%20Fauna%20of%20NZ_Porifera_Demospongiae%20Part%205_Dendroceratida%20and%20Halisarcida.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20106_The%20Marine%20Fauna%20of%20NZ_Athecate%20Hydroids%20and%20their%20Medusae%20(Cnidaria-Hydrozoa).pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20105_Marine%20Fauna%20of%20NZ_Index%20to%20the%20Fauna_Mollusca%20-%201995.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20104_Pelagic%20Copepoda.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20103_Scletactinia_of_New_Zealand%20-%201995.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20102_Pelagic%20Calanoid%20Copepoda%20(1).pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20101_Marine%20Fauna%20of%20NZ_Chaetognatha%20(Arrow%20Worms)%20-%201993.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20100_Marine%20Fauna%20of%20NZ_Index%20to%20the%20Porifera%20-%201993.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20099_The%20Marine%20Fauna%20of%20New%20Zealand%20-%20Index%20to%20the%20Fauna%201%20-%20Protozoa%20-%201992.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20098_Stylasteridae_of_New_Zealand%20-%201991.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20097_Marine%20Fauna%20of%20NZ_Bryozoa_Gymnolaemata%20from%20the%20Western%20South%20Island%20Shelf%20and%20Slope%20-%201989.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20096_Marine%20Fauna%20of%20NZ_Porifera,%20Demospongiae,%20Part%204%20(Poecilosclerida)%20-%201988.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20095_Marine%20Fauna%20of%20NZ_Bryozoa_Gymnolaemata%20from%20the%20Western%20South%20Island%20Shelf%20and%20Slope%20-%201986.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20094_Marine%20Fauna%20of%20NZ_Deep%20Sea%20Isopoda%20Asellota%20-%201985.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20093_Sedimentation_of_the_South_Otago_Continental_Shelf%20-%201985.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20092_Marine%20Fauna%20of%20NZ_Larvae%20of%20the%20Brachyura%20(Decapoda)%20-%201985.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20091_Marine%20Fauna%20of%20NZ_Bryozoa_Gymnolaemata%20from%20the%20Kermadec%20Ridge%20-%201984.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20090_Marine%20Fauna%20of%20NZ_Pelagic%20Calanoid%20Copepods%20-%201983.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20089_Late%20Quarternary%20Stratigraphy%20and%20Sedimentation%20of%20the%20Canterbury%20Continental%20Shelf,%20New%20Zealand.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20088_Physical%20Oceanography%20of%20the%20New%20Zealand%20Fiords.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20087_The%20Marine%20Fauna%20of%20New%20Zealand_Porifera,%20Demospongiae,%20Part%203%20(Haplosclerida%20and%20Nepheliospongida).pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20086_The%20Marine%20Fauna%20of%20New%20Zealand_Pelagic%20Alanoid%20Copepods_Family%20Aetideidae.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20085_The%20Marine%20Fauna%20of%20New%20Zealand_Ascidiacea.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20084_Foraminifera%20on%20the%20Continental%20Shelf%20and%20Slope%20off%20Southern%20Hawke\'s%20Bay,%20New%20Zealand.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20083_The%20Hydraulic%20Regime%20and%20its%20Potential%20to%20Transport%20Sediment%20on%20the%20Canterbury%20Continental%20Shelf.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20082_The%20Marine%20Fauna%20of%20New%20Zealand_Bethnic%20Ostracoda%20(Suborder%20Myodocopina).pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20081_Late%20Cenozoic%20Geology%20of%20the%20West%20Coast%20Shelf%20-%201978.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20080_Soft-bottom%20Bethnic%20Communities%20in%20Otago%20Harbour%20and%20Blueskin%20Bay,%20New%20Zealand.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20079_Fiord%20Studies%20Caswell%20and%20Nancy%20Sounds%20NZ%20-%201978.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20078_%20The%20Marine%20Fauna%20of%20New%20Zealand_Ostracods%20of%20the%20Otago%20Shelf.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20077_Distribution%20and%20Morphology%20of%20Chatham%20Rise%20Phosphorites.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20076_Catalogue%20of%20type%20and%20figured%20specimens%20in%20NZOI%20-%201979.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20075_Hydrology%20of%20the%20Bounty%20Islands%20Region.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20074_Checklist%20of%20NZ%20Lakes%20-%201975.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20073_Hydrology%20of%20the%20Kermadec%20Islands%20Region.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20072_Oceanic%20Circulation%20and%20Hydrology%20off%20the%20Southern%20Half%20of%20South%20Island,%20New%20Zealand.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20071_Comprehensive%20Bibliography%20of%20Marine%20Manganese%20Nodules.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20070_Settlement%20and%20Succession%20on%20Rocky%20Shores%20at%20Auckland,%20North%20Island,%20New%20Zealand.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20063_Marine%20Fauna%20of%20NZ_Sphaeromatidae%20(Isopoda)%20-%201977.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20062_The%20Marine%20Fauna%20of%20NZ%20Algae%20Living%20Littoral%20Gammaridea%20(Crustacea%20Amphipoda)%20-%201972.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20061_The%20Marine%20Fauna%20of%20New%20Zealand_Macrourid%20Fishes%20(Pisces-Gadida).pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20060_Internal%20Structure%20in%20Marine%20Shelf,%20Slope,%20and%20Abyssal%20Sediments%20East%20of%20New%20Zealand.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20059_The%20Fauna%20of%20the%20Ross%20Sea_Part%208.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20058_Hydrological%20Studies%20in%20the%20New%20Zealand%20Region%201966%20and%201967.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20057_Biological%20Results%20of%20the%20Chatham%20Islands%201954%20Expedition.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20056_Hydrology%20of%20the%20Southern%20Kermadec%20Trench%20Region.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20055_Oceanic%20Circulation%20off%20the%20East%20Coast%20of%20New%20Zealand.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20054_Systematics%20and%20Ecology%20of%20NZ%20Kaikoura%20Plankton%20-%201972.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20053_Zooplankton%20and%20Hydrology%20of%20Hauraki%20Gulf%20-%201971.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20052_The%20Marine%20Fauna%20of%20NZ%20-%20Sea%20Cucumbers%20-%201970.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20051_The%20Marine%20Fauna%20of%20New%20Zealand-Porifera,%20Demospongiae,%20Part%202%20(Axinellida%20and%20Halichondrida).pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20050_Marine%20Geology%20of%20the%20NZ%20Subantarctic%20Sea%20Floor%20-%201969.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20049_Fauna%20of%20the%20Ross%20Sea%20(Part%207)_Pycnogonida_1-%201969.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20048_Hydrology%20of%20the%20South-East%20Tasman%20Sea.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20047_Outline%20Distribution%20of%20NZ%20Shelf%20Fauna%20(Echinoidea)%20-%201969.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20046_Fauna%20of%20the%20Ross%20Sea%20(Part%206)_Foraminifera%20-%201968.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20045_A%20Key%20to%20the%20Recent%20Genera%20of%20Foraminiferida%20-%201970.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20044_A%20Checklist%20of%20Recent%20New%20Zealand%20Foraminifera.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20043_The%20Marine%20Fauna%20of%20New%20Zealand_Scleractinian%20Corals.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20042_The%20Echinozoan%20Fauna%20of%20the%20New%20Zealand%20Subantarctic%20Islands,%20Macquarie%20Island,%20and%20the%20Chatham%20Rise.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20041_Bathymetry%20and%20Geologic%20Structure%20of%20the%20North%20West%20Tasman%20Sea%20and%20South%20Solomon%20Sea%20-%201967%20.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20040_Sediments%20of%20the%20Western%20Shelf,%20North%20Island,%20New%20Zealand.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20039_Hydrology%20of%20the%20Southern%20Hikurangi%20Trench%20Region.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20038_The%20Marine%20Fauna%20of%20New%20Zealand_Intertidal%20Foraminifera%20of%20the%20Corallina%20Officinalis%20Zone%20-%201967.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20037_The%20Marine%20Fauna%20of%20New%20Zealand-Porifera,%20Demospongiae,%20Part%201%20(Tetractinomorpha%20and%20Lithistida)%20-%201968.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20036_Water%20Masses%20and%20Fronts%20in%20the%20Southern%20Ocean%20South%20of%20New%20Zealand%20-%201967.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20035_Spider_Crabs_Family_Majidae%20-%201966.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20034_Marine%20Fauna%20of%20NZ%20-%20Family%20Hymenosomatidea%20-%201975.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20033_Submrine_Geology_Foveaux_Strait%20-%201967.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20032_Fauna%20of%20the%20Ross%20Sea_Part%205%20-%201967.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20031_Contributions%20to%20Manihiki%20Atoll%20-%20Cook%20Islands%20-%201974.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20030_Geology%20and%20Geomagnetism%20of%20the%20Bounty%20Region%20East%20of%20the%20South%20Island%20-%201966.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20029_Biological%20Results%20of%20The%20Chatham%20Islands%201954%20Expedition%20-%201964.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20028_Sedimentation%20in%20Hawke%20Bay%20-%201966.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20027_The%20Fauna%20of%20the%20Ross%20Sea%20(Part%204)%20Mysidacea%20and%20Sipunculoidea%20-%201965.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20026_Sediments%20of%20Chatham%20Rise%20-%201964.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20025_A%20Foraminiferal%20Fauna%20from%20the%20Western%20Continental%20Shelf,%20North%20Island,%20New%20Zealand%20-%201965.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20024_A%20Bibliography%20of%20the%20Oceanography%20of%20the%20Tasman%20and%20Coral%20Seas%20(1860-1960)%20-%201964.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20023_Marine%20Fauna%20of%20NZ%20-%20Crustaceans%20of%20the%20order%20Cumacea%20-%201963.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20022_The%20Marine%20Fauna%20of%20New%20Zealand_Crustacea%20Brachyura%20-%201964.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20021_The%20Fauna%20of%20the%20Ross%20Sea_part%203_Asteroidea%20-%201963.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20020_Flabellum%20rubrum%20-%201963.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20019_Fauna%20of%20the%20Ross%20Sea_Part%202%20-%20Scleractinian%20Chorals%20-%201962.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20018_Fauna%20of%20the%20Ross%20Sea_Part%201%20-%20Ophiuroidea%20-%201961.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20017_Studies%20of%20a%20Southern%20Fiord%20-%201964.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20016_Bibliography%20of%20NZ%20Marine%20Zoology%201769%20to%201899%20-%201963.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20015_Bay%20Head%20sand%20beaches%20of%20Banks%20Peninsula%20NZ%20-%201974.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20014_Submarine%20Morphology%20East%20of%20the%20North%20Island%20NZ%20-%201963.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20013_Results%20of%20the%20Chatham%20Islands%20(1954%20Exped)_Part%205%20-%201961.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20012_Hydrology%20of%20NZ%20Offshore%20Waters%20-%201965.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20011_Bathymetry%20of%20the%20New%20Zealand%20Region%20-%201964.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20010_Hydrology%20of%20Circumpolar%20Waters%20South%20of%20New%20Zealand%20-%201961.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20009_Analysis%20of%20hydrological%20observations%20in%20the%20New%20Zealand%20region%20(1874-1955)%20-%201962.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20008_Hydrology%20of%20NZ%20Coastal%20waters%20(1955)%20-%201961.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20007_Biological%20results%20of%20the%20Chatham%20Islands%201954%20expedition%20(Part%204)%20-%201960.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20006_Results%20of%20the%20Chatham%20Islands%20(1954%20Exped)_Part%203%20-%201960.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20005_Biological%20results%20of%20the%20Chatham%20Islands%201954%20expedition%20(Part%202)%20-%201960.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20004_Biological%20Rsults%20of%20the%20Chatham%20Islands%201954%20expidition%20(Part%201)%20-%201960.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20003_Contributions%20to%20Marine%20Microbiology%20-%201959.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20002_General%20Account%20of%20the%20Chatham%20Islands%201954%20Expidition%20-%201957.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20001_Bibliography%20of%20NZ%20Oceanography%20from%201949%20to%201953%20-%201955.pdf',
+
+	$MAX_LABEL_LENGTH = 250;
+
+	$quickstatements = '';
+	
+	$source = array();
+	
+	// Map language codes to Wikidata items
+	$language_map = array(
+		'da' => 'Q9035',
+		'de' => 'Q188',
+		'en' => 'Q1860',
+		'es' => 'Q1321',
+		'fr' => 'Q150',
+		'ja' => 'Q5287',
+		'nl' => 'Q7411',
+		'pt' => 'Q5146',
+		'ru' => 'Q7737',
+		'th' => 'Q9217',
+		'zh' => 'Q7850',		
 	);
 	
-	$guids=array(
-	'http://docs.niwa.co.nz/library/public/Memoir%20130_The%20Marine%20Fauna%20of%20New%20Zealand_Euplectellid%20sponges%20-%202018.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20129_The%20Marine%20Fauna%20of%20New%20Zealand_Primnoid%20octocorals%20(Part%202)%20-%202016.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20128_The%20Marine%20Fauna%20of%20New%20Zealand_Geodiidae.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20127_The%20Marine%20Fauna%20of%20New%20Zealand_Amphipoda,%20Synopiidae.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20126_The%20Marine%20Fauna%20of%20New%20Zealand_Primnoidae%20Part%201.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20125_The%20Marine%20Fauna%20of%20New%20Zealand_Mantis%20Shrimps.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20123_The%20Marine%20Fauna%20of%20New%20Zealand_King%20Crabs.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20122_The%20Marine%20Fauna%20of%20New%20Zealand_Isopoda,%20Aegidae.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20121_The%20Marine%20Fauna%20of%20New%20Zealand_Lithistid%20Demospongiae.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20120_The%20Marine%20Fauna%20of%20New%20Zealand_Echinodermata%20part%203.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20119_The%20Marine%20Fauna%20of%20New%20Zealand_Leptothecata_Cnidaria%20Hydrozoa.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20118_Marine%20Fauna%20of%20NZ_Nemertea%20(Ribbon%20Worms)%20-%202002.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20117_Marine%20Fauna%20of%20NZ_Echinodermata%20-%20Asteroidea%20(order%20Valvatida)%20-%202001.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20116_The%20Marine%20Fauna%20of%20NZ_Echinodermata-Asteroidea%20(Sea-stars).pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20115_The%20Marine%20Fauna%20of%20NZ_Basket-stars%20and%20Snake-stars%20(Echinodermata-Ophiuroidea-Euryalinida).pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20114_Marine%20Fauna%20of%20NZ_Paguridea%20(Hermit%20Crabs)%20-%202000.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20113_Marine%20Fauna%20of%20NZ_Hydromedusae%20-%201999.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20112_The%20Marine%20Fauna%20of%20New%20Zealand_Octopoda%20-%201999.pdf',
-'http://docs.niwa.co.nz/library/public/Memoir%20111_Pelagic%20Calanoid%20Copepoda.pdf',
-);
+
+	// Do we have this already in wikidata?
+	$item = '';
 	
-	foreach ($guids as $guid)
+	if ($item == '')
 	{
-	
-		$json = get('http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . urlencode($guid));
-	
-		//echo $json;
-
-		$obj = json_decode($json);
-
-		//print_r($obj);
-
-		$work = new stdclass;
-		$work->message = $obj;
-	
-		//print_r($work);
-
-		$q =  csljson_to_wikidata($work);
-		echo $q;
-		echo "\n";
+		$item = wikidata_item_from_isbn10($isbn);
 	}
-}
-
-
-if (0)
-{
-
-/*
-// DOI
-$doi = '10.1080/00222933.2010.520169';
-$doi = '10.3956/2011-13.1';
-$doi = '10.3969/J.ISSN.2095-0845.2001.02.002';
-$item = wikidata_item_from_doi($doi);
-echo "$doi $item\n";
-
-// ISSN
-$issn = '1175-5326';
-$issn = '0001-6799';
-$item = wikidata_item_from_issn($issn);
-echo "$issn $item\n";
-
-// Journal name
-$name = 'Allertonia';
-//$name = 'Munis Entomology & Zoology';
-//$name = 'The Pan-Pacific entomologist';
-$item =  wikidata_item_from_journal_name($name);
-echo "$name $item\n";
-
-// BioStor
-$biostor = 217669;
-$item =  wikidata_item_from_biostor($biostor);
-echo "$biostor $item\n";
-
-// Add from microcitation
-$guid = '10.3969/j.issn.2095-0845.2001.02.002';
-$guid = '10.13346/j.mycosystema.140275';
-$guid = '10.3969/j.issn.1005-9628.2005.01.005';
-
-// JSTOR only
-//$guid = 'http://www.jstor.org/stable/23187393';
-
-// PDF is GUID, need to have OpenURL and/or PDF lookup to check doesn't exist
-//$guid = urlencode('http://www.museunacional.ufrj.br/publicacoes/wp-content/arquivos/Arqs%2065%20n%204%20p%20485-504%20Calvo%20et%20al.pdf');
-
-$json = get('http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . $guid);
-
-
-// BioStor examples
-$biostor = 240296;
-$biostor = 217669;
-
-//$json = get('http://biostor.org/api.php?id=biostor/' . $biostor . '&format=citeproc');
-
-
-$obj = json_decode($json);
-
-//print_r($obj);
-
-$work = new stdclass;
-$work->message = $obj;
-
-csljson_to_wikidata($work);
-
-// works for a journal 
-$issn = '0079-8835';
-
-// $works = works_for_journal($issn);
-// print_r($works);
-
-// OpenURL
-
-
-$issn	= "1175-5326";
-$volume = "2528";
-$spage 	= "1";
-
-$item = wikidata_item_from_openurl($issn, $volume, $spage);
-echo "$issn  $volume  $spage $item\n";
-
-*/
-
-/*
-$doi = '10.1371/journal.pone.0029715';
-$doi = '10.1111/aen.12333'; // I've added this
-$work = get_work($doi);
-if ($work)
-{
-	// print_r($work);
-	csljson_to_wikidata($work);
-}
-*/
-
-
-
-if (0)
-{
-	// JSTOR-based journal
-
-	$issn = '1174-9202';
-	$works = works_for_journal($issn);
-	print_r($works);
-}
-
-if (0)
-{
-	$guid = 'http://www.jstor.org/stable/42905863';
-
-	$guid = urlencode('http://www.guihaia-journal.com/ch/reader/view_abstract.aspx?file_no=1986Z1003&flag=1');
-
-	$guid = urlencode('http://www.guihaia-journal.com/ch/reader/view_abstract.aspx?file_no=20070426&flag=1');
-
-
-	$json = get('http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . $guid);
-
-
+	if ($item == '')
+	{
+		$item = wikidata_item_from_isbn13($isbn);
+	}
+	
+	if ($item != '' && !$update)
+	{
+		return $quickstatements;
+	}
+	
+	$url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' . $isbn;
+	
+	$json = get($url);
+	
 	$obj = json_decode($json);
-
+	
 	//print_r($obj);
+	
+	if (count($obj->items) == 1)
+	{		
+						
+		if ($item == '')
+		{						
+			// double check for existence
+			foreach($obj->items[0]->volumeInfo->industryIdentifiers as $identifier)
+			{
+				if ($identifier->type == 'ISBN_10')
+				{
+					$item = wikidata_item_from_isbn10($identifier->identifier);
+				}
+				if ($identifier->type == 'ISBN_13')
+				{
+					$item = wikidata_item_from_isbn13($identifier->identifier);
+				}		
+			}
+		}		
+	
+		if ($item == '')
+		{
+			$item = 'LAST';
+		}	
+		else
+		{
+			if (!$update)
+			{
+				return $quickstatements;
+			}
+		}
+		
+		$w = array();			
+		
+		// Type (here be dragons)
+		// simple model is to have a "book" item with ISBN
+		// Wikidata book project has model where each "book" has a work item and 
+		// one or more expressions (which have unique ISBNs).
+		
+		$w[] = array('P31' => 'Q47461344'); // written work
+		
+		//$w[] = array('P31' => 'Q3331189');  // version, edition, or translation
+		
+		
+		// Google Books
+		$w[] = array('P675' => '"' . $obj->items[0]->id . '"' );
+		
+		// Google Books is the source
+		$source[] = 'S248';
+		$source[] = 'Q206033';
+		$source[] = 'S854';
+		$source[] = '"' . $url . '"';
+				
+		// ISBNs
+		foreach($obj->items[0]->volumeInfo->industryIdentifiers as $identifier)
+		{
+			if ($identifier->type == 'ISBN_10')
+			{
+				$w[] = array('P957' => '"' . $identifier->identifier . '"' );
+			}
+			if ($identifier->type == 'ISBN_13')
+			{
+				$w[] = array('P212' => '"' . $identifier->identifier . '"' );
+			}		
+		}
+		
+		// title
+		if (isset($obj->items[0]->volumeInfo->title))
+		{
+			$title = $obj->items[0]->volumeInfo->title;
+		
+			// language
+			$language == 'en';
+			
+			if (isset($obj->items[0]->volumeInfo->language))
+			{
+				$language = $obj->items[0]->volumeInfo->language;
+			}
+			
+			if ($language == 'en')
+			{
+				// Assume work is English
+				$w[] = array('P407' => $language_map[$language]);
 
-	$work = new stdclass;
-	$work->message = $obj;
+				// title
+				$w[] = array('P1476' => $language . ':' . '"' . str_replace('"', '""', $title) . '"');
 
-	csljson_to_wikidata($work);
+				// label
+				$w[] = array('L' . $language => '"' . str_replace('"', '""', nice_shorten($title, $MAX_LABEL_LENGTH)) . '"');
+			
+			
+			}
+		
+		}
+		
+		// authors
+		if (isset($obj->items[0]->volumeInfo->authors))
+		{		
+			$count = 1;
+			foreach ($obj->items[0]->volumeInfo->authors as $name)
+			{
+				$qualifier = "\tP1545\t\"$count\"";
+				$w[] = array('P2093' => '"' . $name . '"' . $qualifier);	
+				
+				$count++;		
+			}
+			
+			// Generate a human-friendly description
+			$n = count($obj->items[0]->volumeInfo->authors);
+			$names = array();
+			if ($n > 1)
+			{
+				$names = array_slice($obj->items[0]->volumeInfo->authors, 0, $n - 1);
+			}
+			$description = "Book by " . join(", ", $names) . " and " . $obj->items[0]->volumeInfo->authors[$n - 1];
+			
+			$w[] = array('Den' => '"' . $description . '"');	
+			
+		}
+		
+		
+		// pages
+		if (isset($obj->items[0]->volumeInfo->pageCount))
+		{
+			$w[] = array('P304' => '"' . $obj->items[0]->volumeInfo->pageCount . '"' );
+		}
+
+		// date
+		if (isset($obj->items[0]->volumeInfo->publishedDate))
+		{
+			$year = $obj->items[0]->volumeInfo->publishedDate;
+			
+			// assume year
+			$date = "+$year-00-00T00:00:00Z/9";
+		
+			$w[] = array('P577' => $date);
+		}
+		
+		
+		// assume create
+		if ($item == 'LAST')
+		{
+			echo "CREATE\n";
+		}	
+	
+		foreach ($w as $statement)
+		{
+			foreach ($statement as $property => $value)
+			{
+				$row = array();
+				$row[] = $item;
+				$row[] = $property;
+				$row[] = $value;
+		
+				$quickstatements .= join("\t", $row);
+			
+				// labels don't get references 
+				if (count($source) > 0 && !preg_match('/^[D|L]/', $property))
+				{
+					$quickstatements .= "\t" . join("\t", $source);
+				}
+			
+				$quickstatements .= "\n";
+			
+			}
+		}
+		
+	
+	
+	}
+
+
+	return $quickstatements;	
+
 }
 
+if (0)
+{
+	// Bats of the Indian Subcontinent
+	$quickstatements = googlebooks_to_wikidata('0951731319');
+
+	echo $quickstatements . "\n";
 }
+
+
 
 ?>
