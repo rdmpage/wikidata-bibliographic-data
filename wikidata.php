@@ -408,6 +408,38 @@ function wikidata_item_from_orcid($orcid)
 }
 
 //----------------------------------------------------------------------------------------
+function wikidata_item_from_persee($perse)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?author wdt:P2732 "' . $perse . '" }';
+	
+	//echo $sparql . "\n";
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+	
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		
+		//print_r($obj);
+		
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) == 1)	
+			{
+				$item = $obj->results->bindings[0]->author->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+
+//----------------------------------------------------------------------------------------
 function wikidata_item_from_wikispecies_author($wikispecies)
 {
 	$item = '';
@@ -529,6 +561,16 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 				}
 			}
 		}
+		
+		// URL
+		if ($item == '')
+		{
+			if (isset($work->message->URL))
+			{
+				$item = wikidata_item_from_url($work->message->URL);
+			}
+		}
+		
 		
 		// OpenURL
 		if ($item == '')
@@ -731,6 +773,14 @@ $this->props = array(
 							}
 							else											
 							{
+								if (in_array('2175-7860', $work->message->ISSN))
+								{
+									if ($language == 'es')
+									{
+										$language = 'pt';
+									}								
+								}
+							
 								// title
 								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . str_replace('"', '""', $title) . '"');
 
@@ -807,6 +857,22 @@ $this->props = array(
 							}						
 						}						
 					}
+					
+					// Do we have PERSEE?
+					if (!$done)
+					{
+						if (isset($author->PERSEE))
+						{
+							$author_item = wikidata_item_from_persee($author->PERSEE);
+						
+							if ($author_item != '')
+							{							
+								$w[] = array('P50' => $author_item . "\tP1545\t\"$count\"");
+								$done = true;
+							}						
+						}						
+					}
+					
 					
 					// If we've reached this point we only have literals, so add these
 					
@@ -924,6 +990,9 @@ $this->props = array(
 					{
 						$go = true;
 						
+						// Cybium
+						$url = preg_replace('/\x{A0}/u', '%C2%A0', $url);
+						
 						if (preg_match('/https?:\/\/www.jstor.org/', $url))
 						{
 							// force JSTOR to be https						
@@ -941,6 +1010,10 @@ $this->props = array(
 				else
 				{		
 					$url = $v;
+					
+					// Cybium
+					$url = preg_replace('/\x{A0}/u', '%C2%A0', $url);
+					
 					$go = true;
 					
 					if (preg_match('/https?:\/\/www.jstor.org/', $url))
@@ -1173,7 +1246,9 @@ award: [
 								
 							if (count($sentences) != 0)
 							{
-								$first_line = $sentences[0] . '.';								
+								$first_line = $sentences[0] . '.';	
+								$first_line = preg_replace('/\n/u', ' ', $first_line);
+								$first_line = preg_replace('/\s\s+/u', ' ', $first_line);								
 								$first_line = nice_shorten($first_line);
 				
 								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($first_line, '"') . '"');
@@ -1202,11 +1277,24 @@ award: [
 					if (count($sentences) != 0)
 					{
 						$first_line = $sentences[0] . '.';
+						$first_line = preg_replace('/\n/u', ' ', $first_line);
+						$first_line = preg_replace('/\s\s+/u', ' ', $first_line);								
+						
 						$first_line = nice_shorten($first_line);
 				
 						// Detect language of first_line
 						$ld = new Language($languages_to_detect);						
 						$language = $ld->detect($first_line)->__toString();
+						
+						// We don't seem to detect Portguese
+						if (in_array('2175-7860', $work->message->ISSN))
+						{
+							if ($language == 'es')
+							{
+								$language = 'pt';
+							}								
+						}
+						
 
 						$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . addcslashes($first_line, '"') . '"');
 					}
@@ -1422,7 +1510,7 @@ function get_work($doi)
 {
 	$obj = null;
 	
-	$url = 'https://api.crossref.org/v1/works/http://dx.doi.org/' . $doi;
+	$url = 'https://api.crossref.org/v1/works/' . $doi;
 	
 	$json = get($url);
 	
