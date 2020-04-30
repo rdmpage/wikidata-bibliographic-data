@@ -101,6 +101,53 @@ $filename = 'quickstatements/0083-5986.txt';
 $filename = 'quickstatements/0814-1827.txt';
 $filename = 'quickstatements/1447-2546.txt';
 
+// Kirkia
+$filename = 'quickstatements/0451-9930.txt';
+
+// Acta Botánica Venezuélica
+$filename = 'quickstatements/0084-5906.txt';
+
+
+// Allertonia
+$filename = 'quickstatements/0735-8032.txt';
+
+// Annales Botanici Fennici 
+$filename = 'quickstatements/0003-3847.txt';
+
+// Moquito Systematics
+$filename = 'quickstatements/0091-3669.txt';
+
+// Entomotaxonomia
+$filename = 'quickstatements/1000-7482.txt';
+
+// Lindbergia
+$filename = 'quickstatements/0105-0761.txt';
+
+// Records of the Australian Museum
+$filename = 'quickstatements/0067-1975.txt';
+
+// Journal D'agriculture Traditionnelle Et de Botanique Appliquée
+$filename = 'quickstatements/0021-7662.txt';
+
+// Systematics And Geography of Plants
+$filename = 'quickstatements/1374-7886.txt';
+
+// Elytra
+$filename = 'quickstatements/0387-5733.txt';
+
+// Austrobaileya
+$filename = 'quickstatements/0155-4131.txt';
+
+// Cybium
+$filename = 'quickstatements/0399-0974.txt';
+
+// Rodriguésia JSTOR
+$filename = 'quickstatements/0370-6583.txt';
+
+// Cybium
+$filename = 'quickstatements/0399-0974-extra.txt';
+
+
 // flags
 $check = false;// don't check (only do this if we are sure we're adding new stuff)
 $check = true; // make sure record doesn't alreday exist
@@ -113,7 +160,10 @@ $languages = array('en'); // assume everything is in English
 //$languages = array('en', 'de', 'nl');
 //$languages = array('en', 'nl', 'de', 'fr');
 //$languages = array('en', 'de');
-$languages = array('ja', 'en');
+//$languages = array('en', 'da', 'nl', 'fr');
+//$languages = array('ja', 'en');
+
+$languages = array('en', 'fr');
 
 $count++;
 
@@ -130,7 +180,7 @@ while (!feof($file_handle))
 
 	$obj = json_decode($json);
 
-	//print_r($obj);
+	// print_r($obj);
 	
 	// do we have this already? (now down in csljson_to_wikidata)
 	$ok = true;
@@ -179,10 +229,60 @@ while (!feof($file_handle))
 
 		//$quickstatements = csljson_to_wikidata($work, true, true, array('en', 'nl', 'de', 'fr'));
 		
+		$source = array();
+		
+		// default sources
+		// JSTOR
+		if (preg_match('/jstor.org\/stable\/(?<id>.*)$/', $guid, $m) || isset($obj->JSTOR))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q1420342';
+			$source[] = 'S854';
+			$source[] = '"https://www.jstor.org/stable/' . $obj->JSTOR . '"';
+		}
+		
+		/*
+		// JSTOR DOI carefull!!!?
+		if (preg_match('/10.2307\/(?<id>.*)$/', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q1420342';
+			$source[] = 'S854';
+			$source[] = '"https://www.jstor.org/stable/' . $m['id'] . '"';
+		}	
+		*/	
+
+		// Persée (Q252430)
+		if (preg_match('/10.3406\/jatba/', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q252430';
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';
+		}
+		
+		
+		// www.persee.fr
+		if (preg_match('/ww.persee.fr/', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q252430';
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';
+		}
+		
+		// http://sfi-cybium.fr/ CYBIUM
+		if (preg_match('/cybium/i', $guid, $m))
+		{
+			$source[] = 'S854';
+			$source[] = '"' . preg_replace('/\x{A0}/u', '%C2%A0', $obj->URL) . '"';
+		}
+		
 		$quickstatements = csljson_to_wikidata($work, 
 			$check, 
 			$update, 
-			$languages
+			$languages,
+			$source
 			);
 		
 		if ($quickstatements != '')
