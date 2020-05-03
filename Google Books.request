@@ -20,11 +20,27 @@
 	<array>
 		<dict>
 			<key>inUse</key>
-			<true/>
+			<false/>
 			<key>parameter</key>
 			<string>q</string>
 			<key>value</key>
 			<string>isbn:9781900347129</string>
+		</dict>
+		<dict>
+			<key>inUse</key>
+			<true/>
+			<key>parameter</key>
+			<string>q</string>
+			<key>value</key>
+			<string>isbn: 9781919766362</string>
+		</dict>
+		<dict>
+			<key>inUse</key>
+			<false/>
+			<key>parameter</key>
+			<string>q</string>
+			<key>value</key>
+			<string>isbn:9780947643386</string>
 		</dict>
 		<dict>
 			<key>inUse</key>

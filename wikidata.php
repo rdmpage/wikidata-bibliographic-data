@@ -2,6 +2,7 @@
 
 require_once 'vendor/autoload.php';
 use LanguageDetection\Language;
+use Biblys\Isbn\Isbn as Isbn;
 
 
 //----------------------------------------------------------------------------------------
@@ -352,20 +353,30 @@ function wikidata_item_from_isbn10($isbn10)
 {
 	$item = '';
 
-	$sparql = 'SELECT * WHERE { ?work wdt:P957 "' . strtoupper($isbn10) . '" }';
-
-	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
-	$json = get($url, '', 'application/json');
-
-	if ($json != '')
+	$isbns = array($isbn10);
+	
+	$isbn = new Isbn($isbn10);
+	$isbns[] = $isbn->format("ISBN-10");
+	
+	// print_r($isbns);
+	
+	foreach ($isbns as $id)
 	{
-		$obj = json_decode($json);
-		if (isset($obj->results->bindings))
+		$sparql = 'SELECT * WHERE { ?work wdt:P212 "' . strtoupper($id) . '" }';
+
+		$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+		$json = get($url, '', 'application/json');
+
+		if ($json != '')
 		{
-			if (count($obj->results->bindings) != 0)	
+			$obj = json_decode($json);
+			if (isset($obj->results->bindings))
 			{
-				$item = $obj->results->bindings[0]->work->value;
-				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+				if (count($obj->results->bindings) != 0)	
+				{
+					$item = $obj->results->bindings[0]->work->value;
+					$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+				}
 			}
 		}
 	}
@@ -378,21 +389,29 @@ function wikidata_item_from_isbn10($isbn10)
 function wikidata_item_from_isbn13($isbn13)
 {
 	$item = '';
-
-	$sparql = 'SELECT * WHERE { ?work wdt:P212 "' . strtoupper($isbn13) . '" }';
-
-	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
-	$json = get($url, '', 'application/json');
-
-	if ($json != '')
+	
+	$isbns = array($isbn13);
+	
+	$isbn = new Isbn($isbn13);
+	$isbns[] = $isbn->format("ISBN-13");
+	
+	foreach ($isbns as $id)
 	{
-		$obj = json_decode($json);
-		if (isset($obj->results->bindings))
+		$sparql = 'SELECT * WHERE { ?work wdt:P212 "' . strtoupper($id) . '" }';
+
+		$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+		$json = get($url, '', 'application/json');
+
+		if ($json != '')
 		{
-			if (count($obj->results->bindings) != 0)	
+			$obj = json_decode($json);
+			if (isset($obj->results->bindings))
 			{
-				$item = $obj->results->bindings[0]->work->value;
-				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+				if (count($obj->results->bindings) != 0)	
+				{
+					$item = $obj->results->bindings[0]->work->value;
+					$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+				}
 			}
 		}
 	}
@@ -1111,11 +1130,11 @@ $this->props = array(
 							}
 						
 							$qualifier = "\tP1065\t\"https://web.archive.org" . $wayback . '"';
-							$w[] = array($wikidata_properties['PDF'] => '"' . $link->URL . '"' . $qualifier);
+							$w[] = array($wikidata_properties['PDF'] => '"' . str_replace(' ', '%20', $link->URL) . '"' . $qualifier);
 						}
 						else
 						{
-							$w[] = array($wikidata_properties['PDF'] => '"' . $link->URL . '"');
+							$w[] = array($wikidata_properties['PDF'] => '"' . str_replace(' ', '%20', $link->URL) . '"');
 						}
 						
 					}
@@ -1383,7 +1402,14 @@ award: [
 			$quickstatements .= join("\t", $row);
 			
 			// labels don't get references 
-			if (count($source) > 0 && !preg_match('/^L/', $property))
+			$properties_to_ignore = array();
+			
+			$properties_to_ignore = array(
+				'P724',
+				'P953',
+			); // e.g., when adding PDFs or IA to records from JSTOR
+							
+			if (count($source) > 0 && !preg_match('/^[D|L]/', $property) && !in_array($property, $properties_to_ignore))
 			{
 				$quickstatements .= "\t" . join("\t", $source);
 			}
@@ -1745,6 +1771,8 @@ function googlebooks_to_wikidata($isbn, $update = true)
 		{
 			if (!$update)
 			{
+				echo "Have already\n\n";
+				
 				return $quickstatements;
 			}
 		}
@@ -1812,6 +1840,29 @@ function googlebooks_to_wikidata($isbn, $update = true)
 		
 		}
 		
+		//  subtitle
+		if (isset($obj->items[0]->volumeInfo->subtitle))
+		{
+			$subtitle = $obj->items[0]->volumeInfo->subtitle;
+		
+			// language
+			$language == 'en';
+			
+			if (isset($obj->items[0]->volumeInfo->language))
+			{
+				$language = $obj->items[0]->volumeInfo->language;
+			}
+			
+			if ($language == 'en')
+			{
+				// title
+				$w[] = array('P1680' => $language . ':' . '"' . str_replace('"', '""', $subtitle) . '"');
+			}
+		
+		}
+		
+		
+		
 		// authors
 		if (isset($obj->items[0]->volumeInfo->authors))
 		{		
@@ -1831,7 +1882,14 @@ function googlebooks_to_wikidata($isbn, $update = true)
 			{
 				$names = array_slice($obj->items[0]->volumeInfo->authors, 0, $n - 1);
 			}
-			$description = "Book by " . join(", ", $names) . " and " . $obj->items[0]->volumeInfo->authors[$n - 1];
+			$description = "Book by ";
+			
+			if (count($names) > 0)
+			{			
+			 	$description .= join(", ", $names) . " and ";
+			}
+			 
+			$description .= $obj->items[0]->volumeInfo->authors[$n - 1];
 			
 			$w[] = array('Den' => '"' . $description . '"');	
 			
@@ -1847,10 +1905,14 @@ function googlebooks_to_wikidata($isbn, $update = true)
 		// date
 		if (isset($obj->items[0]->volumeInfo->publishedDate))
 		{
-			$year = $obj->items[0]->volumeInfo->publishedDate;
-			
-			// assume year
-			$date = "+$year-00-00T00:00:00Z/9";
+			$d = explode('-', $obj->items[0]->volumeInfo->publishedDate);
+		
+			if ( count($d) > 0 ) $year = $d[0] ;
+			if ( count($d) > 1 ) $month = preg_replace ( '/^0+(..)$/' , '$1' , '00'.$d[1] ) ;
+			if ( count($d) > 2 ) $day = preg_replace ( '/^0+(..)$/' , '$1' , '00'.$d[2] ) ;
+			if ( isset($month) and isset($day) ) $date = "+$year-$month-$day"."T00:00:00Z/11";
+			else if ( isset($month) ) $date = "+$year-$month-00T00:00:00Z/10";
+			else if ( isset($year) ) $date = "+$year-00-00T00:00:00Z/9";
 		
 			$w[] = array('P577' => $date);
 		}
@@ -1874,7 +1936,7 @@ function googlebooks_to_wikidata($isbn, $update = true)
 				$quickstatements .= join("\t", $row);
 			
 				// labels don't get references 
-				if (count($source) > 0 && !preg_match('/^[D|L]/', $property))
+				if (count($source) > 0 && !preg_match('/^[D|L]/', $property) && !in_array($property, $properties_to_ignore))
 				{
 					$quickstatements .= "\t" . join("\t", $source);
 				}
@@ -1896,7 +1958,17 @@ function googlebooks_to_wikidata($isbn, $update = true)
 if (0)
 {
 	// Bats of the Indian Subcontinent
-	$quickstatements = googlebooks_to_wikidata('0951731319');
+	//$quickstatements = googlebooks_to_wikidata('0951731319');
+	
+	//$quickstatements = googlebooks_to_wikidata('9789838120517');
+	
+	//$quickstatements = googlebooks_to_wikidata('9780615116402');
+	
+	//$quickstatements = googlebooks_to_wikidata('9787533508647');
+	
+	$quickstatements = googlebooks_to_wikidata('9783768212441');
+	
+	$quickstatements = googlebooks_to_wikidata('9781919766362');
 
 	echo $quickstatements . "\n";
 }
