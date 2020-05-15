@@ -1,5 +1,12 @@
 # Notes on exporting microcitation database to Wikidata
 
+## List of DOIs to add via CrossRef
+
+```
+SELECT CONCAT("'", guid, "',") FROM publications WHERE issn = "0010-065X" AND doi IS NOT NULL;
+
+```
+
 ## Checking JSTOR harvest for issue parsing problem
 
 In some cases JSTOR parsing code failed for issue numbers, and every article in a volume got assigned to the same volume. We can detect these using SQL:
@@ -26,3 +33,29 @@ Then to generate a list of GUIDs:
 ```
 SELECT guid FROM publications WHERE issn='0161-8202' AND jstor IS NOT NULL AND doi IS NULL AND NOT(title = 'Back Matter');
 ```
+
+
+## Adding DOIs to existing Wikidata items
+
+Discovered that Bijdragen tot de dierkunde now has DOIs, so load data from CrossRef, then do SQL query to generate Quickstatements:
+
+```
+SELECT CONCAT(wikidata, char(9),'P356', char(9), '"', doi, '"', char(9), 'S248', char(9), 'Q5188229', char(9), 'S854', char(9), '"https://api.crossref.org/v1/works/', doi, '"') FROM publications WHERE issn='0067-8546' AND wikidata IS NOT NULL AND doi IS NOT NULL;
+```
+
+## Adding CiNii to existing Wikidata items
+
+For example can use microcitation/harvest_cinii_ris_add.php to read a CiNii RIS file (~/DropBox/BibScrapper/cinii) and output SQL to add CiNii id to references.
+
+
+```
+SELECT CONCAT(wikidata, char(9),'P2409', char(9), '"', cinii, '"', char(9), 'S248', char(9), 'Q10726338', char(9), 'S854', char(9), '"https://ci.nii.ac.jp/naid/', cinii, '"') FROM publications WHERE issn='0385-2423' AND wikidata IS NOT NULL AND cinii IS NOT NULL;
+```
+
+## Adding internet archive to existing Wikidata items
+
+```
+SELECT CONCAT(wikidata, char(9),'P724', char(9), '"', internetarchive, '"') FROM publications WHERE issn='1280-9551' AND wikidata IS NOT NULL AND internetarchive IS NOT NULL;
+```
+
+

@@ -167,10 +167,23 @@ $guids = array(
 //'http://www.repository.naturalis.nl/record/317698',
 //'http://www.repository.naturalis.nl/record/319218',
 //'10.11646/zootaxa.3779.2.7'
-'http://www.repository.naturalis.nl/record/317698',
+//'http://www.repository.naturalis.nl/record/317698',
+
+//'https://www.zin.ru/journals/parazitologiya/content/1989/prz_1989_2_12_Alekseev.pdf',
+//'http://www.cnki.com.cn/Article/CJFDTOTAL-KCFL199302003.htm',
+
+//'10.26028/cybium/2012-362-008',
+
+//'http://www.biodiversitylibrary.org/part/127143'
+//'http://www.biodiversitylibrary.org/part/125502',
+
+//'https://revistas.udea.edu.co/index.php/actbio/article/view/329608'
+
+'http://www.jstor.org/stable/20792616'
 );
 
-
+$languages = array('en', 'fr');
+$source = array();
 
 foreach ($guids as $guid)
 {
@@ -180,18 +193,22 @@ foreach ($guids as $guid)
 	$work = new stdclass;
 	$work->message = $obj;		
 
-	//print_r($work);
+	print_r($work);
+	
+	$source[] = 'S854';
+	$source[] = '"' . $guid . '"';
+
 
 	$item = wikidata_find_from_anything ($work);
 	
 	if ($item != '')
 	{
-		// echo "Have already $item\n";
+		echo "Have already $item\n";
 		
 		// for debugging, or updating
 		if (0)
 		{
-			$q = csljson_to_wikidata($work);
+			$q = csljson_to_wikidata($work, true, true, $languages, $source);
 	
 			echo $q;
 			echo "\n";		
@@ -199,7 +216,7 @@ foreach ($guids as $guid)
 	}
 	else
 	{
-		$q = csljson_to_wikidata($work, true, true, array('en'));
+		$q = csljson_to_wikidata($work, true, true, $languages, $source);
 	
 		echo $q;
 		echo "\n";

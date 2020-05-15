@@ -77,6 +77,21 @@ while (!feof($file_handle))
 		}			
 	}
 	
+	if (!$done)
+	{
+		if (preg_match('/\d+\/\d+/', $guid))
+		{
+			$bhl_part = $m['id'];
+			
+			$item = wikidata_item_from_handle($guid);
+			if ($item)
+			{
+				echo "UPDATE publications SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";
+				$done = true;
+			}
+		}			
+	}	
+	
 	
 	
 
@@ -89,6 +104,23 @@ while (!feof($file_handle))
 			$done = true;
 		}		
 	}
+	
+	// SICI?
+	// 0037-2102(1999)79<101:TEVPAF>2.0.CO;2-W
+	if (!$done)
+	{
+		if (preg_match('/(?<issn>[0-9]{4}-[0-9]{3}[0-9X])\([0-9]{4}\)(?<volume>\d+)<(?<spage>\d+)/', $guid, $m))
+		{		
+			//print_r($m);
+			$item =  wikidata_item_from_openurl($m['issn'], $m['volume'], $m['spage']);
+			if ($item != '')
+			{
+				echo "UPDATE publications SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";
+				$done = true;
+			}		
+		}
+	}
+	
 	
 	
 	

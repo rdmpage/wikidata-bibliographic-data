@@ -8,11 +8,14 @@ Tools to upload bibliographic data to Wikidata
 Journal | ISSN | Wikidata | Notes
 --|--|--|--
 A | | | 
+Acta Botánica Venezuélica | | | JSTOR
 Adansonia nouvelle série	 | 0001-804X | Q58814054 | No external identifiers
+Allertonia | | | JSTOR
+Annales Botanici Fennici | | | JSTOR
 B | | | 
 Basteria	| 0005-6219 | Q21069434 | IA
 Beaufortia | | | IA
-Bijdragen Tot de Dierkunde | | | IA
+Bijdragen Tot de Dierkunde | | | IA, DOIs
 Braueria | 1026-3632 | | IA
 Bulletin of The British Arachnological Society | 0524-4994 | | IA
 Bulletin of the Osaka Museum of Natural History | 0078-6675 | | IA
@@ -20,6 +23,7 @@ C | | |
 Cahiers de Biologie Marine | | | DataCite DOIs
 D | | | 
 E | | | 
+Entonomotaxonomia | 1000-7482 | | CNKI
 F | | | 
 G | | | 
 H | | | 
@@ -29,8 +33,16 @@ Journal of Arachnology | 0161-8202 | | JSTOR
 Journal of The Malayan Branch of The Royal Asiatic Society | 2304-7550 | | JSTOR
 J | | | 
 K | | | 
+Kirkia | | | JSTOR
 L | | | 
+Lindbergia | | | JSTOR
 M | | | 
+Memoirs of Museum Victoria | | | IA
+Memoirs of the Museum of Victoria | | | IA
+Memoirs of the National Museum of Victoria | | | IA
+Memoirs of the National Museum, Melbourne | | | IA
+Molluscan Research | | | CSIRO and Mapress
+Mosquito Systematics | | | BHL parts IA
 N | | | 
 New Zealand Oceanographic Institute Memoir |0083-7903 |Q21385262 | IA
 O | | |
@@ -46,12 +58,15 @@ Records of the Auckland Institute and Museum | 0067-0464 | Q15214730 | JSTOR
 Records of the Auckland Museum | 1174-9202, 2422-8567 | 	Q15756170 | JSTOR
 Records of the Indian Museum | 0375-099X | Q41394003 | IA
 S | | |
+Selbyana | | | JSTOR
+Sida, Contributions To Botany | | | JSTOR
 Studies on the Fauna of Suriname and other Guyanas | 0300-5488 | | IA
 T | | |
+Tettigonia : Memoirs of The Orthopterological Society of Japan : 日本直翅類学会会誌 | | | Handle
 Transactions of the Royal Society of New Zealand. Zoology | 0372-1396 | Q28535616 | IA
 Transactions of the Royal Society of New Zealand. Botany | 0372-1361 | Q21034224 | IA
 Transactions and Proceedings of the Royal Society of New Zealand | 1176-6166 | Q21556862 | IA
-札幌博物学会会報 | | | Handle
+Transactions of the Sapporo Natural History Society 札幌博物学会会報 | | | Handle
 U | | | 
 V | | | 
 W | | | 

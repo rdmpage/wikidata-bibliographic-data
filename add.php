@@ -147,6 +147,67 @@ $filename = 'quickstatements/0370-6583.txt';
 // Cybium
 $filename = 'quickstatements/0399-0974-extra.txt';
 
+// Miscellanea Zoologica Hungarica
+$filename = 'quickstatements/0230-9017.txt';
+
+// Journal of The Adelaide Botanic Garden
+$filename = 'quickstatements/0313-4083.txt';
+// $filename = 'quickstatements/0313-4083-extra.txt';
+
+// Revista Ibérica Aracnología
+$filename = 'quickstatements/1576-9518.txt';
+
+// Zoologische Verhandelingen
+$filename = 'quickstatements/0024-1652.txt';
+
+
+// Taiwania
+$filename = 'quickstatements/0372-333X.txt';
+
+// Journal of The American Mosquito Control Association
+$filename = 'quickstatements/8756-971X.txt';
+
+// Bulletin of The National Museum of Nature And Science Series A (Zoology)
+$filename = 'quickstatements/0385-2423.txt';
+
+// Senckenbergiana biologica
+$filename = 'quickstatements/0037-2102.txt';
+
+// Acta Chiropterologica
+$filename = 'quickstatements/1508-1109.txt';
+
+// Zoosystema no DOI
+$filename = 'quickstatements/1280-9551.txt';
+
+// Journal of The Kansas Entomological Society
+$filename = 'quickstatements/0022-8567.txt';
+
+// Kew Bulletin no DOI
+$filename = 'quickstatements/0075-5974-jstor.txt';
+
+// AMNH handles
+$filename = 'quickstatements/0003-0090.txt';
+
+// Madroño	
+$filename = 'quickstatements/0024-9637.txt';
+
+// The Raffles Bulletin of Zoology
+$filename = 'quickstatements/0217-2445.txt';
+
+// Reinwardtia
+$filename = 'quickstatements/0034-365X.txt';
+
+// Coleopterists Bulletin
+$filename = 'quickstatements/0010-065X.txt';
+
+// Contributions From The Gray Herbarium of Harvard University
+$filename = 'quickstatements/0195-6094.txt';
+
+// Contributions From The Queensland Herbarium
+$filename = 'quickstatements/2202-0802.txt';
+
+// Bulletin De La Société Royale De Botanique De Belgique
+$filename = 'quickstatements/0037-9557.txt';
 
 // flags
 $check = false;// don't check (only do this if we are sure we're adding new stuff)
@@ -163,7 +224,11 @@ $languages = array('en'); // assume everything is in English
 //$languages = array('en', 'da', 'nl', 'fr');
 //$languages = array('ja', 'en');
 
-$languages = array('en', 'fr');
+
+$languages = array('en', 'zh', 'ja');
+$languages = array('en');
+//$languages = array('en', 'es', 'pt');
+$languages = array('en', 'fr', 'de', 'nl');
 
 $count++;
 
@@ -277,6 +342,21 @@ while (!feof($file_handle))
 			$source[] = 'S854';
 			$source[] = '"' . preg_replace('/\x{A0}/u', '%C2%A0', $obj->URL) . '"';
 		}
+		
+		
+		// Senckenbergiana biologica
+		if ($obj->ISSN[0] == '0037-2102')
+		{
+			$source[] = 'S854';
+			$source[] = '"http://www.saturnia.de/senck-biol/sebio-cont.htm"';
+		}
+	
+		if ($obj->ISSN[0] == '0034-365X')
+		{
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';
+		}
+		
 		
 		$quickstatements = csljson_to_wikidata($work, 
 			$check, 

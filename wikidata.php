@@ -170,6 +170,34 @@ function wikidata_item_from_jstor($jstor)
 }
 
 //----------------------------------------------------------------------------------------
+// Does wikidata have this PMID?
+function wikidata_item_from_pmid($pmid)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P698 "' . $pmid . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+
+//----------------------------------------------------------------------------------------
 // Does wikidata have this BHL part id?
 function wikidata_item_from_bhl_part($bhl_part)
 {
@@ -557,6 +585,7 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 	
 	// Map language codes to Wikidata items
 	$language_map = array(
+		'ca' => 'Q7026',
 		'da' => 'Q9035',
 		'de' => 'Q188',
 		'en' => 'Q1860',
@@ -760,6 +789,9 @@ $this->props = array(
 				// Handle multiple languages
 				$done = false;
 				
+				$english_label = '';
+				$last_label = '';
+				
 				if (isset($work->message->multi))
 				{
 					if (isset($work->message->multi->_key->title))
@@ -770,11 +802,25 @@ $this->props = array(
 							$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . str_replace('"', '""', $v) . '"');
 
 							// label
-							$w[] = array('L' . $language => '"' . str_replace('"', '""', nice_shorten($v, $MAX_LABEL_LENGTH)) . '"');
+							$last_label = nice_shorten($v, $MAX_LABEL_LENGTH);
+							$w[] = array('L' . $language => '"' . str_replace('"', '""', $last_label) . '"');
+							
+							if ($language == 'en')
+							{
+								$english_label = $last_label;
+							}
 						}					
 						$done = true;
 					}					
 				}
+				
+				if ($done && $english_label == '')
+				{
+					// make an English label for display
+					$w[] = array('Len' => '"' . str_replace('"', '""', $last_label) . '"');											
+				
+				}
+				
 			
 				if (!$done)
 				{			
@@ -1074,7 +1120,13 @@ $this->props = array(
 							$url = preg_replace('/http:\/\/www.jstor.org/', 'https://www.jstor.org', $url);
 							// For now ignore JSTOR URLs
 							$go = false;
-						}						
+						}	
+						
+						if (preg_match('/[\[|<|;]/', url ))
+						{
+							$go = false;
+						}
+											
 					
 						if ($go)
 						{
@@ -1097,7 +1149,16 @@ $this->props = array(
 						$url = preg_replace('/http:\/\/www.jstor.org/', 'https://www.jstor.org', $url);
 						// For now ignore JSTOR URLs
 						$go = false;
-					}						
+					}	
+					
+					// ignore SICI based DOIs as they break quickstatements
+					if (preg_match('/[\[|<|;]/', $url ))
+					{
+						$go = false;
+					}
+					
+					
+					//$go = false;					
 				
 					if ($go)
 					{
@@ -1552,7 +1613,7 @@ function wikidata_item_from_openurl($issn, $volume, $spage)
 { 
   VALUES ?issn {"' . $issn . '" } .
   VALUES ?volume {"' . $volume . '" } .
-  VALUES ?firstpage {"^' . $spage . '[^0-9]" } .
+  VALUES ?firstpage {"^' . $spage . '([^0-9]|$)" } .
   
   ?work wdt:P1433 ?container .
   ?container wdt:P236 ?issn.
@@ -1561,6 +1622,7 @@ function wikidata_item_from_openurl($issn, $volume, $spage)
   FILTER regex(?pages,?firstpage,"i")
 }';
 	
+	//echo $sparql . "\n";
 	
 	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
 	$json = get($url, '', 'application/json');
@@ -1636,7 +1698,16 @@ function wikidata_find_from_anything ($work)
 		{
 			$item = wikidata_item_from_biostor($work->message->BIOSTOR);
 		}
-	}		
+	}	
+	
+	// PMID
+	if ($item == '')
+	{
+		if (isset($work->message->PMID))
+		{
+			$item = wikidata_item_from_pmid($work->message->PMID);
+		}
+	}			
 
 	// PDF
 	if ($item == '')
@@ -1722,6 +1793,8 @@ function googlebooks_to_wikidata($isbn, $update = true)
 	// Do we have this already in wikidata?
 	$item = '';
 	
+	
+	
 	if ($item == '')
 	{
 		$item = wikidata_item_from_isbn10($isbn);
@@ -1736,13 +1809,17 @@ function googlebooks_to_wikidata($isbn, $update = true)
 		return $quickstatements;
 	}
 	
+	// Google expects clean ISBN
+	$isbn = str_replace('-', '', $isbn);
+	
+	
 	$url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' . $isbn;
 	
 	$json = get($url);
 	
 	$obj = json_decode($json);
 	
-	//print_r($obj);
+	print_r($obj);
 	
 	if (count($obj->items) == 1)
 	{		
@@ -1936,7 +2013,7 @@ function googlebooks_to_wikidata($isbn, $update = true)
 				$quickstatements .= join("\t", $row);
 			
 				// labels don't get references 
-				if (count($source) > 0 && !preg_match('/^[D|L]/', $property) && !in_array($property, $properties_to_ignore))
+				if (count($source) > 0 && !preg_match('/^[D|L]/', $property))
 				{
 					$quickstatements .= "\t" . join("\t", $source);
 				}
