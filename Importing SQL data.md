@@ -9,14 +9,20 @@ SELECT CONCAT("'", guid, "',") FROM publications WHERE issn = "0010-065X" AND do
 
 ## Checking JSTOR harvest for issue parsing problem
 
-In some cases JSTOR parsing code failed for issue numbers, and every article in a volume got assigned to the same volume. We can detect these using SQL:
+In some cases JSTOR parsing code failed for issue numbers, and every article in a volume got assigned to the same issue. We can detect these using SQL:
 
 ```
 SELECT volume, COUNT(distinct issue) FROM publications WHERE issn='0161-8202' AND jstor IS NOT NULL group BY volume ORDER BY CAST(volume as SIGNED);
 
 ```
 
-This tells us how many distinct issue numbers there are for each volume, if it’s only one, or inconsistent across volumes than we may have a problem.
+This tells us how many distinct issue numbers there are for each volume, if it’s only one, or inconsistent across volumes then we may have a problem.
+
+Deleting bad issues in Wikidata:
+
+```
+SELECT CONCAT("-", wikidata, char(9),'P433', char(9), '"', issue, '"')  FROM publications WHERE issn='0018-0831' AND volume < 24 AND wikidata IS NOT NULL AND issue IS NOT NULL;
+```
 
 ## Filtering out administrivia
 
@@ -43,6 +49,17 @@ Discovered that Bijdragen tot de dierkunde now has DOIs, so load data from Cross
 SELECT CONCAT(wikidata, char(9),'P356', char(9), '"', doi, '"', char(9), 'S248', char(9), 'Q5188229', char(9), 'S854', char(9), '"https://api.crossref.org/v1/works/', doi, '"') FROM publications WHERE issn='0067-8546' AND wikidata IS NOT NULL AND doi IS NOT NULL;
 ```
 
+Sequel Pro displays tabs as ⇥ so need to find and replace before uploading to Wikidata.
+
+## Adding JSTOR ids to items with DOIs that also are in JSTOR
+
+```
+SELECT CONCAT(wikidata, char(9),'P888', char(9), '"', jstor, '"') FROM publications WHERE issn='0363-6445' AND jstor IS NOT NULL AND doi IS NOT NULL AND guid NOT LIKE "http%";
+```
+
+Sequel Pro displays tabs as ⇥ so need to find and replace before uploading to Wikidata.
+
+
 ## Adding CiNii to existing Wikidata items
 
 For example can use microcitation/harvest_cinii_ris_add.php to read a CiNii RIS file (~/DropBox/BibScrapper/cinii) and output SQL to add CiNii id to references.
@@ -57,5 +74,12 @@ SELECT CONCAT(wikidata, char(9),'P2409', char(9), '"', cinii, '"', char(9), 'S24
 ```
 SELECT CONCAT(wikidata, char(9),'P724', char(9), '"', internetarchive, '"') FROM publications WHERE issn='1280-9551' AND wikidata IS NOT NULL AND internetarchive IS NOT NULL;
 ```
+
+## Adding Handles to existing Wikidata items
+
+```
+SELECT CONCAT(wikidata, char(9),'P1184', char(9), '"', handle, '"') FROM publications WHERE issn='0037-2870' AND wikidata IS NOT NULL AND handle IS NOT NULL;
+```
+
 
 
