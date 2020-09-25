@@ -27,6 +27,7 @@
 				<string>AD67C8F9-3DDB-4B42-B480-0129A95350B2</string>
 				<string>386DA133-4478-46EF-9C39-17BF85F09A72</string>
 				<string>D82322F8-643D-4ED1-B05B-51E8DF43E297</string>
+				<string>8FEA2E07-3355-426F-9BD9-D1584054A4D7</string>
 				<string>02BF597E-E9B8-4031-BE63-072AEF193A0B</string>
 				<string>3B0A3E74-784C-480A-BB2C-2AAB3F82BCAD</string>
 				<string>E39C44D9-2155-4854-BB77-25F8D90510A7</string>
@@ -712,11 +713,11 @@
 				SAEAAAAAAAAQ0AAABAAAAAAAAAD4AQCAHAIAAAAAAAA=
 				</data>
 				<key>FileURL</key>
-				<string>file:///Users/rpage/Development/wikidata-bibliographic-data/check_url.php</string>
+				<string>file:///Users/rpage/Development/wikidata-bibliographic-data/url-to-wikidata.php</string>
 				<key>HasSecurityScope</key>
 				<true/>
 				<key>RelativePath</key>
-				<string>./check_url.php</string>
+				<string>./url-to-wikidata.php</string>
 				<key>TypeID</key>
 				<string>_CFileLocator</string>
 				<key>Version</key>
@@ -939,6 +940,56 @@
 			</dict>
 			<key>ItemName</key>
 			<string>check_guid.php</string>
+			<key>ItemType</key>
+			<string>FileReference</string>
+			<key>UserOverrideItemName</key>
+			<true/>
+		</dict>
+		<key>8FEA2E07-3355-426F-9BD9-D1584054A4D7</key>
+		<dict>
+			<key>ItemData</key>
+			<dict>
+				<key>BookmarkData</key>
+				<data>
+				Ym9vazgDAAAAAAQQMAAAAPjjKubpXtn8NLwnRkY4OIwN
+				3/DfRSfRdIIwOYV1o1FBKAIAAAQAAAADAwAAAAgAKAUA
+				AAABAQAAVXNlcnMAAAAFAAAAAQEAAHJwYWdlAAAACwAA
+				AAEBAABEZXZlbG9wbWVudAAbAAAAAQEAAHdpa2lkYXRh
+				LWJpYmxpb2dyYXBoaWMtZGF0YQAQAAAAAQEAAGxvY2Fs
+				X2xvb2t1cC5waHAUAAAAAQYAABAAAAAgAAAAMAAAAEQA
+				AABoAAAACAAAAAQDAAAQZwIAAAAAAAgAAAAEAwAAhXQN
+				AAAAAAAIAAAABAMAACNYDgAAAAAACAAAAAQDAACm0UEC
+				AAAAAAgAAAAEAwAAX7fuBAMAAAAUAAAAAQYAAJwAAACs
+				AAAAvAAAAMwAAADcAAAACAAAAAAEAABBwM4W5nHmfhgA
+				AAABAgAAAQAAAAAAAAAPAAAAAAAAAAAAAAAAAAAACAAA
+				AAQDAAADAAAAAAAAAAQAAAADAwAA9QEAAAgAAAABCQAA
+				ZmlsZTovLy8MAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAE
+				AwAAAOAEA2kAAAAIAAAAAAQAAEG+3V1iAAAAJAAAAAEB
+				AAAyNUU0Mjg2RC03MTJDLTM4OTktQjQzRi01RDNGNkE4
+				QkQxMjEYAAAAAQIAAIEAAAABAAAA7xMAAAEAAAAAAAAA
+				AAAAAAEAAAABAQAALwAAAAAAAAABBQAAGgAAAAEBAABO
+				U1VSTERvY3VtZW50SWRlbnRpZmllcktleQAABAAAAAMD
+				AABbdgEA2AAAAP7///8BAAAAAAAAABEAAAAEEAAAgAAA
+				AAAAAAAFEAAA7AAAAAAAAAAQEAAAGAEAAAAAAABAEAAA
+				CAEAAAAAAAACIAAA5AEAAAAAAAAFIAAAVAEAAAAAAAAQ
+				IAAAZAEAAAAAAAARIAAAmAEAAAAAAAASIAAAeAEAAAAA
+				AAATIAAAiAEAAAAAAAAgIAAAxAEAAAAAAAAwIAAA8AEA
+				AAAAAAABwAAAOAEAAAAAAAARwAAAIAAAAAAAAAASwAAA
+				SAEAAAAAAAAQ0AAABAAAAAAAAAD4AQCAHAIAAAAAAAA=
+				</data>
+				<key>FileURL</key>
+				<string>file:///Users/rpage/Development/wikidata-bibliographic-data/local_lookup.php</string>
+				<key>HasSecurityScope</key>
+				<true/>
+				<key>RelativePath</key>
+				<string>./local_lookup.php</string>
+				<key>TypeID</key>
+				<string>_CFileLocator</string>
+				<key>Version</key>
+				<integer>1</integer>
+			</dict>
+			<key>ItemName</key>
+			<string>local_lookup.php</string>
 			<key>ItemType</key>
 			<string>FileReference</string>
 			<key>UserOverrideItemName</key>

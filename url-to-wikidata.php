@@ -79,7 +79,7 @@ while (!feof($file_handle))
 	
 	if (!$done)
 	{
-		if (preg_match('/\d+\/\d+/', $guid))
+		if (preg_match('/\d+\/[A-Z0-9_]+/', $guid))
 		{
 			$bhl_part = $m['id'];
 			
@@ -92,6 +92,22 @@ while (!feof($file_handle))
 		}			
 	}	
 	
+	
+	if (!$done)
+	{
+		if (preg_match('/https?:\/\/hdl.handle.net\/(?<id>.*)/', $guid, $m))
+		{
+			$handle = $m['id'];
+			
+			
+			$item = wikidata_item_from_handle($handle);
+			if ($item)
+			{
+				echo "UPDATE publications SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";
+				$done = true;
+			}
+		}			
+	}		
 	
 	
 
@@ -111,7 +127,7 @@ while (!feof($file_handle))
 	{
 		if (preg_match('/(?<issn>[0-9]{4}-[0-9]{3}[0-9X])\([0-9]{4}\)(?<volume>\d+)<(?<spage>\d+)/', $guid, $m))
 		{		
-			//print_r($m);
+			print_r($m);
 			$item =  wikidata_item_from_openurl($m['issn'], $m['volume'], $m['spage']);
 			if ($item != '')
 			{

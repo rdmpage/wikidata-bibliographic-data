@@ -209,6 +209,127 @@ $filename = 'quickstatements/2202-0802.txt';
 // Bulletin De La Société Royale De Botanique De Belgique
 $filename = 'quickstatements/0037-9557.txt';
 
+// Nachrichtsblatt Der Deutschen Malakozoologischen Gesellschaft
+$filename = 'quickstatements/0723-4244.txt';
+
+// Notes From The Leyden Museum
+$filename = 'quickstatements/1872-9231.txt';
+
+// Annals of The Natal Museum
+$filename = 'quickstatements/0304-0798.txt';
+
+// African Invertebrates
+$filename = 'quickstatements/1681-5556.txt';
+
+// Herpetologica
+$filename = 'quickstatements/0018-0831.txt';
+
+// Caldasia (JSTOR)
+$filename = 'quickstatements/0366-5232.txt';
+
+// Contributions From The United States National Herbarium
+$filename = 'quickstatements/0097-1618.txt';
+
+// Folia Malaysiana
+$filename = 'quickstatements/1511-8916.txt';
+
+// Harvard Papers In Botany (JSTOR)
+$filename = 'quickstatements/1043-4534.txt';
+
+// Revista Del Jardín Botánico Nacional
+$filename = 'quickstatements/0253-5696.txt';
+
+// Systematic Botany (JSTOR)
+$filename = 'quickstatements/0363-6445.txt';
+
+// CAAR
+$filename = 'quickstatements/2325-4882.txt';
+
+$filename = 'quickstatements/herp44.4.txt';
+
+// Tropical Zoology
+$filename = 'quickstatements/1970-9528.txt';
+
+$filename = 'quickstatements/0365-7000.txt';
+
+// Salamandra
+$filename = 'quickstatements/0036-3375.txt';
+
+// Denisia
+$filename = 'quickstatements/1608-8700.txt';
+
+// Insects of Micronesia
+$filename = 'quickstatements/0073-8115.txt';
+
+// Blumea
+$filename = 'quickstatements/0006-5196.txt';
+
+// Journal of The Washington Academy of Sciences
+$filename = 'quickstatements/0043-0439.txt';
+
+// The Bulletin of The Raffles Museum
+$filename = 'quickstatements/bullraffles.txt';
+
+// Bull. Bot. Res., Harbin
+$filename = 'quickstatements/1673-5102.txt';
+
+// Anales del Instituto Botánico A. J. Cavanilles
+$filename = 'quickstatements/0365-0790.txt';
+
+// Anales del Jardín Botánico de Madrid (no DOI)
+$filename = 'quickstatements/0211-1322.txt';
+
+// Bulletin de L'institut Royal Des Sciences Naturelles de Belgique Biologie
+$filename = 'quickstatements/0374-6429.txt';
+
+// Bulletin de L'institut Royal Des Sciences Naturelles de Belgique
+$filename = 'quickstatements/0368-0177.txt';
+
+// Abhandlungen Aus Dem Gebiete Der Naturwissenschaften Hamburg
+$filename = 'quickstatements/abhamburg.txt';
+
+// Nachrichten Des Entomologischen Vereins Apollo
+$filename = 'quickstatements/0723-9912.txt';
+
+$filename = 'quickstatements/0885-5943.txt';
+
+// Insects of Hawaii
+$filename = 'quickstatements/hawaii.txt';
+
+// Acta Arachnologica
+$filename = 'quickstatements/0001-5202.txt';
+
+// American Museum Novitates
+$filename = 'quickstatements/0003-0082.txt';
+
+// LSU
+$filename = 'quickstatements/lsu.txt';
+
+
+$filename = 'quickstatements/2373-0951.txt';
+
+$filename = 'quickstatements/2095-0357.txt';
+
+$filename = 'quickstatements/2333-2468.txt';
+
+$filename = 'quickstatements/0030-4158.txt';
+
+$filename = 'quickstatements/0038-4909.txt';
+
+// Faune de Madagascar sudoc
+$filename = 'quickstatements/0428-0709.txt';
+
+$filename = 'quickstatements/1934-5259.txt';
+
+// Beiträge zur Entomologie
+$filename = 'quickstatements/0005-805X.txt';
+
+// Esakia
+$filename = 'quickstatements/0071-1268.txt';
+
+// Eos
+$filename = 'quickstatements/0013-9440.txt';
+
 // flags
 $check = false;// don't check (only do this if we are sure we're adding new stuff)
 $check = true; // make sure record doesn't alreday exist
@@ -225,10 +346,16 @@ $languages = array('en'); // assume everything is in English
 //$languages = array('ja', 'en');
 
 
-$languages = array('en', 'zh', 'ja');
-$languages = array('en');
+//$languages = array('en', 'zh', 'ja');
+//$languages = array('en', 'zh');
 //$languages = array('en', 'es', 'pt');
-$languages = array('en', 'fr', 'de', 'nl');
+//$languages = array('en', 'fr', 'de', 'nl');
+//$languages = array('en','de', 'fr');
+
+//$languages = array('de', 'en', 'fr', 'es');
+
+$languages = array('es', 'en', 'de', 'fr');
+
 
 $count++;
 
@@ -328,7 +455,7 @@ while (!feof($file_handle))
 		
 		
 		// www.persee.fr
-		if (preg_match('/ww.persee.fr/', $guid, $m))
+		if (preg_match('/www.persee.fr/', $guid, $m))
 		{
 			$source[] = 'S248';
 			$source[] = 'Q252430';
@@ -350,6 +477,23 @@ while (!feof($file_handle))
 			$source[] = 'S854';
 			$source[] = '"http://www.saturnia.de/senck-biol/sebio-cont.htm"';
 		}
+		
+		// www.zobodat.at
+		if (preg_match('/www.zobodat.at/i', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q55153845';
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';			
+		}
+
+		// repository.naturalis.nl
+		if (preg_match('/repository.naturalis.nl/i', $guid, $m))
+		{
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';			
+		}
+		
 	
 		if ($obj->ISSN[0] == '0034-365X')
 		{
@@ -357,6 +501,51 @@ while (!feof($file_handle))
 			$source[] = '"' . $obj->URL . '"';
 		}
 		
+		// 0304-0798
+		// journals.co.za/
+		// sabinet
+		if (preg_match('/journals.co.za/i', $obj->URL, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q52636404';
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';			
+		}
+		
+		// repositories.lib.utexas.edu
+		if ($obj->ISSN[0] == '2325-4882')
+		{
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';
+		}
+		
+		// fupress.net
+		if (preg_match('/fupress.net/i', $obj->URL, $m))
+		{
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';			
+		}
+		
+		// www.sudoc.fr
+		if (preg_match('/www.sudoc.fr/', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q2597810';
+			$source[] = 'S854';
+			$source[] = '"' . $guid . '"';
+		}
+		
+		
+		// default
+		if (0)
+		{
+			if (isset( $obj->URL))
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}
+				
 		
 		$quickstatements = csljson_to_wikidata($work, 
 			$check, 

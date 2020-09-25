@@ -81,5 +81,20 @@ SELECT CONCAT(wikidata, char(9),'P724', char(9), '"', internetarchive, '"') FROM
 SELECT CONCAT(wikidata, char(9),'P1184', char(9), '"', handle, '"') FROM publications WHERE issn='0037-2870' AND wikidata IS NOT NULL AND handle IS NOT NULL;
 ```
 
+## Add “published in” (P1433) to articles missing that from Wikidata
+
+Cases where articles already exists (e.g., has DOI in Wikidata) but it’s not linked to the journal.
+
+```
+SELECT CONCAT(wikidata, char(9),'P1433', char(9), 'Q96734475') FROM publications WHERE issn='0044-5096' AND  wikidata LIKE "Q5%";
+```
+
+## Adding PDF with wayback archive URL
+
+If PDF is backed up in wayback machine, add qualifiers that say it’s a PDF and it’s backed up
+
+```
+SELECT CONCAT(wikidata, char(9),'P953', char(9), '"', pdf, '"', char(9), 'P2701', char(9), 'Q42332', char(9), 'P1065', char(9) , '"https://web.archive.org', waybackmachine , '"' ) FROM publications WHERE issn='0030-8714' AND wikidata IS NOT NULL AND pdf IS NOT NULL AND waybackmachine IS NOT NULL;
+```
 
 

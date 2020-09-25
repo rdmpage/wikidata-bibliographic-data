@@ -813,7 +813,7 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 	
 			if (count($parts == 4))
 			{
-				$item = wikidata_item_from_openurl($parts[0], $parts[1], $parts[2], $parts[3]);
+				$item = wikidata_item_from_openurl_issn($parts[0], $parts[1], $parts[2], $parts[3]);
 			}
 		}
 
@@ -1155,6 +1155,24 @@ $this->props = array(
 					
 					if (!$done)
 					{
+						/*
+						We may need to check for CrossRef weirdness, e.g. 
+						
+						doi:10.3406/linly.1963.7123
+						
+						[1] => stdClass Object
+                        (
+                            [name] => Groupe Ornithologique Lyonnais
+                            [sequence] => additional
+                            [affiliation] => Array
+                                (
+                                )
+
+                        )
+						
+						*/
+						$ok = false; 
+						
 						$name = '';
 						
 						// multilingual?
@@ -1167,13 +1185,17 @@ $this->props = array(
 								$strings[] = $v;
 							}
 							
-							$name = join("/", $strings);				
+							$name = join("/", $strings);	
+							
+							$ok = true;			
 						}
 						else 
 						{						
 							if (isset($author->literal))
 							{
 								$name = $author->literal;
+								
+								$ok = true;		
 							}
 							else
 							{
@@ -1181,35 +1203,43 @@ $this->props = array(
 								if (isset($author->given))
 								{
 									$parts[] = $author->given;
+									$ok = true;		
 								}
 								if (isset($author->family))
 								{
 									$parts[] = $author->family;
+									$ok = true;		
 								}
 								$name = join(' ', $parts);				
 							}
 						}
 					
-						$qualifier = "\tP1545\t\"$count\"";
-					
-						if (isset($author->affiliation))
+						if ($ok == true)
 						{
-							foreach ($author->affiliation as $affiliation)
-							{
-								if (isset($affiliation->name))
-								{
-									// clean
-									$affiliation->name = str_replace("\t", "", $affiliation->name);
-									
-									$qualifier .= "\tP6424\t\"" . $affiliation->name . '"';
-								}
-							}						
-						}						
+							$qualifier = "\tP1545\t\"$count\"";
 					
-						$w[] = array('P2093' => '"' . $name . '"' . $qualifier);
+							if (isset($author->affiliation))
+							{
+								foreach ($author->affiliation as $affiliation)
+								{
+									if (isset($affiliation->name))
+									{
+										// clean
+										$affiliation->name = str_replace("\t", "", $affiliation->name);
+									
+										$qualifier .= "\tP6424\t\"" . $affiliation->name . '"';
+									}
+								}						
+							}						
+					
+							$w[] = array('P2093' => '"' . $name . '"' . $qualifier);
+						}
 
 					}
-					$count++;
+					if ($ok = true)
+					{
+						$count++;
+					}
 				}
 				break;
 		
@@ -1839,7 +1869,7 @@ GROUP BY ?work ?title ?volume ?issue ?pages ?doi ';
 
 //----------------------------------------------------------------------------------------
 // OpenURL lookup using ISSN, volume, spage
-function wikidata_item_from_openurl($issn, $volume, $spage, $year)
+function wikidata_item_from_openurl_issn($issn, $volume, $spage, $year)
 {
 	$item = '';
 	
@@ -1854,11 +1884,61 @@ function wikidata_item_from_openurl($issn, $volume, $spage, $year)
   ?container wdt:P236 ?issn.
   ?work wdt:P478 ?volume .
   ?work wdt:P304 ?pages .
+  ?work wdt:P577 ?date .
+  FILTER regex(?pages,?firstpage,"i")
+  FILTER (STR(year(?date)) = ?year)
+}';
+	
+	// echo $sparql . "\n";
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		
+		//print_r($obj);
+		
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
+// OpenURL lookup using journal name, volume, spage
+function wikidata_item_from_openurl_journal($journal, $volume, $spage, $year)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE 
+{ 
+  VALUES ?journal {"' . $journal . '"@en } .
+  VALUES ?volume {"' . $volume . '" } .
+  VALUES ?firstpage {"^' . $spage . '([^0-9]|$)" } .
+  VALUES ?year {"' . $year . '" } .
+  
+ #?container wdt:P1160 ?journal . # ISO 4 abbreviation 
+  ?container rdfs:label ?journal .
+  ?work wdt:P1433 ?container .
+  ?work wdt:P478 ?volume .
+  ?work wdt:P304 ?pages .
+  ?work wdt:P577 ?date .
   FILTER regex(?pages,?firstpage,"i")
   FILTER (STR(year(?date)) = ?year)
 }';
 	
 	//echo $sparql . "\n";
+	
+	//exit();
 	
 	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
 	$json = get($url, '', 'application/json');
@@ -1936,6 +2016,15 @@ function wikidata_find_from_anything ($work)
 		}
 	}	
 	
+	// Handle
+	if ($item == '')
+	{
+		if (isset($work->HANDLE))
+		{
+			$item = wikidata_item_from_handle($work->HANDLE);
+		}
+	}		
+	
 	// PMID
 	if ($item == '')
 	{
@@ -1994,22 +2083,17 @@ function wikidata_find_from_anything ($work)
 		{
 			$terms[] = $work->message->{'page-first'};
 		}
-		
-		if (isset($work->message->{'page-first'}))
-		{
-			$terms[] = $work->message->{'page-first'};
-		}
-		
+				
 		if (isset($work->message->{'issued'}))
 		{
 			$terms[] = $work->message->{'issued'}->{'date-parts'}[0][0];
 		}
 			
-		if (count(terms) == 4)
+		if (count($terms) == 4)
 		{
 			foreach ($terms[0] as $issn)
 			{
-				$hit = wikidata_item_from_openurl($issn, $terms[1], $terms[2], $terms[3]);
+				$hit = wikidata_item_from_openurl_issn($issn, $terms[1], $terms[2], $terms[3]);
 				if ($hit <> '')
 				{
 					$item = $hit;
