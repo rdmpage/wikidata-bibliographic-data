@@ -15,7 +15,15 @@ $dois=array(
 //'10.12905/0380.phyton54(2)2014-0197',
 //'10.22092/ijb.2017.107596.1132', // fail
 //'10.3264/FG.2017.1221',
-'10.3301/ijg.2013.10',
+//'10.3301/ijg.2013.10',
+
+//'10.12905/0380.phyton56(2)2016-0255',
+
+// '10.22092/ijb.2017.107596.1132', fail
+
+//'10.3264/FG.2017.1221',
+
+'10.12905/0380.phyton57-2018-0019'
 );
 
 
@@ -29,7 +37,7 @@ $check = true; // set to false if we are sure that record will exist with DOI
 
 $detect_languages = array('en');
 
-$detect_languages = array('en', 'it', 'fr', 'de', 'pt', 'es', 'ja', 'zh', 'ru');
+$detect_languages = array('en', 'it', 'de', 'fr', 'pt', 'es', 'ja', 'zh', 'ru');
 
 
 foreach ($dois as $doi)
@@ -86,6 +94,31 @@ foreach ($dois as $doi)
 		
 		}
 		
+		if (!isset($work->message->ISSN))
+		{
+			if (isset($work->message->publisher) && ($work->message->publisher == 'Forum Geobotanicum'))
+			{
+				$work->message->ISSN=array('1867-9315');
+			}
+		
+		}
+		
+		// language
+		if (isset($work->message->language))
+		{
+			switch ($work->message->language)
+			{
+				case 'ger':
+					$detect_languages = array('de');
+					break;
+					
+				defauklt:
+					break;
+			}
+			
+		}
+		
+		
 		print_r($work);
 		
 		if ($work)
@@ -108,7 +141,8 @@ foreach ($dois as $doi)
 				$check, 	// check if already exists
 				$update, // true to update an existing record, false to skip an existing record
 				$detect_languages,
-				$source
+				$source,
+				true
 				);
 		
 			echo $q;

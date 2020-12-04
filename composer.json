@@ -3,6 +3,7 @@
         "php": "^7.1",
         "patrickschur/language-detection": "^3.4",
         "digitalbazaar/json-ld": "0.4.7",
-        "biblys/isbn": "^2.1.4"
+        "biblys/isbn": "^2.1.4",
+        "sunra/php-simple-html-dom-parser": "^1.5"
     }
 }

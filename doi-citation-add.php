@@ -42,7 +42,14 @@ $dois=array('10.1644/11-mamm-a-296.1');
 
 $dois=array('10.1017/s1477200006002271');
 
+// Many citations, none with DOIs included, need to start manula lookup 
+$dois=array('10.1038/S41559-020-1269-4');
 
+$dois=array('10.1093/jme/tjy108');
+
+$dois=array('10.1016/j.pld.2016.08.003');
+
+$dois=array('10.3109/19401736.2013.803543');
 
 foreach ($dois as $doi)
 {

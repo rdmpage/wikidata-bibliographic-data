@@ -97,4 +97,81 @@ If PDF is backed up in wayback machine, add qualifiers that say it’s a PDF and
 SELECT CONCAT(wikidata, char(9),'P953', char(9), '"', pdf, '"', char(9), 'P2701', char(9), 'Q42332', char(9), 'P1065', char(9) , '"https://web.archive.org', waybackmachine , '"' ) FROM publications WHERE issn='0030-8714' AND wikidata IS NOT NULL AND pdf IS NOT NULL AND waybackmachine IS NOT NULL;
 ```
 
+### Deleting PDF (if we make a mistake)
+
+```
+SELECT CONCAT('-', wikidata, char(9),'P953', char(9), '"', pdf, '"') FROM publications WHERE issn='2331-7515' AND wikidata IS NOT NULL AND pdf IS NOT NULL AND waybackmachine IS NOT NULL;
+```
+
+## Add pages (P304) to articles missing that from Wikidata
+
+Cases where articles already exists (e.g., has DOI in Wikidata) but it doesn’t have pages
+
+### Just spage
+
+```
+SELECT CONCAT(wikidata, char(9),'P304', char(9), '"', spage, '"') FROM publications WHERE issn='0366-3469' AND  wikidata IS NOT NULL AND spage IS NOT NULL and epage IS NULL;
+```
+
+### spage and epage
+
+```
+SELECT CONCAT(wikidata, char(9),'P304', char(9), '"', spage, '-', epage, '"') FROM publications WHERE issn='0366-3469' AND  wikidata IS NOT NULL AND spage IS NOT NULL and epage IS NOT NULL;
+
+```
+
+### SEALS pages
+
+### spage only
+
+```
+SELECT CONCAT(wikidata, char(9),'P304', char(9), '"', spage, '"',char(9),'S248',char(9),'Q45313801',char(9), 'S854', char(9), '"', url, '"') FROM publications WHERE issn='0253-1453' AND  wikidata IS NOT NULL AND spage IS NOT NULL and epage IS  NULL;
+```
+
+
+
+#### spage page
+
+```
+SELECT CONCAT(wikidata, char(9),'P304', char(9), '"', spage, '-', epage, '"',char(9),'S248',char(9),'Q45313801',char(9), 'S854', char(9), '"', url, '"') FROM publications WHERE issn='0253-1453' AND  wikidata IS NOT NULL AND spage IS NOT NULL and epage IS NOT NULL;
+```
+
+
+## Add missing publication date (e.g., year)
+
+```
+SELECT CONCAT(wikidata, char(9),'P577', char(9), '+', year, '-00-00T00:00:00Z/9') FROM publications WHERE issn='0311-4538';
+```
+
+## Add missing license
+
+CC-BY 4.0
+
+```
+SELECT CONCAT(wikidata, char(9),'P275', char(9), 'Q20007257', char(9), 'S854', char(9), '"', url, '"') FROM publications WHERE issn='1570-3223';
+
+```
+
+
+## Adding AFD to existing Wikidata items
+
+Use in afd database to link AFD to Wikidata
+
+```
+SELECT CONCAT(wikidata, char(9), 'P6982', char(9), '"', PUBLICATION_GUID, '"') FROM bibliography WHERE issn='0013-8819' AND wikidata IS NOT NULL;
+```
+
+
+## Add missing authors
+
+## Adding to my databases
+
+### IPNI
+
+DOI
+
+SELECT CONCAT("UPDATE names SET wikidata='", wikidata, "' WHERE doi='", doi, "';") FROM publications WHERE issn='0366-3469' AND wikidata IS NOT NULL;
+
+
+
 

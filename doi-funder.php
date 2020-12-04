@@ -9,6 +9,12 @@ require_once (dirname(__FILE__) . '/wikidata.php');
 
 $dois=array('10.1007/s13744-020-00798-3');
 
+$dois=array('10.1155/2016/3952323');
+
+$dois=array('10.1038/S41559-020-1269-4');
+
+$dois=array('10.1016/j.pld.2016.11.010');
+
 
 foreach ($dois as $doi)
 {

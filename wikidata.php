@@ -6,6 +6,26 @@ require_once 'vendor/autoload.php';
 use LanguageDetection\Language;
 use Biblys\Isbn\Isbn as Isbn;
 
+
+
+//----------------------------------------------------------------------------------------
+// Extract type of work from title
+function types_from_title(&$w, $title)
+{
+	// errata
+	
+	if (preg_match('/^ERRATA\b/i', $title))
+	{
+		$w[] = array('P31' => 'Q1348305');	
+		
+		if (preg_match('/^ERRATA ET ADDENDA/i', $title))
+		{
+			$w[] = array('P31' => 'Q352858');	
+		}
+	
+	}
+}	
+
 //----------------------------------------------------------------------------------------
 function nice_strip_tags($str)
 {
@@ -13,6 +33,8 @@ function nice_strip_tags($str)
 	$str = preg_replace('/>/u', '> ', $str);
 	
 	$str = strip_tags($str);
+	
+	$str = preg_replace('/&amp;/u', '&', $str);
 	
 	$str = preg_replace('/\s\s+/u', ' ', $str);
 	
@@ -106,12 +128,66 @@ function wikidata_funder_from_doi($doi)
 }
 
 //----------------------------------------------------------------------------------------
+// Does wikidata have this Internet Archive item?
+function wikidata_item_from_internet_archive($ia)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P724 "' . $ia . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
+// Does wikidata have this Google Book?
+function wikidata_item_from_google_book($gb)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P675 "' . $gb . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
 // Does wikidata have this DOI?
 function wikidata_item_from_doi($doi)
 {
 	$item = '';
 	
-	$sparql = 'SELECT * WHERE { ?work wdt:P356 "' . strtoupper($doi) . '" }';
+	$sparql = 'SELECT * WHERE { ?work wdt:P356 "' . mb_strtoupper($doi) . '" }';
 	
 	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
 	$json = get($url, '', 'application/json');
@@ -299,6 +375,59 @@ function wikidata_item_from_cnki($cnki)
 	return $item;
 }
 
+//----------------------------------------------------------------------------------------
+// Does wikidata have this DIALNET?
+function wikidata_item_from_dialnet($dialnet)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P1610 "' . $dialnet . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
+// Does wikidata have this CINII?
+function wikidata_item_from_cinii($cinii)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P2409 "' . $cinii . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
 
 //----------------------------------------------------------------------------------------
 // Does wikidata have this PDF
@@ -494,6 +623,60 @@ function wikidata_item_from_isbn13($isbn13)
 	return $item;
 }
 
+//----------------------------------------------------------------------------------------
+// Does wikidata have this OCLC ?
+function wikidata_item_from_oclc($oclc)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P243 "' . $oclc . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
+// Does wikidata have this VIAF ?
+function wikidata_item_from_viaf($viaf)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P214 "' . $viaf . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
 
 
 //----------------------------------------------------------------------------------------
@@ -669,6 +852,7 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 		'en' => 'Q1860',
 		'es' => 'Q1321',
 		'fr' => 'Q150',
+		'hu' => 'Q9067',
 		'it' => 'Q652',
 		'ja' => 'Q5287',
 		'la' => 'Q397',
@@ -676,6 +860,7 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 		'pt' => 'Q5146',
 		'ru' => 'Q7737',
 		'th' => 'Q9217',
+		'vi' => 'Q9199',
 		'zh' => 'Q7850',		
 	);
 	
@@ -759,6 +944,22 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 			if (isset($work->message->CNKI))
 			{
 				$item = wikidata_item_from_cnki($work->message->CNKI);
+			}
+		}		
+		
+		if ($item == '')
+		{
+			if (isset($work->message->DIALNET))
+			{
+				$item = wikidata_item_from_dialnet($work->message->DIALNET);
+			}
+		}		
+
+		if ($item == '')
+		{
+			if (isset($work->message->CINII))
+			{
+				$item = wikidata_item_from_cinii($work->message->CINII);
 			}
 		}		
 	
@@ -866,7 +1067,9 @@ $this->props = array(
 		'BHL' 					=> 'P687',
 		'BHLPART' 				=> 'P6535',
 		'BIOSTOR' 				=> 'P5315',
+		'CINII'					=> 'P2409',
 		'CNKI'					=> 'P6769',
+		'DIALNET'				=> 'P1610',
 		'DOI' 					=> 'P356',
 		'HANDLE'				=> 'P1184',
 		'JSTOR'					=> 'P888',
@@ -891,6 +1094,7 @@ $this->props = array(
 	
 		switch ($k)
 		{
+			//----------------------------------------------------------------------------
 			case 'type':
 				switch ($v)
 				{
@@ -913,16 +1117,22 @@ $this->props = array(
 					
 						$w[] = array('P31' => $dissertation_type);
 						break;
-				
+						
+					case 'book-chapter':
+						$w[] = array('P31' => 'Q1980247');
+						break;				
 				
 					case 'article-journal':
 					case 'journal-article':
 					default:
 						$w[] = array('P31' => 'Q13442814');
 						break;
+						
+					
 				}
 				break;
 		
+			//----------------------------------------------------------------------------
 			case 'title':
 			
 				// Handle multiple languages
@@ -996,6 +1206,12 @@ $this->props = array(
 						$language = 'en';					
 						$title = nice_strip_tags($title);
 						
+						// J-Stage fixes
+						if (preg_match('/(\^\|\^[a-z]+);/i', $title, $m))
+						{
+							$title = str_replace('^|^', '&', $title);
+						}						
+						
 						$title = html_entity_decode($title, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 						
 						$title = str_replace("\n", "", $title);
@@ -1025,7 +1241,7 @@ $this->props = array(
 							
 							if ($detect)
 							{			
-								//echo "Detect language\n";
+								// echo "Detect language\n";								
 											
 								// Detect language of title
 								$ld = new Language($languages_to_detect);						
@@ -1038,11 +1254,39 @@ $this->props = array(
 									$language = 'ru';
 								}
 								
+								
+								// double check Chinese
+								if (preg_match('/\p{Han}+/u', $title))
+								{
+									$language = 'zh';
+									
+									// maybe Japanese?
+									if (in_array('ja', $languages_to_detect)) 
+									{
+										$language = 'ja';
+									}
+									
+									
+								}
+								
+								// double check German
+								if (preg_match('/[ä|ö|ü]/iu', $title) && $language == 'en')
+								{
+									$language = 'de';
+								}								
+								
+								// echo $title . " " . $language . "\n";
+								// exit();
+								
 								if ($language == 'en')
 								{
 									if (isset($work->message->ISSN))
 									{
-										if (is_array($work->message->ISSN) && in_array('1983-0572', $work->message->ISSN))
+										if (is_array($work->message->ISSN) 
+										&& 
+										(count(array_intersect(array('1983-0572','1808-2688','2175-7860', '2358-1980'), $work->message->ISSN)) > 0)
+										)
+										
 										{
 								
 											// Portuguese doesn't seem to be detected properly
@@ -1069,6 +1313,11 @@ $this->props = array(
 
 								// label
 								$w[] = array('L' . $language => '"' . nice_shorten($title, $MAX_LABEL_LENGTH) . '"');
+								
+								// Can we deduce anything about the type of article?
+								
+								types_from_title($w, $title);
+						
 							
 							
 							}
@@ -1076,7 +1325,8 @@ $this->props = array(
 							{
 								if (isset($work->message->ISSN))
 								{
-									if (in_array('2175-7860', $work->message->ISSN))
+								
+									if (count(array_intersect(array('1808-2688','2175-7860', '2358-1980'), $work->message->ISSN)) > 0)
 									{
 										if ($language == 'es')
 										{
@@ -1104,13 +1354,14 @@ $this->props = array(
 								
 								}
 							
-														
-							
 								// add label in English anyway
 								if ($always_english_label)
 								{
 									$w[] = array('Len' => '"' . nice_shorten($title, $MAX_LABEL_LENGTH) . '"');
 								}
+								
+
+								
 							
 							}	
 						}
@@ -1119,6 +1370,42 @@ $this->props = array(
 				}
 				break;
 				
+			//----------------------------------------------------------------------------
+			// CrossRef sometimes stores title in original language 
+			case 'original-title':
+				$title = $v;
+				
+				// Check if container is an array, if it is not empty take the first string
+				if (is_array($v) && count($v) > 0)
+				{
+					$title = $v[0];
+				}
+				
+				// by this stage we should have a string name for the container,
+				// (unless record is empty array, which can happen with CrossRef)
+				if (is_string($title))
+				{
+					// language
+					$ld = new Language(array('en', 'es', 'ja', 'ru', 'pt', 'zh'));						
+					$language = $ld->detect($title)->__toString();
+					
+					
+					// add
+					
+					// title
+					$w[] = array($wikidata_properties['title'] => $language . ':' . '"' . $title . '"');
+					
+					// langauge of work
+					$w[] = array('P407' => $language_map[$language]);	
+
+					// label
+					$w[] = array('L' . $language => '"' . nice_shorten($title, $MAX_LABEL_LENGTH) . '"');
+				
+				}
+				break;			
+			
+				
+			//----------------------------------------------------------------------------
 			case 'author':
 				// For now just use author names, but will want to do lookup to see if there is an item for each person
 				// in which case we would only add the item, not the name (can have one or the other)
@@ -1283,6 +1570,8 @@ $this->props = array(
 									{
 										// clean
 										$affiliation->name = str_replace("\t", "", $affiliation->name);
+										$affiliation->name = str_replace("\r", "", $affiliation->name);
+										$affiliation->name = str_replace("\n", " ", $affiliation->name);
 									
 										$qualifier .= "\tP6424\t\"" . $affiliation->name . '"';
 									}
@@ -1300,91 +1589,163 @@ $this->props = array(
 				}
 				break;
 		
+			//----------------------------------------------------------------------------
 			case 'volume':
 			case 'issue':
 			case 'page':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 				
+			//----------------------------------------------------------------------------
+			case 'alternative-id':
+				// e.g. 10.5354/0717-8883.2014.31638
+				if (preg_match('/Pág.\s+(?<pages>.*)/u', $v[0], $m))
+				{
+					$w[] = array($wikidata_properties['page'] => '"' . $m['pages'] . '"');
+				}			
+				break;
+				
+			//----------------------------------------------------------------------------
 			case 'BHL':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 
+			//----------------------------------------------------------------------------
 			case 'BHLPART':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 
+			//----------------------------------------------------------------------------
 			case 'BIOSTOR':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 
+			//----------------------------------------------------------------------------
 			case 'CNKI':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 				
+			//----------------------------------------------------------------------------
 			case 'DOI':
-				$w[] = array($wikidata_properties[$k] => '"' . strtoupper($v) . '"');
+				$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"');
+				
+				//Zenodo?
+				
+				if (preg_match('/10.5281\/ZENODO\.(?<id>\d+)/i', $v, $m))
+				{
+					$w[] = array('P4901' => '"' . $m['id'] . '"');
+				}
+				
 				break;
 				
+			//----------------------------------------------------------------------------
 			case 'JSTOR':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 								
+			//----------------------------------------------------------------------------
 			case 'HANDLE':
-				$w[] = array($wikidata_properties[$k] => '"' . strtoupper($v) . '"');
+				$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"');
 				break;								
 				
+			//----------------------------------------------------------------------------
 			case 'ARCHIVE':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 				
+			//----------------------------------------------------------------------------
 			case 'PMID':
 				$w[] = array($wikidata_properties[$k] => '"' . strtoupper($v) . '"');
 				break;	
 				
+			//----------------------------------------------------------------------------
 			case 'SUDOC':
 				$w[] = array($wikidata_properties[$k] => '"' . strtoupper($v) . '"');
 				break;	
+								
+			//----------------------------------------------------------------------------
+			case 'DIALNET':
+				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
+				break;
 				
-				
+			//----------------------------------------------------------------------------
+			case 'CINII':
+				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
+				break;
+								
+			//----------------------------------------------------------------------------
 			case 'ISBN':
-				$isbns = array();
-				if (is_array($v))
-				{
-					$isbns = $v;
-				}
-				else
-				{
-					$isbns[] = $v;
-				}
 			
-				foreach ($isbns as $isbn_string)
+				switch ($work->message->type)
 				{
-					$isbn = new Isbn($isbn_string);
+					case 'book-chapter':
 						
-					switch (strlen($isbn_string))
-					{
-						case 10:
-							// echo " Line: " . __LINE__ . "\n";
-
-							$w[] = array('P957' => '"' .  $isbn->format("ISBN-10") . '"' );			
-							break;
-					
-						case 13:
-							// echo " Line: " . __LINE__ . "\n";
+						$isbn_string = $v[0];
+						
+						$book = '';
+						
+						if ($book == '')
+						{
+							$book = wikidata_item_from_isbn10($isbn_string);
+						}
+						if ($book == '')
+						{
+							$book = wikidata_item_from_isbn13($isbn_string);
+						}
+						
+						if ($book != '')
+						{
+							// part of
+							$w[] = array('P361' => $book);
+						}
+						
+						
+						break;
 				
-				
-							$w[] = array('P212' => '"' .  $isbn->format("ISBN-13") . '"' );
-							break;
-					
-						default:
-							break;
+					// book 
+					// article
+					default:
+						$isbns = array();
+						if (is_array($v))
+						{
+							$isbns = $v;
+						}
+						else
+						{
+							$isbns[] = $v;
+						}
 			
-					}
+						foreach ($isbns as $isbn_string)
+						{
+							$isbn = new Isbn($isbn_string);
+						
+							switch (strlen($isbn_string))
+							{
+								case 10:
+									// echo " Line: " . __LINE__ . "\n";
+
+									$w[] = array('P957' => '"' .  $isbn->format("ISBN-10") . '"' );			
+									break;
+					
+								case 13:
+									// echo " Line: " . __LINE__ . "\n";
+				
+				
+									$w[] = array('P212' => '"' .  $isbn->format("ISBN-13") . '"' );
+									break;
+					
+								default:
+									break;
+			
+							}
+						}
+					break;
 				}
+				
 				break;								
 											
 				
+			//----------------------------------------------------------------------------
 			// BioStor CSL-JSON
 			case 'bhl_pages':
 				// Get first element of page array
@@ -1393,6 +1754,7 @@ $this->props = array(
 				break;
 			
 			
+			//----------------------------------------------------------------------------
 			case 'URL':
 				if (is_array($v))
 				{
@@ -1456,38 +1818,72 @@ $this->props = array(
 				}
 				break;
 				
+			//----------------------------------------------------------------------------
 			case 'WIKISPECIES':
 				$w[] = array('Sspecieswiki' => $v);
 				break;
 				
+			//----------------------------------------------------------------------------
 			case 'ZOOBANK':
 				$w[] = array($wikidata_properties['ZOOBANK_PUBLICATION'] => '"' . $v . '"');
 				break;				
 				
+			//----------------------------------------------------------------------------
 			case 'link':
+				// Some publishers such as Springer may have multiple entries for the same PDF
+				// so keep track of them to avoid adding more than once
+				$pdfs = array();
+			
 				foreach ($v as $link)
 				{
 					if ($link->{'content-type'} == 'application/pdf')
 					{
-						$qualifier = "\tP2701\tQ42332";
-					
-						// do we have an archive version?
-						if (isset($work->message->WAYBACK))
-						{
-							$wayback = $work->message->WAYBACK;
-							
-							if (!preg_match('/^\//', $wayback))
-							{
-								$wayback = '/' . $wayback;
-							}
+						$go = true;
 						
-							$qualifier .= "\tP1065\t\"https://web.archive.org" . $wayback . '"';
+						// some PDFs we have to ignore as they are gone
+						if (preg_match('/ci.nii.ac.jp/', $link->URL))
+						{
+							$go = false;
 						}
-						$w[] = array($wikidata_properties['PDF'] => '"' . str_replace(' ', '%20', $link->URL) . '"' . $qualifier);						
+						
+						if (preg_match('/^S/', $link->URL))
+						{
+							$go = false;
+						}
+						
+						if ($go)
+						{
+										
+							if (in_array($link->URL, $pdfs))
+							{
+								// skip
+							}
+							else
+							{
+								$pdfs[] = $link->URL;
+							
+								$qualifier = "\tP2701\tQ42332";
+					
+								// do we have an archive version?
+								if (isset($work->message->WAYBACK))
+								{
+									$wayback = $work->message->WAYBACK;
+							
+									if (!preg_match('/^\//', $wayback))
+									{
+										$wayback = '/' . $wayback;
+									}
+						
+									$qualifier .= "\tP1065\t\"https://web.archive.org" . $wayback . '"';
+								}
+								$w[] = array($wikidata_properties['PDF'] => '"' . str_replace(' ', '%20', $link->URL) . '"' . $qualifier);						
+							}
+						}
 					}
 				}
 				break;
 								
+			//----------------------------------------------------------------------------
 			case 'container-title':
 				$container = $v;
 				
@@ -1556,6 +1952,7 @@ $this->props = array(
 				}
 				break;
 				
+			//----------------------------------------------------------------------------
 			// based on https://bitbucket.org/magnusmanske/sourcemd/src/6c998c4809df/sourcemd.php?at=master
 			case 'approved': // for theses
 			case 'issued':			
@@ -1577,6 +1974,7 @@ $this->props = array(
 				break;
 				
 				
+			//----------------------------------------------------------------------------
 			case 'reference':
 				foreach ($v as $reference)
 				{
@@ -1616,6 +2014,7 @@ award: [
 ],
 */
 
+			//----------------------------------------------------------------------------
 			case 'funder':
 				foreach ($v as $funder)
 				{
@@ -1631,6 +2030,7 @@ award: [
 				}
 				break;
 				
+			//----------------------------------------------------------------------------
 			// Datacite
 			case 'copyright':
 				$license_item = '';
@@ -1651,156 +2051,188 @@ award: [
 				break;
 			
 				
+			//----------------------------------------------------------------------------
 			case 'license':
-				if (isset($v[0]->URL))
+				if (is_array($v))
 				{
+					foreach ($v as $license)
+
+					if (isset($license->URL))
+					{
 				
-					// map to Wikidata
-					$license_item = '';
-					switch ($v[0]->URL)
-					{
-					          
-						case 'https://creativecommons.org/licenses/by-nd/4.0/':						
-							// CC-BY-ND 4.0 
-							$license_item = 'Q36795408';
-							break;
+						// map to Wikidata
+						$license_item = '';
+						switch ($license->URL)
+						{
+							  
+							case 'https://creativecommons.org/licenses/by/4.0/':
+								// CC-BY 4.0
+								$license_item = 'Q20007257';
+								break;
+							  
+							case 'https://creativecommons.org/licenses/by-nd/4.0/':						
+								// CC-BY-ND 4.0 
+								$license_item = 'Q36795408';
+								break;
 							
-						case 'http://creativecommons.org/licenses/by-nc/3.0/':						
-						case 'http://creativecommons.org/licenses/by-nc/3.0/nl/':						
-							// CC-BY-NC 
-							$license_item = 'Q18810331';					
-							break;
+							case 'http://creativecommons.org/licenses/by-nc/3.0/':						
+							case 'http://creativecommons.org/licenses/by-nc/3.0/nl/':						
+								// CC-BY-NC 
+								$license_item = 'Q18810331';					
+								break;
+								
+							case 'https://creativecommons.org/licenses/by-nc/4.0':
+								// CC-BY-NC  4.0
+								$license_item = 'Q34179348';
+								break;
 							
-						case 'http://creativecommons.org/licenses/by-sa/3.0/nl/':
-							// CC-BY-SA 
-							$license_item = 'Q14946043';												
-							break;
+							case 'http://creativecommons.org/licenses/by-sa/3.0/nl/':
+								// CC-BY-SA 
+								$license_item = 'Q14946043';												
+								break;
+								
+							case 'http://creativecommons.org/licenses/by-sa/4.0':
+								// CC-BY-SA 
+								$license_item = 'Q18199165';												
+								break;
 							
+							case 'https://creativecommons.org/licenses/by-nc-nd/4.0/':
+								// CC-BY-NC-ND 
+								$license_item = 'Q24082749';
+								break;
 							
-						case 'https://creativecommons.org/licenses/by-nc-nd/4.0/':
-							// CC-BY-NC-ND 
-							$license_item = 'Q24082749';
-							break;
-							
-						case 'https://creativecommons.org/licenses/by-nc-nd/1.0/':
-							// CC-BY-NC-ND 
-							$license_item = 'Q47008926';
-							break;
+							case 'https://creativecommons.org/licenses/by-nc-nd/1.0/':
+								// CC-BY-NC-ND 
+								$license_item = 'Q47008926';
+								break;
+								
+							case 'http://creativecommons.org/licenses/by-nc-nd/4.0/':
+							case 'https://creativecommons.org/licenses/by-nc-nd/4.0/':
+								// CC-BY-NC-ND 4.0
+								$license_item = 'Q24082749';
+								break;
+												
+							default:
+								break;
+						}
 					
-						default:
-							break;
+					
+					
+						if ($license_item != '')
+						{
+							$w[] = array('P275' => $license_item);
+						}					
 					}
-					
-					if ($license_item != '')
-					{
-						$w[] = array('P275' => $license_item);
-					}					
-					
 					
 				}
 				break;
 				
+			//----------------------------------------------------------------------------
 			case 'abstract':
-				// Handle multiple languages
-				$done = false;
-				
-				if (isset($work->message->multi))
+				if (1)
 				{
-					if (isset($work->message->multi->_key->abstract))
-					{					
-						foreach ($work->message->multi->_key->abstract as $language => $text)
-						{
-							$text = preg_replace('/^<jats:p>/u', '', $text);
-							$text = nice_strip_tags($text);
-							$text = preg_replace('/^(SUMMARY|Abstract|ABSTRACT|INTRODUCTION)/u', '', $text);
+					// Handle multiple languages
+					$done = false;
+				
+					if (isset($work->message->multi))
+					{
+						if (isset($work->message->multi->_key->abstract))
+						{					
+							foreach ($work->message->multi->_key->abstract as $language => $text)
+							{
+								$text = preg_replace('/^<jats:p>/u', '', $text);
+								$text = nice_strip_tags($text);
+								$text = preg_replace('/^(SUMMARY|Abstract|ABSTRACT|INTRODUCTION)/u', '', $text);
 						
 				
 							
-							$sentences = '';
+								$sentences = '';
 							
-							switch ($language)
-							{
-								case 'zh':
-									$sentences = preg_split('/。/u', $text);
-									break;							
+								switch ($language)
+								{
+									case 'zh':
+										$sentences = preg_split('/。/u', $text);
+										break;							
 							
-								case 'en':
-								default:
-									// sentence split (assumes English-style text)
-									// see https://stackoverflow.com/a/16377765/9684 for some ideas
-									$sentences = preg_split('/(?<=[a-z\)])[.?!](?=\s+[A-Z])/u', $text);
-									break;
-							}
+									case 'en':
+									default:
+										// sentence split (assumes English-style text)
+										// see https://stackoverflow.com/a/16377765/9684 for some ideas
+										$sentences = preg_split('/(?<=[a-z\)])[.?!](?=\s+[A-Z])/u', $text);
+										break;
+								}
 							
+								
+								if (count($sentences) != 0)
+								{
+									$first_line = $sentences[0] . '.';	
+									$first_line = preg_replace('/\n/u', ' ', $first_line);
+									$first_line = preg_replace('/\s\s+/u', ' ', $first_line);								
+									$first_line = nice_shorten($first_line);
+				
+									$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . $first_line . '"');
+								}
+							}					
+							$done = true;
+						}					
+					}
+			
+					if (!$done)
+					{			
+						// one language only
+						$text = $v;
+					
+						// for now just single language 9to do: multilingual)
+				
+						// clean
+						$text = str_replace('<jats:p>-</jats:p>', '', $text);
+						$text = preg_replace('/^<jats:p>/u', '', $text);
+						$text = str_replace('..', '', $text);
+					
+					
+						$text = nice_strip_tags($text);
+					
+						$text = preg_replace('/^(SUMMARY|Abstract|ABSTRACT|INTRODUCTION)\s*/u', '', $text);
+					
+					
+						if ($text != '')
+						{
+				
+							// sentence split (assumes English-style text)
+							// see https://stackoverflow.com/a/16377765/9684 for some ideas
+							$sentences = preg_split('/(?<=[a-z\)])[.?!](?=\s+[A-Z])/u', $text);
 								
 							if (count($sentences) != 0)
 							{
-								$first_line = $sentences[0] . '.';	
+								$first_line = $sentences[0] . '.';
 								$first_line = preg_replace('/\n/u', ' ', $first_line);
 								$first_line = preg_replace('/\s\s+/u', ' ', $first_line);								
+						
 								$first_line = nice_shorten($first_line);
 				
-								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . $first_line . '"');
-							}
-						}					
-						$done = true;
-					}					
-				}
-			
-				if (!$done)
-				{			
-					// one language only
-					$text = $v;
-					
-					// for now just single language 9to do: multilingual)
-				
-					// clean
-					$text = str_replace('<jats:p>-</jats:p>', '', $text);
-					$text = preg_replace('/^<jats:p>/u', '', $text);
-					$text = str_replace('..', '', $text);
-					
-					
-					$text = nice_strip_tags($text);
-					
-					$text = preg_replace('/^(SUMMARY|Abstract|ABSTRACT|INTRODUCTION)\s*/u', '', $text);
-					
-					
-					if ($text != '')
-					{
-				
-						// sentence split (assumes English-style text)
-						// see https://stackoverflow.com/a/16377765/9684 for some ideas
-						$sentences = preg_split('/(?<=[a-z\)])[.?!](?=\s+[A-Z])/u', $text);
-								
-						if (count($sentences) != 0)
-						{
-							$first_line = $sentences[0] . '.';
-							$first_line = preg_replace('/\n/u', ' ', $first_line);
-							$first_line = preg_replace('/\s\s+/u', ' ', $first_line);								
+								// Detect language of first_line
+								$ld = new Language($languages_to_detect);						
+								$language = $ld->detect($first_line)->__toString();
 						
-							$first_line = nice_shorten($first_line);
-				
-							// Detect language of first_line
-							$ld = new Language($languages_to_detect);						
-							$language = $ld->detect($first_line)->__toString();
-						
-							// We don't seem to detect Portguese
-							if (is_array($work->message->ISSN) && isset($work->message->ISSN) && in_array('2175-7860', $work->message->ISSN))
-							{
-								if ($language == 'es')
+								// We don't seem to detect Portguese
+								if (isset($work->message->ISSN) && is_array($work->message->ISSN) && in_array('2175-7860', $work->message->ISSN))
 								{
-									$language = 'pt';
-								}								
-							}
+									if ($language == 'es')
+									{
+										$language = 'pt';
+									}								
+								}
 						
 
-							$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . $first_line . '"');
+								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . $first_line . '"');
+							}
 						}
 					}
 				}
 				break;
 				
 	
+			//----------------------------------------------------------------------------
 			default:
 				break;
 		}
@@ -2524,6 +2956,7 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		'pt' => 'Q5146',
 		'ru' => 'Q7737',
 		'th' => 'Q9217',
+		'vi' => 'Q9199',
 		'zh' => 'Q7850',		
 	);
 	
@@ -2532,6 +2965,7 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 	$item = '';
 	
 	
+	// isbn
 	if ($namespace == 'isbn')
 	{
 		if ($item == '')
@@ -2544,6 +2978,14 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		}
 	}
 	
+	// google
+	if ($namespace == 'google')
+	{
+		if ($item == '')
+		{
+			$item = wikidata_item_from_google_book($book_id);
+		}
+	}
 	
 	if ($item != '' && !$update)
 	{
@@ -2558,30 +3000,50 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		$url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' . $book_id;
 	}
 	
+	if ($namespace == 'google')
+	{
+		$url = 'https://www.googleapis.com/books/v1/volumes/' . $book_id;
+	}
+	
+	//echo $url;
+	
 	$json = get($url);
 	
 	$obj = json_decode($json);
 	
 	//print_r($obj);
 	
-	//if (count($obj->items) == 1)
-	if (count($obj->items) > 0)
+	$thing = null;
+	
+	if (isset($obj->items) && count($obj->items) > 0) 
+	{
+		$thing = $obj->items[0];
+	}
+	if (isset($obj->volumeInfo) )
+	{
+		$thing = $obj;
+	}
+	
+	if ($thing)
 	{		
 		// echo " Line: " . __LINE__ . "\n";
 			
 		if ($item == '')
 		{						
 			// double check for existence
-			foreach($obj->items[0]->volumeInfo->industryIdentifiers as $identifier)
+			if (isset($thing->volumeInfo->industryIdentifiers))
 			{
-				if ($identifier->type == 'ISBN_10')
+				foreach($thing->volumeInfo->industryIdentifiers as $identifier)
 				{
-					$item = wikidata_item_from_isbn10($identifier->identifier);
+					if ($identifier->type == 'ISBN_10')
+					{
+						$item = wikidata_item_from_isbn10($identifier->identifier);
+					}
+					if ($identifier->type == 'ISBN_13')
+					{
+						$item = wikidata_item_from_isbn13($identifier->identifier);
+					}		
 				}
-				if ($identifier->type == 'ISBN_13')
-				{
-					$item = wikidata_item_from_isbn13($identifier->identifier);
-				}		
 			}
 		}	
 		
@@ -2614,7 +3076,7 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		
 		
 		// Google Books
-		$w[] = array('P675' => '"' . $obj->items[0]->id . '"' );
+		$w[] = array('P675' => '"' . $thing->id . '"' );
 		
 		// Google Books is the source
 		$source[] = 'S248';
@@ -2628,18 +3090,21 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		// echo " Line: " . __LINE__ . "\n";
 		
 		// Sometimes Google API doesn't return ISBNs even though Google Books web page has them (FFS!)		
-		foreach($obj->items[0]->volumeInfo->industryIdentifiers as $identifier)
+		if (isset($thing->volumeInfo->industryIdentifiers))
 		{
-			if ($identifier->type == 'ISBN_10')
+			foreach($thing->volumeInfo->industryIdentifiers as $identifier)
 			{
-				$isbns[] = $identifier->identifier;
+				if ($identifier->type == 'ISBN_10')
+				{
+					$isbns[] = $identifier->identifier;
+				}
+				if ($identifier->type == 'ISBN_13')
+				{
+					$isbns[] = $identifier->identifier;
+				}		
 			}
-			if ($identifier->type == 'ISBN_13')
-			{
-				$isbns[] = $identifier->identifier;
-			}		
 		}
-		
+				
 		// echo " Line: " . __LINE__ . "\n";		
 		
 		if (count($isbns) == 0 && ($namespace == 'isbn'))
@@ -2687,16 +3152,18 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		//print_r($isbns);
 		
 		// title
-		if (isset($obj->items[0]->volumeInfo->title))
+		if (isset($thing->volumeInfo->title))
 		{
-			$title = $obj->items[0]->volumeInfo->title;
+			$title = $thing->volumeInfo->title;
 		
 			// language
 			$language = 'en';
 			
-			if (isset($obj->items[0]->volumeInfo->language))
+			if (isset($thing->volumeInfo->language))
 			{
-				$language = $obj->items[0]->volumeInfo->language;
+				$language = $thing->volumeInfo->language;
+				
+				$language = str_replace('-CN', '', $language);
 			}
 			
 			if ($language == 'en')
@@ -2732,16 +3199,16 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		}
 		
 		//  subtitle
-		if (isset($obj->items[0]->volumeInfo->subtitle))
+		if (isset($thing->volumeInfo->subtitle))
 		{
-			$subtitle = $obj->items[0]->volumeInfo->subtitle;
+			$subtitle = $thing->volumeInfo->subtitle;
 		
 			// language
 			$language = 'en';
 			
-			if (isset($obj->items[0]->volumeInfo->language))
+			if (isset($thing->volumeInfo->language))
 			{
-				$language = $obj->items[0]->volumeInfo->language;
+				$language = $thing->volumeInfo->language;
 			}
 			
 			// subtitle
@@ -2752,10 +3219,10 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		
 		
 		// authors
-		if (isset($obj->items[0]->volumeInfo->authors))
+		if (isset($thing->volumeInfo->authors))
 		{		
 			$count = 1;
-			foreach ($obj->items[0]->volumeInfo->authors as $name)
+			foreach ($thing->volumeInfo->authors as $name)
 			{
 				$qualifier = "\tP1545\t\"$count\"";
 				$w[] = array('P2093' => '"' . $name . '"' . $qualifier);	
@@ -2764,11 +3231,11 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 			}
 			
 			// Generate a human-friendly description
-			$n = count($obj->items[0]->volumeInfo->authors);
+			$n = count($thing->volumeInfo->authors);
 			$names = array();
 			if ($n > 1)
 			{
-				$names = array_slice($obj->items[0]->volumeInfo->authors, 0, $n - 1);
+				$names = array_slice($thing->volumeInfo->authors, 0, $n - 1);
 			}
 			$description = "Book by ";
 			
@@ -2777,7 +3244,7 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 			 	$description .= join(", ", $names) . " and ";
 			}
 			 
-			$description .= $obj->items[0]->volumeInfo->authors[$n - 1];
+			$description .= $thing->volumeInfo->authors[$n - 1];
 			
 			$w[] = array('Den' => '"' . $description . '"');	
 			
@@ -2785,15 +3252,15 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		
 		
 		// pages
-		if (isset($obj->items[0]->volumeInfo->pageCount))
+		if (isset($thing->volumeInfo->pageCount))
 		{
-			$w[] = array('P304' => '"' . $obj->items[0]->volumeInfo->pageCount . '"' );
+			$w[] = array('P304' => '"' . $thing->volumeInfo->pageCount . '"' );
 		}
 
 		// date
-		if (isset($obj->items[0]->volumeInfo->publishedDate))
+		if (isset($thing->volumeInfo->publishedDate))
 		{
-			$d = explode('-', $obj->items[0]->volumeInfo->publishedDate);
+			$d = explode('-', $thing->volumeInfo->publishedDate);
 		
 			if ( count($d) > 0 ) $year = $d[0] ;
 			if ( count($d) > 1 ) $month = preg_replace ( '/^0+(..)$/' , '$1' , '00'.$d[1] ) ;
@@ -2804,6 +3271,21 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		
 			$w[] = array('P577' => $date);
 		}
+		
+		/*
+		// publisher
+		
+		// this doesn't work as Quickstatments can't add somevalue with LAST, and can't
+		// add qualifiers to it either. Need to investigate using the API
+		
+		if (isset($thing->volumeInfo->publisher))
+		{
+			$qualifier = "\tP1932\t\"" . $thing->volumeInfo->publisher . "\"";
+		
+			$w[] = array('P123' => 'somevalue' . $qualifier );
+		
+		}
+		*/
 		
 		
 		// assume create

@@ -1,6 +1,16 @@
 # wikidata-bibliographic-data
 Tools to upload bibliographic data to Wikidata
 
+## Notes on citations
+
+Can’t seem to add citations as strings using Quickstatements, e.g. 
+```
+Q22582894	P2860	somevalue	P1545	"1"	P1932	"Chua LSL (2012) Conservation. In: Kiew R, Chung RCK, Saw LG, Soepadmo E (Eds) Flora of Peninsular Malaysia 2, 3: 3–10"
+Q22582894	P2860	somevalue	P1545	"2"	P1932	"Weber A (1998) (‘1997’) Revision of the genus Ridleyandra (Gesneriaceae). Beiträge zur Biologie der Pflanzen 70: 225−273."
+Q22582894	P2860	somevalue	P1545	"3"	P1932	"Kiew R (2009) Three New Species of Gesneriaceae from Kelantan. Gard. Bull. Singapore 61(1): 73−79."
+```
+Did it manually for 
+
 ## Added
 
 **IA** means there are PDFs of the articles in Internet Archive.
