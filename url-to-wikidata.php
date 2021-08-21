@@ -177,6 +177,22 @@ while (!feof($file_handle))
 		}			
 	}				
 	
+	// BioStor
+	if (!$done)
+	{
+		if (preg_match('/https?:\/\/biostor.org\/reference\/(?<id>\d+)/', $guid, $m))
+		{
+			$biostor = $m['id'];
+						
+			$item = wikidata_item_from_biostor($biostor);
+			if ($item)
+			{
+				echo "UPDATE publications SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";
+				$done = true;
+			}
+		}			
+	}			
+	
 
 	if (!$done)
 	{
@@ -190,6 +206,7 @@ while (!feof($file_handle))
 	
 	// SICI?
 	// 0037-2102(1999)79<101:TEVPAF>2.0.CO;2-W
+	/*
 	if (!$done)
 	{
 		if (preg_match('/(?<issn>[0-9]{4}-[0-9]{3}[0-9X])\([0-9]{4}\)(?<volume>\d+)<(?<spage>\d+)/', $guid, $m))
@@ -203,7 +220,7 @@ while (!feof($file_handle))
 			}		
 		}
 	}
-	
+	*/
 	
 	
 	

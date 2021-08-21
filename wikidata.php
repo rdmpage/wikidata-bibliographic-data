@@ -73,7 +73,11 @@ function get($url, $user_agent='', $content_type = '')
 	$opts = array(
 	  CURLOPT_URL =>$url,
 	  CURLOPT_FOLLOWLOCATION => TRUE,
-	  CURLOPT_RETURNTRANSFER => TRUE
+	  CURLOPT_RETURNTRANSFER => TRUE,
+	  
+		CURLOPT_SSL_VERIFYHOST=> FALSE,
+		CURLOPT_SSL_VERIFYPEER=> FALSE,
+	  
 	);
 
 	if ($content_type != '')
@@ -189,8 +193,12 @@ function wikidata_item_from_doi($doi)
 	
 	$sparql = 'SELECT * WHERE { ?work wdt:P356 "' . mb_strtoupper($doi) . '" }';
 	
+	//echo $sparql . "\n";
+	
 	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
 	$json = get($url, '', 'application/json');
+	
+	//echo $json;
 		
 	if ($json != '')
 	{
@@ -517,7 +525,14 @@ function wikidata_item_from_issn($issn)
 {
 	$cached_issn = array(
 		'0067-0464' => 'Q15214730', // Records of the Auckland Institute and Museum
-		'0001-804X' => 'Q58814054', // Adansonia nouvelle série
+		'0001-804X' => 'Q58814054', // Adansonia nouvelle série		
+		'0003-049X' => 'Q6087079', // Proceedings of the American Philosophical Society
+		'0199-9818' => 'Q6087076', // Proceedings of the American Academy of Arts and Sciences
+		'0097-3157' => 'Q11134281', // Proceedings of The Academy of Natural Sciences of Philadelphia
+		'2410-0226' => 'Q18649566', // Zoosystematica Rossica
+		'0424-7086' => 'Q15766885', // Medical Entomology and Zoology
+		'0027-0113' => 'Q27887126', // Comunicaciones Zoológicas Del Museo de Historia Natural de Montevideo
+		'0036-7575' => 'Q21385818', // Mitteilungen der Schweizerischen Entomologischen Gesellschaft 
 	);
 
 	$item = '';
@@ -836,6 +851,39 @@ function wikidata_item_from_wikispecies_author($wikispecies)
 }
 
 //----------------------------------------------------------------------------------------
+function wikidata_item_from_bhl_creator($id)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?author wdt:P4081 "' . $id . '" }';
+	
+	//echo $sparql . "\n";
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+	
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		
+		//print_r($obj);
+		
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) == 1)	
+			{
+				$item = $obj->results->bindings[0]->author->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+
+
+//----------------------------------------------------------------------------------------
 // Convert a csl json object to Wikidata quickstatments
 function csljson_to_wikidata($work, $check = true, $update = true, $languages_to_detect = array('en'), $source = array(), $always_english_label = true)
 {
@@ -847,6 +895,7 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 	// Map language codes to Wikidata items
 	$language_map = array(
 		'ca' => 'Q7026',
+		'cs' => 'Q9056',
 		'da' => 'Q9035',
 		'de' => 'Q188',
 		'en' => 'Q1860',
@@ -857,12 +906,41 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 		'ja' => 'Q5287',
 		'la' => 'Q397',
 		'nl' => 'Q7411',
+		'pl' => 'Q809',
 		'pt' => 'Q5146',
 		'ru' => 'Q7737',
 		'th' => 'Q9217',
+		'un' => 'Q22282914', 
 		'vi' => 'Q9199',
 		'zh' => 'Q7850',		
 	);
+	
+	// Journals that are Portuguese (or contain signifcant Port content)
+	$pt_issn = array(
+		'2178-0579', 
+		'2175-7860', 
+		'1983-0572',
+		'1808-2688',
+		'2175-7860', 
+		'0101-8175', 
+		'1806-969X',
+		'0328-0381',
+		'0074-0276',
+		'0065-6755',
+		'2317-6105',
+		);
+
+	
+	// labels don't get references 
+	$properties_to_ignore = array();
+	
+	$properties_to_ignore = array(
+		'P724',
+		'P953',
+		'P407', // language of work is almost never set by the source
+		'P1922',
+		'P6535', // credit BHL separately
+	); // e.g., when adding PDFs or IA to records from JSTOR
 	
 	// Is record sane?
 	if (!isset($work->message->title))
@@ -1028,7 +1106,13 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 	{
 		// already exists, if $update is false exit
 		
-		//echo "Have item $item\n";
+		if (0)
+		{
+			echo "Have item $item\n";
+		
+			print_r($work);
+		
+		}
 		
 		if (!$update)
 		{
@@ -1085,6 +1169,7 @@ $this->props = array(
 		'ARCHIVE'				=> 'P724',
 		'ZOOBANK_PUBLICATION' 	=> 'P2007',
 		'abstract'				=> 'P1922', // first line
+		'article-number'		=> 'P1545', // series ordinal
 	);
 	
 	// Need to think how to handle multi tag
@@ -1098,6 +1183,10 @@ $this->props = array(
 			case 'type':
 				switch ($v)
 				{
+					case 'dataset':
+						$w[] = array('P31' => 'Q1172284');
+						break;
+				
 					case 'dissertation':
 						// default is thesis
 						$dissertation_type = 'Q1266946';
@@ -1120,7 +1209,12 @@ $this->props = array(
 						
 					case 'book-chapter':
 						$w[] = array('P31' => 'Q1980247');
+						break;	
+						
+					case 'book':
+						$w[] = array('P31' => 'Q571'); // book
 						break;				
+									
 				
 					case 'article-journal':
 					case 'journal-article':
@@ -1131,6 +1225,32 @@ $this->props = array(
 					
 				}
 				break;
+				
+		
+			case 'subtitle':
+				$subtitle = $v;
+				if (is_array($v))
+				{
+					if (count($v) == 0)
+					{
+						$subtitle = '';
+					}
+					else
+					{
+						$subtitle = $v[0];
+					}
+				}				
+			
+				if ($subtitle != '')
+				{
+					$ld = new Language($languages_to_detect);						
+					$language = $ld->detect($subtitle)->__toString();
+				
+					$w[] = array('P1680' => $language . ':' . '"' . $subtitle . '"');
+				}
+			
+				break;
+
 		
 			//----------------------------------------------------------------------------
 			case 'title':
@@ -1261,7 +1381,7 @@ $this->props = array(
 									$language = 'zh';
 									
 									// maybe Japanese?
-									if (in_array('ja', $languages_to_detect)) 
+									if (in_array('ja', $languages_to_detect) && !in_array('zh', $languages_to_detect)) 
 									{
 										$language = 'ja';
 									}
@@ -1273,7 +1393,23 @@ $this->props = array(
 								if (preg_match('/[ä|ö|ü]/iu', $title) && $language == 'en')
 								{
 									$language = 'de';
-								}								
+								}	
+								
+								
+								// double check Hungarian
+								if (isset($work->message->ISSN))
+									{
+										if (is_array($work->message->ISSN) 
+										&& 
+										(count(array_intersect(array('0521-4726'), $work->message->ISSN)) > 0)
+										)										
+										{								
+											if (preg_match('/[á|é|ő|ú|ű]/iu', $title) && ($language == 'en' || $language == 'de'))
+											{
+												$language = 'hu';
+											}	
+										}	
+									}													
 								
 								// echo $title . " " . $language . "\n";
 								// exit();
@@ -1284,16 +1420,22 @@ $this->props = array(
 									{
 										if (is_array($work->message->ISSN) 
 										&& 
-										(count(array_intersect(array('1983-0572','1808-2688','2175-7860', '2358-1980'), $work->message->ISSN)) > 0)
+										(count(array_intersect($pt_issn, $work->message->ISSN)) > 0)
 										)
 										
 										{
-								
+											
 											// Portuguese doesn't seem to be detected properly
-											if (preg_match('/[ç|ā|ê|á|â|ó|é]/u', $title))
+											if (preg_match('/[ç|ā|ê|á|â|ó|ô|é]/iu', $title))
 											{
 												$language = 'pt';
 											}
+
+											if (preg_match('/( o | dos |Notas | de | sobre | e | da |Sobre | um | ume )/iu', $title))
+											{
+												$language = 'pt';
+											}
+											
 										}	
 									}							
 								}
@@ -1306,7 +1448,7 @@ $this->props = array(
 							if ($language == 'en')
 							{
 								// Assume work is English
-								$w[] = array('P407' => $language_map[$language]);
+								// $w[] = array('P407' => $language_map[$language]);
 
 								// title
 								$w[] = array($wikidata_properties[$k] => $language . ':' . '"' . $title . '"');
@@ -1326,7 +1468,7 @@ $this->props = array(
 								if (isset($work->message->ISSN))
 								{
 								
-									if (count(array_intersect(array('1808-2688','2175-7860', '2358-1980'), $work->message->ISSN)) > 0)
+									if (count(array_intersect($pt_issn, $work->message->ISSN)) > 0)
 									{
 										if ($language == 'es')
 										{
@@ -1344,12 +1486,12 @@ $this->props = array(
 								switch ($language)
 								{
 									case 'la':
-										// very unlikely an article is actially in Latin
+										// very unlikely an article is actually in Latin
 										break;
 										
 									default:
 										// language of work (assume it is the same as the title)
-										$w[] = array('P407' => $language_map[$language]);	
+										//$w[] = array('P407' => $language_map[$language]);	
 										break;
 								
 								}
@@ -1372,35 +1514,54 @@ $this->props = array(
 				
 			//----------------------------------------------------------------------------
 			// CrossRef sometimes stores title in original language 
+			// but for some journals (e.g., Darwiniana this is simply the language :()
+			// this also suffers from errors in language detection :(
 			case 'original-title':
-				$title = $v;
 				
-				// Check if container is an array, if it is not empty take the first string
-				if (is_array($v) && count($v) > 0)
+				if (1)
 				{
-					$title = $v[0];
-				}
+					$title = $v;
 				
-				// by this stage we should have a string name for the container,
-				// (unless record is empty array, which can happen with CrossRef)
-				if (is_string($title))
-				{
-					// language
-					$ld = new Language(array('en', 'es', 'ja', 'ru', 'pt', 'zh'));						
-					$language = $ld->detect($title)->__toString();
+					// Check if container is an array, if it is not empty take the first string
+					if (is_array($v) && count($v) > 0)
+					{
+						$title = $v[0];
+					}
+				
+					// by this stage we should have a string name for the container,
+					// (unless record is empty array, which can happen with CrossRef)
+					if (is_string($title) && trim($title) != '')
+					{
+						// language
+						$ld = new Language($languages_to_detect);						
+						$language = $ld->detect($title)->__toString();
+					
+						// double check
+						if (preg_match('/\p{Han}+/u', $title))
+						{
+							$language = 'zh';
+						
+							// maybe Japanese?
+							if (in_array('ja', $languages_to_detect) && !in_array('zh', $languages_to_detect)) 
+							{
+								$language = 'ja';
+							}
+						}
 					
 					
-					// add
 					
-					// title
-					$w[] = array($wikidata_properties['title'] => $language . ':' . '"' . $title . '"');
+						// add
 					
-					// langauge of work
-					$w[] = array('P407' => $language_map[$language]);	
+						// title
+						$w[] = array($wikidata_properties['title'] => $language . ':' . '"' . $title . '"');
+					
+						// langauge of work (don't do this, very prone to errors)
+						//$w[] = array('P407' => $language_map[$language]);	
 
-					// label
-					$w[] = array('L' . $language => '"' . nice_shorten($title, $MAX_LABEL_LENGTH) . '"');
+						// label
+						$w[] = array('L' . $language => '"' . nice_shorten($title, $MAX_LABEL_LENGTH) . '"');
 				
+					}
 				}
 				break;			
 			
@@ -1494,6 +1655,77 @@ $this->props = array(
 						}						
 					}
 					
+					// Do we have BHL Creator?
+					// This is a bit complicated as I want to add the stated name as a qualifier,
+					// and I want to credit BHL for this, so we add P50 to the list of properties that
+					// lack a source, and add the source separately as BHL.
+					if (!$done)
+					{
+						if (isset($author->BHL))
+						{
+							$author_item = wikidata_item_from_bhl_creator($author->BHL);
+						
+							if ($author_item != '')
+							{	
+								// Get name as string
+								$parts = array();
+								if (isset($author->given))
+								{
+									$parts[] = $author->given;
+									$ok = true;		
+								}
+								if (isset($author->family))
+								{
+									$parts[] = $author->family;
+									$ok = true;		
+								}
+								
+								$name = '';
+								
+								if (count($parts) > 0)
+								{								
+									$name = join(' ', $parts);	
+									$name = preg_replace('/\s\s+/u', ' ', $name);
+								}
+								else
+								{
+									if (isset($author->literal))
+									{
+										$name = $author->literal;
+									}								
+								}
+								
+								$qualifiers = array();
+								
+								$qualifiers [] = 'P1545';
+								$qualifiers [] = '"' . $count . '"';
+								
+								if ($name != '')
+								{								
+									$qualifiers [] = 'P1932';
+									$qualifiers [] = '"' . addcslashes($name, '"') . '"';
+								}
+																										
+								if (isset($work->message->BHLPART))
+								{
+									$qualifiers [] = 'S248';
+									$qualifiers [] = 'Q172266';
+									$qualifiers [] = 'S854';
+									$qualifiers [] = '"https://www.biodiversitylibrary.org/part/' . $work->message->BHLPART . '"';							
+								}
+									
+								$w[] = array('P50' => $author_item . "\t" . join("\t", $qualifiers));
+
+								$done = true;
+								
+								$properties_to_ignore[] = 'P50';
+							}						
+						}						
+					}
+					
+					
+					
+					
 					
 					// If we've reached this point we only have literals, so add these
 					
@@ -1524,12 +1756,44 @@ $this->props = array(
 						{
 							$strings = array();
 							
-							foreach ($author->multi->_key->literal as $language => $v)
-							{
-								$strings[] = $v;
+							// handle a bit nicer
+							$authors_done = false;
+							
+							// for Chinese authors include English in parentheses (like Airti Library does)
+							if (
+								isset($author->multi->_key->literal->zh)
+								&& isset($author->multi->_key->literal->en)
+								) {
+								
+								$name = $author->multi->_key->literal->zh . '(' . $author->multi->_key->literal->en . ')';
+							
+								$authors_done = true;
+							
 							}
 							
-							$name = join("/", $strings);	
+							// for Japanese authors include English in parentheses (like Airti Library does)
+							if (
+								isset($author->multi->_key->literal->ja)
+								&& isset($author->multi->_key->literal->en)
+								) {
+								
+								$name = $author->multi->_key->literal->ja . '(' . $author->multi->_key->literal->en . ')';
+							
+								$authors_done = true;
+							
+							}
+							
+							
+							
+							if (!$authors_done)
+							{
+								foreach ($author->multi->_key->literal as $language => $v)
+								{
+									$strings[] = $v;
+								}
+							
+								$name = join("/", $strings);	
+							}
 							
 							$ok = true;			
 						}
@@ -1556,6 +1820,11 @@ $this->props = array(
 								}
 								$name = join(' ', $parts);				
 							}
+						}
+						
+						if ($name == '')
+						{
+							$ok = false;
 						}
 					
 						if ($ok == true)
@@ -1593,6 +1862,11 @@ $this->props = array(
 			case 'volume':
 			case 'issue':
 			case 'page':
+			case 'article-number':
+				// clean				
+				$v = html_entity_decode($v, ENT_QUOTES | ENT_HTML5, 'UTF-8');			
+			
+			
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 				
@@ -1612,7 +1886,13 @@ $this->props = array(
 
 			//----------------------------------------------------------------------------
 			case 'BHLPART':
-				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
+				$qualifiers = array();
+				$qualifiers [] = 'S248';
+				$qualifiers [] = 'Q172266';
+				$qualifiers [] = 'S854';
+				$qualifiers [] = '"https://www.biodiversitylibrary.org/part/' . $work->message->BHLPART . '"';							
+	
+				$w[] = array($wikidata_properties[$k] => '"' . $v . '"' . "\t" . join("\t", $qualifiers));
 				break;
 
 			//----------------------------------------------------------------------------
@@ -1627,13 +1907,54 @@ $this->props = array(
 				
 			//----------------------------------------------------------------------------
 			case 'DOI':
-				$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"');
-				
-				//Zenodo?
-				
-				if (preg_match('/10.5281\/ZENODO\.(?<id>\d+)/i', $v, $m))
+				if (isset($work->message->DOIAgency))
 				{
-					$w[] = array('P4901' => '"' . $m['id'] . '"');
+					switch ($work->message->DOIAgency)
+					{
+						case 'airiti':
+							$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"' . "\tP2378\tQ4698727");
+							break;					
+					
+						case 'cnki':
+							$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"' . "\tP2378\tQ12857515");
+							break;					
+					
+						case 'crossref':
+							$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"' . "\tP2378\tQ5188229");
+							break;
+										
+						case 'datacite':
+							$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"' . "\tP2378\tQ821542");
+							break;
+
+						case 'istic':
+							$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"' . "\tP2378\tQ30262675");
+							break;
+
+						case 'jalc':
+							$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"' . "\tP2378\tQ100319347");
+							break;
+
+						case 'medra':
+							$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"' . "\tP2378\tQ100312513");
+							break;
+					
+						default:
+							$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"');
+							break;
+						
+					}
+				}
+				else
+				{
+					$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"');
+				
+					//Zenodo?
+				
+					if (preg_match('/10.5281\/ZENODO\.(?<id>\d+)/i', $v, $m))
+					{
+						$w[] = array('P4901' => '"' . $m['id'] . '"');
+					}
 				}
 				
 				break;
@@ -1846,6 +2167,12 @@ $this->props = array(
 							$go = false;
 						}
 						
+						if (preg_match('/file:\/\//', $link->URL))
+						{
+							$go = false;
+						}
+						
+						
 						if (preg_match('/^S/', $link->URL))
 						{
 							$go = false;
@@ -1941,6 +2268,44 @@ $this->props = array(
 						{
 							$journal_item = 'Q13548385';
 						}
+						
+					
+						// Societas entomologica
+						if ($container == 'Societas Entomologica')
+						{
+							$journal_item = 'Q104094462';
+						}
+						if ($container == 'Societas entomologica')
+						{
+							$journal_item = 'Q104094462';
+						}
+						
+						// Kyoto
+						if ($container == 'Memoirs of The College of Science, Kyoto Imperial University. Ser. B')
+						{
+							$journal_item = 'Q16606215';
+						}
+
+						// Knowia
+						if ($container == 'Konowia (Vienna)')
+						{
+							$journal_item = 'Q47090071';
+						}
+
+
+						// Stettiner Entomologische Zeitung
+						if ($container == 'Entomologische Zeitung Stettin')
+						{
+							$journal_item = 'Q9345782';
+						}
+
+						/*
+						if ($container == 'Entomologische Zeitung Stettin')
+						{
+							$journal_item = 'Q51469073';
+						}
+						*/
+
 					
 					}
 				
@@ -2049,6 +2414,30 @@ award: [
 					$w[] = array('P275' => $license_item);
 				}					
 				break;
+				
+				
+			//----------------------------------------------------------------------------
+			case 'publisher':
+				$publisher_item = '';
+				switch ($v)
+				{
+					case 'Barcode of Life Data Systems':
+						$publisher_item = 'Q16934719';
+						break;
+						
+					default:
+						break;
+				}
+				
+				if ($publisher_item != '')
+				{
+					$w[] = array('P123' => $publisher_item);
+				}					
+			
+			
+			
+				break;
+
 			
 				
 			//----------------------------------------------------------------------------
@@ -2064,6 +2453,7 @@ award: [
 						$license_item = '';
 						switch ($license->URL)
 						{
+							  
 							  
 							case 'https://creativecommons.org/licenses/by/4.0/':
 								// CC-BY 4.0
@@ -2095,6 +2485,12 @@ award: [
 								// CC-BY-SA 
 								$license_item = 'Q18199165';												
 								break;
+								
+							case 'https://creativecommons.org/licenses/by-nc-sa':							
+								// CC-BY-NC-SA unknown version
+								$license_item = 'Q6998997';												
+								break;
+								
 							
 							case 'https://creativecommons.org/licenses/by-nc-nd/4.0/':
 								// CC-BY-NC-ND 
@@ -2106,20 +2502,38 @@ award: [
 								$license_item = 'Q47008926';
 								break;
 								
+							case 'http://creativecommons.org/licenses/by-nc-nd/3.0':
+							case 'http://creativecommons.org/licenses/by-nc-nd/3.0/':
+								// CC-BY-NC-ND 3.0
+								$license_item = 'Q19125045';
+								break;								
+								
 							case 'http://creativecommons.org/licenses/by-nc-nd/4.0/':
 							case 'https://creativecommons.org/licenses/by-nc-nd/4.0/':
 								// CC-BY-NC-ND 4.0
 								$license_item = 'Q24082749';
 								break;
+								
+							case 'http://creativecommons.org/licenses/by-nc-sa/3.0/':
+							case 'http://creativecommons.org/licenses/by-nc-sa/3.0':
+								// CC-BY-NC-SA 3.0
+								$license_item = 'Q15643954';
+								break;
+								
+							case 'https://creativecommons.org/licenses/by-nc-sa/4.0/';
+							case 'http://creativecommons.org/licenses/by-nc-sa/4.0/';
+								// CC-BY-NC-SA 4.0
+								$license_item = 'Q42553662';
+								break;
+							
 												
 							default:
 								break;
 						}
 					
-					
-					
 						if ($license_item != '')
 						{
+							$w[] = array('P6216' => 'Q50423863');
 							$w[] = array('P275' => $license_item);
 						}					
 					}
@@ -2129,7 +2543,7 @@ award: [
 				
 			//----------------------------------------------------------------------------
 			case 'abstract':
-				if (1)
+				if (0)
 				{
 					// Handle multiple languages
 					$done = false;
@@ -2214,8 +2628,9 @@ award: [
 								$ld = new Language($languages_to_detect);						
 								$language = $ld->detect($first_line)->__toString();
 						
-								// We don't seem to detect Portguese
-								if (isset($work->message->ISSN) && is_array($work->message->ISSN) && in_array('2175-7860', $work->message->ISSN))
+								// We don't seem to detect Portguese reliably
+								
+								if (isset($work->message->ISSN) && is_array($work->message->ISSN) && count(array_intersect($work->message->ISSN, $pt_issn)) > 0)
 								{
 									if ($language == 'es')
 									{
@@ -2257,15 +2672,6 @@ award: [
 		
 			$quickstatements .= join("\t", $row);
 			
-			// labels don't get references 
-			$properties_to_ignore = array();
-			
-			$properties_to_ignore = array(
-				'P724',
-				'P953',
-				'P407', // language of work is almost never set by the source
-				'P1922',
-			); // e.g., when adding PDFs or IA to records from JSTOR
 							
 			if (count($source) > 0 && !preg_match('/^[D|L]/', $property) && !in_array($property, $properties_to_ignore))
 			{
@@ -2956,6 +3362,7 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		'pt' => 'Q5146',
 		'ru' => 'Q7737',
 		'th' => 'Q9217',
+		'un' => 'Q22282914', 
 		'vi' => 'Q9199',
 		'zh' => 'Q7850',		
 	);
@@ -3005,13 +3412,13 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		$url = 'https://www.googleapis.com/books/v1/volumes/' . $book_id;
 	}
 	
-	//echo $url;
+	echo $url;
 	
 	$json = get($url);
 	
 	$obj = json_decode($json);
 	
-	//print_r($obj);
+	print_r($obj);
 	
 	$thing = null;
 	

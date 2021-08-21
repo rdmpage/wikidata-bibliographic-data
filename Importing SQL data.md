@@ -51,10 +51,35 @@ SELECT CONCAT(wikidata, char(9),'P356', char(9), '"', doi, '"', char(9), 'S248',
 
 Sequel Pro displays tabs as ⇥ so need to find and replace before uploading to Wikidata.
 
+## Adding DOI registration agency to existing Wikidata items
+
+CrossRef Q5188229
+ISTIC	Q30262675
+DataCite Q821542
+
+```
+-- CrossRef
+SELECT CONCAT(wikidata, char(9),'P356', char(9), '"', UPPER(doi), '"', char(9), 'P2378', char(9), 'Q5188229') FROM publications WHERE issn='2095-0845' AND wikidata IS NOT NULL AND doi IS NOT NULL;
+```
+
+
+
+Sequel Pro displays tabs as ⇥ so need to find and replace before uploading to Wikidata.
+
+
+## Adding Zoobank to existing Wikidata items
+
+
+```
+SELECT CONCAT(wikidata, char(9),'P2007', char(9), '"', zoobank, '"') FROM publications WHERE issn='0374-1036' AND wikidata IS NOT NULL AND zoobank IS NOT NULL;
+```
+
+Sequel Pro displays tabs as ⇥ so need to find and replace before uploading to Wikidata.
+
 ## Adding JSTOR ids to items with DOIs that also are in JSTOR
 
 ```
-SELECT CONCAT(wikidata, char(9),'P888', char(9), '"', jstor, '"') FROM publications WHERE issn='0363-6445' AND jstor IS NOT NULL AND doi IS NOT NULL AND guid NOT LIKE "http%";
+SELECT CONCAT(wikidata, char(9),'P888', char(9), '"', jstor, '"') FROM publications WHERE issn='0363-6445' AND Wikidata IS NOT NULL AND jstor IS NOT NULL AND doi IS NOT NULL AND guid NOT LIKE "http%";
 ```
 
 Sequel Pro displays tabs as ⇥ so need to find and replace before uploading to Wikidata.
@@ -67,6 +92,13 @@ For example can use microcitation/harvest_cinii_ris_add.php to read a CiNii RIS 
 
 ```
 SELECT CONCAT(wikidata, char(9),'P2409', char(9), '"', cinii, '"', char(9), 'S248', char(9), 'Q10726338', char(9), 'S854', char(9), '"https://ci.nii.ac.jp/naid/', cinii, '"') FROM publications WHERE issn='0385-2423' AND wikidata IS NOT NULL AND cinii IS NOT NULL;
+```
+
+## Adding BioStor to existing Wikidata items
+
+
+```
+SELECT CONCAT(wikidata, char(9),'P5315', char(9), '"', biostor, '"') FROM publications WHERE issn='0004-2625' AND wikidata IS NOT NULL AND biostor IS NOT NULL;
 ```
 
 ## Adding internet archive to existing Wikidata items
@@ -97,11 +129,23 @@ If PDF is backed up in wayback machine, add qualifiers that say it’s a PDF and
 SELECT CONCAT(wikidata, char(9),'P953', char(9), '"', pdf, '"', char(9), 'P2701', char(9), 'Q42332', char(9), 'P1065', char(9) , '"https://web.archive.org', waybackmachine , '"' ) FROM publications WHERE issn='0030-8714' AND wikidata IS NOT NULL AND pdf IS NOT NULL AND waybackmachine IS NOT NULL;
 ```
 
+## Adding PDF only
+
+
+```
+SELECT CONCAT(wikidata, char(9),'P953', char(9), '"', pdf, '"', char(9), 'P2701', char(9), 'Q42332') FROM publications WHERE issn='0030-8714' AND wikidata IS NOT NULL AND pdf IS NOT NULL;
+```
+
+
 ### Deleting PDF (if we make a mistake)
 
 ```
 SELECT CONCAT('-', wikidata, char(9),'P953', char(9), '"', pdf, '"') FROM publications WHERE issn='2331-7515' AND wikidata IS NOT NULL AND pdf IS NOT NULL AND waybackmachine IS NOT NULL;
 ```
+
+## Add missing language titles
+
+
 
 ## Add pages (P304) to articles missing that from Wikidata
 
@@ -163,6 +207,12 @@ SELECT CONCAT(wikidata, char(9), 'P6982', char(9), '"', PUBLICATION_GUID, '"') F
 
 
 ## Add missing authors
+
+## Deleting incorrect authors
+
+```
+SELECT CONCAT('-', wikidata, char(9),'P2093', char(9), '"Rsea Sea"') FROM publications WHERE issn='1851-7471' AND wikidata IS NOT NULL AND authors="Rsea Sea";
+```
 
 ## Adding to my databases
 

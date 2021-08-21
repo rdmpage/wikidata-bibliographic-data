@@ -1,11 +1,12 @@
 <?php
 
-// Given list of URLs match to Wikidata and update local publications table
+// Given list of URLs match to Wikidata if not found add to list to add
 
 require_once (dirname(__FILE__) . '/wikidata.php');
 
 $filename = 'urls.txt';
 
+$to_do = array();
 
 $file_handle = fopen($filename, "r");
 while (!feof($file_handle)) 
@@ -16,6 +17,7 @@ while (!feof($file_handle))
 	
 	$done = false;
 	
+	/*
 	if (!$done)
 	{
 		if (preg_match('/pmid:(?<id>\d+)/', $guid, $m))
@@ -48,7 +50,8 @@ while (!feof($file_handle))
 			}
 		}			
 	}
-
+	*/
+	
 	if (!$done)
 	{
 		if (preg_match('/^10\.\d+\//', $guid, $m))
@@ -56,13 +59,17 @@ while (!feof($file_handle))
 			$item = wikidata_item_from_doi($guid);
 			if ($item)
 			{
-				echo "UPDATE names SET wikidata='" . $item . "' WHERE doi='" . $guid . "';" . "\n";
+				//echo "UPDATE names SET wikidata='" . $item . "' WHERE doi='" . $guid . "';" . "\n";
 				//echo "UPDATE names_indexfungorum SET wikidata='" . $item . "' WHERE doi='" . $guid . "';" . "\n";
+				
+				echo "found $item\n";
+				
 				$done = true;
 			}
 		}			
 	}
 	
+	/*
 	// http://www.cnki.com.cn/Article/CJFDTOTAL-KCFL197901001.htm
 	if (!$done)
 	{
@@ -111,7 +118,7 @@ while (!feof($file_handle))
 		}			
 	}	
 	
-	
+	/*
 	if (!$done)
 	{
 		if (preg_match('/https?:\/\/hdl.handle.net\/(?<id>.*)/', $guid, $m))
@@ -172,27 +179,11 @@ while (!feof($file_handle))
 			$item = wikidata_item_from_cinii($cinii);
 			if ($item)
 			{
-				echo "UPDATE names SET wikidata='" . $item . "' WHERE cinii='" . $cinii . "';" . "\n";
+				echo "UPDATE names SET wikidata='" . $item . "' WHERE cinii='" . $guid . "';" . "\n";
 				$done = true;
 			}
 		}			
-	}	
-	
-	// BioStor
-	if (!$done)
-	{
-		if (preg_match('/https?:\/\/biostor.org\/reference\/(?<id>\d+)/', $guid, $m))
-		{
-			$biostor = $m['id'];
-						
-			$item = wikidata_item_from_biostor($biostor);
-			if ($item)
-			{
-				echo "UPDATE names SET wikidata='" . $item . "' WHERE biostor='" . $biostor . "';" . "\n";
-				$done = true;
-			}
-		}			
-	}							
+	}				
 	
 
 	if (!$done)
@@ -204,24 +195,14 @@ while (!feof($file_handle))
 			$done = true;
 		}		
 	}
-	
-	/*
-	// SICI?
-	// 0037-2102(1999)79<101:TEVPAF>2.0.CO;2-W
-	if (!$done)
-	{
-		if (preg_match('/(?<issn>[0-9]{4}-[0-9]{3}[0-9X])\([0-9]{4}\)(?<volume>\d+)<(?<spage>\d+)/', $guid, $m))
-		{		
-			print_r($m);
-			$item =  wikidata_item_from_openurl($m['issn'], $m['volume'], $m['spage']);
-			if ($item != '')
-			{
-				echo "UPDATE names SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";
-				$done = true;
-			}		
-		}
-	}
 	*/
+	
+
+	if ($item == '')
+	{
+		$to_do[] = $guid;
+	
+	}
 	
 	
 	
@@ -229,5 +210,7 @@ while (!feof($file_handle))
 }
 
 fclose($file_handle);
+
+print_r($to_do);
 
 ?>

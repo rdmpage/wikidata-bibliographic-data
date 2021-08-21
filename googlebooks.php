@@ -212,7 +212,32 @@ $isbns=array(
 '978-93-87360-42-6',
 */
 
-9780881928846
+//9780881928846
+
+//9780935868531
+
+//9780642568571
+
+//'978-602-52326-0-2',
+
+//9781877711053,
+
+//9781925260625,
+//9780643102392,
+
+//9780851986074,
+
+//9780520091177,
+
+//'0125455550',
+
+//9788390980447,
+
+//'978-2-35387-154-4',
+
+//9789869351324,
+
+'978-94-009-6542-3',
 
 );
 
@@ -224,12 +249,18 @@ foreach ($isbns as $isbn)
 	echo $quickstatements . "\n";
 }
 
+
+
 /*
 
 $gb = 'dgQmAQAAMAAJ';
 $gb = '9sAuAQAAIAAJ';
 
 $gb = 'FF4mAQAAMAAJ';
+
+$gb = 'zRA1AAAAMAAJ';
+
+$gb = '7a0LAQAAIAAJ';
 
 $quickstatements = googlebooks_to_wikidata($gb, 'google', true);
 echo $quickstatements . "\n";

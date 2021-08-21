@@ -516,6 +516,308 @@ $filename = 'quickstatements/0080-4274.txt';
 // Extra Lankerstriana
 $filename = 'quickstatements/1409-3871.txt';
 
+// Ceiba with DOIs
+$filename = 'quickstatements/2225-6687.txt';
+
+// Ceiba without DOIs
+$filename = 'quickstatements/0008-8692.txt';
+
+// Zoologische Mededelingen missed
+$filename = 'quickstatements/0024-0672-extra.txt';
+
+// Societas Entomologica
+$filename = 'quickstatements/socent.txt';
+
+// Darwiniania
+$filename = 'quickstatements/0011-6793.txt';
+
+// AMNH Novitates Handles
+$filename = 'quickstatements/0003-0082-handles.txt';
+
+// Sandakania
+$filename = 'quickstatements/0128-5939.txt';
+
+// 月刊むし : a monthly journal of entomology
+$filename = 'quickstatements/0388-418X.txt';
+
+// Annales Mycologici need to do more, need to filter out Anon, Plates, and other stray bits
+$filename = 'quickstatements/0176-3970.txt';
+
+// Mycotaxon cybertruffle
+//$filename = 'quickstatements/0093-4666.txt';
+
+// Formosan Entomology
+$filename = 'quickstatements/1680-7650.txt';
+
+// Chinese Journal of Entomology
+$filename = 'quickstatements/0258-462X.txt';
+
+// Bangladesh Journal of Plant Taxonomy
+$filename = 'quickstatements/2224-7297.txt';
+
+// Revista de Biologia Neotropical / Journal of Neotropical Biology
+$filename = 'quickstatements/2178-0579.txt';
+
+// Journal of Japanese botany
+$filename = 'quickstatements/0022-2062.txt';
+
+// Adansonia
+$filename = 'quickstatements/1280-8571.txt';
+
+// Linzer Biologische Beiträge
+$filename = 'quickstatements/0253-116X.txt';
+
+$filename = 'quickstatements/0253-6366.txt';
+
+// Bulletin de L'institut Royal Des Sciences Naturelles de Belgique Entomologie & Biol
+$filename = 'quickstatements/2033-494X.txt';
+$filename = 'quickstatements/0374-6232.txt';
+
+// Genus
+$filename = 'quickstatements/0867-1710.txt';
+
+// Uttar Pradesh Journal of Zoology
+$filename = 'quickstatements/0256-971X.txt';
+
+$filename = 'quickstatements/0001-7302.txt';
+
+// FishTaxa
+$filename = 'quickstatements/2458-942X.txt';
+
+// Iranian Ichthyology
+$filename = 'quickstatements/2383-0964.txt';
+
+// Transactions of The American Entomological Society (much to do)
+$filename = 'quickstatements/0002-8320.txt';
+
+// Acta Entomologica Musei Nationalis Pragae
+$filename = 'quickstatements/0374-1036.txt';
+
+// Földtani Közlöny (to do)
+$filename = 'quickstatements/0015-542X.txt';
+
+// Neue Entomologische Nachrichten
+$filename = 'quickstatements/0722-3773.txt';
+
+// Acta Botanica Yunnanica 
+// Initially Wanfang DOI data vols 
+$filename = 'quickstatements/0253-2700.txt';
+
+$filename = 'quickstatements/missed.txt';
+
+// Castanea
+//$filename = 'quickstatements/0008-7475.txt';
+
+// Willdenowia JSTOR
+$filename = 'quickstatements/0511-9618.txt';
+
+// Stapfia
+$filename = 'quickstatements/0252-192X.txt';
+
+// Memoirs of The College of Science, University of Kyoto. Series B
+$filename = 'quickstatements/0368-8895.txt';
+$filename = 'quickstatements/0454-7802.txt';
+$filename = 'quickstatements/kyoto.txt';
+$filename = 'quickstatements/0369-206X.txt';
+
+$filename = 'quickstatements/2095-8137.txt';
+
+// Česká Mykologie
+$filename = 'quickstatements/0009-0476.txt';
+
+$filename = 'quickstatements/0021-5090.txt';
+
+// Flora Malesiana Bulletin
+$filename = 'quickstatements/0071-5778.txt';
+
+// Taxonomic Report of The International Lepidoptera Survey
+$filename = 'quickstatements/2643-4776.txt';
+
+// Mitteilungen Des Naturwissenschaftlichen Vereins Für Steiermark
+$filename = 'quickstatements/0369-1136.txt';
+
+// Journal of Entomology and Zoology Studies
+$filename = 'quickstatements/2320-7078.txt';
+
+// Annales Historico-Naturales Musei Nationalis Hungarici
+$filename = 'quickstatements/0521-4726.txt';
+
+// Treubia
+$filename = 'quickstatements/2337-876X.txt';
+
+// ACTA BOTANICA YUNNANICA pre 1999
+$filename = 'quickstatements/0253-2700.txt';
+
+// Revista de la Sociedad Entomológica Argentina
+$filename = 'quickstatements/1851-7471.txt';
+
+// Knowia
+$filename = 'quickstatements/knowia.txt';
+
+// Pearce-Sellards Series Texas Memorial Museum
+$filename = 'quickstatements/0079-0354.txt';
+
+// Journal of Shenyang Normal University(Natural Science Edition)
+$filename = 'quickstatements/1673-5862.txt';
+
+// Mémoires du Musée Royal D'histoire Naturelle de Belgique
+$filename = 'quickstatements/0770-7622.txt';
+
+// Baltic Journal of Coleopterology
+$filename = 'quickstatements/1407-8619.txt';
+
+// Bulletin of The National Museum of Nature And Science Series A (Zoology) Supplement
+$filename = 'quickstatements/1881-9052.txt';
+
+//Memoirs of The Torrey Botanical Club
+$filename = 'quickstatements/0097-3807.txt';
+
+// Proceedings of The American Philosophical Society
+$filename = 'quickstatements/0003-049X.txt';
+
+// Proceedings of the American Academy of Arts and Sciences
+$filename = 'quickstatements/0199-9818.txt';
+
+// Proceedings of The Academy of Natural Sciences of Philadelphia
+$filename = 'quickstatements/0097-3157.txt';
+
+// Bulletin of The National Science Museum Series A (Zoology)
+$filename = 'quickstatements/0385-2423.txt';
+
+// Stuttgarter Beiträge Naturkunde Serie A [Biologie]
+$filename = 'quickstatements/0341-0145.txt';
+
+// Stuttgarter Beiträge Naturkunde
+$filename = 'quickstatements/0562-4452.txt';
+
+// Zoosystematica Rossica
+$filename = 'quickstatements/2410-0226.txt';
+
+$filename = 'quickstatements/Stettiner Entomologische Zeitung.txt';
+
+$filename = 'quickstatements/Entomologische Zeitung Stettin.txt';
+
+// Comunicaciones Zoológicas Del Museo de Historia Natural de Montevideo
+$filename = 'quickstatements/0027-0113.txt';
+
+$filename = 'quickstatements/2539-200X.txt';
+
+// ACTA ENTOMOLOGICA SINICA
+$filename = 'quickstatements/0454-6296.txt';
+
+// Sendtnera
+$filename = 'quickstatements/0944-0178.txt';
+
+// Journal of The Entomological Society of Australia (N.s.w.)
+$filename = 'quickstatements/0071-0725.txt';
+
+// AnnotZoolJapon
+$filename = 'quickstatements/AnnotZoolJapon.txt';
+
+// orchid Monographs
+$filename = 'quickstatements/0920-1998.txt';
+
+// Acta Zoológica Lilloana
+$filename = 'quickstatements/1852-6098.txt';
+
+// Opera Botanica
+$filename = 'quickstatements/0078-5237.txt';
+
+// Israel Journal of Zoology
+$filename = 'quickstatements/0021-2210.txt';
+
+// Hydrobiologia with DOIs not getting metadata
+//$filename = 'quickstatements/1573-5117.txt';
+
+// Mitteilungen Der Schweizerischen Entomologischen Gesellschaft 
+// = Bulletin de la Société Entomologique Suisse
+// = Journal of The Swiss Entomological Society
+$filename = 'quickstatements/0036-7575.txt';
+
+
+$filename = 'quickstatements/0075-207X.txt';
+
+// wuyi science journal
+$filename = 'quickstatements/1001-4276.txt';
+
+// Studies On The Fauna of Curaçao And Other Caribbean Islands
+$filename = 'quickstatements/0166-5189.txt';
+
+// Journal of the New York Entomological Society
+$filename = 'quickstatements/0028-7199.txt';
+
+// International Journal of Entomology
+$filename = 'quickstatements/0735-6250.txt';
+
+// Actualidades Biológicas
+$filename = 'quickstatements/2145-7166.txt';
+
+// Les Cahiers Magellanes new series
+$filename = 'quickstatements/1625-2764.txt';
+
+// Belgian Journal of Botany
+$filename = 'quickstatements/0778-4031.txt';
+
+// Botanische Jahrbücher Für Systematik, Pflanzengeschichte Und Pflanzengeographie
+$filename = 'quickstatements/0006-8152.txt';
+
+// Contributions From The Museum of Paleontology University of Michigan
+$filename = 'quickstatements/0097-3556.txt';
+
+// Amazonia
+$filename = 'quickstatements/0065-6755.txt';
+
+// Polish Journal of Botany
+$filename = 'quickstatements/1641-8190.txt';
+
+// Complex with multiple sources and languages
+// Trudy Zoologicheskogo Instituta
+// Proceedings of the Zoological Institute RAS
+$filename = 'quickstatements/0206-0477.txt';
+
+
+$filename = 'quickstatements/2080-945X.txt';
+
+// Annales Zoologici
+$filename = 'quickstatements/0003-4541.txt';
+
+// Florida entomologist
+$filename = 'quickstatements/0015-4040.txt';
+
+// Entomologische Blätter Kafer
+$filename = 'quickstatements/0013-8835.txt';
+
+// Entomologische Blätter
+$filename = 'quickstatements/0342-412X.txt';
+
+// Jahrbücher Des Nassauischen Vereins Für Naturkunde
+$filename = 'quickstatements/0368-1254.txt';
+
+// Entomofauna
+$filename = 'quickstatements/0250-4413.txt';
+
+// Sugapa
+$filename = 'quickstatements/1978-9807.txt';
+
+
+// Chiroptera Neotropical
+$filename = 'quickstatements/2317-6105.txt';
+
+
+// Kontyu
+// $filename = 'quickstatements/0013-8770.txt';
+
+// Atalanta
+//$filename = 'quickstatements/0171-0079.txt';
+
+// Boletín Del Museo Nacional de Historia Natural, Chile
+// different years have different ISSNs...
+//$filename = 'quickstatements/0716-2545.txt';
+
+
+//$filename = 'quickstatements/missed.txt';
+
+
 // flags
 $check = false;// don't check (only do this if we are sure we're adding new stuff)
 $check = true; // make sure record doesn't alreday exist
@@ -524,6 +826,39 @@ $update = true; // Update any existing records
 $update = false; // Leave existing record alone
 
 $languages = array('en'); // assume everything is in English
+
+//$languages = array('en', 'fr', 'de', 'pl');
+
+// $languages = array('fr'); // assume everything is in French
+
+//$languages = array('en', 'zh');
+
+$languages = array('en', 'de');
+$languages = array('en', 'pt');
+
+//$languages = array('en', 'ru');
+
+//$languages = array('en', 'de', 'ja');
+
+//$languages = array('en', 'de', 'pt', 'es');
+
+//$languages = array('en','de', 'fr', 'la');
+
+//$languages = array('en', 'es');
+
+//$languages = array('en', 'fr', 'de');
+
+//$languages = array('en', 'id');
+
+//$languages = array('en', 'fr', 'nl');
+
+//$languages = array('en', 'hu', 'de', 'fr');
+
+//$languages = array('cs', 'en', 'fr', 'de');
+
+//$languages = array('hu', 'en', 'fr', 'de');
+
+
 //$languages = array('ja','en','de');
 //$languages = array('en', 'de', 'nl', 'fr');
 //$languages = array('en', 'nl', 'de', 'fr');
@@ -533,10 +868,10 @@ $languages = array('en'); // assume everything is in English
 
 
 //$languages = array('en', 'zh', 'ja');
-$languages = array('en', 'zh');
+//$languages = array('en', 'zh');
 //$languages = array('en', 'es', 'pt');
 //$languages = array('en', 'fr', 'de', 'nl');
-//$languages = array('en','de', 'fr');
+
 
 //$languages = array('de', 'en', 'fr', 'es');
 
@@ -546,15 +881,28 @@ $languages = array('en', 'zh');
 
 //$languages = array('ru', 'en');
 
+//$languages = array('de', 'en', 'fr');
 //$languages = array('en', 'de');
+//$languages = array('en', 'ru');
+
+//$languages = array('en', 'zh');
 
 //$languages = array('en', 'nl', 'de', 'fr');
 
-$languages = array('de', 'en');
+//$languages = array('de', 'en', 'fr', 'es');
 
 //$languages = array('es', 'en', 'de', 'pt');
 
-$languages = array('es', 'en');
+//$languages = array('de', 'en', 'fr', 'la');
+
+//$languages = array('es', 'en');
+
+//$languages = array('en', 'ja', 'de');
+
+//$languages = array('cs', 'en', 'de', 'la');
+
+//$languages = array('en', 'pt');
+//$languages = array('en', 'fr', 'de');
 
 
 $count = 1;
@@ -562,12 +910,19 @@ $count = 1;
 $file_handle = fopen($filename, "r");
 while (!feof($file_handle)) 
 {
+	// echo $guid . "\n";
+
 	$guid = trim(fgets($file_handle));
 	
 	
 	$url = 'http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . urlencode($guid);
 
+	//$url = 'http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . urlencode($guid) . '&table=publications_tmp';
+
+
 	$json = get($url);
+	
+	// echo $json;
 	
 	
 	if ($json == '') {}
@@ -576,14 +931,28 @@ while (!feof($file_handle))
 	
 
 	$obj = json_decode($json);
+	
+	
+	// For ACTA BOTANICA YUNNANICA pre 1999 we need to undo some things...
+	if ($filename == 'quickstatements/0253-2700.txt')
+	{
+		// pagination is wrong
+		unset($obj->page);
+		unset($obj->{'page-first'});
+		
+		// make sure ISSN is for old journal
+		$obj->ISSN = array('0253-2700'); 
+	}
 
 	//print_r($obj);
+	
+	//exit();
 	
 	// do we have this already? (now down in csljson_to_wikidata)
 	$ok = true;
 	
-	/*
 	
+	/*
 	$parts = array();
 	
 	if (isset($obj->ISSN))
@@ -618,6 +987,7 @@ while (!feof($file_handle))
 		}
 	}
 	*/
+	
 	
 	if ($ok)
 	{
@@ -677,12 +1047,15 @@ while (!feof($file_handle))
 		
 		
 		// Senckenbergiana biologica
-		if ($obj->ISSN[0] == '0037-2102')
+		if (isset($obj->ISSN))
 		{
-			$source[] = 'S854';
-			$source[] = '"http://www.saturnia.de/senck-biol/sebio-cont.htm"';
+			if ($obj->ISSN[0] == '0037-2102')
+			{
+				$source[] = 'S854';
+				$source[] = '"http://www.saturnia.de/senck-biol/sebio-cont.htm"';
+			}
 		}
-		
+				
 		// www.zobodat.at
 		if (preg_match('/www.zobodat.at/i', $guid, $m))
 		{
@@ -699,11 +1072,14 @@ while (!feof($file_handle))
 			$source[] = '"' . $obj->URL . '"';			
 		}
 		
-	
-		if ($obj->ISSN[0] == '0034-365X')
+		if (isset($obj->ISSN))
 		{
-			$source[] = 'S854';
-			$source[] = '"' . $obj->URL . '"';
+	
+			if ($obj->ISSN[0] == '0034-365X')
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';
+			}
 		}
 		
 		// 0304-0798
@@ -721,10 +1097,14 @@ while (!feof($file_handle))
 		}
 		
 		// repositories.lib.utexas.edu
-		if ($obj->ISSN[0] == '2325-4882')
+		if (isset($obj->ISSN))
 		{
-			$source[] = 'S854';
-			$source[] = '"' . $obj->URL . '"';
+		
+			if ($obj->ISSN[0] == '2325-4882')
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';
+			}
 		}
 		
 		// fupress.net
@@ -826,7 +1206,7 @@ while (!feof($file_handle))
 			}
 		}		
 
-		
+		/*
 		// cinii
 		if (isset($obj->CINII))
 		{
@@ -836,6 +1216,7 @@ while (!feof($file_handle))
 			$source[] = 'S854';
 			$source[] = '"https://ci.nii.ac.jp/naid/' . $obj->CINII . '"';			
 		}		
+		*/
 		
 		// rjh.folium.ru
 		if (isset($obj->URL))
@@ -856,18 +1237,314 @@ while (!feof($file_handle))
 				$source[] = '"' . $obj->URL . '"';			
 			}
 		}	
+		
+		// CAMJOL
+		if (isset($obj->URL))
+		{
+			if (preg_match('/camjol.info/i', $obj->URL, $m))
+			{
+				$source[] = 'S248';
+				$source[] = 'Q103847498'; // CAMJOL
+
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}				
 			
+			
+	
+		// www.cybertruffle.org.uk
+		if (isset($obj->URL))
+		{
+			if (preg_match('/(?<url>http:\/\/www.cybertruffle.org.uk\/cyberliber\/\d+\/\d+\/)/', $obj->URL, $m))
+			{
+				$source[] = 'S248';
+				$source[] = 'Q104671608'; // CYBERLIBER
+						
+				$url = $m['url'] . 'index.htm';
+
+				$source[] = 'S854';
+				$source[] = '"' . $url . '"';			
+			}
+		}		
+		
+		// BanglaJOL
+		if (isset($obj->URL))
+		{
+			if (preg_match('/banglajol.info/i', $obj->URL, $m))
+			{
+				$source[] = 'S248';
+				$source[] = 'Q16826689'; // BanglaJOL
+
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}	
+		
+		// MNHN
+		if (isset($obj->URL))
+		{
+			if (preg_match('/sciencepress.mnhn.fr/i', $obj->URL, $m))
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}							
+
+		if (isset($obj->URL))
+		{
+			if (preg_match('/erepository.nara.ac.lk/i', $obj->URL, $m))
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}	
+		
+		// mbimph.com						
+		if (isset($obj->URL))
+		{
+			if (preg_match('/mbimph.com/i', $obj->URL, $m))
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}	
+
+		// fishtaxa
+		if (isset($obj->URL))
+		{
+			if (preg_match('/fishtaxa.com/i', $obj->URL, $m))
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}	
+		
+		// ijichthyol.org
+		if (isset($obj->URL))
+		{
+			if (preg_match('/ijichthyol.org/i', $obj->URL, $m))
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}	
+
+		if (isset($obj->URL))
+		{
+			if (preg_match('/www.aemnp.eu/i', $obj->URL, $m))
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}	
+		
+		// epa.oszk.hu
+		if (isset($obj->link))
+		{
+			if (preg_match('/epa.oszk.hu/i', $obj->link[0]->URL, $m))
+			{
+				$source[] = 'S248';
+				$source[] = 'Q988764'; // Elektronikus Periodika Archívum
+				
+				if (preg_match('/(?<url>http:\/\/epa.oszk.hu\/01600\/01635\/\d+\/pdf\/)/', $obj->link[0]->URL, $mm))
+				{
+					$source[] = 'S854';
+					$source[] = '"' . $mm['url'] . '"';	
+				}		
+			}
+		}	
+		
+		// journal.kib.ac.cn
+		if (isset($obj->link))
+		{
+			if (preg_match('/journal.kib.ac.cn/i', $obj->link[0]->URL, $m))
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}	
+		
+		// https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/257937
+		if (isset($obj->link))
+		{
+			if (preg_match('/repository.kulib.kyoto-u.ac.jp/i', $obj->link[0]->URL, $m))
+			{
+				$source[] = 'S248';
+				$source[] = 'Q105759681'; // KURENAI
+				
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';	
+			}
+		}	
+		
+		// www.entomoljournal.com
+		if (isset($obj->link))
+		{
+			if (preg_match('/entomoljournal.com/i', $obj->link[0]->URL, $m))
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}	
+		
+		if (preg_match('/10.11369\/jji/', $guid, $m))
+		{
+			$work->message->DOIAgency = 'jalc';
+		}
+
+		if (preg_match('/10.3969\/j.issn/', $guid, $m))
+		{
+			$work->message->DOIAgency = 'istic';
+		}
+		
+		if (preg_match('/10.1023\/A/', $guid, $m))
+		{
+			$work->message->DOIAgency = 'crossref';
+		}
+
+		if (preg_match('/10.5169\/seals/', $guid, $m))
+		{
+			$work->message->DOIAgency = 'datacite';
+		}
+
+		if (preg_match('/10.6165\/tai/', $guid, $m))
+		{
+			$work->message->DOIAgency = 'airiti';
+		}
+		
+		if (preg_match('/10.11369\/jji/', $guid, $m))
+		{
+			$work->message->DOIAgency = 'jalc';
+		}
+		
+		
+				
+		// Tropicos
+		if (preg_match('/legacy.tropicos.org/i', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q2578548'; // Tropicos
+					
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';		
+			
+			unset($obj->URL);
+		}
+
+
+		// e-periodica
+		if (preg_match('/10.5169\/seals/i', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q45313801'; // e-periodica
+					
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';		
+			
+			unset($obj->URL);
+		}
+		
+		// www.cnki.net
+		if (isset( $obj->URL))
+		{
+			if (preg_match('/cnki.net/i', $obj->URL, $m))
+			{
+				$source[] = 'S248';
+				$source[] = 'Q12857515'; // CNKI
+					
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';		
+			
+			
+			}
+		}
+	
+	
+		// bvs-vet.org.br
+		if (preg_match('/bvs-vet.org.br/i', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q108168159'; // Biblioteca Virtual em Medicina Veterinária e Zootecnia
+					
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';		
+			
+			unset($obj->URL);
+		}	
+		
+				
+		
+		// special
+		if (0)
+		{
+			$urls = array (
+			  1 => 'http://magellanes.net/book/volume-1-les-cahiers-magellanes-ns-n1/',
+			  2 => 'http://magellanes.net/book/volume-2-les-cahiers-magellanes-ns-n2/',
+			  3 => 'http://magellanes.net/book/volume-3-les-cahiers-magellanes-ns-n3/',
+			  4 => 'http://magellanes.net/book/volume-4-les-cahiers-magellanes-ns-n4/',
+			  5 => 'http://magellanes.net/book/volume-5-les-cahiers-magellanes-ns-n5/',
+			  6 => 'http://magellanes.net/book/cm-6/',
+			  7 => 'http://magellanes.net/book/cm-7/',
+			  8 => 'http://magellanes.net/book/cm-8/',
+			  9 => 'http://magellanes.net/book/cs-9/',
+			  10 => 'http://magellanes.net/book/cs-10/',
+			  11 => 'http://magellanes.net/book/cs-11/',
+			  12 => 'http://magellanes.net/book/cm-12/',
+			  13 => 'http://magellanes.net/book/cm-13/',
+			  14 => 'http://magellanes.net/book/cm-14/',
+			  15 => 'http://magellanes.net/book/cm-15/',
+			  16 => 'http://magellanes.net/book/cm-16/',
+			  17 => 'http://magellanes.net/book/cm-17/',
+			  18 => 'http://magellanes.net/book/cm-18/',
+			  19 => 'http://magellanes.net/book/cm-19/',
+			  20 => 'http://magellanes.net/book/cm-20/',
+			  21 => 'http://magellanes.net/book/cm-21/',
+			  22 => 'http://magellanes.net/book/cm-22/',
+			  23 => 'http://magellanes.net/book/cm-23/',
+			  24 => 'http://magellanes.net/book/cm-24/',
+			  25 => 'http://magellanes.net/book/cm-25/',
+			  26 => 'http://magellanes.net/book/cm-26/',
+			  27 => 'http://magellanes.net/book/cm-27/',
+			  28 => 'http://magellanes.net/book/cm-28/',
+			  29 => 'http://magellanes.net/book/cm-29/',
+			  30 => 'http://magellanes.net/book/cm-30/',
+			  31 => 'http://magellanes.net/book/cm-31/',
+			  32 => 'http://magellanes.net/book/cm-32/',
+			  33 => 'http://magellanes.net/book/cm-33/',
+			  34 => 'http://magellanes.net/book/cm-34/',
+			  35 => 'http://magellanes.net/book/cm-35/',
+			  36 => 'http://magellanes.net/book/cm-36/',
+			   37 => 'http://magellanes.net/book/1327-2/',
+			  38 => 'http://magellanes.net/book/cm-38/',
+			  39 => 'http://magellanes.net/book/cm-38-2/',
+			);
+
+			$url = $urls[$obj->volume];
+		
+				$source[] = 'S854';
+				$source[] = '"' . $url . '"';				
+		}
 		
 		
 		// default
-		if (0)
+		if (1)
 		{
-			if (isset( $obj->URL))
+			if (isset( $obj->URL) && (count($source) == 0))
 			{
 				$source[] = 'S854';
 				$source[] = '"' . $obj->URL . '"';			
 			}
 		}
+		
+		
+		if (0)
+		{
+			unset($obj->DOI);
+			unset($obj->link);
+		
+		}
+		
 				
 		
 		$quickstatements = csljson_to_wikidata($work, 

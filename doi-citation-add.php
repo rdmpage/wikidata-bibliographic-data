@@ -6,6 +6,7 @@
 
 
 require_once (dirname(__FILE__) . '/wikidata.php');
+require_once (dirname(__FILE__) . '/couchsimple.php');
 
 
 $dois=array('10.1645/ge-3525.1');
@@ -42,7 +43,7 @@ $dois=array('10.1644/11-mamm-a-296.1');
 
 $dois=array('10.1017/s1477200006002271');
 
-// Many citations, none with DOIs included, need to start manula lookup 
+// Many citations, none with DOIs included, need to start manual lookup 
 $dois=array('10.1038/S41559-020-1269-4');
 
 $dois=array('10.1093/jme/tjy108');
@@ -50,6 +51,20 @@ $dois=array('10.1093/jme/tjy108');
 $dois=array('10.1016/j.pld.2016.08.003');
 
 $dois=array('10.3109/19401736.2013.803543');
+
+$dois=array('10.7717/peerj.6157');
+$dois=array('10.3897/PHYTOKEYS.95.21586');
+
+$dois=array("10.1007/s12225-016-9650-9");
+
+$dois=array("10.1002/TAX.12273");
+
+$dois=array('10.1016/j.ympev.2018.04.016');
+
+$dois=array('10.3897/ZOOKEYS.1012.57172');
+
+$dois=array('10.3372/wi.46.46202');
+
 
 foreach ($dois as $doi)
 {
@@ -62,7 +77,30 @@ foreach ($dois as $doi)
 
 	if ($crossref)
 	{
-		$work = get_work($doi);
+		// check cache	
+		$id = 'https://doi.org/' . $doi;
+
+		$exists = $couch->exists($id);
+	
+		if ($exists)
+		{
+			$resp = $couch->send("GET", "/" . $config['couchdb_options']['database'] . "/" . urlencode($id));			
+			//echo $resp;
+			$work = json_decode($resp);
+		}
+		else
+		{
+			$work = get_work($doi);
+		
+			if ($work)
+			{
+				$work->_id = $id;
+		
+				// store
+				$couch->add_update_or_delete_document($work, $work->_id, 'add');	
+			}
+
+		}
 		
 		print_r($work);
 		
