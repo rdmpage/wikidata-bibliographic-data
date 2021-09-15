@@ -100,6 +100,60 @@ function get($url, $user_agent='', $content_type = '')
 }
 
 //----------------------------------------------------------------------------------------
+// BHL ItemID to Wikidata item
+function wikidata_from_bhl_item($ItemID)
+{
+	$cache = array(
+		
+	
+	);
+	
+	$item = '';
+	
+	if (isset($cache[$ItemID]))
+	{
+		$item = $ItemID;
+	}
+	
+	if ($item == '')
+	{
+		// BHL API
+		$config['api_key'] = '0d4f0303-712e-49e0-92c5-2113a5959159';
+		
+		$parameters = array(
+			'op' 		=> 'GetItemMetadata',
+			'itemid'	=> $ItemID,
+			'pages'		=> 'f',
+			'ocr'		=> 'f',
+			'parts'		=> 'f',
+			'apikey'	=> $config['api_key'],
+			'format'	=> 'json'
+		);
+	
+		$url = 'https://www.biodiversitylibrary.org/api2/httpquery.ashx?' . http_build_query($parameters);
+	
+		//echo $url . "\n";
+	
+		$json = get($url);
+	
+		$obj = json_decode($json);
+				
+		//print_r($obj);
+		
+		// assume title has DOI
+		if (isset($obj->Result->PrimaryTitleID))
+		{
+			$doi = '10.5962/BHL.TITLE.' . $obj->Result->PrimaryTitleID;
+			$item = wikidata_item_from_doi($doi);
+		}
+	
+	}
+
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
 // Does wikidata have this funder with a Crossref funder DOI
 function wikidata_funder_from_doi($doi)
 {
@@ -533,6 +587,8 @@ function wikidata_item_from_issn($issn)
 		'0424-7086' => 'Q15766885', // Medical Entomology and Zoology
 		'0027-0113' => 'Q27887126', // Comunicaciones Zoológicas Del Museo de Historia Natural de Montevideo
 		'0036-7575' => 'Q21385818', // Mitteilungen der Schweizerischen Entomologischen Gesellschaft 
+		'0373-2967' => 'Q5747392', // Candolea
+		'2153-733X' => 'Q15314455', // Phytoneuron
 	);
 
 	$item = '';
@@ -2251,6 +2307,17 @@ $this->props = array(
 						}					
 							
 					}	
+					
+					// BHL special case
+					if ($journal_item == '')
+					{
+						if (isset($work->message->ItemID))
+						{
+							$journal_item = wikidata_from_bhl_item($work->message->ItemID);							
+						}
+
+					}					
+					
 				
 					if ($journal_item == '')
 					{
@@ -3412,13 +3479,13 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		$url = 'https://www.googleapis.com/books/v1/volumes/' . $book_id;
 	}
 	
-	echo $url;
+	// echo $url;
 	
 	$json = get($url);
 	
 	$obj = json_decode($json);
 	
-	print_r($obj);
+	// print_r($obj);
 	
 	$thing = null;
 	

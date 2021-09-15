@@ -65,6 +65,10 @@ $dois=array('10.3897/ZOOKEYS.1012.57172');
 
 $dois=array('10.3372/wi.46.46202');
 
+$dois=array('10.3897/PHYTOKEYS.157.32683');
+
+$dois=array('10.1038/S41598-020-80955-1');
+
 
 foreach ($dois as $doi)
 {

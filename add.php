@@ -803,6 +803,9 @@ $filename = 'quickstatements/1978-9807.txt';
 // Chiroptera Neotropical
 $filename = 'quickstatements/2317-6105.txt';
 
+// Phytoneuron
+$filename = 'quickstatements/2153-733X.txt';
+
 
 // Kontyu
 // $filename = 'quickstatements/0013-8770.txt';
@@ -815,7 +818,7 @@ $filename = 'quickstatements/2317-6105.txt';
 //$filename = 'quickstatements/0716-2545.txt';
 
 
-//$filename = 'quickstatements/missed.txt';
+$filename = 'quickstatements/missed.txt';
 
 
 // flags
@@ -833,8 +836,8 @@ $languages = array('en'); // assume everything is in English
 
 //$languages = array('en', 'zh');
 
-$languages = array('en', 'de');
-$languages = array('en', 'pt');
+//$languages = array('en', 'de');
+//$languages = array('en', 'pt');
 
 //$languages = array('en', 'ru');
 
@@ -1525,6 +1528,21 @@ while (!feof($file_handle))
 				$source[] = 'S854';
 				$source[] = '"' . $url . '"';				
 		}
+		
+		if (preg_match('/www.phytoneuron.net/i', $guid, $m))
+		{
+					
+			$source[] = 'S854';
+			
+			// https://www.phytoneuron.net/2020-publications/
+			$url = 'https://www.phytoneuron.net/' . $work->message->issued->{'date-parts'}[0][0] . '-publications/';
+			
+			
+			$source[] = '"' . $url . '"';		
+			
+			unset($obj->URL);
+		}	
+		
 		
 		
 		// default

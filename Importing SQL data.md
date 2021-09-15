@@ -205,6 +205,13 @@ Use in afd database to link AFD to Wikidata
 SELECT CONCAT(wikidata, char(9), 'P6982', char(9), '"', PUBLICATION_GUID, '"') FROM bibliography WHERE issn='0013-8819' AND wikidata IS NOT NULL;
 ```
 
+## Adding National Diet Library (NDL) persistent work ID to existing Wikidata items
+
+
+```
+SELECT CONCAT(wikidata, char(9),'P9836', char(9), '"', REPLACE(guid, 'https://dl.ndl.go.jp/info:ndljp/pid/', ''), '"') FROM publications WHERE issn='0013-8770' AND wikidata IS NOT NULL AND guid like "https://dl.ndl.go.jp/info:ndljp/pid/%" IS NOT NULL;
+```
+
 
 ## Add missing authors
 
