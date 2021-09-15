@@ -1,13 +1,38 @@
 <?php
 
-// Fetch BioStor article
-
-
+// Fetch BHL part
 require_once(dirname(__FILE__) . '/wikidata.php');
 
-
 $ids = array(
-241552
+312710,
+312711,
+312712,
+312713,
+312714,
+312715,
+312716,
+312717,
+312718,
+312719,
+312720,
+312721,
+312722,
+312723,
+312724,
+312725,
+312726,
+312727,
+312728,
+312729,
+312730,
+312731,
+312732,
+312733,
+312734,
+312735,
+312736,
+312737,
+312738,
 );
 
 $start = 0;
@@ -48,10 +73,7 @@ function get_part_from_bhl_part($id)
 	}
 	
 	return $part;
-	
 }
-
-
 
 //----------------------------------------------------------------------------------------
 
@@ -59,8 +81,6 @@ function get_part_from_bhl_part($id)
 
 foreach ($ids as $id)
 {
-
-
 	$item = wikidata_item_from_bhl_part($id);
 	
 	if ($item != '')
@@ -105,7 +125,18 @@ foreach ($ids as $id)
 						break;
 				
 					case 'PageRange':
-						$csl->page = $part->{$k};
+						if ($part->{$k} == '--')
+						{
+							
+						}
+						else
+						{
+							$csl->page = $part->{$k};
+						}
+						break;
+						
+					case 'Doi':
+						$csl->DOI = $part->{$k};
 						break;
 				
 					default:
@@ -129,6 +160,12 @@ foreach ($ids as $id)
 			}
 		}
 		
+		// can't match to an ISSN
+		if (!isset($csl->ISSN))
+		{
+			$csl->ItemID = $part->ItemID;
+		}
+				
 		// authors
 		$csl->authors = array();
 		foreach ($part->Authors as $author)
@@ -162,7 +199,7 @@ foreach ($ids as $id)
 		$work = new stdclass;
 		$work->message = $csl;
 		
-		// print_r($work);
+		//print_r($work);
 
 		$source = array();
 		$source[] = 'S248';
@@ -180,11 +217,7 @@ foreach ($ids as $id)
 			);
 			
 		echo $quickstatements . "\n";
-
-
 	}
-
-
 }
 
 
