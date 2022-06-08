@@ -58,7 +58,7 @@ while (!feof($file_handle))
 			
 			$qid = str_replace('http://www.wikidata.org/entity/', '', $obj->work);
 			
-			if (1)
+			if (0)
 			{
 				echo $qid . "\n";
 			}
@@ -68,9 +68,24 @@ while (!feof($file_handle))
 			{
 				if (isset($obj->doi))
 				{
-					echo 'UPDATE publications SET wikidata="' . $qid . '" WHERE doi="' . $obj->doi . '";' . "\n";
+					//echo 'UPDATE publications SET wikidata="' . $qid . '" WHERE doi="' . $obj->doi . '";' . "\n";
+					echo 'UPDATE publications_tmp SET wikidata="' . $qid . '" WHERE doi="' . $obj->doi . '";' . "\n";
+				}
+				if (isset($obj->jstor))
+				{
+					//echo 'UPDATE publications SET wikidata="' . $qid . '" WHERE jstor="' . $obj->jstor . '";' . "\n";
+					echo 'UPDATE publications_tmp SET wikidata="' . $qid . '" WHERE jstor="' . $obj->jstor . '";' . "\n";
 				}
 			}
+			
+			if (1)
+			{
+				if (isset($obj->pmid) && !isset($obj->jstor) && !isset($obj->doi))
+				{
+					print_r($obj);
+				}
+			}
+			
 			
 			if (0)
 			{

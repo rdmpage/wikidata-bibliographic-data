@@ -46,7 +46,7 @@ SELECT guid FROM publications WHERE issn='0161-8202' AND jstor IS NOT NULL AND d
 Discovered that Bijdragen tot de dierkunde now has DOIs, so load data from CrossRef, then do SQL query to generate Quickstatements:
 
 ```
-SELECT CONCAT(wikidata, char(9),'P356', char(9), '"', doi, '"', char(9), 'S248', char(9), 'Q5188229', char(9), 'S854', char(9), '"https://api.crossref.org/v1/works/', doi, '"') FROM publications WHERE issn='0067-8546' AND wikidata IS NOT NULL AND doi IS NOT NULL;
+SELECT CONCAT(wikidata, char(9),'P356', char(9), '"', UPPER(doi), '"', char(9), 'S248', char(9), 'Q5188229', char(9), 'S854', char(9), '"https://api.crossref.org/v1/works/', doi, '"') FROM publications WHERE issn='0067-8546' AND wikidata IS NOT NULL AND doi IS NOT NULL;
 ```
 
 Sequel Pro displays tabs as ⇥ so need to find and replace before uploading to Wikidata.
@@ -56,6 +56,7 @@ Sequel Pro displays tabs as ⇥ so need to find and replace before uploading to 
 CrossRef Q5188229
 ISTIC	Q30262675
 DataCite Q821542
+Airiti Q4698727
 
 ```
 -- CrossRef
@@ -101,6 +102,11 @@ SELECT CONCAT(wikidata, char(9),'P2409', char(9), '"', cinii, '"', char(9), 'S24
 SELECT CONCAT(wikidata, char(9),'P5315', char(9), '"', biostor, '"') FROM publications WHERE issn='0004-2625' AND wikidata IS NOT NULL AND biostor IS NOT NULL;
 ```
 
+BHL
+
+SELECT CONCAT(wikidata, char(9),'P687', char(9), '"', pageid, '"') FROM publications WHERE issn='0004-2625' AND wikidata IS NOT NULL AND pageid IS NOT NULL;
+
+
 ## Adding internet archive to existing Wikidata items
 
 ```
@@ -120,6 +126,18 @@ Cases where articles already exists (e.g., has DOI in Wikidata) but it’s not l
 ```
 SELECT CONCAT(wikidata, char(9),'P1433', char(9), 'Q96734475') FROM publications WHERE issn='0044-5096' AND  wikidata LIKE "Q5%";
 ```
+
+## Fix broken data on which journal article is included in (e.g., CrossRef mistakes)
+
+10.15298/rusentj.30.3.05
+
+```
+SELECT CONCAT(wikidata, char(9),'P1433', char(9), 'Q21385717') FROM publications WHERE issn='1684-4866';
+
+SELECT CONCAT('-', wikidata, char(9),'P1433', char(9), 'Q21385665') FROM publications WHERE issn='1684-4866';
+
+```
+
 
 ## Adding PDF with wayback archive URL
 
@@ -143,9 +161,26 @@ SELECT CONCAT(wikidata, char(9),'P953', char(9), '"', pdf, '"', char(9), 'P2701'
 SELECT CONCAT('-', wikidata, char(9),'P953', char(9), '"', pdf, '"') FROM publications WHERE issn='2331-7515' AND wikidata IS NOT NULL AND pdf IS NOT NULL AND waybackmachine IS NOT NULL;
 ```
 
-## Add missing language titles
+## Add missing language titles and labels
+
+-- add English title
+SELECT CONCAT(wikidata, char(9),'P1476', char(9), language, ':"', value, '"', char(9), 'S248', char(9), 'Q12857515', char(9),  'S854', char(9), '"https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename=', guid, '"')
+FROM publications 
+INNER JOIN multilingual USING(guid) 
+WHERE issn='0001-6616' AND guid LIKE 'GSWX%'
+AND multilingual.`language` = 'en'
+AND multilingual.`key` = 'title'
+AND wikidata IS NOT NULL;
 
 
+-- add English label
+SELECT CONCAT(wikidata, char(9),'L', language, char(9) , '"', value, '"')
+FROM publications 
+INNER JOIN multilingual USING(guid) 
+WHERE issn='0001-6616' AND guid LIKE 'GSWX%'
+AND multilingual.`language` = 'en'
+AND multilingual.`key` = 'title'
+AND wikidata IS NOT NULL;
 
 ## Add pages (P304) to articles missing that from Wikidata
 
@@ -187,12 +222,24 @@ SELECT CONCAT(wikidata, char(9),'P304', char(9), '"', spage, '-', epage, '"',cha
 SELECT CONCAT(wikidata, char(9),'P577', char(9), '+', year, '-00-00T00:00:00Z/9') FROM publications WHERE issn='0311-4538';
 ```
 
-## Add missing license
+## Add missing journal link
 
-CC-BY 4.0
 
 ```
-SELECT CONCAT(wikidata, char(9),'P275', char(9), 'Q20007257', char(9), 'S854', char(9), '"', url, '"') FROM publications WHERE issn='1570-3223';
+SELECT CONCAT(wikidata, char(9), 'P1433', char(9), 'Q15816855') FROM publications_tmp WHERE journal LIKE 'Sydow%' AND issn IS NULL AND wikidata IS NOT NULL;
+
+```
+
+
+## Add missing license
+
+
+```
+-- copyrighted
+SELECT CONCAT(wikidata, char(9),'P6216', char(9), 'Q50423863') FROM publications WHERE issn='1570-3223';
+
+-- license 
+SELECT CONCAT(wikidata, char(9),'P275', char(9), 'Q34179348') FROM publications WHERE issn='1570-3223';
 
 ```
 
@@ -209,8 +256,22 @@ SELECT CONCAT(wikidata, char(9), 'P6982', char(9), '"', PUBLICATION_GUID, '"') F
 
 
 ```
-SELECT CONCAT(wikidata, char(9),'P9836', char(9), '"', REPLACE(guid, 'https://dl.ndl.go.jp/info:ndljp/pid/', ''), '"') FROM publications WHERE issn='0013-8770' AND wikidata IS NOT NULL AND guid like "https://dl.ndl.go.jp/info:ndljp/pid/%" IS NOT NULL;
+SELECT CONCAT(wikidata, char(9),'P9836', char(9), '"', REPLACE(guid, 'https://dl.ndl.go.jp/info:ndljp/pid/', ''), '"') FROM publications WHERE issn='0013-8770' AND wikidata IS NOT NULL AND guid like "https://dl.ndl.go.jp/info:ndljp/pid/%";
 ```
+
+## Adding Persee article  ID to existing Wikidata items
+
+
+```
+SELECT CONCAT(wikidata, char(9),'P8758', char(9), '"', REPLACE(guid, 'https://www.persee.fr/doc/', ''), '"') FROM publications_tmp WHERE issn='0037-928X' AND wikidata IS NOT NULL AND guid like "https://www.persee.fr/doc/%";```
+
+## Adding fatcat ID to existing Wikidata items
+
+
+```
+SELECT CONCAT(wikidata, char(9),'P8608', char(9), '"', xml, '"') FROM `vestnik zoologii-tmp-wd` WHERE  wikidata IS NOT NULL AND xml IS NOT NULL;
+```
+
 
 
 ## Add missing authors

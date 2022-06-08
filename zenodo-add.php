@@ -11,7 +11,7 @@ $dois=array();
 
 $dois=array(
 //'10.5281/zenodo.4044276',
-'10.5281/zenodo.3562003',
+'10.5281/zenodo.1219120',
 );
 
 // True to update existing record, false to skip

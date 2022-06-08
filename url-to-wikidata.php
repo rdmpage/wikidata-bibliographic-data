@@ -57,6 +57,7 @@ while (!feof($file_handle))
 			if ($item)
 			{
 				echo "UPDATE publications SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";
+				//echo "UPDATE publications_tmp SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";
 				$done = true;
 			}
 		}			
@@ -79,6 +80,25 @@ while (!feof($file_handle))
 			}
 		}			
 	}
+	
+	// CNKI
+	if (!$done)
+	{
+		if (preg_match('/^[A-Z]{4}\d+/', $guid, $m))
+		{
+			$cnki = $guid;
+			
+			//echo $cnki . "\n";
+			
+			$item = wikidata_item_from_cnki($cnki);
+			if ($item)
+			{
+				echo "UPDATE publications SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";
+				$done = true;
+			}
+		}			
+	}
+	
 		
 	if (!$done)
 	{
@@ -185,6 +205,38 @@ while (!feof($file_handle))
 			$biostor = $m['id'];
 						
 			$item = wikidata_item_from_biostor($biostor);
+			if ($item)
+			{
+				//echo "UPDATE publications SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";
+				$done = true;
+			}
+			else
+			{
+				echo "Not found $biostor\n";
+			}
+		}			
+	}			
+	
+	// PMC
+	if (!$done)
+	{
+		if (preg_match('/PMC(?<id>\d+)/', $guid, $m))
+		{
+			$item = wikidata_item_from_pmc($guid);
+			if ($item)
+			{
+				echo "UPDATE publications_tmp SET wikidata='" . $item . "' WHERE pmc='" . $guid . "';" . "\n";
+				$done = true;
+			}
+		}			
+	}			
+	
+	// ZooBank
+	if (!$done)
+	{
+		if (preg_match('/zoobank.org\/(?<id>.*)/', $guid, $m))
+		{
+			$item = wikidata_item_from_zoobank($m['id']);
 			if ($item)
 			{
 				echo "UPDATE publications SET wikidata='" . $item . "' WHERE guid='" . $guid . "';" . "\n";

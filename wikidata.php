@@ -32,6 +32,8 @@ function nice_strip_tags($str)
 	$str = preg_replace('/</u', ' <', $str);
 	$str = preg_replace('/>/u', '> ', $str);
 	
+	$str = preg_replace('/\n/u', ' ', $str);
+	
 	$str = strip_tags($str);
 	
 	$str = preg_replace('/&amp;/u', '&', $str);
@@ -271,6 +273,37 @@ function wikidata_item_from_doi($doi)
 }
 
 //----------------------------------------------------------------------------------------
+// Does wikidata have this PMC?
+function wikidata_item_from_pmc($pmc)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P932 "' . str_replace('PMC', '', $pmc) . '" }';
+	
+	//echo $sparql . "\n";
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+	
+	//echo $json;
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
 // Does wikidata have this URL?
 function wikidata_item_from_url($url)
 {
@@ -438,6 +471,33 @@ function wikidata_item_from_cnki($cnki)
 }
 
 //----------------------------------------------------------------------------------------
+// Does wikidata have this PERSEE?
+function wikidata_item_from_persee_article($perse)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P8758 "' . $perse . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
 // Does wikidata have this DIALNET?
 function wikidata_item_from_dialnet($dialnet)
 {
@@ -471,6 +531,33 @@ function wikidata_item_from_cinii($cinii)
 	$item = '';
 	
 	$sparql = 'SELECT * WHERE { ?work wdt:P2409 "' . $cinii . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
+// Does wikidata have this Zoobank pub?
+function wikidata_item_from_zoobank($zoobank)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P2007 "' . $zoobank . '" }';
 	
 	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
 	$json = get($url, '', 'application/json');
@@ -589,6 +676,13 @@ function wikidata_item_from_issn($issn)
 		'0036-7575' => 'Q21385818', // Mitteilungen der Schweizerischen Entomologischen Gesellschaft 
 		'0373-2967' => 'Q5747392', // Candolea
 		'2153-733X' => 'Q15314455', // Phytoneuron
+		'1560-2745' => 'Q15765496', // Fungal Diversity
+		'0001-6616' => 'Q15746639', // Acta Palaeontologica Sinica
+		'0006-7172'	=> 'Q15750918', // Bonner zoologische Beiträge
+		'1148-8425' => 'Q37408733', // Bulletin du Muséum national d'histoire naturelle
+		'2095-1787' => 'Q111386916', // Journal of Biosafety
+		'0007-2745' => 'Q7720447', // The Bryologist
+		'0027-5514' => 'Q1962302', //Mycologia
 	);
 
 	$item = '';
@@ -937,6 +1031,38 @@ function wikidata_item_from_bhl_creator($id)
 	return $item;
 }
 
+//----------------------------------------------------------------------------------------
+function wikidata_item_from_zoobank_author($id)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?author wdt:P2006 "' . strtoupper($id) . '" }';
+	
+	//echo $sparql . "\n";
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+	
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		
+		//print_r($obj);
+		
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) == 1)	
+			{
+				$item = $obj->results->bindings[0]->author->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+
 
 
 //----------------------------------------------------------------------------------------
@@ -947,6 +1073,8 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 	$MAX_LABEL_LENGTH = 250;
 
 	$quickstatements = '';
+	
+	$description = '';
 	
 	// Map language codes to Wikidata items
 	$language_map = array(
@@ -965,6 +1093,7 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 		'pl' => 'Q809',
 		'pt' => 'Q5146',
 		'ru' => 'Q7737',
+		'sv' => 'Q9027',
 		'th' => 'Q9217',
 		'un' => 'Q22282914', 
 		'vi' => 'Q9199',
@@ -984,6 +1113,8 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 		'0074-0276',
 		'0065-6755',
 		'2317-6105',
+		'0034-7108',
+		'2317-1111',
 		);
 
 	
@@ -1001,6 +1132,10 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 	// Is record sane?
 	if (!isset($work->message->title))
 	{
+		echo "No title\n";
+		
+		//print_r($work);
+		
 		return;
 	}
 
@@ -1018,7 +1153,6 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 			}
 		}
 	}
-	
 
 	// Do we have this already in wikidata?
 	$item = '';
@@ -1031,6 +1165,26 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 		{
 			$item = wikidata_item_from_doi($work->message->DOI);
 		}
+		
+		// PMID
+		if (isset($work->message->PMID))
+		{
+			$item = wikidata_item_from_pmid($work->message->PMID);
+		}
+
+		// PMC
+		if (isset($work->message->PMC))
+		{
+			$item = wikidata_item_from_pmc($work->message->PMC);
+		}
+		
+		// ZooBank
+		if (isset($work->message->ZOOBANK))
+		{
+			$item = wikidata_item_from_zoobank($work->message->ZOOBANK);
+		}
+		
+		
 	
 		// JSTOR
 		if ($item == '')
@@ -1041,8 +1195,7 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 			
 			}
 		}	
-		
-		
+				
 		// HANDLE
 		if ($item == '')
 		{
@@ -1080,6 +1233,15 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 				$item = wikidata_item_from_cnki($work->message->CNKI);
 			}
 		}		
+		
+		if ($item == '')
+		{
+			if (isset($work->message->PERSEE))
+			{
+				$item = wikidata_item_from_persee_article($work->message->PERSEE);
+			}
+		}		
+		
 		
 		if ($item == '')
 		{
@@ -1167,6 +1329,7 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 			echo "Have item $item\n";
 		
 			print_r($work);
+			exit();
 		
 		}
 		
@@ -1221,11 +1384,13 @@ $this->props = array(
 		'volume' 				=> 'P478',
 		'issue' 				=> 'P433',
 		'page' 					=> 'P304',
+		'PERSEE'				=> 'P8758',
 		'PDF'					=> 'P953',
 		'ARCHIVE'				=> 'P724',
 		'ZOOBANK_PUBLICATION' 	=> 'P2007',
 		'abstract'				=> 'P1922', // first line
 		'article-number'		=> 'P1545', // series ordinal
+		'number-of-pages'		=> 'P1104', // number of pages
 	);
 	
 	// Need to think how to handle multi tag
@@ -1241,6 +1406,8 @@ $this->props = array(
 				{
 					case 'dataset':
 						$w[] = array('P31' => 'Q1172284');
+						
+						$description = "Dataset";
 						break;
 				
 					case 'dissertation':
@@ -1261,21 +1428,35 @@ $this->props = array(
 						}
 					
 						$w[] = array('P31' => $dissertation_type);
+						
+						$description = "Dissertation";
 						break;
 						
 					case 'book-chapter':
 						$w[] = array('P31' => 'Q1980247');
+						
+						$description = "Book chapter";
 						break;	
 						
 					case 'book':
 						$w[] = array('P31' => 'Q571'); // book
-						break;				
-									
-				
+						
+						$description = "Book";
+						break;		
+						
+					case 'monograph':		
+						$w[] = array('P31' => 'Q571'); // book
+						$w[] = array('P31' => 'Q193495'); // monograph
+						
+						$description = "Monograph";
+						break;		
+													
 					case 'article-journal':
 					case 'journal-article':
 					default:
 						$w[] = array('P31' => 'Q13442814');
+						
+						$description = "Scholarly article";
 						break;
 						
 					
@@ -1299,6 +1480,8 @@ $this->props = array(
 			
 				if ($subtitle != '')
 				{
+					$subtitle = nice_strip_tags($subtitle);
+				
 					$ld = new Language($languages_to_detect);						
 					$language = $ld->detect($subtitle)->__toString();
 				
@@ -1306,6 +1489,7 @@ $this->props = array(
 				}
 			
 				break;
+			
 
 		
 			//----------------------------------------------------------------------------
@@ -1380,7 +1564,7 @@ $this->props = array(
 						// We always want a title for the English language, even if
 						// it isn't English
 						$language = 'en';					
-						$title = nice_strip_tags($title);
+						
 						
 						// J-Stage fixes
 						if (preg_match('/(\^\|\^[a-z]+);/i', $title, $m))
@@ -1388,7 +1572,16 @@ $this->props = array(
 							$title = str_replace('^|^', '&', $title);
 						}						
 						
+						// Horizon fixes
+						//if (preg_match('/\#[A-Z]\w+(\s\w+)?\$/i', $title, $m))
+						{
+							$title = str_replace('#', '', $title);
+							$title = str_replace('$', '', $title);
+						}
+						
+						
 						$title = html_entity_decode($title, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+						$title = nice_strip_tags($title);
 						
 						$title = str_replace("\n", "", $title);
 					
@@ -1690,7 +1883,7 @@ $this->props = array(
 						
 							if ($author_item != '')
 							{							
-								$w[] = array('P50' => $author_item . "\tP1545\t\"$count\"");
+								$w[] = array('P50' => $author_item . "\tP1545\t\"$count\"\tP1932\t\"" . $author->literal . "\"");
 								$done = true;
 							}						
 						}						
@@ -1780,11 +1973,25 @@ $this->props = array(
 					}
 					
 					
+					// Do we have ZOOBANK?
+					if (!$done)
+					{
+						if (isset($author->ZOOBANK))
+						{
+							$author_item = wikidata_item_from_zoobank_author($author->ZOOBANK);
+						
+							if ($author_item != '')
+							{							
+								$w[] = array('P50' => $author_item . "\tP1545\t\"$count\"\tP1932\t\"" . $author->literal . "\"");
+								$done = true;
+							}						
+						}						
+					}
 					
 					
 					
 					// If we've reached this point we only have literals, so add these
-					
+					$ok = true;
 					if (!$done)
 					{
 						/*
@@ -1901,13 +2108,23 @@ $this->props = array(
 										$qualifier .= "\tP6424\t\"" . $affiliation->name . '"';
 									}
 								}						
-							}						
+							}
+							
+							// add any identifiers that we have but which we haven't matched
+							if (isset($author->PERSEE))
+							{	
+								// Persee identifier is not allowed here
+								//$qualifier .= "\tP2732\t\"" . $author->PERSEE . '"';
+								
+								// Maybe use URL as this qualifier is allowed?							
+								// $qualifier .= "\t:P2699\t\"https://www.persee.fr/authority/" . $author->PERSEE . '"';							
+							}					
 					
 							$w[] = array('P2093' => '"' . $name . '"' . $qualifier);
 						}
 
 					}
-					if ($ok = true)
+					if ($ok == true)
 					{
 						$count++;
 					}
@@ -1925,6 +2142,13 @@ $this->props = array(
 			
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
+				
+			//----------------------------------------------------------------------------
+			// needs to be a number
+			case 'number-of-pages':
+				$w[] = array($wikidata_properties[$k] => $v);
+				break;
+				
 				
 			//----------------------------------------------------------------------------
 			case 'alternative-id':
@@ -1960,6 +2184,7 @@ $this->props = array(
 			case 'CNKI':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
+
 				
 			//----------------------------------------------------------------------------
 			case 'DOI':
@@ -2005,14 +2230,48 @@ $this->props = array(
 				{
 					$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"');
 				
-					//Zenodo?
-				
-					if (preg_match('/10.5281\/ZENODO\.(?<id>\d+)/i', $v, $m))
-					{
-						$w[] = array('P4901' => '"' . $m['id'] . '"');
-					}
 				}
 				
+				//Zenodo?
+			
+				if (preg_match('/10.5281\/ZENODO\.(?<id>\d+)/i', $v, $m))
+				{
+					$w[] = array('P4901' => '"' . $m['id'] . '"');
+				}
+				
+				
+				// book chapter DOIs may include ISBN which we cna use to link to parent book
+				if (isset($work->type) && ($work->message->type == 'book-chapter') && !isset($work->message->ISBN))
+				{
+					$isbn_string = '';
+					
+					if (preg_match('/10.1525\/california\/(?<isbn>978\d+)\./', $work->message->DOI, $m))
+					{
+						$isbn_string = $m['isbn'];
+					}
+					
+					if ($isbn_string != '')
+					{
+						$book = '';
+						
+						if ($book == '')
+						{
+							$book = wikidata_item_from_isbn10($isbn_string);
+						}
+						if ($book == '')
+						{
+							$book = wikidata_item_from_isbn13($isbn_string);
+						}
+						
+						if ($book != '')
+						{
+							// part of
+							$w[] = array('P361' => $book);
+						}
+
+					}
+					
+				}
 				break;
 				
 			//----------------------------------------------------------------------------
@@ -2031,8 +2290,19 @@ $this->props = array(
 				break;
 				
 			//----------------------------------------------------------------------------
+			case 'PERSEE':
+				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
+				break;
+				
+				
+			//----------------------------------------------------------------------------
 			case 'PMID':
 				$w[] = array($wikidata_properties[$k] => '"' . strtoupper($v) . '"');
+				break;	
+
+			//----------------------------------------------------------------------------
+			case 'PMC':
+				$w[] = array($wikidata_properties[$k] => '"' . str_replace('PMC', '', $v) . '"');
 				break;	
 				
 			//----------------------------------------------------------------------------
@@ -2078,7 +2348,7 @@ $this->props = array(
 						
 						
 						break;
-				
+
 					// book 
 					// article
 					default:
@@ -2389,20 +2659,52 @@ $this->props = array(
 			case 'approved': // for theses
 			case 'issued':			
 				$date = '';
-				$d = $v->{'date-parts'}[0];
 				
-				// sanity check
-				if (is_numeric($d[0]))
-				{
-					if ( count($d) > 0 ) $year = $d[0] ;
-					if ( count($d) > 1 ) $month = preg_replace ( '/^0+(..)$/' , '$1' , '00'.$d[1] ) ;
-					if ( count($d) > 2 ) $day = preg_replace ( '/^0+(..)$/' , '$1' , '00'.$d[2] ) ;
-					if ( isset($month) and isset($day) ) $date = "+$year-$month-$day"."T00:00:00Z/11";
-					else if ( isset($month) ) $date = "+$year-$month-00T00:00:00Z/10";
-					else if ( isset($year) ) $date = "+$year-00-00T00:00:00Z/9";
+				// normally we have one date, if we have two then it's a year range
 				
-					$w[] = array('P577' => $date);
+				if (count($v->{'date-parts'}) == 1)
+				{				
+					$d = $v->{'date-parts'}[0];
+				
+					// sanity check
+					if (is_numeric($d[0]))
+					{
+						if ( count($d) > 0 ) $year = $d[0] ;
+						if ( count($d) > 1 ) $month = preg_replace ( '/^0+(..)$/' , '$1' , '00'.$d[1] ) ;
+						if ( count($d) > 2 ) $day = preg_replace ( '/^0+(..)$/' , '$1' , '00'.$d[2] ) ;
+						if ( isset($month) and isset($day) ) $date = "+$year-$month-$day"."T00:00:00Z/11";
+						else if ( isset($month) ) $date = "+$year-$month-00T00:00:00Z/10";
+						else if ( isset($year) ) $date = "+$year-00-00T00:00:00Z/9";
+				
+						$w[] = array('P577' => $date);
+					
+						switch ($v)
+						{
+							case 'approved':
+								break;
+						
+							case 'issued':
+							default:
+								if (isset($year))
+								{
+									$description .= ' published in ' . $year;
+								}
+								break;				
+						}
+					
+					
+					}
 				}
+				
+				// two dates such as a range like 1956/1957
+				// assume for now that dates are years
+				if (count($v->{'date-parts'}) == 2)
+				{				
+					$date1 = '+' . $v->{'date-parts'}[0][0] ."-00-00T00:00:00Z/9";
+					$date2 = '+' . $v->{'date-parts'}[1][0] ."-00-00T00:00:00Z/9";
+					$w[] = array('P577' => $date1 . "\tP1326\t" . $date2);
+				}
+				
 				break;
 				
 				
@@ -2523,6 +2825,8 @@ award: [
 							  
 							  
 							case 'https://creativecommons.org/licenses/by/4.0/':
+							case 'https://creativecommons.org/licenses/by/4.0':
+							case 'https://creativecommons.org/licenses/by/4.0/legalcode';
 								// CC-BY 4.0
 								$license_item = 'Q20007257';
 								break;
@@ -2719,6 +3023,14 @@ award: [
 				break;
 		}
 	}
+	
+	
+	// description can be problematic if we have multiple articles with the same title, quickstametsm flags an error
+	if ($description != '')
+	{
+		//$w[] = array('Den' => '"' . $description . '"');	
+	}
+	
 	
 	// echo "--------------------------\n";
 	

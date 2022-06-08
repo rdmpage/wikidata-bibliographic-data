@@ -118,7 +118,9 @@ $dois=array(
 );
 
 $dois=array(
-'10.6165/tai.2021.66.11',
+//'10.6165/tai.2021.66.11',
+//'10.6156/JTAR/2014.06301.01',
+'10.6165/tai.2021.66.1'
 );
 
 // True to update existing record, false to skip
@@ -333,7 +335,7 @@ foreach ($dois as $doi)
 		}	
 		
 		
-		// print_r($csl);
+		print_r($csl);
 		
 		if (isset($csl->title))
 		{
@@ -346,6 +348,12 @@ foreach ($dois as $doi)
 			{
 				switch ($work->message->{'container-title'})
 				{
+					case 'Journal of Taiwan Agricultural Research':
+					case '台灣農業研究':				
+						$work->message->type = 'journal-article';
+						$work->message->ISSN[] = '0022-4847';
+						break;
+				
 					case 'Journal of Marine Science and Technology':
 						$work->message->type = 'journal-article';
 						$work->message->ISSN[] = '1023-2796';

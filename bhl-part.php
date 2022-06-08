@@ -35,6 +35,11 @@ $ids = array(
 312738,
 );
 
+$ids = array(
+
+);
+
+
 $start = 0;
 $end   = 0;
 
@@ -58,8 +63,6 @@ function get_part_from_bhl_part($id)
 	);
 	
 	$url = 'https://www.biodiversitylibrary.org/api2/httpquery.ashx?' . http_build_query($parameters);
-	
-	//echo $url . "\n";
 	
 	$json = get($url);
 	

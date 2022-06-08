@@ -69,6 +69,21 @@ $dois=array('10.3897/PHYTOKEYS.157.32683');
 
 $dois=array('10.1038/S41598-020-80955-1');
 
+$dois=array('10.3897/NATURECONSERVATION.15.10005');
+
+$dois=array('10.1126/science.aaw2090');
+$dois=array('10.1080/00275514.2019.1668906');
+$dois=array('10.1371/JOURNAL.PBIO.3000736');
+$dois=array('10.1016/S1631-0691(03)00158-6');
+$dois=array('10.1186/S12983-020-00375-9');
+$dois=array('10.1002/AQC.3038');
+$dois=array('10.1111/joa.12999');
+$dois=array('10.3390/JOF6040251');
+
+$dois=array('10.1080/00269786.1983.11758568');
+
+$dois=array('10.1080/13887890.2017.1331867');
+
 
 foreach ($dois as $doi)
 {

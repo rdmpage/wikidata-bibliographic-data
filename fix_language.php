@@ -28,7 +28,6 @@ $language_map = array(
 );
 
 
-$languages_to_detect = array('en', 'de', 'nl');
 
 
 //----------------------------------------------------------------------------------------
@@ -52,11 +51,24 @@ function nice_shorten($str, $length = 250) {
 
 //----------------------------------------------------------------------------------------
 
+/*
+SELECT * WHERE {
+  ?work wdt:P1433 wd:Q21385899;
+   wdt:P1476 ?title.
+  BIND(LANG(?title) AS ?language)
+}
+*/
 
-$filename = 'medtitles.txt';
+$filename = 'titles.txt';
+$filename = 'query-13.tsv';
+
+$languages_to_detect = array('en', 'fr');
+
 
 $d = array();
 $w = array();
+
+$row_count = 0;
 
 
 $file_handle = fopen($filename, "r");
@@ -66,40 +78,52 @@ while (!feof($file_handle))
 		
 	$row = explode("\t",$line);
 	
-	$item = $row[0];
-	
-	$title = $row[1];
-	
-	$ld = new Language($languages_to_detect);						
-	$language = $ld->detect($title)->__toString();
-	
-	if ($language != 'en')
+	if ($row_count > 0 && $line != '')
 	{
-		//echo $language . ' ' . $title . "\n";
+	
+		$item = $row[0];
+	
+		// clean up
+		$item = str_replace('http://www.wikidata.org/entity/', '', $item);
+	
+		$title = $row[1];
 		
-		// delete
-		$d[$item] = array();
+		$wikidata_language = $row[2]; // language in wikidata
+	
+		// echo $title . "\n";
 		
-		$d[$item][] = array('P407' => $language_map['en']);
-		$d[$item][] = array('P1476' => 'en:' . '"' . $title . '"');
+		$ld = new Language($languages_to_detect);						
+		$language = $ld->detect($title)->__toString();
+	
+		if ($language != $wikidata_language)
+		{
+			echo $language . ' ' . $title . "\n";
+		
+			// delete
+			$d[$item] = array();
+		
+			// $d[$item][] = array('P407' => $language_map[$wikidata_language]);
+			
+			$d[$item][] = array('P1476' => $wikidata_language . ':' . '"' . $title . '"');
 		
 		
-		// add
+			// add
 		
-		$w[$item] = array();
+			$w[$item] = array();
 		
-		$w[$item][] = array('P407' => $language_map[$language]);
+			// $w[$item][] = array('P407' => $language_map[$language]);
 		
-		$w[$item][] = array('P1476' => $language . ':' . '"' . $title . '"');
+			$w[$item][] = array('P1476' => $language . ':' . '"' . $title . '"');
 		
-		// label
-		$w[$item][] = array('L' . $language => '"' . nice_shorten($title, 250) . '"');
+			// label
+			$w[$item][] = array('L' . $language => '"' . nice_shorten($title, 250) . '"');
 		
 		
 	
+		}
 	}
 
-	
+	$row_count++;
 }	
 
 $quickstatements = '';

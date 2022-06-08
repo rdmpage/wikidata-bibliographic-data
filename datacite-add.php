@@ -8990,6 +8990,41 @@ $dois=array(
 "10.5169/seals-879214",
 );
 
+$dois=array(
+"10.20362/am.011004",
+"10.20362/am.011002",
+"10.20362/am.011003",
+"10.20362/am.009019",
+"10.20362/am.012001",
+"10.20362/am.012002",
+"10.20362/am.012003",
+"10.20362/am.012004",
+"10.20362/am.012005",
+"10.20362/am.013001",
+"10.20362/am.013002",
+"10.20362/am.013003",
+"10.20362/am.013004",
+"10.20362/am.013005",
+"10.20362/am.013006",
+"10.20362/am.014005",
+"10.20362/am.013008",
+"10.20362/am.014001",
+"10.20362/am.014002",
+"10.20362/am.014003",
+"10.20362/am.014004",
+"10.20362/am.005019",
+"10.20362/am.005020",
+"10.20362/am.006007",
+"10.20362/am.006010",
+"10.20362/am.006011",
+"10.20362/am.006012",
+);
+
+$dois=array('10.20363/bzb-2018.67.2.171');
+
+$dois=array('10.5281/ZENODO.1219120');
+
+
 // True to update existing record, false to skip
 $update = false;
 //$update = true;
@@ -9040,7 +9075,7 @@ foreach ($dois as $doi)
 			$work->message->DOIAgency = 'datacite';
 		}
 	
-		// print_r($work);				
+		//print_r($work);				
 	
 		if ($work)
 		{
@@ -9146,6 +9181,10 @@ foreach ($dois as $doi)
 					
 				}
 				
+				if ($work->message->{'container-title'} == 'Raffles Bulletin of Zoology')
+				{
+					$work->message->ISSN = array('0217-2445');
+				}
 			}
 			
 			
@@ -9182,6 +9221,26 @@ foreach ($dois as $doi)
 				
 				
 			}
+			
+			if (preg_match('/BZB-[0-9]{4}.(?<volume>\d+)\.(?<issue>\d+)\.0*(?<spage>\d+)/', $work->message->DOI, $m))
+			{
+				$work->message->{'container-title'} = 'Bonn zoological Bulletin';
+				$work->message->ISSN[] = '2190-7307';
+				$work->message->volume = $m['volume'];
+				$work->message->issue = $m['issue'];
+				$work->message->page = $m['spage'];
+			}
+
+			if (preg_match('/\.pdf/', $work->message->URL))
+			{
+				$link = new stdclass;
+				$link->{'content-type'} = 'application/pdf';
+				$link->URL = $work->message->URL;
+				$work->message->link[] = $link;
+			
+				unset($work->message->URL);
+			}
+			
 			
 			
 		
