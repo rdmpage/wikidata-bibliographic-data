@@ -807,6 +807,60 @@ $filename = 'quickstatements/2317-6105.txt';
 $filename = 'quickstatements/2153-733X.txt';
 
 
+// Revue D'hydrobiologie Tropicale
+$filename = 'quickstatements/horizon.txt';
+
+$filename = 'quickstatements/0013-886X.txt';
+
+// Bulletin de la Societe Entomologique de France Paris
+$filename = 'quickstatements/0037-928X.txt';
+
+// Anales de la Escuela Nacional de Ciencias Biológicas
+$filename = 'quickstatements/0365-1932.txt';
+
+// Studies On The Fauna of Curaçao And Other Caribbean Islands
+$filename = 'quickstatements/0166-5189.txt';
+
+// Philippine Journal of Systematic Biology
+$filename = 'quickstatements/1908-6865.txt';
+
+// Bolletí de la Societat D'història Natural de Les Balears
+$filename = 'quickstatements/2444-8192.txt';
+
+// Myriapodologica
+$filename = 'quickstatements/0163-5395.txt';
+
+// Journal of The Marine Biological Association of India
+$filename = 'quickstatements/0025-3146.txt';
+
+// The Great Basin Naturalist
+$filename = 'quickstatements/0017-3614.txt';
+
+$filename = 'quickstatements/0034-7108.txt';
+
+$filename = 'quickstatements/1026-051X.txt';
+
+// Fungal Diversity
+$filename = 'quickstatements/1560-2745.txt';
+
+// Russian Entomological Journal
+$filename = 'quickstatements/0132-8069.txt';
+
+// Bonner Zoologische Beiträge
+$filename = 'quickstatements/0006-7172.txt';
+
+$filename = 'quickstatements/1005-1694.txt';
+$filename = 'quickstatements/2095-1787.txt';
+
+// bryoloigts
+$filename = 'quickstatements/0007-2745.txt';
+
+$filename = 'quickstatements/1000-4025.txt';
+
+
+// The Bulletin of The Texas Memorial Museum
+//$filename = 'quickstatements/0082-3074.txt';
+
 // Kontyu
 // $filename = 'quickstatements/0013-8770.txt';
 
@@ -821,6 +875,8 @@ $filename = 'quickstatements/2153-733X.txt';
 $filename = 'quickstatements/missed.txt';
 
 
+
+
 // flags
 $check = false;// don't check (only do this if we are sure we're adding new stuff)
 $check = true; // make sure record doesn't alreday exist
@@ -828,7 +884,39 @@ $check = true; // make sure record doesn't alreday exist
 $update = true; // Update any existing records
 $update = false; // Leave existing record alone
 
+
+// 1
 $languages = array('en'); // assume everything is in English
+
+
+// 2
+$languages = array('en', 'de');
+//$languages = array('en', 'fr');
+//$languages = array('en', 'ja');
+//$languages = array('en', 'sv');
+//$languages = array('en', 'es');
+//$languages = array('en', 'it');
+
+//$languages = array('en', 'pt');
+
+//$languages = array('ru', 'en');
+//$languages = array('en', 'zh');
+
+
+//$languages = array('en', 'de', 'it', 'fr');
+
+// 3
+//$languages = array('en', 'hu', 'de');
+
+//$languages = array('en', 'fr', 'es');
+//$languages = array('en', 'fr', 'de');
+
+//$languages = array('en', 'es', 'ca');
+
+//$languages = array('en', 'es', 'de');
+
+//$languages = array('en', 'de', 'ja');
+
 
 //$languages = array('en', 'fr', 'de', 'pl');
 
@@ -913,19 +1001,25 @@ $count = 1;
 $file_handle = fopen($filename, "r");
 while (!feof($file_handle)) 
 {
-	// echo $guid . "\n";
+	//echo $guid . "\n";
 
 	$guid = trim(fgets($file_handle));
 	
 	
 	$url = 'http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . urlencode($guid);
+	
+	//echo $url . "\n";
 
 	//$url = 'http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . urlencode($guid) . '&table=publications_tmp';
+	//$url = 'http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . urlencode($guid) . '&table=' . urlencode('occasional papers texas tech university museum');
 
+	//$url = 'http://localhost/~rpage/microcitation/www/citeproc-api.php?guid=' . urlencode($guid) . '&table=publications_jstor';
+
+	//echo $url. "\n";
 
 	$json = get($url);
 	
-	// echo $json;
+	//echo $json;
 	
 	
 	if ($json == '') {}
@@ -996,6 +1090,24 @@ while (!feof($file_handle))
 	{
 		$work = new stdclass;
 		$work->message = $obj;
+		
+		// Acta Phytotaxonomia Sinica broken DOIs
+		if (isset($work->message->DOI) && preg_match('/10.3724\/SP.J.1002./i', $work->message->DOI))
+		{
+			unset($work->message->DOI);
+		}
+		
+		if (isset($work->message->DOI) && preg_match('/10.1360\/aps/i', $work->message->DOI))
+		{
+			unset($work->message->DOI);
+			$work->message->ISSN = array('0529-1526');
+		}
+
+		if (preg_match('/http:\/\/www.plantsystematics.com\/CN\//i', $guid))
+		{
+			$work->message->ISSN = array('0529-1526');
+		}
+		
 
 		//$quickstatements = csljson_to_wikidata($work, true, true, array('en', 'nl', 'de', 'fr'));
 		
@@ -1057,6 +1169,13 @@ while (!feof($file_handle))
 				$source[] = 'S854';
 				$source[] = '"http://www.saturnia.de/senck-biol/sebio-cont.htm"';
 			}
+			
+			if ($obj->ISSN[0] == '0078-7515')
+			{
+				$source[] = 'S854';
+				$source[] = '"http://hbs.bishopmuseum.org/pim/"';
+			}
+			
 		}
 				
 		// www.zobodat.at
@@ -1065,7 +1184,13 @@ while (!feof($file_handle))
 			$source[] = 'S248';
 			$source[] = 'Q55153845';
 			$source[] = 'S854';
-			$source[] = '"' . $obj->URL . '"';			
+			$source[] = '"' . $obj->URL . '"';	
+			
+			// identifier
+			if (preg_match('/www.zobodat.at\/publikation_articles.php\?id=(?<id>\d+)/', $obj->URL, $m))
+			{
+				$obj->ZOBODAT = $m['id'];
+			}
 		}
 
 		// repository.naturalis.nl
@@ -1340,7 +1465,19 @@ while (!feof($file_handle))
 				$source[] = 'S854';
 				$source[] = '"' . $obj->URL . '"';			
 			}
-		}	
+		}
+		
+		// Horizon Pleins textes 
+		if (isset($obj->URL))
+		{
+			if (preg_match('/www.documentation.ird.fr/i', $obj->URL, $m))
+			{
+				$source[] = 'S248';
+				$source[] = 'Q56319412';
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}					
 		
 		// epa.oszk.hu
 		if (isset($obj->link))
@@ -1421,7 +1558,25 @@ while (!feof($file_handle))
 			$work->message->DOIAgency = 'jalc';
 		}
 		
+		if (preg_match('/10.2307\//', $guid, $m))
+		{
+			$work->message->DOIAgency = 'crossref';
+		}
 		
+		// 
+		if (preg_match('/10.6532\//', $guid, $m))
+		{
+			$work->message->DOIAgency = 'airiti';
+		}
+		
+		if (isset($obj->DOI))
+		{
+
+			if (preg_match('/10.20363\//', $obj->DOI, $m))
+			{
+				$work->message->DOIAgency = 'datacite';
+			}
+		}
 				
 		// Tropicos
 		if (preg_match('/legacy.tropicos.org/i', $guid, $m))
@@ -1462,6 +1617,21 @@ while (!feof($file_handle))
 			
 			}
 		}
+		
+		// https://oajournals.fupress.net
+		if (isset( $obj->URL))
+		{
+			if (preg_match('/oajournals.fupress.net/i', $obj->URL, $m))
+			{
+				unset($obj->DOI);
+					
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';		
+			
+			
+			}
+		}
+		
 	
 	
 		// bvs-vet.org.br
@@ -1476,9 +1646,50 @@ while (!feof($file_handle))
 			unset($obj->URL);
 		}	
 		
+		// Biblat
+		if (preg_match('/biblat.unam.mx/i', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q6496206'; // Latin American Bibliography (Biblat)
+					
+			$source[] = 'S854';
+			$source[] = '"' . $obj->URL . '"';		
+			
+			unset($obj->URL);
+		}	
+
 				
 		
 		// special
+		// KMK
+		if (isset($obj->ISSN) && $obj->ISSN[0] == '0132-8069')
+		{
+			$source[] = 'S248';
+			$source[] = 'Q74434045'; // KMK Scientific Press Ltd.
+					
+			$source[] = 'S854';
+			$source[] = '"https://kmkjournals.com/journals/REJ/REJ_Index_Volumes"';		
+		}		
+		
+
+		// Zoological Record reset ISSN
+		if (isset($obj->ISSN) && $obj->ISSN[0] == '2095-8137')
+		{
+			if ($obj->issued->{'date-parts'}[0][0] < 2014)
+			{
+				$obj->ISSN[0] = '0254-5853';
+				
+				/*
+				// if we want to kill DOI
+				if (isset($obj->DOI))
+				{
+					unset($obj->DOI);
+				}
+				*/
+			}
+		}		
+		
+		
 		if (0)
 		{
 			$urls = array (
@@ -1529,6 +1740,37 @@ while (!feof($file_handle))
 				$source[] = '"' . $url . '"';				
 		}
 		
+		// special
+		if (isset($obj->ISSN) && $obj->ISSN[0] == '0013-886X')
+		{
+			$data = json_decode('{"138":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-138-2017\/","137":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-137-2016\/","136":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-136-2015","135":"http:\/\/www.sef.nu\/entomologisk-tidskrift-vol-135-2014\/","134":"http:\/\/www.sef.nu\/?p=5592","133":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-133-2012\/","132":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-132-2011\/","131":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-131-2010","130":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-130-2009","129":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-129-2008\/","128":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-128-2007\/","127":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-127-2006\/","126":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-126-2005\/","125":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-125-2004\/","124":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-124-2003\/","123":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-123-2002\/","122":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-122-2001\/","121":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-121-2000","120":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-120-1999\/","119":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-119-1998\/","118":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-118-1997","117":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-117-1996\/","116":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-116-1995\/","115":"http:\/\/www.sef.nu\/?p=3894","114":"http:\/\/www.sef.nu\/?p=3910","113":"http:\/\/www.sef.nu\/?p=3924","112":"http:\/\/www.sef.nu\/?p=4608","111":"http:\/\/www.sef.nu\/?p=4569","110":"http:\/\/www.sef.nu\/?p=4578","109":"http:\/\/www.sef.nu\/?p=4587","108":"http:\/\/www.sef.nu\/?p=4596","107":"http:\/\/www.sef.nu\/?p=4624","106":"http:\/\/www.sef.nu\/?p=4633","105":"http:\/\/www.sef.nu\/?p=4642","104":"http:\/\/www.sef.nu\/?p=4651","103":"http:\/\/www.sef.nu\/?p=4660","102":"http:\/\/www.sef.nu\/?p=4669","101":"http:\/\/www.sef.nu\/?p=4679","100":"http:\/\/www.sef.nu\/?p=4689","99":"http:\/\/www.sef.nu\/?p=4699","98":"http:\/\/www.sef.nu\/?p=4708","97":"http:\/\/www.sef.nu\/?p=4717","96":"http:\/\/www.sef.nu\/?p=4723","95":"http:\/\/www.sef.nu\/?p=4731","94":"http:\/\/www.sef.nu\/?p=4740","93":"http:\/\/www.sef.nu\/?p=4748","92":"http:\/\/www.sef.nu\/?page_id=6531","91":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-91-1970\/","90":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-90-1969\/","89":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-89-1968\/","88":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-88-1967\/","87":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-87-1966\/","86":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-86-1965\/","85":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-85-1964\/","84":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-84-1963\/","83":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-83-1962\/","82":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-82-1961\/","81":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-81-1960\/","80":"http:\/\/www.sef.nu\/scannade-nummer-av-entomologisk-tidskrift\/entomologisk-tidskrift-vol-80-1959\/"}');
+			
+			if (isset($data->{$obj->volume}))
+			{
+				$source[] = 'S854';
+				$source[] = '"' . $data->{$obj->volume} . '"';				
+			
+			}
+		
+		
+		}
+		
+		if (isset($obj->ISSN) && $obj->ISSN[0] == '1855-5810')
+		{
+			
+			$source[] = 'S854';
+			$source[] = '"http://illiesia.speciesfile.org/html/papers.html"';	
+			
+			// these mostly seem to be bogus
+			if (isset($obj->ZOOBANK))
+			{
+				//unset($obj->ZOOBANK);
+			}
+			
+		
+		}
+		
+		
 		if (preg_match('/www.phytoneuron.net/i', $guid, $m))
 		{
 					
@@ -1543,6 +1785,125 @@ while (!feof($file_handle))
 			unset($obj->URL);
 		}	
 		
+		if (preg_match('/www.vmnh.net/i', $guid, $m))
+		{
+					
+			$source[] = 'S854';
+			$url = 'https://www.vmnh.net/research-collections/vmnh-scientific-publications/myriapodologica';
+			$source[] = '"' . $url . '"';		
+			
+			unset($obj->URL);
+		}	
+		
+		/*
+		if (preg_match('/zoobank.org/i', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q8074026'; // ZooBank
+					
+			$source[] = 'S854';
+			$source[] = '"' . $guid . '"';		
+		}	
+		*/
+		
+		if (preg_match('/mds.marshall.edu/i', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q111244838'; // ZooBank
+					
+			$source[] = 'S854';
+			$source[] = '"' . $guid . '"';		
+		}	
+		
+		if (isset($obj->URL))
+		{
+			if (preg_match('/redalyc.org/i', $obj->URL, $m))
+			{
+				$source[] = 'S248';
+				$source[] = 'Q7305434';
+
+				$source[] = 'S854';
+				$source[] = '"' . $obj->URL . '"';			
+			}
+		}		
+	
+	
+			
+		if (isset($obj->HANDLE))
+		{
+			if (preg_match('/^2115/i', $obj->HANDLE, $m))
+			{
+				$source[] = 'S248';
+				$source[] = 'Q25804153';
+
+				$source[] = 'S854';
+				$source[] = '"https://eprints.lib.hokudai.ac.jp/dspace/handle/' . $obj->HANDLE . '"';			
+			}
+		}		
+	
+		
+		// special CNKI DOI
+		if (preg_match('/^(GSWX|HDKC|DNYX|XBNX)/i', $guid, $m))
+		{
+			$source[] = 'S248';
+			$source[] = 'Q12857515'; // CNKI
+					
+			$source[] = 'S854';
+			$source[] = '"https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename=' . $guid . '"';	
+			
+			$work->message->DOIAgency = 'cnki';
+		}		
+		
+		// http://www.chinadoi.cn/portal/mr.action?doi=1
+		// special chinadoi
+		if (preg_match('/^10.3969/i', $guid, $m))
+		{
+					
+			$source[] = 'S854';
+			$source[] = '"http://www.chinadoi.cn/portal/mr.action?doi=' . $guid . '"';	
+			
+			$work->message->DOIAgency = 'istic';
+		}	
+			
+		// http://www.chinadoi.cn/portal/mr.action?doi=1
+		// special chinadoi
+		if (preg_match('/chinadoi.cn/i', $guid, $m))
+		{
+					
+			$source[] = 'S854';
+			$source[] = '"http://www.chinadoi.cn/portal/mr.action?doi=' . $guid . '"';	
+			
+			$work->message->DOIAgency = 'istic';
+		}		
+		
+		
+		// Ichthyological Exploration of Freshwaters
+		if (isset($obj->ISSN) && $obj->ISSN[0] == '0936-9902')
+		{
+			// pdfs are abstarcts only with request for money
+			if (isset($obj->link))
+			{
+				unset($obj->link);
+			}
+			if (isset($obj->DOI))
+			{
+				$obj->DOIAgency = 'medra';
+			}
+			
+			$source[] = 'S854';
+			$source[] = '"https://pfeil-verlag.de/publikationen/ichthyological-exploration-of-freshwaters-uebersicht/"';				
+		}
+		
+		
+		
+		// Allyn
+		if (preg_match('/www.floridamuseum.ufl.edu/i', $guid, $m))
+		{
+			$work->message->title = preg_replace('/\.$/', '', $work->message->title);
+					
+			$source[] = 'S854';
+			$source[] = '"https://www.floridamuseum.ufl.edu/mcguire/publications/allyn-bulletin/"';		
+		}	
 		
 		
 		// default

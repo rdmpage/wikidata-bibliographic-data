@@ -579,6 +579,62 @@ function wikidata_item_from_zoobank($zoobank)
 }
 
 //----------------------------------------------------------------------------------------
+// Does wikidata have this ZOBODAT work?
+function wikidata_item_from_zobodat($zobodat)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P10931 "' . $zobodat . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+//----------------------------------------------------------------------------------------
+// Does wikidata have this ZOBODAT person?
+function wikidata_item_from_zobodat_author($zobodat)
+{
+	$item = '';
+	
+	$sparql = 'SELECT * WHERE { ?work wdt:P8914 "' . $zobodat . '" }';
+	
+	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
+	$json = get($url, '', 'application/json');
+		
+	if ($json != '')
+	{
+		$obj = json_decode($json);
+		if (isset($obj->results->bindings))
+		{
+			if (count($obj->results->bindings) != 0)	
+			{
+				$item = $obj->results->bindings[0]->work->value;
+				$item = preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $item);
+			}
+		}
+	}
+	
+	return $item;
+}
+
+
+
+//----------------------------------------------------------------------------------------
 // Does wikidata have this PDF
 function wikidata_item_from_pdf($pdf)
 {
@@ -612,7 +668,9 @@ function wikidata_item_from_handle($handle)
 {
 	$item = '';
 	
-	$sparql = 'SELECT * WHERE { ?work wdt:P1184 "' . $handle . '" }';
+	$sparql = 'SELECT * WHERE { ?work wdt:P1184 "' . strtoupper($handle) . '" }';
+	
+	//echo $sparql ."\n";
 	
 	$url = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=' . urlencode($sparql);
 	$json = get($url, '', 'application/json');
@@ -1183,8 +1241,12 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 		{
 			$item = wikidata_item_from_zoobank($work->message->ZOOBANK);
 		}
-		
-		
+
+		// ZOBODAT
+		if (isset($work->message->ZOBODAT))
+		{
+			$item = wikidata_item_from_zobodat($work->message->ZOBODAT);
+		}
 	
 		// JSTOR
 		if ($item == '')
@@ -1324,7 +1386,7 @@ function csljson_to_wikidata($work, $check = true, $update = true, $languages_to
 	{
 		// already exists, if $update is false exit
 		
-		if (0)
+		if (1)
 		{
 			echo "Have item $item\n";
 		
@@ -1388,6 +1450,8 @@ $this->props = array(
 		'PDF'					=> 'P953',
 		'ARCHIVE'				=> 'P724',
 		'ZOOBANK_PUBLICATION' 	=> 'P2007',
+		'ZOBODAT'				=> 'P10931',
+		'ZOBODAT_AUTHOR'		=> 'P8914',
 		'abstract'				=> 'P1922', // first line
 		'article-number'		=> 'P1545', // series ordinal
 		'number-of-pages'		=> 'P1104', // number of pages
@@ -1988,6 +2052,20 @@ $this->props = array(
 						}						
 					}
 					
+					// ZOBODAT author?
+					if (!$done)
+					{
+						if (isset($author->ZOBODAT))
+						{
+							$author_item = wikidata_item_from_zobodat_author($author->ZOBODAT);
+						
+							if ($author_item != '')
+							{							
+								$w[] = array('P50' => $author_item . "\tP1545\t\"$count\"\tP1932\t\"" . $author->literal . "\"");
+								$done = true;
+							}						
+						}						
+					}
 					
 					
 					// If we've reached this point we only have literals, so add these
@@ -2188,9 +2266,12 @@ $this->props = array(
 				
 			//----------------------------------------------------------------------------
 			case 'DOI':
-				if (isset($work->message->DOIAgency))
+				if (isset($work->message->DOIAgency) || isset($work->message->doi_agency))
 				{
-					switch ($work->message->DOIAgency)
+					if (isset($work->message->DOIAgency)) { $agency = $work->message->DOIAgency; }
+					if (isset($work->message->doi_agency)) { $agency = $work->message->doi_agency; }
+				
+					switch (strtolower($agency))
 					{
 						case 'airiti':
 							$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"' . "\tP2378\tQ4698727");
@@ -2214,6 +2295,10 @@ $this->props = array(
 
 						case 'jalc':
 							$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"' . "\tP2378\tQ100319347");
+							break;
+
+						case 'kisti':
+							$w[] = array($wikidata_properties[$k] => '"' . mb_strtoupper($v) . '"' . "\tP2378\tQ6431653");
 							break;
 
 						case 'medra':
@@ -2317,6 +2402,10 @@ $this->props = array(
 				
 			//----------------------------------------------------------------------------
 			case 'CINII':
+				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
+				break;
+				
+			case 'ZOBODAT':
 				$w[] = array($wikidata_properties[$k] => '"' . $v . '"');
 				break;
 								
@@ -3734,6 +3823,7 @@ function googlebooks_to_wikidata($book_id, $namespace = 'isbn', $update = true)
 		'en' => 'Q1860',
 		'es' => 'Q1321',
 		'fr' => 'Q150',
+		'hu' => 'Q9067',
 		'it' => 'Q652',
 		'ja' => 'Q5287',
 		'la' => 'Q397',

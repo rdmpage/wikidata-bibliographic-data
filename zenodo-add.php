@@ -11,7 +11,30 @@ $dois=array();
 
 $dois=array(
 //'10.5281/zenodo.4044276',
-'10.5281/zenodo.1219120',
+//'10.5281/zenodo.1219120',
+//'10.5281/zenodo.3694249',
+//'10.5281/zenodo.3685541',
+
+'10.5281/zenodo.3685541',
+'10.5281/zenodo.3693156',
+'10.5281/zenodo.3693900',
+'10.5281/zenodo.3694249',
+'10.5281/zenodo.4593168',
+'10.5281/zenodo.4593168',
+'10.5281/zenodo.4593168',
+'10.5281/zenodo.4593168',
+'10.5281/zenodo.4593168',
+'10.5281/zenodo.4593168',
+'10.5281/zenodo.4593250',
+'10.5281/zenodo.5512985',
+'10.5281/zenodo.5519140',
+'10.5281/zenodo.5608835',
+'10.5281/zenodo.5768172',
+'10.5281/zenodo.6026502',
+'10.5281/zenodo.6415937',
+'10.5281/zenodo.6497956',
+'10.5281/zenodo.6831180',
+
 );
 
 // True to update existing record, false to skip
@@ -50,7 +73,7 @@ foreach ($dois as $doi)
 		$work = new stdclass;
 		$work->message = $obj;		
 	
-		print_r($work);
+		//print_r($work);
 		
 		
 	
@@ -79,6 +102,12 @@ foreach ($dois as $doi)
 				{
 					$work->message->ISSN = array('0075-1243');
 					$work->message->{'container-title'} = 'Israel Journal of Entomology';
+				}
+
+				if ( $work->message->{'container_title'} == "ZooNova")
+				{
+					$work->message->ISSN = array('1759-0116');
+					$work->message->{'container-title'} = 'ZooNova';
 				}
 				
 			}

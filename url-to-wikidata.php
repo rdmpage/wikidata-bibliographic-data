@@ -117,7 +117,7 @@ while (!feof($file_handle))
 	
 	if (!$done)
 	{
-		if (preg_match('/\d+\/[A-Z0-9_]+/', $guid))
+		if (preg_match('/\d+\/[a-zA-Z0-9_]+/', $guid))
 		{
 			//$bhl_part = $m['id'];
 			

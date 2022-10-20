@@ -9023,6 +9023,7 @@ $dois=array(
 $dois=array('10.20363/bzb-2018.67.2.171');
 
 $dois=array('10.5281/ZENODO.1219120');
+$dois=array('10.5281/zenodo.3694249');
 
 
 // True to update existing record, false to skip
@@ -9034,9 +9035,9 @@ $check = false;
 
 $detect_languages = array('en');
 
-$detect_languages = array('en', 'it', 'fr', 'de', 'pt', 'es', 'ja', 'zh', 'ru');
+//$detect_languages = array('en', 'it', 'fr', 'de', 'pt', 'es', 'ja', 'zh', 'ru');
 
-$detect_languages = array('en', 'de', 'fr');
+//$detect_languages = array('en', 'de', 'fr');
 
 //$detect_languages = array('en', 'it');
 
@@ -9075,7 +9076,7 @@ foreach ($dois as $doi)
 			$work->message->DOIAgency = 'datacite';
 		}
 	
-		//print_r($work);				
+		print_r($work);				
 	
 		if ($work)
 		{

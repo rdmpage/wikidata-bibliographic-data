@@ -22,6 +22,8 @@ $dois=array('10.7717/peerj.6157');
 
 $dois=array('10.3897/PHYTOKEYS.95.21586');
 
+$dois=array('10.1177/0306312720920362');
+
 
 
 foreach ($dois as $doi)

@@ -13,6 +13,7 @@ $filename = 'query-3.tsv';
 $filename = 'query-4.tsv';
 $filename = 'query-5.tsv';
 $filename = 'query.tsv';
+$filename = '/Users/rpage/Downloads/query.tsv';
 
 /*
 SELECT * WHERE {
@@ -66,10 +67,6 @@ while (!feof($file_handle))
 
 			//print_r($obj);
 			
-			$issn = '0003-049X';
-			$issn = '0199-9818';
-			$issn = '0024-0974';
-			
 			if (0)
 			{
 				if (isset($obj->jstor))
@@ -105,7 +102,10 @@ while (!feof($file_handle))
 			{
 				if (isset($obj->work))
 				{
-			
+					$issn = '0003-049X';
+					$issn = '0199-9818';
+					$issn = '0024-0974';
+							
 					$keys = array();
 					$values = array();
 				
@@ -161,26 +161,47 @@ while (!feof($file_handle))
 			
 			}
 			
-			/*
-			if (isset($obj->volume) && isset($obj->pages))
+			if (1)
 			{
-				$parts = preg_split('/[-|—]/', $obj->pages);
+				// update local database
+				if (isset($obj->volume) && isset($obj->pages))
+				{
+					$issn = '0077-1813';
 				
-				$spage = $parts[0];
+					$parts = preg_split('/[-|—]\s*/', $obj->pages);
+					if (count($parts) == 2)
+					{
 				
-				$sql = 'UPDATE publications SET wikidata="' 
-					. preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $obj->work) . '"'
-					. ' WHERE issn="' . $issn . '"'
-					. ' AND volume="' . $obj->volume . '"'
-					. ' AND spage="' . $spage . '"'
-					. ';';
+						$sql = 'UPDATE rdmp_reference SET wikidata="' 
+							. preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $obj->work) . '"'
+							. ' WHERE issn="' . $issn . '"'
+							. ' AND volume="' . $obj->volume . '"'
+							. ' AND spage="' . $parts[0] . '"'
+							. ' AND epage="' . $parts[1]. '"'
+							. ' AND wikidata IS NULL'
+							. ';';
 					
-				echo $sql . "\n";
+						echo $sql . "\n";
+					}
+					
+					/*
+					if (count($parts) == 1)
+					{
 				
+						$sql = 'UPDATE rdmp_reference SET wikidata="' 
+							. preg_replace('/https?:\/\/www.wikidata.org\/entity\//', '', $obj->work) . '"'
+							. ' WHERE issn="' . $issn . '"'
+							. ' AND volume="' . $obj->volume . '"'
+							. ' AND spage="' . $parts[0] . '"'
+							. ' AND epage="' . $parts[0]. '"'
+							. ';';
+					
+						echo $sql . "\n";
+					}
+					*/
 			
+				}
 			}
-			*/
-			
 			
 			/*
 			if (isset($obj->volume) && isset($obj->pages))
